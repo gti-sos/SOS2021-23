@@ -4,12 +4,9 @@ var serveIndex = require('serve-index');
 var path = require("path");
 var app = express();
 var BASE_API_PATH_EDU="/api/v1/mh-stats";
-<<<<<<< HEAD
 var BASE_API_PATH_ACE="/api/v1/unemployment-stats";
 var BASE_API_PATH_MEM="/api/v1/hdi-stats";
-=======
 var BASE_API_PATH_SEC="/api/v1/du-stats";
->>>>>>> 20555fb3cff355e040e142fa61e1dba128cd9764
 var bodyParser = require("body-parser");
 
 var port = process.env.PORT || 11337;
