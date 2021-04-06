@@ -7,6 +7,7 @@ var BASE_API_PATH_EDU="/api/v1/mh-stats";
 var BASE_API_PATH_ACE="/api/v1/unemployment-stats";
 var BASE_API_PATH_MEM="/api/v1/hdi-stats";
 var bodyParser = require("body-parser");
+const fs = require('fs');
 
 var port = process.env.PORT || 11337;
 
@@ -80,7 +81,8 @@ var mh_countries = [];
 app.get(BASE_API_PATH_EDU+"/loadInitialData", (request, response) =>{
 	if (mh_countries.length == 0) {
 		try {
-		mh_countries = require("./mh-stats.json");
+		let rawdata = fs.readFileSync('mh-stats.json');
+		mh_countries = JSON.parse(rawdata);
 		} catch {
 			console.log('Error parsing .json file');
 	}
@@ -104,33 +106,29 @@ app.get(BASE_API_PATH_EDU, (request, response) =>{
 	}
 });
 
-// 6.2
-// Auxiliary function to test if JSON object exists in JSON array.
-function elementExists(obj, obj_t) {
-	for (var i = 0; i < obj.length; i++) {
-		if (obj[i] == obj_t) {
-			return true;
-		} else {
-			false;
+app.post(BASE_API_PATH_EDU, (request, response) =>{
+	var updateCountry = request.body;
+	console.log(updateCountry.country);
+		console.log(updateCountry.year);
+	var oldCountry;
+	var del_index;
+	console.log(`[!] Received: <${JSON.stringify(updateCountry, null)}> checking for coincidences...`);
+	for(var i=0; i<mh_countries.length; i++){
+		if(mh_countries[i].country==updateCountry.country && mh_countries[i].year==updateCountry.year){
+			oldCountry = mh_countries[i];
+			del_index = i;
 		}
 	}
-}
-
-app.post(BASE_API_PATH_EDU, (request, response) =>{
-	var country;
-	mh_countries.forEach(function(obj) {
-		if (obj.country == request.params.country && obj.year == request.params.year) {
-			country = obj;
-		}
-	});
-	if (isAO(request.body) && request.body.length != 0 && country == null) {
-		var newCountry = request.body;
-		console.log(`Add new country: <${JSON.stringify(newCountry, null)}>`);
-		mh_countries.push(newCountry);
-		response.status(201).send("<p>New resource created.</p>");
-	} else{
-		console.log("[-] Received malformed or empty JSON when trying to add a new resource. \n-->"+JSON.stringify(newCountry, null));
-		response.status(400).send("<p>400: Bad or empty JSON has been provided.</p>");
+	if (oldCountry == null) {
+		console.log("[!] POST with: \n-->" + JSON.stringify(updateCountry, null) + " :: Not found in array.");
+		response.status(200).send("<p>Added resource.</p>");
+		mh_countries.push(updateCountry);
+	} else if (JSON.stringify(oldCountry, null) == JSON.stringify(updateCountry, null)) {
+		console.log("[!] Someone has tried upload an existent resource: \n-->" + JSON.stringify(oldCountry, null));
+		response.status(400).send("<p>Resource already exists.</p>");
+	} else {
+		console.log("[!] POST containing: \n-->" + JSON.stringify(updateCountry, null));
+		response.status(400).send("<p>Error</p>");
 	}
 });
 
@@ -143,12 +141,12 @@ app.put(BASE_API_PATH_EDU, (request, response) => {
 // 6.8
 app.delete(BASE_API_PATH_EDU, (request, response) => {
 	console.log("[-] Full deletion has been requested. Proceeding.");
-	if (mh_countries.length == 0) {
+	if (mh_countries.length == 0 || mh_countries == null) {
 		response.status(400).send("<p>400: No resources found. Can't delete any.</p>");
 	} else {
 		mh_countries.length = 0;
 		console.log(mh_countries.length);
-		response.status(200).send("<p>200: All resources deleted.</p>");	
+		response.status(200).send("<p>200: All resources deleted.</p>");
 	}
 });
 
@@ -178,15 +176,17 @@ app.post(BASE_API_PATH_EDU+"/:country/:year", (request, response) => {
 // 6.4
 app.delete(BASE_API_PATH_EDU+"/:country/:year", (request, response) => {
 	var oldCountry;
+	var del_index;
 	console.log("[!] Deletion requested for resource: /"+request.params.country+"/"+request.params.year+"\n [?] Checking existence.");
-		mh_countries.forEach(function(obj) {
-		if (obj.country == request.params.country && obj.year == request.params.year) {
-			oldCountry = obj;
+	for(var i=0; i<mh_countries.length; i++){
+		if(mh_countries[i].country==request.params.country && mh_countries[i].year==request.params.year){
+			oldCountry = mh_countries[i];
+			del_index = i;
 		}
-	});
+	}
 	if (oldCountry != null) {
 		console.log("[-] Delete: "+ JSON.stringify(oldCountry,null));
-		delete mh_countries[oldCountry];
+		mh_countries.splice(del_index, 1);
 		response.status(200).send("<p>Resource deleted</p>");	
 	} else {
 		console.log("[!] Someone has tried to delete a non-existent resource: \n-->" + JSON.stringify(oldCountry, null));
@@ -198,17 +198,19 @@ app.delete(BASE_API_PATH_EDU+"/:country/:year", (request, response) => {
 app.put(BASE_API_PATH_EDU+"/:country/:year", (request, response) => {
 	var updateCountry = request.body;
 	var oldCountry;
+	var del_index;
 	console.log(`[!] New country to update: <${JSON.stringify(updateCountry, null)}>`);
-			mh_countries.forEach(function(obj) {
-		if (obj.country == request.params.country && obj.year == request.params.year) {
-			oldCountry = obj;
+	for(var i=0; i<mh_countries.length; i++){
+		if(mh_countries[i].country==request.params.country && mh_countries[i].year==request.params.year){
+			oldCountry = mh_countries[i];
+			del_index = i;
 		}
-	});
+	}
 	if (oldCountry != null) {
 		console.log("[-] Delete "+ JSON.stringify(oldCountry, null)+" to add resource: \n-->"+ JSON.stringify(updateCountry, null));
-		delete mh_countries[oldCountry];
+		mh_countries.splice(del_index, 1);
 		response.status(200).send("<p>Resource updated.</p>");
-		mh_countries.push(updateCountry);	
+		mh_countries.push(updateCountry);
 	} else {
 		console.log("[!] Someone has tried to update a non-existent resource: \n-->" + JSON.stringify(oldCountry, null));
 		response.status(400).send("<p>Resource not found, can't delete.</p>");
@@ -246,6 +248,7 @@ app.get(BASE_API_PATH_ACE, (request, response) =>{
 	}
 });
 
+<<<<<<< HEAD
 // 6.2
 // Auxiliary function to test if JSON object exists in JSON array.
 function elementExists(obj, obj_t) {
@@ -256,6 +259,13 @@ function elementExists(obj, obj_t) {
 			false;
 		}
 	}
+=======
+// API DEV (mh-stats)
+app.use(bodyParser.json());
+// Auxiliary function to check if valid JSON array
+function isAO(val) {
+    return val instanceof Array || val instanceof Object ? true : false;
+>>>>>>> 36c75f0c05939548ca1bad83bf2e4638bbc8ba90
 }
 
 app.post(BASE_API_PATH_ACE, (request, response) =>{
@@ -367,9 +377,15 @@ app.get(BASE_API_PATH_MEM+"/loadInitialData", (request, response) =>{
 		} catch {
 			console.log('Error parsing .json file');
 	}
+<<<<<<< HEAD
 		console.log('[!] hdi-stats.json loaded onto hdi_countries');
 		console.log(JSON.stringify(hdi_countries, null));
 		response.status(200).send("<h3>Successfuly loaded "+ hdi_countries.length + " resources</h3><p>You can head now to /api/v1/hdi-stats to check newly created resources</p>")
+=======
+		console.log('[!] du-stats.json loaded onto du_countries');
+		console.log(JSON.stringify(du_countries, null));
+		response.status(200).send("<h3>Successfuly loaded "+ du_countries.length + " resources</h3><p>You can head now to /api/v1/du-stats to check newly created resources</p>")
+>>>>>>> 36c75f0c05939548ca1bad83bf2e4638bbc8ba90
 	} else {
 		console.log('[!] GET request to /loadInitialData but resources are already loaded.');
 		response.status(400).send("<h1>Resources already loaded. Head back to /api/v1/hdi-stats to check them.</h1>")
@@ -498,7 +514,10 @@ app.put(BASE_API_PATH_MEM+"/:country/:year", (request, response) => {
 	}
 });
 ///////////////////////////////////////////////////
+<<<<<<< HEAD
 app.listen(port, () => {
 	console.log("Server is ready, listening on port " + port);
 });
 
+=======
+>>>>>>> 36c75f0c05939548ca1bad83bf2e4638bbc8ba90
