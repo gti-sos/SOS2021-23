@@ -7,7 +7,7 @@ var BASE_API_PATH_EDU="/api/v1/mh-stats";
 var BASE_API_PATH_SEC="/api/v1/du-stats";
 var bodyParser = require("body-parser");
 
-var port = process.env.PORT || 11338;
+var port = process.env.PORT || 11337;
 
 function hehe() {
 	var res = "<h3> Welcome to /cool, an exclusive lounge for cool! people </h3><br><p> These are the faces of our coolest members </p><br>";
@@ -215,7 +215,7 @@ app.listen(port, () => {
 
 ///////////////////////////////////////////////////
 
-// API DEV (du-stats)
+// API DEV (mh-stats)
 app.use(bodyParser.json());
 // Auxiliary function to check if valid JSON array
 function isAO(val) {
@@ -232,7 +232,7 @@ app.get(BASE_API_PATH_SEC+"/loadInitialData", (request, response) =>{
 	}
 		console.log('[!] du-stats.json loaded onto du_countries');
 		console.log(JSON.stringify(du_countries, null));
-		response.status(200).send("<h3>Successfuly loaded "+ du_countries.length + " resources</h3><p>You can head now to /api/v1/mh-stats to check newly created resources</p>")
+		response.status(200).send("<h3>Successfuly loaded "+ du_countries.length + " resources</h3><p>You can head now to /api/v1/du-stats to check newly created resources</p>")
 	} else {
 		console.log('[!] GET request to /loadInitialData but resources are already loaded.');
 		response.status(400).send("<h1>Resources already loaded. Head back to /api/v1/du-stats to check them.</h1>")
@@ -362,6 +362,3 @@ app.put(BASE_API_PATH_SEC+"/:country/:year", (request, response) => {
 });
 
 ///////////////////////////////////////////////////
-app.listen(port, () => {
-	console.log("Server is ready, listening on port " + port);
-});
