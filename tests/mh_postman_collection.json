@@ -373,11 +373,18 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.have.status(201);\r",
 							"});\r",
 							"\r",
 							"pm.test(\"Body matches string, 'Added resource.'\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include(\"Added resource.\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Resource sent with POST is on mh_countries\", function() {\r",
+							"    pm.sendRequest(\"https://sos2021-23.herokuapp.com/api/v1/mh-stats/Spainy/2017\", function (err, response) {\r",
+							"        pm.response.to.have.status(200);\r",
+							"        pm.expect(pm.response.text()).to.include(\"Spainy\");   \r",
+							"    });\r",
 							"});"
 						],
 						"type": "text/javascript"
