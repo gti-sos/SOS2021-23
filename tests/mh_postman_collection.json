@@ -377,7 +377,7 @@
 							"});\r",
 							"\r",
 							"pm.test(\"Body matches string, 'Added resource.'\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"Added resource.\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"Created resource.\");\r",
 							"});\r",
 							""
 						],
