@@ -15,4 +15,4 @@
     - [https://sos2021-23.herokuapp.com/api/v1/hdi-/docs](https://sos2021-23.herokuapp.com/api/v1/hdi-stats/s) (developed by [Antonio Maiquez Marin](https://github.com/Jackman97))
     - [/api/v1/mh-stats/docs](https://documenter.getpostman.com/view/14943559/TzJoDfQ5) (developed by [Eduardo Carmona](https://github.com/Beelthazad))
 
-- Propuesta: https://docs.google.com/spreadsheets/d/1k4qAyHUGc5xTsaPLKgx0gpixK02GCAo_UJpViFWoCFM/
+- Propuesta del equipo: https://docs.google.com/spreadsheets/d/1k4qAyHUGc5xTsaPLKgx0gpixK02GCAo_UJpViFWoCFM/
