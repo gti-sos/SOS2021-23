@@ -1,13 +1,26 @@
 var BASE_API_PATH_EDU="/api/v1/mh-stats";
-var mh_countries = [];
-// 5.2
+const fs = require('fs');
 
-///////////////////////////////////////////////////
+function isAO(val) {
+    return val instanceof Array || val instanceof Object ? true : false;
+}
+
+function elementExists(obj, obj_t) {
+	for (var i = 0; i < obj.length; i++) {
+		if (obj[i] == obj_t) {
+			return true;
+		} else {
+			false;
+		}
+	}
+}
+
 module.exports.register = (app) => {
+    var mh_countries = [];
     app.get(BASE_API_PATH_EDU+"/loadInitialData", (request, response) =>{
         if (mh_countries.length == 0) {
             try {
-            let rawdata = fs.readFileSync('mh-stats.json');
+            let rawdata = fs.readFileSync('./mh-stats-api/mh-stats.json');
             mh_countries = JSON.parse(rawdata);
             } catch {
                 console.log('Error parsing .json file');

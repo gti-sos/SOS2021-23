@@ -1,9 +1,23 @@
 var BASE_API_PATH_ACE="/api/v1/unemployment-stats";
-var unemployment_countries = [];
+const fs = require('fs');
+
+function isAO(val) {
+    return val instanceof Array || val instanceof Object ? true : false;
+}
+
+function elementExists(obj, obj_t) {
+	for (var i = 0; i < obj.length; i++) {
+		if (obj[i] == obj_t) {
+			return true;
+		} else {
+			false;
+		}
+	}
+}
 
 module.exports.register = (app) => {
 // API DEV (unemployment-stats)
-
+var unemployment_countries = [];
 // 5.2
 app.get(BASE_API_PATH_ACE+"/loadInitialData", (request, response) =>{
 	if (unemployment_countries.length == 0) {
