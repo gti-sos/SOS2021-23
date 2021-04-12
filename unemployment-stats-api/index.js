@@ -22,7 +22,7 @@ var unemployment_countries = [];
 app.get(BASE_API_PATH_ACE+"/loadInitialData", (request, response) =>{
 	if (unemployment_countries.length == 0) {
 		try {
-		let rawdata = fs.readFileSync('unemployment-stats.json');
+		let rawdata = fs.readFileSync('./unemployment-stats-api/unemployment-stats.json');
 		unemployment_countries = JSON.parse(rawdata);
 		} catch {
 			console.log('Error parsing .json file');
