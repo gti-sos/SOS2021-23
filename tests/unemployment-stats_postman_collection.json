@@ -1,0 +1,530 @@
+{
+	"info": {
+		"_postman_id": "29da829b-59ab-4d50-b509-489b30f8d433",
+		"name": "SOS2021-23/unemployment-stats API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/v1/unemployment-stats",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats",
+					"protocol": "https",
+					"host": [
+						"sos2021-23",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"unemployment-stats"
+					]
+				},
+				"description": "Sirve para ver los elementos. Habrá que hacer un /loadInitialData para cargarlos previamente"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/unemployment-stats/loadInitialData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/loadInitialData",
+					"protocol": "https",
+					"host": [
+						"sos2021-23",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"unemployment-stats",
+						"loadInitialData"
+					]
+				},
+				"description": "Carga los datos"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/unemployment-stats/Canada/2020",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/Canada/2020",
+					"protocol": "https",
+					"host": [
+						"sos2021-23",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"unemployment-stats",
+						"Canada",
+						"2020"
+					]
+				},
+				"description": "Devuelve un recurso concreto."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/unemployment-stats",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"Iceland\",\r\n\"year\": \"2020\",\r\n\"kno-perc\": \"23.9\",\r\n\"int-perc\": \"24.4\",\r\n\"gf-perc\": \"28.8\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats",
+					"protocol": "https",
+					"host": [
+						"sos2021-23",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"unemployment-stats"
+					]
+				},
+				"description": "Crea un recurso nuevo"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/unemployment-stats/Iceland/2020",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/Iceland/2020",
+					"protocol": "https",
+					"host": [
+						"sos2021-23",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"unemployment-stats",
+						"Iceland",
+						"2020"
+					]
+				},
+				"description": "Comprobación de que se ha creado bien el recurso"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/unemployment-stats Check 8",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Hay 8\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(8);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats",
+					"protocol": "https",
+					"host": [
+						"sos2021-23",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"unemployment-stats"
+					]
+				},
+				"description": "Comprueba que detecte que haya 8 recursos."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/unemployment-stats/Iceland/2020",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"Iceland\",\r\n\"year\": \"2020\",\r\n\"kno-perc\": \"33.19\",\r\n\"int-perc\": \"34.14\",\r\n\"gf-perc\": \"38.18\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/Iceland/2020",
+					"protocol": "https",
+					"host": [
+						"sos2021-23",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"unemployment-stats",
+						"Iceland",
+						"2020"
+					]
+				},
+				"description": "Actualiza 1 recurso"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/unemployment-stats/Iceland/2020 Updated",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/Iceland/2020",
+					"protocol": "https",
+					"host": [
+						"sos2021-23",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"unemployment-stats",
+						"Iceland",
+						"2020"
+					]
+				},
+				"description": "Comprobar que se ha actualizado bien el recurso."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/unemployment-stats/Iceland/2020",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/Iceland/2020",
+					"protocol": "https",
+					"host": [
+						"sos2021-23",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"unemployment-stats",
+						"Iceland",
+						"2020"
+					]
+				},
+				"description": "Borra un recurso."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/unemployment-stats/Iceland/2020 not found",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/Iceland/2020",
+					"protocol": "https",
+					"host": [
+						"sos2021-23",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"unemployment-stats",
+						"Iceland",
+						"2020"
+					]
+				},
+				"description": "Comprueba que un recurso no existe."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/unemployment-stats/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"Iceland\",\r\n\"year\": \"2020\",\r\n\"kno-perc\": \"33.19\",\r\n\"int-perc\": \"34.14\",\r\n\"gf-perc\": \"38.18\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/",
+					"protocol": "https",
+					"host": [
+						"sos2021-23",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"unemployment-stats",
+						""
+					]
+				},
+				"description": "Método no permitido. La actualización debería hacerse a un recurso en concreto."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/unemployment-stats/Canada/2020",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/South-Corea/2020",
+					"protocol": "https",
+					"host": [
+						"sos2021-23",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"unemployment-stats",
+						"South-Corea",
+						"2020"
+					]
+				},
+				"description": "Método no permitido. Así no se crea un nuevo recurso. Para crear un recurso nuevo se ha explicado en un método mencionado anteriormente."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/unemployment-stats/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/",
+					"protocol": "https",
+					"host": [
+						"sos2021-23",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"unemployment-stats",
+						""
+					]
+				},
+				"description": "Borra todos los recursos."
+			},
+			"response": []
+		}
+	]
+}
