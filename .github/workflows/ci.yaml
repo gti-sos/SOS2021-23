@@ -13,6 +13,3 @@ jobs:
       - run: npm start &
       - run: npx newman run tests/mh_postman_collection.json
       - run: npx newman run tests/unemployment-stats_postman_collection.json
-	  
-	  
-	  
