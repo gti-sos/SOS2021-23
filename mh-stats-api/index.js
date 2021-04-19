@@ -42,6 +42,9 @@ module.exports.register = (app) => {
     });
 
     app.get(BASE_API_PATH_EDU, (request, response) =>{
+        var offset = request.query.offset;
+        var limit = request.query.limit;
+
         if (request.query.offset) {
             offset = parseInt(request.query.offset);
             delete request.query.offset;
@@ -50,8 +53,6 @@ module.exports.register = (app) => {
             limit = parseInt(request.query.limit);
             delete request.query.limit;
         }
-        console.log("[INFO] OFFSET: " + offsetAux);
-        console.log("[INFO] LIMIT: " + limitAux);
         var search = {};
         if (request.query.country) {search["country"] = req.query.country}
         if (request.query.year) {search["year"] = parseInt(req.query.year)}
@@ -62,11 +63,13 @@ module.exports.register = (app) => {
         if (request.query.mh-bipolar) {search["mh-bipolar"] = parseInt(req.query.mh-bipolar)}
         if (request.query.mh-depression) {search["mh-depression"] = parseInt(req.query.mh-depression)}
         if (request.query.mh-schizophrenia) {search["mh-schizophrenia"] = parseInt(req.query.mh-schizophrenia)}
-        if (mh_countries.length == 0) {
+        if (db.count({}) == 0) {
             console.log('[!] Resource mh_countries has been requested, but are not loaded.');
             response.status(404).send("<p>Resources not found. Head to /loadInitialData to create them.</p>");
         } else {
             console.log('[!] Resource mh_countries has been requested');
+            console.log("[INFO] OFFSET: " + offset);
+            console.log("[INFO] LIMIT: " + limit);
             response.status(200).send(JSON.stringify(db.find({search}).skip(offset).limit(limit).exec((err, dbdata) => {
                 if (err) {
                     console.log("[!] Error accessing mh-stats.db " + err);
