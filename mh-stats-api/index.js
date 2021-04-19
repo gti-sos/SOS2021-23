@@ -44,23 +44,22 @@ module.exports.register = (app) => {
     app.get(BASE_API_PATH_EDU, (request, response) =>{
         var limitAux = parseInt(request.query.limit);
         var offsetAux = parseInt(rquest.query.offset);
-        /*
-        if (request.query.country) {}
-        if (request.query.year) {}
-        if (request.query.mh-population) {}
-        if (request.query.mh-anxdaly) {}
-        if (request.query.mh-eating) {}
-        if (request.query.mh-adhd) {}
-        if (request.query.mh-bipolar) {}
-        if (request.query.mh-depression) {}
-        if (request.query.mh-schizophrenia) {}
-        */
+        var search = {};
+        if (request.query.country) {search["country"] = req.query.country}
+        if (request.query.year) {search["year"] = parseInt(req.query.year)}
+        if (request.query.mh-population) {search["mh-population"] = parseInt(req.query.mh-population)}
+        if (request.query.mh-anxdaly) {search["mh-anxdaly"] = parseInt(req.query.mh-anxdaly)}
+        if (request.query.mh-eating) {search["mh-eating"] = parseInt(req.query.mh-eating)}
+        if (request.query.mh-adhd) {search["mh-adhd"] = parseInt(req.query.mh-adhd)}
+        if (request.query.mh-bipolar) {search["mh-bipolar"] = parseInt(req.query.mh-bipolar)}
+        if (request.query.mh-depression) {search["mh-depression"] = parseInt(req.query.mh-depression)}
+        if (request.query.mh-schizophrenia) {search["mh-schizophrenia"] = parseInt(req.query.mh-schizophrenia)}
         if (mh_countries.length == 0) {
             console.log('[!] Resource mh_countries has been requested, but are not loaded.');
             response.status(404).send("<p>Resources not found. Head to /loadInitialData to create them.</p>");
         } else {
             console.log('[!] Resource mh_countries has been requested');
-            response.status(200).send(JSON.stringify(db.find({}).skip(offsetAux).limit(limitAux).exec((err, dbdata) => {
+            response.status(200).send(JSON.stringify(db.find({search}).skip(offsetAux).limit(limitAux).exec((err, dbdata) => {
                 if (err) {
                     console.log("[!] Error accessing mh-stats.db " + err);
                     response.status(500).send("<h1>Error accessing database</h1>");
