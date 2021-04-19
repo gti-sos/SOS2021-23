@@ -1,4 +1,5 @@
 var BASE_API_PATH_MEM="/api/v1/hdi-stats";
+<<<<<<< HEAD
 const fs = require('fs');
 
 function isAO(val) {
@@ -14,6 +15,8 @@ function elementExists(obj, obj_t) {
 		}
 	}
 }
+=======
+>>>>>>> 10ed1809fb9190dda11b0f30f1bc22c5c77ef865
 
 module.exports.register = (app) => {
 var hdi_countries = [];
@@ -21,8 +24,12 @@ var hdi_countries = [];
 app.get(BASE_API_PATH_MEM+"/loadInitialData", (request, response) =>{
 	if (hdi_countries.length == 0) {
 		try {
+<<<<<<< HEAD
 			let rawdata= fs.readFileSync("./hdi-stats-api/hdi-stats.json");
 			hdi_countries = JSON.parse(rawdata);
+=======
+			hdi_countries = require("./hdi-stats.json");
+>>>>>>> 10ed1809fb9190dda11b0f30f1bc22c5c77ef865
 		} catch {
 			console.log('Error parsing .json file');
 	}
@@ -47,6 +54,7 @@ app.get(BASE_API_PATH_MEM, (request, response) =>{
 });
 
 app.post(BASE_API_PATH_MEM, (request, response) =>{
+<<<<<<< HEAD
 	var updateCountry = request.body;
         console.log(updateCountry.country);
             console.log(updateCountry.year);
@@ -70,6 +78,23 @@ app.post(BASE_API_PATH_MEM, (request, response) =>{
             console.log("[!] POST containing: \n-->" + JSON.stringify(updateCountry, null));
             response.status(400).send("<p>Error</p>");
         }
+=======
+	var country;
+	hdi_countries.forEach(function(obj) {
+		if (obj.country == request.params.country && obj.year == request.params.year) {
+			country = obj;
+		}
+	});
+	if (isAO(request.body) && request.body.length != 0 && country == null) {
+		var newCountry = request.body;
+		console.log(`Add new country: <${JSON.stringify(newCountry, null)}>`);
+		hdi_countries.push(newCountry);
+		response.status(201).send("<p>New resource created.</p>");
+	} else{
+		console.log("[-] Received malformed or empty JSON when trying to add a new resource. \n-->"+JSON.stringify(newCountry, null));
+		response.status(400).send("<p>400: Bad or empty JSON has been provided.</p>");
+	}
+>>>>>>> 10ed1809fb9190dda11b0f30f1bc22c5c77ef865
 });
 
 // 6.7
@@ -114,6 +139,7 @@ app.post(BASE_API_PATH_MEM+"/:country/:year", (request, response) => {
 });
 
 // 6.4
+<<<<<<< HEAD
    app.delete(BASE_API_PATH_MEM+"/:country/:year", (request, response) => {
         var oldCountry;
         var del_index;
@@ -133,6 +159,25 @@ app.post(BASE_API_PATH_MEM+"/:country/:year", (request, response) => {
             response.status(400).send("<p>Resource not found, can't delete.</p>");
         }
     });
+=======
+app.delete(BASE_API_PATH_MEM+"/:country/:year", (request, response) => {
+	var oldCountry;
+	console.log("[!] Deletion requested for resource: /"+request.params.country+"/"+request.params.year+"\n [?] Checking existence.");
+	hdi_countries.forEach(function(obj) {
+		if (obj.country == request.params.country && obj.year == request.params.year) {
+			oldCountry = obj;
+		}
+	});
+	if (oldCountry != null) {
+		console.log("[-] Delete: "+ JSON.stringify(oldCountry,null));
+		delete hdi_countries[oldCountry];
+		response.status(200).send("<p>Resource deleted</p>");	
+	} else {
+		console.log("[!] Someone has tried to delete a non-existent resource: \n-->" + JSON.stringify(oldCountry, null));
+		response.status(400).send("<p>Resource not found, can't delete.</p>");
+	}
+});
+>>>>>>> 10ed1809fb9190dda11b0f30f1bc22c5c77ef865
 
 // 6.5
 app.put(BASE_API_PATH_MEM+"/:country/:year", (request, response) => {

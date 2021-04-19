@@ -1,4 +1,5 @@
 var BASE_API_PATH_SEC="/api/v1/du-stats";
+<<<<<<< HEAD
 const fs = require('fs');
 
 function isAO(val) {
@@ -14,6 +15,8 @@ function elementExists(obj, obj_t) {
 		}
 	}
 }
+=======
+>>>>>>> 10ed1809fb9190dda11b0f30f1bc22c5c77ef865
 
 module.exports.register = (app) => {
 var du_countries = [];
@@ -21,8 +24,12 @@ var du_countries = [];
 app.get(BASE_API_PATH_SEC+"/loadInitialData", (request, response) =>{
 	if (du_countries.length == 0) {
 		try {
+<<<<<<< HEAD
 		let rawdata = fs.readFileSync('du-stats.json');
 		du_countries = JSON.parse(rawdata);
+=======
+		du_countries = require("./du-stats.json");
+>>>>>>> 10ed1809fb9190dda11b0f30f1bc22c5c77ef865
 		} catch {
 			console.log('Error parsing .json file');
 	}
