@@ -23,6 +23,7 @@
     "express": "^4.17.1",
     "newman": "^5.2.2",
     "serve-index": "^1.9.1"
+    "nedb": "^1.8.0"
   },
   "keywords": []
 }
