@@ -60,7 +60,7 @@ module.exports.register = (app) => {
             console.log("[INFO] LIMIT: not found");
         }
         var search = {};
-        if (request.query.country) {search["country"] = req.query.country}
+        /*if (request.query.country) {search["country"] = req.query.country}
         if (request.query.year) {search["year"] = parseInt(req.query.year)}
         if (request.query.mh-population) {search["mh-population"] = parseInt(req.query.mh-population)}
         if (request.query.mh-anxdaly) {search["mh-anxdaly"] = parseInt(req.query.mh-anxdaly)}
@@ -68,7 +68,7 @@ module.exports.register = (app) => {
         if (request.query.mh-adhd) {search["mh-adhd"] = parseInt(req.query.mh-adhd)}
         if (request.query.mh-bipolar) {search["mh-bipolar"] = parseInt(req.query.mh-bipolar)}
         if (request.query.mh-depression) {search["mh-depression"] = parseInt(req.query.mh-depression)}
-        if (request.query.mh-schizophrenia) {search["mh-schizophrenia"] = parseInt(req.query.mh-schizophrenia)}
+        if (request.query.mh-schizophrenia) {search["mh-schizophrenia"] = parseInt(req.query.mh-schizophrenia)}*/
         if (db.count({}) == 0) {
             console.log('[!] Resource mh_countries has been requested, but are not loaded.');
             response.status(404).send("<p>Resources not found. Head to /loadInitialData to create them.</p>");
