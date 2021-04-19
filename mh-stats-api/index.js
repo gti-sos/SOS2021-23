@@ -42,14 +42,14 @@ module.exports.register = (app) => {
     });
 
     app.get(BASE_API_PATH_EDU, (request, response) =>{
-        var offset = request.query.offset;
-        var limit = request.query.limit;
+        var offset;
+        var limit;
 
         if (request.query.offset) {
             offset = parseInt(request.query.offset);
             delete request.query.offset;
         }
-        if (request) {
+        if (request.query.limit) {
             limit = parseInt(request.query.limit);
             delete request.query.limit;
         }
