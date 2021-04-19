@@ -76,7 +76,7 @@ module.exports.register = (app) => {
             console.log('[!] Resource mh_countries has been requested');
             console.log("[INFO] OFFSET: " + offset);
             console.log("[INFO] LIMIT: " + limit);
-            response.status(200).send(JSON.stringify(db.find(search).sort({country:1}).skip(offset).limit(limit).exec((err, dbdata) => {
+            response.status(200).send(JSON.stringify(db.find(search).skip(offset).limit(limit).exec((err, dbdata) => {
                 if (err) {
                     console.log("[!] Error accessing mh-stats.db " + err);
                     response.status(500).send("<h1>Error accessing database</h1>");
@@ -132,7 +132,7 @@ module.exports.register = (app) => {
             }
           });
         console.log("[-] Full deletion has been requested. Proceeding.");
-        if (count == 0) {
+        if (hascontent == 0) {
             response.status(400).send("<p>400: No resources found. Can't delete any.</p>");
         } else {
             mh_countries.length = 0;
@@ -149,10 +149,10 @@ module.exports.register = (app) => {
     // Methods involving path+object_fields
     app.get(BASE_API_PATH_EDU + "/:country/:year", (req, res) => {
         var req_data = req.params; 
-        var limitAux = parseInt(request.query.limit);
-        var offsetAux = parseInt(rquest.query.offset);
+        var limitAux = parseInt(req.query.limit);
+        var offsetAux = parseInt(req.query.offset);
         
-        db.find({country: req_data.country, year: parseInt(req_data.year)}).offset(offsetAux).limit(limitAux).exec((err, dataInDB) => {
+        db.find({country: req.data.country, year: parseInt(req.data.year)}).offset(offsetAux).limit(limitAux).exec((err, dataInDB) => {
             if (err) {
                 console.error("[!] ERROR accesing DB " + err);
                 res.sendStatus(500);
@@ -189,7 +189,7 @@ module.exports.register = (app) => {
         var year = parseInt(req.params.year);
         var updatemh = req.body;
         var exists;
-        db.find({country: req_data.country, year: parseInt(req_data.year)}).exec((err, dbdata) => {
+        db.find({country: req.data.country, year: parseInt(req.data.year)}).exec((err, dbdata) => {
             if (err) {
                 console.log("[!] Error accessing DB " + err);
                 res.status(500).send("Error processing query...");
