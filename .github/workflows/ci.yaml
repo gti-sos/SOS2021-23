@@ -10,6 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm install
+      - run: npm install nedb
       - run: npm start &
       - run: npx newman run tests/mh_postman_collection.json
       - run: npx newman run tests/unemployment-stats_postman_collection.json
