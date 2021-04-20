@@ -187,7 +187,7 @@ module.exports.register = (app) => {
                     console.error("[!] No DATA found");
                     res.status(404).send("<h1>Resource not found</h1>");
                 } else {
-                    delete dataInDB[0]._id;
+                    dataInDB.forEach((data) =>{delete data._id});
                     res.status(200).send(JSON.stringify(dataInDB[0], null, 2)); 
                     console.log(`GET stat by country: <${req_data.country}> and date: <${req_data.year}>`);
                 }
