@@ -1,5 +1,11 @@
 var BASE_API_PATH_MEM="/api/v1/hdi-stats";
+var path = require("path");
 const fs = require('fs');
+var datafile = path.join(__dirname, 'hdi-stats-db')
+var DataStore = require('nedb');
+var db = new DataStore({ filename: datafile, autoload: true});
+
+
 function isAO(val) {
     return val instanceof Array || val instanceof Object ? true : false;
 }
@@ -15,142 +21,215 @@ function elementExists(obj, obj_t) {
 }
 
 module.exports.register = (app) => {
-var hdi_countries = [];
+    var hdi_countries = [];
 
-app.get(BASE_API_PATH_MEM+"/loadInitialData", (request, response) =>{
-	if (hdi_countries.length == 0) {
-		try {
-			let rawdata= fs.readFileSync("./hdi-stats-api/hdi-stats.json");
-			hdi_countries = JSON.parse(rawdata);
-		} catch {
-			console.log('Error parsing .json file');
-	}
-		console.log('[!] hdi-stats.json loaded onto hdi_countries');
-		console.log(JSON.stringify(hdi_countries, null));
-		response.status(200).send("<h3>Successfuly loaded "+ hdi_countries.length + " resources</h3><p>You can head now to /api/v1/hdi-stats to check newly created resources</p>")
-	} else {
-		console.log('[!] GET request to /loadInitialData but resources are already loaded.');
-		response.status(400).send("<h1>Resources already loaded. Head back to /api/v1/hdi-stats to check them.</h1>")
-	}
-});
-
-// 5.1 y 6.1
-app.get(BASE_API_PATH_MEM, (request, response) =>{
-	if (hdi_countries.length == 0) {
-		console.log('[!] Resource hdi_countries has been requested, but are not loaded.');
-		response.status(404).send("<p>Resources not found. Head to /loadInitialData to create them.</p>");
-	} else {
-		console.log('[!] Resource hdi_countries has been requested');
-		response.status(200).send(JSON.stringify(hdi_countries,null, 2));
-	}
-});
-
-app.post(BASE_API_PATH_MEM, (request, response) =>{
-	var updateCountry = request.body;
-        console.log(updateCountry.country);
-            console.log(updateCountry.year);
-        var oldCountry;
-        var del_index;
-        console.log(`[!] Received: <${JSON.stringify(updateCountry, null)}> checking for coincidences...`);
-        for(var i=0; i<hdi_countries.length; i++){
-            if(hdi_countries[i].country==updateCountry.country && hdi_countries[i].year==updateCountry.year){
-                oldCountry = hdi_countries[i];
-                del_index = i;
-            }
+    // Methods involving base path
+    app.get(BASE_API_PATH_MEM+"/loadInitialData", (request, response) =>{
+        if (hdi_countries.length == 0) {
+            try {
+            let rawdata = fs.readFileSync('./hdi-stats-api/hdi-stats.json');
+            hdi_countries = JSON.parse(rawdata);
+            db.insert(hdi_countries);
+            } catch {
+                console.log('Error parsing .json file');
         }
-        if (oldCountry == null) {
-            console.log("[!] POST with: \n-->" + JSON.stringify(updateCountry, null) + " :: Not found in array.");
-            response.status(201).send("<p>Added resource.</p>");
-            hdi_countries.push(updateCountry);
-        } else if (JSON.stringify(oldCountry, null) == JSON.stringify(updateCountry, null)) {
-            console.log("[!] Someone has tried upload an existent resource: \n-->" + JSON.stringify(oldCountry, null));
-            response.status(400).send("<p>Resource already exists.</p>");
+            console.log('[!] hdi-stats.json loaded onto hdi_countries');
+            console.log(JSON.stringify(hdi_countries, null));
+            response.status(200).send("<h3>Successfuly loaded "+ hdi_countries.length + " resources</h3><p>You can head now to /api/v1/hdi-stats to check newly created resources</p>")
         } else {
-            console.log("[!] POST containing: \n-->" + JSON.stringify(updateCountry, null));
-            response.status(400).send("<p>Error</p>");
+            console.log('[!] GET request to /loadInitialData but resources are already loaded.');
+            response.status(400).send("<h1>Resources already loaded. Head back to /api/v1/hdi-stats to check them.</h1>")
         }
-});
-
-// 6.7
-app.put(BASE_API_PATH_MEM, (request, response) => {
-	console.log("[!] Method (PUT) not allowed at " + BASE_API_PATH_MEM);
-	response.status(405).send('<p>405: Method not allowed</p>');
-});
-
-// 6.8
-app.delete(BASE_API_PATH_MEM, (request, response) => {
-	console.log("[-] Full deletion has been requested. Proceeding.");
-	if (hdi_countries.length == 0) {
-		response.status(400).send("<p>400: No resources found. Can't delete any.</p>");
-	} else {
-		hdi_countries.length = 0;
-		console.log(hdi_countries.length);
-		response.status(200).send("<p>200: All resources deleted.</p>");	
-	}
-});
-
-// 6.3
-app.get(BASE_API_PATH_MEM+"/:country/:year", (request, response) => {
-	console.log("[!] GET to " + request.params.country + ", checking if exists.");
-	var country;
-	hdi_countries.forEach(function(obj) {
-		if (obj.country == request.params.country && obj.year == request.params.year) {
-			country = obj;
-		}
-	});
-	if (isAO(country) && country != null) {
-		response.status(200).send(JSON.stringify(country, null, 2));	
-	} else {
-		console.log("[!] Someone has tried to GET a non-existent resource: \n-->" + request.params.country + "/" + request.params.year);
-		response.status(404).send("<p>404: Resource not found</p>");	
-	}
-});
-
-// 6.6
-app.post(BASE_API_PATH_MEM+"/:country/:year", (request, response) => {
-	console.log("[!] Method not allowed (POST) to /" + request.params.country +"/"+request.params.year);
-	response.status(405).send('<p>405: Method not allowed</p>');
-});
-
-// 6.4
-   app.delete(BASE_API_PATH_MEM+"/:country/:year", (request, response) => {
-        var oldCountry;
-        var del_index;
-        console.log("[!] Deletion requested for resource: /"+request.params.country+"/"+request.params.year+"\n [?] Checking existence.");
-        for(var i=0; i<hdi_countries.length; i++){
-            if(hdi_countries[i].country==request.params.country && hdi_countries[i].year==request.params.year){
-                oldCountry = hdi_countries[i];
-                del_index = i;
-            }
-        }
-        if (oldCountry != null) {
-            console.log("[-] Delete: "+ JSON.stringify(oldCountry,null));
-            hdi_countries.splice(del_index, 1);
-            response.status(200).send("<p>Resource deleted</p>");	
+    });
+    app.get(BASE_API_PATH_MEM, (request, response) =>{
+        
+        var offset;
+        var limit;
+        /*
+        if (request.query.offset) {
+            console.log("[INFO] OFFSET: " + offset);
+            offset = parseInt(request.query.offset);
+            delete request.query.offset;
         } else {
-            console.log("[!] Someone has tried to delete a non-existent resource: \n-->" + JSON.stringify(oldCountry, null));
-            response.status(400).send("<p>Resource not found, can't delete.</p>");
+            console.log("[INFO] OFFSET:  not found");
+        }
+        if (request.query.limit) {
+            console.log("[INFO] LIMIT: " + limit);
+            limit = parseInt(request.query.limit);
+            delete request.query.limit;
+        } else {
+            console.log("[INFO] LIMIT: not found");
+        }*/
+        var search = {};
+        /*if (request.query.country) {search["country"] = request.query.country}
+        if (request.query.year) {search["year"] = parseInt(request.query.year)}
+        if (request.query.mh-population) {search["mh-population"] = parseInt(request.query.mh-population)}
+        if (request.query.mh-anxdaly) {search["mh-anxdaly"] = parseInt(request.query.mh-anxdaly)}
+        if (request.query.mh-eating) {search["mh-eating"] = parseInt(request.query.mh-eating)}
+        if (request.query.mh-adhd) {search["mh-adhd"] = parseInt(request.query.mh-adhd)}
+        if (request.query.mh-bipolar) {search["mh-bipolar"] = parseInt(request.query.mh-bipolar)}
+        if (request.query.mh-depression) {search["mh-depression"] = parseInt(request.query.mh-depression)}
+        if (request.query.mh-schizophrenia) {search["mh-schizophrenia"] = parseInt(request.query.mh-schizophrenia)}*/
+        if (db.count({}) == 0) {
+            console.log('[!] Resource hdi_countries has been requested, but are not loaded.');
+            return response.status(404).send("<p>Resources not found. Head to /loadInitialData to create them.</p>");
+        } else {
+            var offset;
+            var limit;
+            if (request.query.offset) {
+                offset = parseInt(request.query.offset);
+                console.log("[INFO] OFFSET: " + offset);
+                delete request.query.offset;
+            } else {
+                console.log("[INFO] OFFSET:  not found");
+            }
+            if (request.query.limit) {
+                limit = parseInt(request.query.limit);
+                console.log("[INFO] LIMIT: " + limit);
+                delete request.query.limit;
+            } else {
+                console.log("[INFO] LIMIT: not found");
+            }
+            db.find(search).skip(offset).limit(limit).exec((err, dbdata) => {
+                if (err) {
+                    console.log("[!] Error accessing hdi-stats.db " + err);
+                    return response.status(500).send("<h1>Error accessing database</h1>");
+                } else {
+                    if (dbdata == 0) {
+                        console.log("[!] Database hdi-stats is EMPTY!");
+                        return response.status(404).send("<h1>Resources not found. Head to /loadInitialData to create them.</h1>");
+                    } else {
+                        dbdata.forEach((data) =>{ delete data._id});
+                        return response.status(200).send(JSON.stringify(dbdata,null, 2));
+                    }
+                }
+            })
         }
     });
 
-// 6.5
-app.put(BASE_API_PATH_MEM+"/:country/:year", (request, response) => {
-	var updateCountry = request.body;
-	var oldCountry;
-	console.log(`[!] New country to update: <${JSON.stringify(updateCountry, null)}>`);
-	hdi_countries.forEach(function(obj) {
-		if (obj.country == request.params.country && obj.year == request.params.year) {
-			oldCountry = obj;
-		}
-	});
-	if (oldCountry != null) {
-		console.log("[-] Delete "+ JSON.stringify(oldCountry, null)+" to add resource: \n-->"+ JSON.stringify(updateCountry, null));
-		delete hdi_countries[oldCountry];
-		response.status(200).send("<p>Resource updated.</p>");
-		hdi_countries.push(updateCountry);	
-	} else {
-		console.log("[!] Someone has tried to update a non-existent resource: \n-->" + JSON.stringify(oldCountry, null));
-		response.status(400).send("<p>Resource not found, can't delete.</p>");
-	}
-});
+ app.post(BASE_API_PATH_MEM, (req, res) => {
+        var newData = req.body;
+        db.find({country: newData.country, year: parseInt(newData.year)}, (err, dbdata) =>{
+            if (err) {
+                console.error("[!] Error accessing hdi-stats.db "+ err);
+                res.sendStatus(500);
+            } else {
+                if(dbdata == 0){  
+                    if(!newData.country || !newData.year || !newData['hdi-rank'] || !newData['hdi-value'] || !newData['hdi-scholar'] ) {
+                        console.log("[!] Data is missing or incorrect.");
+                        return res.sendStatus(400);
+                    }else {                        
+                        console.log(`[+] New resource added to the database <${JSON.stringify(newData, null, 2)}>`);
+                        db.insert(newData);
+                        return res.status(201).send("<h1>Created resource</h1>");
+                    }
+                }else {
+                    console.log("[!] A resource already exists with the same country and date");
+                    return res.sendStatus(409);
+                }
+            }
+        });
+    });
+
+    app.put(BASE_API_PATH_MEM, (request, response) => {
+        console.log("[!] Method (PUT) not allowed at " + BASE_API_PATH_MEM);
+        response.status(405).send('<p>405: Method not allowed</p>');
+    });
+    
+    app.delete(BASE_API_PATH_MEM, (request, response) => {
+        var hascontent;
+        db.count({}, function (err, count) {
+            if (err) {
+                console.log("[!] Error accessing DB, " + err);
+            } else {
+                hascontent = count;
+            }
+          });
+        console.log("[-] Full deletion has been requested. Proceeding.");
+        if (hascontent == 0) {
+            response.status(400).send("<p>400: No resources found. Can't delete any.</p>");
+        } else {
+            hdi_countries.length = 0;
+            db.remove({}, { multi: true }, function (err, numRemoved) {
+                if (err) {
+                    console.log("[!] Error deleting all resources");
+                } else {
+                    console.log(numRemoved);
+                    if (numRemoved != 0) return response.status(200).send("<p>200: All resources deleted.</p>");
+                    else return response.status(500).send("<p>Error</p>");
+                }
+            });
+
+        }
+    });
+
+    // Methods involving path+object_fields
+    app.get(BASE_API_PATH_MEM + "/:country/:year", (req, res) => {
+        var req_data = req.params; 
+        let limit;
+        let offset;
+        if (req.query.offset) {
+            offset = parseInt(req.query.offset);
+            delete req.query.offset;
+        } 
+        if (req.query.limit) {
+            limit = parseInt(req.query.limit);
+            delete req.query.limit;
+            console.log(limit);
+        }
+        console.log(offset);
+        console.log(limit);
+        db.find({country: req.params.country, year: req.params.year}).skip(offset).limit(limit).exec((err, dataInDB) => {
+            if (err) {
+                console.error("[!] ERROR accesing DB " + err);
+                res.sendStatus(500);
+            } else {
+                if (dataInDB == 0) {
+                    console.error("[!] No DATA found");
+                    res.status(404).send("<h1>Resource not found</h1>");
+                } else {
+                    delete dataInDB._id;
+                    res.status(200).send(JSON.stringify(dataInDB, null, 2)); 
+                    console.log(`GET stat by country: <${req_data.country}> and date: <${req_data.year}>`);
+                }
+            }
+        });
+    });
+
+    app.delete(BASE_API_PATH_MEM + "/:country/:year", (req, res) => {
+        var country = req.params.country;
+        var year = req.params.year;
+        db.remove({ country: country, year: year });
+        res.status(200).send("<h1> Resource deleted " + country + "/" + year + "has been deleted");
+    });
+
+    app.post(BASE_API_PATH_MEM + "/:country", (req, res) => {
+        res.status(405).send("<h1> Method not allowed</h1>");
+    });
+
+    app.post(BASE_API_PATH_MEM + "/:country/:year", (req, res) => {
+        res.status(405).send("<h1> Method not allowed</h1>");
+    });
+
+    app.put(BASE_API_PATH_MEM + "/:country/:year", (req, res) => {
+        var countryx = req.params.country;
+        var yearx = req.params.year;
+        var updatemh = req.body;
+        var exists;
+        db.find({country: countryx, year: yearx}).exec((err, dbdata) => {
+            if (err) {
+                console.log("[!] Error accessing DB " + err);
+                return res.status(500).send("Error processing query...");
+            } else {
+                if (dbdata.country) {
+                    db.remove({country: countryx, year: yearx});
+                    db.update({ country: countryx, year: yearx }, updatemh, { upsert: false });
+                    return res.status(200).send("<h1> Resource updated </h1>");
+                } else {
+                    return res.status(409).send("<h1> Conflict </h1>");
+                }
+            }
+        });
+    });
+
 }
