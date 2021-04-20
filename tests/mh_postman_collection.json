@@ -148,8 +148,8 @@
 							"\r",
 							"pm.test(\"Resource /Spain/2017 received\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.country).to.eql(\"Spain\");\r",
-							"    pm.expect(jsonData.year).to.eql('2017');\r",
+							"    pm.expect(jsonData[0].country).to.eql(\"Spain\");\r",
+							"    pm.expect(jsonData[0].year).to.eql('2017');\r",
 							"});"
 						],
 						"type": "text/javascript"
