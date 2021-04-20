@@ -335,7 +335,7 @@
 							"});\r",
 							"\r",
 							"pm.test(\"Body matches string, 'Resource not found'\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"Conflict\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"<h1>Resource not found</h1>\");\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -377,7 +377,7 @@
 							"});\r",
 							"\r",
 							"pm.test(\"Body matches string, 'Added resource.'\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"Created resource.\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"<h1>Created resource</h1>\");\r",
 							"});\r",
 							""
 						],
