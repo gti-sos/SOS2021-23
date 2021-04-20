@@ -1,5 +1,4 @@
 var BASE_API_PATH_ACE="/api/v1/unemployment-stats";
-<<<<<<< HEAD
 const fs = require('fs');
 
 function isAO(val) {
@@ -15,9 +14,6 @@ function elementExists(obj, obj_t) {
 		}
 	}
 }
-=======
-
->>>>>>> 10ed1809fb9190dda11b0f30f1bc22c5c77ef865
 
 module.exports.register = (app) => {
 // API DEV (unemployment-stats)
@@ -26,11 +22,8 @@ var unemployment_countries = [];
 app.get(BASE_API_PATH_ACE+"/loadInitialData", (request, response) =>{
 	if (unemployment_countries.length == 0) {
 		try {
-<<<<<<< HEAD
+
 		let rawdata = fs.readFileSync('./unemployment-stats-api/unemployment-stats.json');
-=======
-		let rawdata = fs.readFileSync('unemployment-stats.json');
->>>>>>> 10ed1809fb9190dda11b0f30f1bc22c5c77ef865
 		unemployment_countries = JSON.parse(rawdata);
 		} catch {
 			console.log('Error parsing .json file');
