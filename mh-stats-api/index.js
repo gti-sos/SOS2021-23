@@ -41,8 +41,7 @@ module.exports.register = (app) => {
             response.status(400).send("<h1>Resources already loaded. Head back to /api/v1/mh-stats to check them.</h1>")
         }
     });
-    app.get(BASE_API_PATH_EDU, (request, response) =>{
-        
+    app.get(BASE_API_PATH_EDU, (request, response) =>{        
         var offset;
         var limit;
         /*
@@ -189,7 +188,7 @@ module.exports.register = (app) => {
                     res.status(404).send("<h1>Resource not found</h1>");
                 } else {
                     delete dataInDB._id;
-                    res.status(200).send(JSON.stringify(dataInDB, null, 2)); 
+                    res.status(200).send(JSON.stringify(dataInDB[0], null, 2)); 
                     console.log(`GET stat by country: <${req_data.country}> and date: <${req_data.year}>`);
                 }
             }
