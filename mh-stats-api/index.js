@@ -165,7 +165,7 @@ module.exports.register = (app) => {
         var limitAux = parseInt(req.query.limit);
         var offsetAux = parseInt(req.query.offset);
         
-        db.find({country: req.data.country, year: parseInt(req.data.year)}).offset(offsetAux).limit(limitAux).exec((err, dataInDB) => {
+        db.find({country: req_data.country, year: parseInt(req_data.year)}).offset(offsetAux).limit(limitAux).exec((err, dataInDB) => {
             if (err) {
                 console.error("[!] ERROR accesing DB " + err);
                 res.sendStatus(500);
@@ -202,7 +202,7 @@ module.exports.register = (app) => {
         var year = parseInt(req.params.year);
         var updatemh = req.body;
         var exists;
-        db.find({country: req.data.country, year: parseInt(req.data.year)}).exec((err, dbdata) => {
+        db.find({'country': country, 'year': year}).exec((err, dbdata) => {
             if (err) {
                 console.log("[!] Error accessing DB " + err);
                 res.status(500).send("Error processing query...");
