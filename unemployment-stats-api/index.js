@@ -1,5 +1,9 @@
 var BASE_API_PATH_ACE="/api/v1/unemployment-stats";
 const fs = require('fs');
+var path = require('path');
+var Datastore = require("nedb");
+var dbFile = path.join(__dirname, 'unemployment-stats.db');
+var db = new Datastore({filename: dbFile,autoload:true});
 
 function isAO(val) {
     return val instanceof Array || val instanceof Object ? true : false;
@@ -14,148 +18,248 @@ function elementExists(obj, obj_t) {
 		}
 	}
 }
+var unemployment_stats = [
+    {
+      "country": "Canada",
+      "year": "2020",
+      "knoperc": "5.4",
+      "intperc": "5.6",
+      "gfperc": "9.7"
+    },
+    {
+      "country": "United States",
+      "year": "2020",
+      "knoperc": "3.9",
+      "intperc": "4.4",
+      "gfperc": "8.8"
+    },
+    {
+      "country": "United Kingdom",
+      "year": "2020",
+      "knoperc": "4.1",
+      "intperc": "3.9",
+      "gfperc": "5.3"
+    },
+    {
+      "country": "Germany",
+      "year": "2020",
+      "knoperc": "3",
+      "intperc": "3.2",
+      "gfperc": "4.2"
+    },
+    {
+      "country": "Japan",
+      "year": "2020",
+      "knoperc": "2.3",
+      "intperc": "2.4",
+      "gfperc": "3.3"
+    },
+    {
+      "country": "Spain",
+      "year": "2020",
+      "knoperc": "13",
+      "intperc": "13.6",
+      "gfperc": "16.8"
+    },
+    {
+      "country": "Brazil",
+      "year": "2020",
+      "knoperc": "12",
+      "intperc": "11.6",
+      "gfperc": "13.3"
+    }
+];
 
-module.exports.register = (app) => {
-// API DEV (unemployment-stats)
-var unemployment_countries = [];
-// 5.2
-app.get(BASE_API_PATH_ACE+"/loadInitialData", (request, response) =>{
-	if (unemployment_countries.length == 0) {
-		try {
 
-		let rawdata = fs.readFileSync('./unemployment-stats-api/unemployment-stats.json');
-		unemployment_countries = JSON.parse(rawdata);
-		} catch {
-			console.log('Error parsing .json file');
-	}
-		console.log('[!] unemployment-stats.json loaded onto unemployment_countries');
-		console.log(JSON.stringify(unemployment_countries, null));
-		response.status(200).send("<h3>Successfuly loaded "+ unemployment_countries.length + " resources</h3><p>You can head now to /api/v1/unemployment-stats to check newly created resources</p>")
-	} else {
-		console.log('[!] GET request to /loadInitialData but resources are already loaded.');
-		response.status(400).send("<h1>Resources already loaded. Head back to /api/v1/unemployment-stats to check them.</h1>")
-	}
-});
+ module.exports.register = (app) => {
+    //carga inicial de datos
+	app.get(BASE_API_PATH_ACE  + "/loadInitialData", (req, res) => {
+		db.insert(unemployment_stats);
+		console.log(`Initial data: <${JSON.stringify(unemployment_stats, null, 2)}>`);
+		res.sendStatus(200);
+	});
 
-// 5.1 y 6.1
-app.get(BASE_API_PATH_ACE, (request, response) =>{
-	if (unemployment_countries.length == 0) {
-		console.log('[!] Resource unemployment_countries has been requested, but are not loaded.');
-		response.status(404).send("<p>Resources not found. Head to /loadInitialData to create them.</p>");
-	} else {
-		console.log('[!] Resource unemployment_countries has been requested');
-		response.status(200).send(JSON.stringify(unemployment_countries,null, 2));
-	}
-});
+    //GET a la lista de recursos
+    app.get(BASE_API_PATH_ACE , (req, res) => {
+		var limit = parseInt(req.query.limit);
+		var offset = parseInt(req.query.offset);
+		var search = {};
+	
+		if(req.query.country) 
+			search["country"] = req.query.country;
+		if(req.query.year) 
+			search["year"] = parseInt(req.query.year);
+		if(req.query.knoperc) 
+			search["knoperc"] = req.query.knoperc;
+		if(req.query.dudead) 
+			search["intperc"] = req.query.intperc;
+		if(req.query.dudependenceperc) 
+			search["gfperc"] = req.query.gfperc;
+	
+		db.find(search).skip(offset).limit(limit).exec((err,data)=>{
+			if(err){
+				console.error("ERROR accessing DB in GET");
+				res.sendStatus(500);
+			}else {
+				if (data.length != 0){
+					data.forEach((a)=>{delete a._id; }); 
+					console.log(search)
+					return res.send(JSON.stringify(data,null,2));
+					return res.sendStatus(200);
+				} else {
+					console.log(search)
+					console.log("No data found");
+					return res.sendStatus(404);
+				}
+	
+	
+			}
+		});
+	});
 
-app.post(BASE_API_PATH_ACE, (request, response) =>{
-	var updateCountry = request.body;
-	console.log(updateCountry.country);
-		console.log(updateCountry.year);
-	var oldCountry;
-	var del_index;
-	console.log(`[!] Received: <${JSON.stringify(updateCountry, null)}> checking for coincidences...`);
-	for(var i=0; i<unemployment_countries.length; i++){
-		if(unemployment_countries[i].country==updateCountry.country && unemployment_countries[i].year==updateCountry.year){
-			oldCountry = unemployment_countries[i];
-			del_index = i;
-		}
-	}
-	if (oldCountry == null) {
-		console.log("[!] POST with: \n-->" + JSON.stringify(updateCountry, null) + " :: Not found in array.");
-		response.status(200).send("<p>Added resource.</p>");
-		unemployment_countries.push(updateCountry);
-	} else if (JSON.stringify(oldCountry, null) == JSON.stringify(updateCountry, null)) {
-		console.log("[!] Someone has tried upload an existent resource: \n-->" + JSON.stringify(oldCountry, null));
-		response.status(400).send("<p>Resource already exists.</p>");
-	} else {
-		console.log("[!] POST containing: \n-->" + JSON.stringify(updateCountry, null));
-		response.status(400).send("<p>Error</p>");
-	}
-});
+    //POST a la lista de recursos
+    app.post(BASE_API_PATH_ACE, (req, res) => {
+		var newData = req.body;
+        var country = req.body.country;
+        var year = req.body.year; //lo tenemos pasado como string el valor, sino deberíamos usar un parseInt
+        db.find({$and: [{country: newData.country}, {year: newData.year}]},
 
-// 6.7
-app.put(BASE_API_PATH_ACE, (request, response) => {
-	console.log("[!] Method (PUT) not allowed at " + BASE_API_PATH_ACE);
-	response.status(405).send('<p>405: Method not allowed</p>');
-});
+            (err, resources) =>{
+                if(resources.length !=0){
+                    console.log("El recurso ya existe");
+                    res.sendStatus(409);
+                }else if(!newData.country || !newData.year ||!newData.knoperc ||!newData.intperc || !newData.gfperc ||Object.keys(newData).length != 5){
+                        console.log("El número de campos no es el correcto");
+                        res.sendStatus(400);
+                }else{
+                    console.log(`new resource <${newData.country}/${newData.year}> added`)
+                    db.insert(newData);
+                    res.status(201).json(newData);
+                }
 
-// 6.8
-app.delete(BASE_API_PATH_ACE, (request, response) => {
-	console.log("[-] Full deletion has been requested. Proceeding.");
-	if (unemployment_countries.length == 0 || unemployment_countries == null) {
-		response.status(400).send("<p>400: No resources found. Can't delete any.</p>");
-	} else {
-		unemployment_countries.length = 0;
-		console.log(unemployment_countries.length);
-		response.status(200).send("<p>200: All resources deleted.</p>");
-	}
-});
+            }
+        );
+    });
+	
 
-// 6.3
-app.get(BASE_API_PATH_ACE+"/:country/:year", (request, response) => {
-	console.log("[!] GET to " + request.params.country + ", checking if exists.");
-	var country;
-	unemployment_countries.forEach(function(obj) {
-		if (obj.country == request.params.country && obj.year == request.params.year) {
-			country = obj;
+    //GET a un recurso -- CODIGO NUEVO
+    app.get(BASE_API_PATH_ACE + "/:country/:year", (req, res) => {
+		var countryToGet = req.params.country;
+		var yearToGet = req.params.year;
+		
+		
+		db.find({country: countryToGet, year: yearToGet}, function(err, employsInDB){
+		console.log("Searching "+countryToGet+" "+yearToGet);
+			if(err) {
+				console.error(err);
+				res.sendStatus(404);
+			}
+			if(employsInDB.length==0){
+				console.log("Resource not found: "+countryToGet+" "+yearToGet);
+				res.sendStatus(404); // NOT FOUND
+			}else{
+				console.log(employsInDB);
+				var employsToSend = employsInDB.map((c)=>{
+					return {country : c.country, year : c.year, knoperc : c.knoperc, intperc : c.intperc, gfperc : c.gfperc};
+				});
+				res.send(JSON.stringify(employsToSend,null,2));
+			}
+			
+		})
+	});
+
+    //DELETE a un recurso -- POSIBLE CODIGO NUEVO (probar cuando haga el post nuevo)
+    app.delete(BASE_API_PATH_ACE + "/:country/:year", (req,res) => {
+
+			
+			var countryToDelete = req.params.country;
+			var yearToDelete = req.params.year;
+			
+			db.remove({country: countryToDelete, year: yearToDelete},{},(err, data)=>{
+				if(err){
+					console.error("ERROR deleting the resource in DELETE: "+err);
+					res.sendStatus(500);
+				}else{
+					if(data==0){
+						console.log("No data found to delete");
+						res.sendStatus(404); // NOT FOUND
+					}else{
+						res.sendStatus(200); // OK
+					}
+				}
+			})
+			
+	
+		});
+
+    //PUT a un recurso
+	app.put(BASE_API_PATH_ACE + "/:country/:year", (req, res) => {
+	
+		var country = req.params.country;
+		var year = req.params.year;
+		var updatedEmploy = req.body;
+		var query = {"country":country, "year":year};
+	
+		if (!updatedEmploy.country 
+			|| !updatedEmploy.year 
+			|| !updatedEmploy['knoperc'] 
+			|| !updatedEmploy['intperc'] 
+			|| !updatedEmploy['gfperc'] 
+			|| country != updatedEmploy.country 
+			|| year != updatedEmploy.year
+			|| Object.keys(updatedEmploy).length != 5){
+	
+			console.log("Missing any field");
+			return res.sendStatus(400);
+		} 
+		else {
+			db.update(query,updatedEmploy,(err,data) =>{
+				if(err){
+					console.error("ERROR accesing DB in PUT");
+					res.sendStatus(500);
+				}
+				else{
+					if(data == 0){
+						res.sendStatus(404);
+						console.log("No data in the database");
+					}
+					else{
+						res.sendStatus(200);
+						console.log("Resource updated");
+					}
+				}
+			});
 		}
 	});
-	if (isAO(country) && country != null) {
-		response.status(200).send(JSON.stringify(country, null, 2));	
-	} else {
-		console.log("[!] Someone has tried to GET a non-existent resource: \n-->" + request.params.country + "/" + request.params.year);
-		response.status(404).send("<p>404: Resource not found</p>");	
-	}
-});
+		
+	
 
-// 6.6
-app.post(BASE_API_PATH_ACE+"/:country/:year", (request, response) => {
-	console.log("[!] Method not allowed (POST) to /" + request.params.country +"/"+request.params.year);
-	response.status(405).send('<p>405: Method not allowed</p>');
-});
 
-// 6.4
-app.delete(BASE_API_PATH_ACE+"/:country/:year", (request, response) => {
-	var oldCountry;
-	var del_index;
-	console.log("[!] Deletion requested for resource: /"+request.params.country+"/"+request.params.year+"\n [?] Checking existence.");
-	for(var i=0; i<unemployment_countries.length; i++){
-		if(unemployment_countries[i].country==request.params.country && unemployment_countries[i].year==request.params.year){
-			oldCountry = unemployment_countries[i];
-			del_index = i;
-		}
-	}
-	if (oldCountry != null) {
-		console.log("[-] Delete: "+ JSON.stringify(oldCountry,null));
-		unemployment_countries.splice(del_index, 1);
-		response.status(200).send("<p>Resource deleted</p>");	
-	} else {
-		console.log("[!] Someone has tried to delete a non-existent resource: \n-->" + JSON.stringify(oldCountry, null));
-		response.status(400).send("<p>Resource not found, can't delete.</p>");
-	}
-});
+    //POST a un recurso
+    app.post(BASE_API_PATH_ACE + "/:country/:year", (req,res) => {
+    	console.log ("Unable to POST to a specific resource");
+    	return res.sendStatus(405);
+    });
+    //PUT a una lista de recursos
+    app.put(BASE_API_PATH_ACE, (req,res) => {
+    	console.log("Unable to PUT to a list of resources");
+    	return res.sendStatus(405);
+    });
 
-// 6.5
-app.put(BASE_API_PATH_ACE+"/:country/:year", (request, response) => {
-	var updateCountry = request.body;
-	var oldCountry;
-	var del_index;
-	console.log(`[!] New country to update: <${JSON.stringify(updateCountry, null)}>`);
-	for(var i=0; i<unemployment_countries.length; i++){
-		if(unemployment_countries[i].country==request.params.country && unemployment_countries[i].year==request.params.year){
-			oldCountry = unemployment_countries[i];
-			del_index = i;
-		}
-	}
-	if (oldCountry != null) {
-		console.log("[-] Delete "+ JSON.stringify(oldCountry, null)+" to add resource: \n-->"+ JSON.stringify(updateCountry, null));
-		unemployment_countries.splice(del_index, 1);
-		response.status(200).send("<p>Resource updated.</p>");
-		unemployment_countries.push(updateCountry);
-	} else {
-		console.log("[!] Someone has tried to update a non-existent resource: \n-->" + JSON.stringify(oldCountry, null));
-		response.status(400).send("<p>Resource not found, can't delete.</p>");
-	}
-});
+      //DELETE a una lista de recursos -- EL CODIGO NUEVO ES EL COMENTADO
+    app.delete(BASE_API_PATH_ACE, (req,res) => {
+	  db.remove({},{multi: true},(err, numEmploysRemoved)=>{
+		  if(err){
+			  console.error("ERROR deleting DB evictions: "+err);
+			  res.sendStatus(500);
+		  }else{
+			  if(numEmploysRemoved==0){
+				  res.sendStatus(404);
+			  }else{
+				  console.log("Resources deleted");
+				  res.sendStatus(200);
+			  }
+		  }
+	  })
+    });
 }
