@@ -13,6 +13,46 @@
 					"listen": "test",
 					"script": {
 						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string, 'All resources deleted'\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"All resources deleted.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/mh-stats",
+					"protocol": "https",
+					"host": [
+						"sos2021-23",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mh-stats"
+					]
+				},
+				"description": "Use this method to delete all loaded resources (old, new & updated ones)."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/mh-stats",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
 							"pm.test(\"Status code is 404\", function () {\r",
 							"    pm.response.to.have.status(404);\r",
 							"});\r",
