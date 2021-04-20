@@ -120,7 +120,7 @@ module.exports.register = (app) => {
                     }else {                        
                         console.log(`[+] New resource added to the database <${JSON.stringify(newData, null, 2)}>`);
                         db.insert(newData);
-                        return res.status(201).send("<h1>Added resource</h1>");
+                        return res.status(201).send("<h1>Created resource</h1>");
                     }
                 }else {
                     console.log("[!] A resource already exists with the same country and date");
@@ -161,7 +161,7 @@ module.exports.register = (app) => {
 
     // Methods involving path+object_fields
     app.get(BASE_API_PATH_EDU + "/:country/:year", (req, res) => {
-        var req_data = req.params; 
+        var req_data = req.query; 
         var limit;
         var offset;
 
@@ -198,10 +198,10 @@ module.exports.register = (app) => {
     });
 
     app.delete(BASE_API_PATH_EDU + "/:country/:year", (req, res) => {
-        var country = req.params.country;
-        var year = parseInt(req.params.year);
+        var country = req.query.country;
+        var year = parseInt(req.query.year);
         db.remove({ 'country': country, 'year': year });
-        res.status(200).send("<h1> Resource Deleted" + country + "/" + year + "has been deleted");
+        res.status(200).send("<h1> Resource deleted " + country + "/" + year + "has been deleted");
     });
 
     app.post(BASE_API_PATH_EDU + "/:country", (req, res) => {
@@ -213,21 +213,21 @@ module.exports.register = (app) => {
     });
 
     app.put(BASE_API_PATH_EDU + "/:country/:year", (req, res) => {
-        var country = req.params.country;
-        var year = parseInt(req.params.year);
+        var country = req.query.country;
+        var year = parseInt(req.query.year);
         var updatemh = req.body;
         var exists;
         db.find({'country': country, 'year': year}).exec((err, dbdata) => {
             if (err) {
                 console.log("[!] Error accessing DB " + err);
-                res.status(500).send("Error processing query...");
+                return res.status(500).send("Error processing query...");
             } else {
                 if (country) {
                     db.remove({ 'country': country, 'year': year });
                     db.update({ "country": country, "year": year }, updatemh, { upsert: false });
-                    res.status(200).send("<h1> Resource updated </h1>");
+                    return res.status(200).send("<h1> Resource updated </h1>");
                 } else {
-                    res.status(409).send("<h1> Conflict </h1>");
+                    return res.status(409).send("<h1> Conflict </h1>");
                 }
             }
         });
