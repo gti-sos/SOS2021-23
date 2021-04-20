@@ -42,7 +42,8 @@ module.exports.register = (app) => {
         }
     });
     app.get(BASE_API_PATH_EDU, (request, response) =>{
-        var offset;
+        
+        /*var offset;
         var limit;
         if (request.query.offset) {
             console.log("[INFO] OFFSET: " + offset);
@@ -57,7 +58,7 @@ module.exports.register = (app) => {
             delete request.query.limit;
         } else {
             console.log("[INFO] LIMIT: not found");
-        }
+        }*/
         var search = {};
         /*if (request.query.country) {search["country"] = req.query.country}
         if (request.query.year) {search["year"] = parseInt(req.query.year)}
@@ -75,7 +76,7 @@ module.exports.register = (app) => {
             console.log('[!] Resource mh_countries has been requested');
             console.log("[INFO] OFFSET: " + offset);
             console.log("[INFO] LIMIT: " + limit);
-            response.status(200).send(JSON.stringify(db.find(search).skip(offset).limit(limit).exec((err, dbdata) => {
+            response.status(200).send(JSON.stringify(db.find(search)/*.skip(offset).limit(limit)*/.exec((err, dbdata) => {
                 if (err) {
                     console.log("[!] Error accessing mh-stats.db " + err);
                     response.status(500).send("<h1>Error accessing database</h1>");
