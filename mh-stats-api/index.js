@@ -120,7 +120,7 @@ module.exports.register = (app) => {
                     }else {                        
                         console.log(`[+] New resource added to the database <${JSON.stringify(newData, null, 2)}>`);
                         db.insert(newData);
-                        return res.sendStatus(201);
+                        return res.status(201).send("<h1>Added resource</h1>");
                     }
                 }else {
                     console.log("[!] A resource already exists with the same country and date");
@@ -180,14 +180,14 @@ module.exports.register = (app) => {
             console.log("[INFO] LIMIT: not found");
         }
         
-        db.find({country: req_data.country, year: parseInt(req_data.year)}).skip(offset).limit(limit).exec((err, dataInDB) => {
+        db.find({'country': req_data.country, 'year': parseInt(req_data.year)}).skip(offset).limit(limit).exec((err, dataInDB) => {
             if (err) {
                 console.error("[!] ERROR accesing DB " + err);
                 res.sendStatus(500);
             } else {
                 if (dataInDB == 0) {
                     console.error("[!] No DATA found");
-                    res.status(404).send("No resources found.");
+                    res.status(404).send("<h1>Resource not found</h1>");
                 } else {
                     delete dataInDB._id;
                     res.status(200).send(JSON.stringify(dataInDB, null, 2)); 
@@ -201,7 +201,7 @@ module.exports.register = (app) => {
         var country = req.params.country;
         var year = parseInt(req.params.year);
         db.remove({ 'country': country, 'year': year });
-        res.status(200).send("<h1> Resource" + country + "/" + year + "has been deleted");
+        res.status(200).send("<h1> Resource Deleted" + country + "/" + year + "has been deleted");
     });
 
     app.post(BASE_API_PATH_EDU + "/:country", (req, res) => {
@@ -222,7 +222,7 @@ module.exports.register = (app) => {
                 console.log("[!] Error accessing DB " + err);
                 res.status(500).send("Error processing query...");
             } else {
-                if (dbdata.country) {
+                if (country) {
                     db.remove({ 'country': country, 'year': year });
                     db.update({ "country": country, "year": year }, updatemh, { upsert: false });
                     res.status(200).send("<h1> Resource updated </h1>");
