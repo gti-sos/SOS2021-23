@@ -96,7 +96,7 @@ module.exports.register = (app) => {
                 } else {
                     if (dbdata == 0) {
                         console.log("[!] Database mh-stats is EMPTY!");
-                        response.status(404).send("<h1>Resources not found.</h1>");
+                        response.status(404).send("<h1>Resources not found. Head to /loadInitialData to create them.</h1>");
                     } else {
                         dbdata.forEach((data) =>{ delete data._id});
                         response.status(200).send(JSON.stringify(dbdata,null, 2));
