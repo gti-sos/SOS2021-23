@@ -180,7 +180,7 @@ module.exports.register = (app) => {
             console.log("[INFO] LIMIT: not found");
         }
         
-        db.find({country: req_data.country, year: parseInt(req_data.year)}).offset(offset).limit(limit).exec((err, dataInDB) => {
+        db.find({country: req_data.country, year: parseInt(req_data.year)}).skip(offset).limit(limit).exec((err, dataInDB) => {
             if (err) {
                 console.error("[!] ERROR accesing DB " + err);
                 res.sendStatus(500);
