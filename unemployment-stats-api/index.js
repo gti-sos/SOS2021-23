@@ -162,7 +162,7 @@ var unemployment_stats = [
 				var employsToSend = employsInDB.map((c)=>{
 					return {country : c.country, year : c.year, knoperc : c.knoperc, intperc : c.intperc, gfperc : c.gfperc};
 				});
-				res.send(JSON.stringify(employsToSend,null,2));
+				res.send(JSON.stringify(employsToSend[0],null,2));
 			}
 			
 		})
