@@ -162,10 +162,25 @@ module.exports.register = (app) => {
     // Methods involving path+object_fields
     app.get(BASE_API_PATH_EDU + "/:country/:year", (req, res) => {
         var req_data = req.params; 
-        var limitAux = parseInt(req.query.limit);
-        var offsetAux = parseInt(req.query.offset);
+        var limit;
+        var offset;
+
+        if (req.query.offset) {
+            console.log("[INFO] OFFSET: " + offset);
+            offset = parseInt(req.query.offset);
+            delete req.query.offset;
+        } else {
+            console.log("[INFO] OFFSET:  not found");
+        }
+        if (req.query.limit) {
+            console.log("[INFO] LIMIT: " + limit);
+            limit = parseInt(req.query.limit);
+            delete req.query.limit;
+        } else {
+            console.log("[INFO] LIMIT: not found");
+        }
         
-        db.find({country: req_data.country, year: parseInt(req_data.year)}).offset(offsetAux).limit(limitAux).exec((err, dataInDB) => {
+        db.find({country: req_data.country, year: parseInt(req_data.year)}).offset(offset).limit(limit).exec((err, dataInDB) => {
             if (err) {
                 console.error("[!] ERROR accesing DB " + err);
                 res.sendStatus(500);
