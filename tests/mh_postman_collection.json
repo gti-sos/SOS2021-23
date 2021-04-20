@@ -96,6 +96,106 @@
 			"response": []
 		},
 		{
+			"name": "/api/v1/mh-stats?limit=2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Pagination (limit) working\", function () {\r",
+							"    var limit = pm.collectionVariables.get(\"LIMIT\");\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].length).to.eql(limit);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/mh-stats?limit={{LIMIT}}",
+					"protocol": "https",
+					"host": [
+						"sos2021-23",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mh-stats"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "{{LIMIT}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/mh-stats?limit=5&offset=2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Pagination (limit) working\", function () {\r",
+							"    var limit = pm.collectionVariables.get(\"LIMIT\");\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].length).to.eql(limit);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/mh-stats?limit=5&offset=2",
+					"protocol": "https",
+					"host": [
+						"sos2021-23",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mh-stats"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "offset",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "/api/v1/mh-stats/:country/:year",
 			"event": [
 				{
@@ -188,11 +288,11 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 409\", function () {\r",
+							"pm.test(\"Status code is 400\", function () {\r",
 							"    pm.response.to.have.status(409);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Conflict\", function () {\r",
+							"pm.test(\"Resource not found, can't delete.\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include(\"Conflict\");\r",
 							"});"
 						],
@@ -335,7 +435,7 @@
 							"});\r",
 							"\r",
 							"pm.test(\"Body matches string, 'Resource not found'\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"<h1>Resource not found</h1>\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"Resource not found\");\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -376,7 +476,7 @@
 							"    pm.response.to.have.status(201);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Body matches string, 'Added resource.'\", function () {\r",
+							"pm.test(\"Body matches string, 'Created resource.'\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include(\"<h1>Created resource</h1>\");\r",
 							"});\r",
 							""
@@ -454,6 +554,36 @@
 				"description": "Use this method to delete all loaded resources (old, new & updated ones)."
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "LIMIT\n",
+			"value": "5"
+		},
+		{
+			"key": "OFFSET",
+			"value": "2"
 		}
 	]
 }
