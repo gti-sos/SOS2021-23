@@ -43,8 +43,9 @@ module.exports.register = (app) => {
     });
     app.get(BASE_API_PATH_EDU, (request, response) =>{
         
-        /*var offset;
+        var offset;
         var limit;
+        /*
         if (request.query.offset) {
             console.log("[INFO] OFFSET: " + offset);
             offset = parseInt(request.query.offset);
@@ -60,15 +61,15 @@ module.exports.register = (app) => {
             console.log("[INFO] LIMIT: not found");
         }*/
         var search = {};
-        /*if (request.query.country) {search["country"] = req.query.country}
-        if (request.query.year) {search["year"] = parseInt(req.query.year)}
-        if (request.query.mh-population) {search["mh-population"] = parseInt(req.query.mh-population)}
-        if (request.query.mh-anxdaly) {search["mh-anxdaly"] = parseInt(req.query.mh-anxdaly)}
-        if (request.query.mh-eating) {search["mh-eating"] = parseInt(req.query.mh-eating)}
-        if (request.query.mh-adhd) {search["mh-adhd"] = parseInt(req.query.mh-adhd)}
-        if (request.query.mh-bipolar) {search["mh-bipolar"] = parseInt(req.query.mh-bipolar)}
-        if (request.query.mh-depression) {search["mh-depression"] = parseInt(req.query.mh-depression)}
-        if (request.query.mh-schizophrenia) {search["mh-schizophrenia"] = parseInt(req.query.mh-schizophrenia)}*/
+        /*if (request.query.country) {search["country"] = request.query.country}
+        if (request.query.year) {search["year"] = parseInt(request.query.year)}
+        if (request.query.mh-population) {search["mh-population"] = parseInt(request.query.mh-population)}
+        if (request.query.mh-anxdaly) {search["mh-anxdaly"] = parseInt(request.query.mh-anxdaly)}
+        if (request.query.mh-eating) {search["mh-eating"] = parseInt(request.query.mh-eating)}
+        if (request.query.mh-adhd) {search["mh-adhd"] = parseInt(request.query.mh-adhd)}
+        if (request.query.mh-bipolar) {search["mh-bipolar"] = parseInt(request.query.mh-bipolar)}
+        if (request.query.mh-depression) {search["mh-depression"] = parseInt(request.query.mh-depression)}
+        if (request.query.mh-schizophrenia) {search["mh-schizophrenia"] = parseInt(request.query.mh-schizophrenia)}*/
         if (db.count({}) == 0) {
             console.log('[!] Resource mh_countries has been requested, but are not loaded.');
             return response.status(404).send("<p>Resources not found. Head to /loadInitialData to create them.</p>");
@@ -76,15 +77,15 @@ module.exports.register = (app) => {
             var offset;
             var limit;
             if (request.query.offset) {
-                console.log("[INFO] OFFSET: " + offset);
                 offset = parseInt(request.query.offset);
+                console.log("[INFO] OFFSET: " + offset);
                 delete request.query.offset;
             } else {
                 console.log("[INFO] OFFSET:  not found");
             }
             if (request.query.limit) {
-                console.log("[INFO] LIMIT: " + limit);
                 limit = parseInt(request.query.limit);
+                console.log("[INFO] LIMIT: " + limit);
                 delete request.query.limit;
             } else {
                 console.log("[INFO] LIMIT: not found");
@@ -164,26 +165,21 @@ module.exports.register = (app) => {
 
     // Methods involving path+object_fields
     app.get(BASE_API_PATH_EDU + "/:country/:year", (req, res) => {
-        var req_data = req.query; 
-        var limit;
-        var offset;
-
+        var req_data = req.params; 
+        let limit;
+        let offset;
         if (req.query.offset) {
-            console.log("[INFO] OFFSET: " + offset);
             offset = parseInt(req.query.offset);
             delete req.query.offset;
-        } else {
-            console.log("[INFO] OFFSET:  not found");
-        }
+        } 
         if (req.query.limit) {
-            console.log("[INFO] LIMIT: " + limit);
             limit = parseInt(req.query.limit);
             delete req.query.limit;
-        } else {
-            console.log("[INFO] LIMIT: not found");
+            console.log(limit);
         }
-        
-        db.find({'country': req_data.country, 'year': parseInt(req_data.year)}).skip(offset).limit(limit).exec((err, dataInDB) => {
+        console.log(offset);
+        console.log(limit);
+        db.find({country: req.params.country, year: req.params.year}).skip(offset).limit(limit).exec((err, dataInDB) => {
             if (err) {
                 console.error("[!] ERROR accesing DB " + err);
                 res.sendStatus(500);
@@ -194,16 +190,16 @@ module.exports.register = (app) => {
                 } else {
                     delete dataInDB._id;
                     res.status(200).send(JSON.stringify(dataInDB, null, 2)); 
-                    console.log(`GET stat by country: <${req_data.country}> and date: <${req_data.date}>`);
+                    console.log(`GET stat by country: <${req_data.country}> and date: <${req_data.year}>`);
                 }
             }
         });
     });
 
     app.delete(BASE_API_PATH_EDU + "/:country/:year", (req, res) => {
-        var country = req.query.country;
-        var year = parseInt(req.query.year);
-        db.remove({ 'country': country, 'year': year });
+        var country = req.params.country;
+        var year = req.params.year;
+        db.remove({ country: country, year: year });
         res.status(200).send("<h1> Resource deleted " + country + "/" + year + "has been deleted");
     });
 
@@ -216,18 +212,18 @@ module.exports.register = (app) => {
     });
 
     app.put(BASE_API_PATH_EDU + "/:country/:year", (req, res) => {
-        var country = req.query.country;
-        var year = parseInt(req.query.year);
+        var countryx = req.params.country;
+        var yearx = req.params.year;
         var updatemh = req.body;
         var exists;
-        db.find({'country': country, 'year': year}).exec((err, dbdata) => {
+        db.find({country: countryx, year: yearx}).exec((err, dbdata) => {
             if (err) {
                 console.log("[!] Error accessing DB " + err);
                 return res.status(500).send("Error processing query...");
             } else {
-                if (country) {
-                    db.remove({ 'country': country, 'year': year });
-                    db.update({ "country": country, "year": year }, updatemh, { upsert: false });
+                if (dbdata.country) {
+                    db.remove({country: countryx, year: yearx});
+                    db.update({ country: countryx, year: yearx }, updatemh, { upsert: false });
                     return res.status(200).send("<h1> Resource updated </h1>");
                 } else {
                     return res.status(409).send("<h1> Conflict </h1>");
