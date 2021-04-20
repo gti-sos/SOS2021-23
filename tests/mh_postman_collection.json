@@ -228,12 +228,12 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 400\", function () {\r",
-							"    pm.response.to.have.status(400);\r",
+							"pm.test(\"Status code is 409\", function () {\r",
+							"    pm.response.to.have.status(409);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Resource not found, can't delete.\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"Resource not found, can't delete.\");\r",
+							"pm.test(\"Conflict\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Conflict\");\r",
 							"});"
 						],
 						"type": "text/javascript"
