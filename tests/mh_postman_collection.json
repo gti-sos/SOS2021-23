@@ -140,7 +140,8 @@
 							"value": "{{LIMIT}}"
 						}
 					]
-				}
+				},
+				"description": "Testing pagination, only limit"
 			},
 			"response": []
 		},
@@ -191,7 +192,65 @@
 							"value": "2"
 						}
 					]
+				},
+				"description": "Testing pagination, limit+offset"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/mh-stats?year=2017&limit=5&offset=2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Pagination (limit) working, search fields working\", function () {\r",
+							"    var limit = pm.collectionVariables.get(\"LIMIT\");\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].length).to.eql(limit);\r",
+							"    pm.expect(jsonData[0].year).to.eql(\"2017\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/mh-stats?year=2017&limit=5&offset=2",
+					"protocol": "https",
+					"host": [
+						"sos2021-23",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mh-stats"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2017"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "offset",
+							"value": "2"
+						}
+					]
+				},
+				"description": "Pagination + search"
 			},
 			"response": []
 		},

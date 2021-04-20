@@ -61,15 +61,15 @@ module.exports.register = (app) => {
             console.log("[INFO] LIMIT: not found");
         }*/
         var search = {};
-        /*if (request.query.country) {search["country"] = request.query.country}
-        if (request.query.year) {search["year"] = parseInt(request.query.year)}
-        if (request.query.mh-population) {search["mh-population"] = parseInt(request.query.mh-population)}
-        if (request.query.mh-anxdaly) {search["mh-anxdaly"] = parseInt(request.query.mh-anxdaly)}
-        if (request.query.mh-eating) {search["mh-eating"] = parseInt(request.query.mh-eating)}
-        if (request.query.mh-adhd) {search["mh-adhd"] = parseInt(request.query.mh-adhd)}
-        if (request.query.mh-bipolar) {search["mh-bipolar"] = parseInt(request.query.mh-bipolar)}
-        if (request.query.mh-depression) {search["mh-depression"] = parseInt(request.query.mh-depression)}
-        if (request.query.mh-schizophrenia) {search["mh-schizophrenia"] = parseInt(request.query.mh-schizophrenia)}*/
+        if (request.query.country) {search["country"] = request.query.country}
+        if (request.query.year) {search["year"] = request.query.year}
+        if (request.query.mhpopulation) {search["mh-population"] = request.query.mhpopulation}
+        if (request.query.mhanxdaly) {search["mh-anxdaly"] = request.query.mhanxdaly}
+        if (request.query.mheating) {search["mh-eating"] = request.query.mheating}
+        if (request.query.mhadhd) {search["mh-adhd"] = request.query.mhadhd}
+        if (request.query.mhbipolar) {search["mh-bipolar"] = request.query.mhbipolar}
+        if (request.query.mhdepression) {search["mh-depression"] = request.query.mhdepression}
+        if (request.query.mhschizophrenia) {search["mh-schizophrenia"] = request.query.mhschizophrenia}
         if (db.count({}) == 0) {
             console.log('[!] Resource mh_countries has been requested, but are not loaded.');
             return response.status(404).send("<p>Resources not found. Head to /loadInitialData to create them.</p>");
