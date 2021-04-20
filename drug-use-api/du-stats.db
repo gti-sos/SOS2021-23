@@ -8,6 +8,7 @@
 {"country":"Canada","year":"2017","dupopulation":"36,700,000","dudead":"7.27","dudependenceperc":"2.28","dudaly":"756.15","_id":"sBF7SFHYPGqdCuNw"}
 {"country":"Spain","year":"2017","dupopulation":"46,600,000","dudead":"1.83","dudependenceperc":"1.47","dudaly":"249.83","_id":"tTWy2zLFA3L10wc8"}
 {"country":"United Kingdom","year":"2017","dupopulation":"66,200,000","dudead":"6.98","dudependenceperc":"1.66","dudaly":"527.75","_id":"zTKHGfZ8NoeVyi0d"}
+<<<<<<< HEAD
 {"country":"Spain","year":"2017","dupopulation":"46,600,000","dudead":"1.83","dudependenceperc":"1.47","dudaly":"249.83","_id":"Jktky5ZPVCVKRTve"}
 {"country":"France","year":"2017","dupopulation":"65,000,000","dudead":"5.5","dudependenceperc":"1.18","dudaly":"254.95","_id":"cNEd4WwO7qDVhU55"}
 {"country":"Germany","year":"2017","dupopulation":"83,100,000","dudead":"6.7","dudependenceperc":"1.66","dudaly":"241.92","_id":"PMqbB9x65PkZF1Vg"}
@@ -50,3 +51,5 @@
 {"country":"Canada","year":"2017","dupopulation":"36,700,000","dudead":"7.27","dudependenceperc":"2.28","dudaly":"756.15","_id":"qdqTK2oAPBOGiocD"}
 {"country":"Greenland","year":"2017","dupopulation":"56,000,000","dudead":"13.93","dudependenceperc":"1.99","dudaly":"480.89","_id":"WKGuu7CsR76PT6gS"}
 {"country":"Italy","year":"2017","dupopulation":"60,500,000","dudead":"1.19","dudependenceperc":"1.15","dudaly":"257.85","_id":"EUFmp54uk0JkSxVa"}
+=======
+>>>>>>> deb101821a139fe44487002e6b552fd780b23171
