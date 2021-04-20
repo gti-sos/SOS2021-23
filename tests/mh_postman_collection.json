@@ -375,7 +375,7 @@
 							"});\r",
 							"\r",
 							"pm.test(\"Body matches string, 'Resource not found'\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"Resource not found\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"Conflict\");\r",
 							"});"
 						],
 						"type": "text/javascript"
