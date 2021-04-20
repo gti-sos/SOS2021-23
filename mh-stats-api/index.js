@@ -71,7 +71,7 @@ module.exports.register = (app) => {
         if (request.query.mh-schizophrenia) {search["mh-schizophrenia"] = parseInt(req.query.mh-schizophrenia)}*/
         if (db.count({}) == 0) {
             console.log('[!] Resource mh_countries has been requested, but are not loaded.');
-            response.status(404).send("<p>Resources not found. Head to /loadInitialData to create them.</p>");
+            return response.status(404).send("<p>Resources not found. Head to /loadInitialData to create them.</p>");
         } else {
             var offset;
             var limit;
@@ -92,14 +92,14 @@ module.exports.register = (app) => {
             db.find(search).skip(offset).limit(limit).exec((err, dbdata) => {
                 if (err) {
                     console.log("[!] Error accessing mh-stats.db " + err);
-                    response.status(500).send("<h1>Error accessing database</h1>");
+                    return response.status(500).send("<h1>Error accessing database</h1>");
                 } else {
                     if (dbdata == 0) {
                         console.log("[!] Database mh-stats is EMPTY!");
-                        response.status(404).send("<h1>Resources not found. Head to /loadInitialData to create them.</h1>");
+                        return response.status(404).send("<h1>Resources not found. Head to /loadInitialData to create them.</h1>");
                     } else {
                         dbdata.forEach((data) =>{ delete data._id});
-                        response.status(200).send(JSON.stringify(dbdata,null, 2));
+                        return response.status(200).send(JSON.stringify(dbdata,null, 2));
                     }
                 }
             })
@@ -154,7 +154,7 @@ module.exports.register = (app) => {
                     console.log("[!] Error deleting all resources");
                 }
             });
-            console.log(mh_countries.length);
+            console.log(hascontent);
             response.status(200).send("<p>200: All resources deleted.</p>");
         }
     });
