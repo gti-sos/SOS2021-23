@@ -73,10 +73,23 @@ module.exports.register = (app) => {
             console.log('[!] Resource mh_countries has been requested, but are not loaded.');
             response.status(404).send("<p>Resources not found. Head to /loadInitialData to create them.</p>");
         } else {
-            console.log('[!] Resource mh_countries has been requested');
-            console.log("[INFO] OFFSET: " + offset);
-            console.log("[INFO] LIMIT: " + limit);
-            response.status(200).send(JSON.stringify(db.find(search)/*.skip(offset).limit(limit)*/.exec((err, dbdata) => {
+            var offset;
+            var limit;
+            if (request.query.offset) {
+                console.log("[INFO] OFFSET: " + offset);
+                offset = parseInt(request.query.offset);
+                delete request.query.offset;
+            } else {
+                console.log("[INFO] OFFSET:  not found");
+            }
+            if (request.query.limit) {
+                console.log("[INFO] LIMIT: " + limit);
+                limit = parseInt(request.query.limit);
+                delete request.query.limit;
+            } else {
+                console.log("[INFO] LIMIT: not found");
+            }
+            db.find(search).skip(offset).limit(limit).exec((err, dbdata) => {
                 if (err) {
                     console.log("[!] Error accessing mh-stats.db " + err);
                     response.status(500).send("<h1>Error accessing database</h1>");
@@ -86,10 +99,10 @@ module.exports.register = (app) => {
                         response.status(404).send("<h1>Resources not found.</h1>");
                     } else {
                         dbdata.forEach((data) =>{ delete data._id});
-                        return dbdata;
+                        response.status(200).send(JSON.stringify(dbdata,null, 2));
                     }
                 }
-            }),null, 2));
+            })
         }
     });
 
