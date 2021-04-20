@@ -152,10 +152,13 @@ module.exports.register = (app) => {
             db.remove({}, { multi: true }, function (err, numRemoved) {
                 if (err) {
                     console.log("[!] Error deleting all resources");
+                } else {
+                    console.log(numRemoved);
+                    if (numRemoved != 0) return response.status(200).send("<p>200: All resources deleted.</p>");
+                    else return response.status(500).send("<p>Error</p>");
                 }
             });
-            console.log(hascontent);
-            response.status(200).send("<p>200: All resources deleted.</p>");
+
         }
     });
 
