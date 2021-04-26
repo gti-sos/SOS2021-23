@@ -33,6 +33,9 @@
 		<!-- Aquí van las tablas -->
 		<h1>Datos de Salud Mental</h1>
 		<MHTable></MHTable>
+		
+		<h1>Datos de Uso de Drogas</h1>
+		<DUTable></DUTable>
 	</body>
 	<Footer></Footer>
 </main>
