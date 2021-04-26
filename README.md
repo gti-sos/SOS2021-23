@@ -1,7 +1,7 @@
 # SOS2021-23-sandbox
 ## SOS2021-23
 
-- **_Team_**
+- **_Team**
   - [Antonio Corpas Espinar](https://github.com/ace58)
   - [José Carlos Torres](https://github.com/secaasecas)
   - [Antonio Maiquez Marin](https://github.com/Jackman97)
