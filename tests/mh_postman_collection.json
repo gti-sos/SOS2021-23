@@ -364,7 +364,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"country\": \"Spainy\",\r\n\"year\": \"2018\",\r\n\"mh-population\": \"46,600,000\",\r\n\"mh-anxdaly\": \"463.69\",\r\n\"mh-eating\": \"257,180.25\",\r\n\"mh-adhd\": \"530,553.88\",\r\n\"mh-bipolar\": \"451,100.50\",\r\n\"mh-depression\": \"1,820,000\",\r\n\"mh-schizophrenia\": \"152,911\"\r\n}",
+					"raw": "{\r\n\"country\": \"Spainy\",\r\n\"year\": \"2018\",\r\n\"population\": \"46,600,000\",\r\n\"anxdaly\": \"463.69\",\r\n\"eating\": \"257,180.25\",\r\n\"adhd\": \"530,553.88\",\r\n\"bipolar\": \"451,100.50\",\r\n\"depression\": \"1,820,000\",\r\n\"schizophrenia\": \"152,911\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -415,7 +415,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"country\": \"Spain\",\r\n\"year\": \"2017\",\r\n\"mh-population\": \"46,600,000\",\r\n\"mh-anxdaly\": \"463.69\",\r\n\"mh-eating\": \"257,180.25\",\r\n\"mh-adhd\": \"530,553.88\",\r\n\"mh-bipolar\": \"451,100.50\",\r\n\"mh-depression\": \"1,820,000\",\r\n\"mh-schizophrenia\": \"152,911\"\r\n}",
+					"raw": "{\r\n\"country\": \"Spain\",\r\n\"year\": \"2017\",\r\n\"population\": \"46,600,000\",\r\n\"anxdaly\": \"463.69\",\r\n\"eating\": \"257,180.25\",\r\n\"adhd\": \"530,553.88\",\r\n\"bipolar\": \"451,100.50\",\r\n\"depression\": \"1,820,000\",\r\n\"schizophrenia\": \"152,911\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -549,7 +549,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"country\": \"Spainy\",\r\n\"year\": \"2017\",\r\n\"mh-population\": \"46,600,000\",\r\n\"mh-anxdaly\": \"463.69\",\r\n\"mh-eating\": \"257,180.25\",\r\n\"mh-adhd\": \"530,553.88\",\r\n\"mh-bipolar\": \"451,100.50\",\r\n\"mh-depression\": \"1,820,000\",\r\n\"mh-schizophrenia\": \"152,911\"\r\n}",
+					"raw": "{\r\n\"country\": \"Spainy\",\r\n\"year\": \"2017\",\r\n\"population\": \"46,600,000\",\r\n\"anxdaly\": \"463.69\",\r\n\"eating\": \"257,180.25\",\r\n\"adhd\": \"530,553.88\",\r\n\"bipolar\": \"451,100.50\",\r\n\"depression\": \"1,820,000\",\r\n\"schizophrenia\": \"152,911\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
