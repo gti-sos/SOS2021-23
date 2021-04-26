@@ -1,6 +1,7 @@
 <script>
 	import MHTable from './MHTable.svelte';
 	import Navbar from './Navbar.svelte';
+	import Home from './Home.svelte';
 	import Sidebar from './Sidebar.svelte';
 	import Hamburger from './Hamburger.svelte'
 	import Footer from './Footer.svelte';
