@@ -44,31 +44,17 @@ module.exports.register = (app) => {
     app.get(BASE_API_PATH_EDU, (request, response) =>{        
         var offset;
         var limit;
-        /*
-        if (request.query.offset) {
-            console.log("[INFO] OFFSET: " + offset);
-            offset = parseInt(request.query.offset);
-            delete request.query.offset;
-        } else {
-            console.log("[INFO] OFFSET:  not found");
-        }
-        if (request.query.limit) {
-            console.log("[INFO] LIMIT: " + limit);
-            limit = parseInt(request.query.limit);
-            delete request.query.limit;
-        } else {
-            console.log("[INFO] LIMIT: not found");
-        }*/
+
         var search = {};
         if (request.query.country) {search["country"] = request.query.country}
         if (request.query.year) {search["year"] = request.query.year}
-        if (request.query.mhpopulation) {search["mh-population"] = request.query.mhpopulation}
-        if (request.query.mhanxdaly) {search["mh-anxdaly"] = request.query.mhanxdaly}
-        if (request.query.mheating) {search["mh-eating"] = request.query.mheating}
-        if (request.query.mhadhd) {search["mh-adhd"] = request.query.mhadhd}
-        if (request.query.mhbipolar) {search["mh-bipolar"] = request.query.mhbipolar}
-        if (request.query.mhdepression) {search["mh-depression"] = request.query.mhdepression}
-        if (request.query.mhschizophrenia) {search["mh-schizophrenia"] = request.query.mhschizophrenia}
+        if (request.query.mhpopulation) {search["population"] = request.query.mhpopulation}
+        if (request.query.mhanxdaly) {search["anxdaly"] = request.query.mhanxdaly}
+        if (request.query.mheating) {search["eating"] = request.query.mheating}
+        if (request.query.mhadhd) {search["adhd"] = request.query.mhadhd}
+        if (request.query.mhbipolar) {search["bipolar"] = request.query.mhbipolar}
+        if (request.query.mhdepression) {search["depression"] = request.query.mhdepression}
+        if (request.query.mhschizophrenia) {search["schizophrenia"] = request.query.mhschizophrenia}
         if (db.count({}) == 0) {
             console.log('[!] Resource mh_countries has been requested, but are not loaded.');
             return response.status(404).send("<p>Resources not found. Head to /loadInitialData to create them.</p>");
@@ -79,15 +65,11 @@ module.exports.register = (app) => {
                 offset = parseInt(request.query.offset);
                 console.log("[INFO] OFFSET: " + offset);
                 delete request.query.offset;
-            } else {
-                console.log("[INFO] OFFSET:  not found");
             }
             if (request.query.limit) {
                 limit = parseInt(request.query.limit);
                 console.log("[INFO] LIMIT: " + limit);
                 delete request.query.limit;
-            } else {
-                console.log("[INFO] LIMIT: not found");
             }
             db.find(search).skip(offset).limit(limit).exec((err, dbdata) => {
                 if (err) {
@@ -114,7 +96,7 @@ module.exports.register = (app) => {
                 res.sendStatus(500);
             } else {
                 if(dbdata == 0){  
-                    if(!newData.country || !newData.year || !newData['mh-population'] || !newData['mh-anxdaly'] || !newData['mh-eating'] || !newData['mh-adhd'] || !newData['mh-bipolar']|| !newData['mh-depression'] || !newData['mh-schizophrenia']) {
+                    if(!newData.country || !newData.year || !newData['population'] || !newData['anxdaly'] || !newData['eating'] || !newData['adhd'] || !newData['bipolar']|| !newData['depression'] || !newData['schizophrenia']) {
                         console.log("[!] Data is missing or incorrect.");
                         return res.sendStatus(400);
                     }else {                        
