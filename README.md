@@ -1,7 +1,7 @@
 # SOS2021-23-sandbox
 ## SOS2021-23
 
-- **_Team**
+- **_Team_**
   - [Antonio Corpas Espinar](https://github.com/ace58)
   - [José Carlos Torres](https://github.com/secaasecas)
   - [Antonio Maiquez Marin](https://github.com/Jackman97)
@@ -22,6 +22,3 @@
     - [/api/v1/mh-stats/docs](https://documenter.getpostman.com/view/14943559/TzJoDfQ5) (developed by [Eduardo Carmona](https://github.com/Beelthazad))
 
 - Propuesta: https://docs.google.com/spreadsheets/d/1k4qAyHUGc5xTsaPLKgx0gpixK02GCAo_UJpViFWoCFM/
-
-
-1:00:22
