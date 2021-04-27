@@ -16,7 +16,7 @@
   </script>
   
   <main>
-    <h1>SOS2021-01</h1>
+    <h1>SOS2021-23</h1>
   
     <h2>Team</h2>
     <Container>
@@ -24,16 +24,19 @@
         <a href="http://github.com/secaasecas">José Carlos Torres Moreno</a>
       </Col>
       <Col>
-        <a href="http://github.com/Lucia2712">Lucia Castro Perez</a>
+        <a href="https://github.com/ace58">Antonio</a>
       </Col>
       <Col>
-        <a href="http://github.com/AbramsM1A2">Abraham Corta Ramirez</a>
+        <a href="https://github.com/Jackman97">Tony</a>
+      </Col>
+      <Col>
+        <a href="https://github.com/Beelthazad">Eduardo Carmona</a>
       </Col>
     </Container>
   
     <h2>Project description</h2>
     <p>
-        Our aim is to analyze the relationship between drug use,HDI, mental health & unemployment at a global scale.
+        Our aim is to analyze the relationship between drug use, HDI, mental health & unemployment at a global scale.
     </p>
   
     <Container>
@@ -59,80 +62,49 @@
           <CardBody>
             <CardSubtitle />
             <CardText
-              >Drug use data source.</CardText
-            >
+              >Drug use data source.</CardText>
+            
             <a href="https://sos2021-23.herokuapp.com/api/v1/du-stats">
-              <Button color="primary">Backend</Button></a
-            >
+              <Button color="primary">Backend</Button></a>
+            
             <a href="/#/du-stats">
               <Button color="primary">Frontend</Button>
             </a>
             <a href="https://documenter.getpostman.com/view/14950269/TzJoDzt6"
-              ><Button color="info">Postman Documentation</Button></a
-            >
+              ><Button color="info">Postman Documentation</Button></a>
           </CardBody>
           <CardFooter
             >developed by
-            <a href="https://github.com/secaasecas">José Carlos Torres Moreno</a
-            ></CardFooter
-          >
+            <a href="https://github.com/secaasecas">José Carlos Torres Moreno</a>
+            </CardFooter>
         </Card>
       </Col>
+
       <Col xs="auto">
         <Card class="mb-3">
           <CardHeader>
-            <CardTitle><h5>Life-stats</h5></CardTitle>
+            <CardTitle><h5>Estadísticas de Salud Mental</h5></CardTitle>
           </CardHeader>
           <CardBody>
             <CardSubtitle />
             <CardText
-              >Quality of life index data source by country, which is linked to
-              the purchasing power index and the safety index.</CardText
-            >
-            <a href="https://sos2021-01.herokuapp.com/api/v1/life-stats">
-              <Button color="primary">Backend</Button>
-            </a>
-            <a href="/#/life-stats">
+              >Drug use data source.</CardText>
+            <a href="https://sos2021-23.herokuapp.com/api/v1/mh-stats">
+              <Button color="primary">Backend</Button></a>
+            <a href="/#/mh-stats">
               <Button color="primary">Frontend</Button>
             </a>
-            <a href="https://documenter.getpostman.com/view/14961437/TzJoDg1P">
-              <Button color="info">Postman Documentation</Button>
-            </a>
+            <a href="https://documenter.getpostman.com/view/14943559/TzJoDfQ5"
+              ><Button color="info">Documentación Backend en Postman</Button></a>
+            
           </CardBody>
           <CardFooter
             >developed by
-            <a href="https://github.com/Lucia2712">Lucia Castro Perez</a>
-          </CardFooter>
+            <a href="https://github.com/Beelthazad">Eduardo Carmona</a>
+            </CardFooter>
         </Card>
       </Col>
-      <Col xs="auto">
-        <Card class="mb-3">
-          <CardHeader>
-            <CardTitle><h5>Natality-stats</h5></CardTitle>
-          </CardHeader>
-          <CardBody>
-            <CardSubtitle />
-            <CardText>
-              Men and women born, natality and fertlity ratios by year and
-              country.
-            </CardText>
-            <a href="/api/v1/natality-stats"
-              ><Button color="primary">Backend</Button></a
-            >
-            <a href="/#/natality-stats"
-              ><Button color="primary">Frontend</Button></a
-            >
-            <a href="https://documenter.getpostman.com/view/14932491/TzJrCzRM"
-              ><Button color="info">Postman Documentation</Button></a
-            >
-          </CardBody>
-          <CardFooter
-            >developed by
-            <a href="https://github.com/AbramsM1A2">Abraham Corta Ramírez</a
-            ></CardFooter
-          >
-        </Card>
-      </Col>
+
     </Container>
   </main>
   

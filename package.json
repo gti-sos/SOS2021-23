@@ -39,6 +39,7 @@
     "newman": "^5.2.2",
     "serve-index": "^1.9.1",
     "sirv-cli": "^1.0.0",
+    "svelte-spa-router": "^3.1.0",
     "sveltestrap": "^3.14.1"
   },
   "keywords": []

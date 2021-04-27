@@ -100,6 +100,9 @@
         {/each}
     </tbody>
 </table>
+<div>
+    <button type="button" class="btn btn-dark"><a href="/" style="text-decoration:none;color:white" >Atrás</a></button>
+</div>
  <!-- Alerts -->
  <div>
  {#if error === 0}
