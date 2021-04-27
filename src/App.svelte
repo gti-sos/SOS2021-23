@@ -4,10 +4,13 @@
 	import Router from 'svelte-spa-router';
 	import MHST from "./MHST.svelte";
 	import UnemploymentTable from "./unempAPI/unemploymentTable.svelte";
+	import DUSTATS from "./duAPI/DUTable.svelte";
+
 	const routes = {
 		"/":Home,
 		"/unemployment-stats":UnemploymentTable,
-		"/mh-stats": MHST};
+		"/du-stats":DUSTATS,
+		"/mh-stats":MHST};
 </script>
 <main>
 	<Router {routes}> </Router>
