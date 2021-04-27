@@ -126,7 +126,29 @@
             </CardFooter>
         </Card>
       </Col>
-
+      <Col xs="auto">
+        <Card class="mb-3">
+          <CardHeader>
+            <CardTitle><h5>Estadísticas HDI</h5></CardTitle>
+          </CardHeader>
+          <CardBody>
+            <CardSubtitle />
+            <CardText>Recogidas por la UNDP</CardText>
+            <a href="https://sos2021-23.herokuapp.com/api/v1/hdi-stats">
+              <Button color="primary">Backend</Button></a>
+            <a href="/">
+              <Button color="primary">Frontend</Button>
+            </a>
+            <a href="https://documenter.getpostman.com/view/14943559/TzJoDfQ5"
+              ><Button color="info">Documentación Backend en Postman</Button></a>
+            
+          </CardBody>
+          <CardFooter
+            >desarrollado por 
+            <a href="https://github.com/Jackman97">Antonio Maiquez</a>
+            </CardFooter>
+        </Card>
+      </Col>
     </Container>
   </main>
   
