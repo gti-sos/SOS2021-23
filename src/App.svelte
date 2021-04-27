@@ -1,6 +1,6 @@
 <script>
 	import MHTable from './MHTable.svelte';
-	import dutable from './duAPI/dutable.svelte';
+	import DUtable from './duAPI/dutable.svelte';
 	import Navbar from './Navbar.svelte';
 	import Home from './Home.svelte';
 	import Sidebar from './Sidebar.svelte';
