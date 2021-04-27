@@ -260,7 +260,7 @@
                     <th>Porcentaje según Knoema </th>
                     <th>Porcentaje según Gfmag </th>
                     <th>Porcentaje según InternetWorldStats</th>
-                    <th>Acciones</th>
+                    <th>Acciones</th> <!-- comentario-->
                 </tr>
             </thead>
             <tbody>
