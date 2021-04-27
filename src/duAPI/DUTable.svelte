@@ -207,6 +207,12 @@
 </script>
 
 <main>
+    <Button color="success" on:click="{loadInitialData}">
+        Cargar datos inciales
+    </Button>
+    <Button color="danger" on:click="{deleteALL}">
+        Eliminar todo
+    </Button>
 
     {#await du_stats}
         Loading data...
@@ -290,19 +296,6 @@
         {#if du_stats.length === 0}
             <p>No se han encontrado datos, por favor, carga los datos iniciales.</p>
         {/if}
-
-        <Button color="success" on:click="{loadInitialData}">
-            Cargar datos inciales
-        </Button>
-        <Button color="danger" on:click="{deleteALL}">
-            Eliminar todo
-        </Button>
-        <Button outline color="info" on:click="{getPreviewPage}">
-           Atrás
-        </Button>
-        <Button outline color="info" on:click="{getNextPage}">
-            Siguiente
-         </Button>
          
     {/await}
 </main>

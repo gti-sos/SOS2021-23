@@ -1,25 +1,11 @@
 <script>
 	import MHTable from './MHTable.svelte';
-	import DUtable from './duAPI/dutable.svelte';
+	import UnempTable from'./unempApi/unemploymentTable.svelte';
+	import DUTable from "./duAPI/DUTable.svelte";
 	import Navbar from './Navbar.svelte';
-	import Home from './Home.svelte';
 	import Sidebar from './Sidebar.svelte';
 	import Hamburger from './Hamburger.svelte'
 	import Footer from './Footer.svelte';
-
-	const routes = {
-		"/":Home,
-		"/du-stats": DUtable, 
-		'*': NotFound};
-	
-	function hideTable() {
-  		var x = document.getElementById("mhtable");
-  		if (x.style.display === "none") {
-    		x.style.display = "block";
-  		} else {
-    		x.style.display = "none";
-  		}
-	}
 	let open = false
 </script>
 <!--------------------------------------------------------------------------------------------------------->
@@ -33,16 +19,20 @@
 <Navbar bind:sidebar={open}/>
 
 <!-- Cuerpo -->
-<main id="mhtable">
+<main>
 	<body>
 		<!-- Aquí van las tablas -->
 		<h1>Datos de Salud Mental</h1>
 		<MHTable></MHTable>
-		
-		<h1>Datos de Uso de Drogas</h1>
-		<dutable></dutable>
 	</body>
-	<Footer></Footer>
+	<body>
+		<h1> Paro </h1>
+		<UnempTable></UnempTable>
+	</body>
+	<body>
+		<h1> Drogas </h1>
+		<DUTable></DUTable>
+	</body>
 </main>
 
 <!-- Estilos -->

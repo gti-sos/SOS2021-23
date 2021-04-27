@@ -1,10 +1,10 @@
 <script>
-	import DUTable from './duApi/dutable.svelte';
+	import DUTable from './DUTable.svelte';
 </script>
 
 
 <main>
-	<h1 class="display-3" style="text-align: center;" >API de uso de drogas</h1>
+	<h1 class="display-3" style="text-align: center;" >Life Stats</h1>
 	<div>
 		<DUTable/>
 	</div>
