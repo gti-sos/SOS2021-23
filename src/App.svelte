@@ -1,6 +1,6 @@
 <script>
 	import MHTable from './MHTable.svelte';
-	import DUTable from './duAPI/DUTable.svelte';
+	import dutable from './duAPI/dutable.svelte';
 	import Navbar from './Navbar.svelte';
 	import Home from './Home.svelte';
 	import Sidebar from './Sidebar.svelte';
@@ -35,7 +35,7 @@
 		<MHTable></MHTable>
 		
 		<h1>Datos de Uso de Drogas</h1>
-		<DUTable></DUTable>
+		<dutable></dutable>
 	</body>
 	<Footer></Footer>
 </main>

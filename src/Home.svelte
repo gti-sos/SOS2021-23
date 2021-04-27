@@ -1,41 +1,160 @@
-<main>
-    <head>
-        <link rel='stylesheet' href='/global.css'>
-        <link rel='stylesheet' href='/build/bundle.css'>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    </head>
-    
-    <body>
-        <ul>
-            <li class="has-line-data" data-line-start="2" data-line-end="7">
-            <p class="has-line-data" data-line-start="2" data-line-end="3"><strong>Team</strong></p>
-            <ul>
-            <li class="has-line-data" data-line-start="3" data-line-end="4"><a href="https://github.com/secaasecas">José Carlos Torres Moreno</a></li>
-            </ul>
-            </li>
-            <li class="has-line-data" data-line-start="6" data-line-end="7">
-            <p class="has-line-data" data-line-start="6" data-line-end="7"><strong>Project description</strong>:Our aim is to analyze the relationship between drug use, videogame use, mental health & unemployment at a global scale.</p>
-            </li>
-            <li class="has-line-data" data-line-start="7" data-line-end="8">
-            <p class="has-line-data" data-line-start="7" data-line-end="8"><strong>Repository</strong>: <a href="https://github.com/gti-sos/SOS2021-23">gti-sos/SOS2021-23</a></p>
-            </li>
-            <li class="has-line-data" data-line-start="8" data-line-end="9">
-            <p class="has-line-data" data-line-start="8" data-line-end="9"><strong>URL</strong>: <a href="https://sos2021-23.herokuapp.com">https://sos2021-23.herokuapp.com</a></p>
-            </li>
-            <li class="has-line-data" data-line-start="9" data-line-end="14">
-            <p class="has-line-data" data-line-start="9" data-line-end="10"><strong>APIs</strong>:</p>
-            <ul>
-            <li class="has-line-data" data-line-start="10" data-line-end="11"><a href="https://sos2021-23.herokuapp.com/api/v1/unemployment-stats">https://sos2021-23.herokuapp.com/api/v1/unemployment-stats</a> (developed by <a href="https://github.com/ace58">Antonio Corpas Espinar</a>)</li>
-            <li class="has-line-data" data-line-start="11" data-line-end="12"><a href="https://sos2021-23.herokuapp.com/api/v1/du-stats ">https://sos2021-23.herokuapp.com/api/v1/du-stats </a> (developed by <a href="https://github.com/secaasecas">José Carlos Torres Moreno</a>)</li>
-            <li class="has-line-data" data-line-start="12" data-line-end="14"><a href="https://sos2021-23.herokuapp.com/api/v1/hdi-stats">https://sos2021-23.herokuapp.com/api/v1/hdi-stats</a> (developed by <a href="https://github.com/Jackman97">Antonio Maiquez Marín</a>)</li>
-            <li class="has-line-data" data-line-start="12" data-line-end="14"><a href="https://sos2021-23.herokuapp.com/api/v1/mh-stats">https://sos2021-23.herokuapp.com/api/v1/mh-stats</a> (developed by <a href="https://github.com/Beelthazad">Eduardo Carmona</a>)</li>
-            </ul>
-            </li>
-            <li class="has-line-data" data-line-start="14" data-line-end="18">
-            <p class="has-line-data" data-line-start="14" data-line-end="15"><strong>Postman Documentation</strong>:</p>
-            <ul>
-            <li class="has-line-data" data-line-start="15" data-line-end="16"><a href="https://documenter.getpostman.com/view/14950269/TzJoDzt6">Drug Use API Doc</a> (developed by <a  href="https://github.com/secaasecas">José Carlos Torres</a>)</li>
-           </ul>
-            </li>
-        </ul>
-</main>
+<script>
+    import {
+      Button,
+      Icon,
+      Card,
+      CardBody,
+      CardFooter,
+      CardHeader,
+      CardSubtitle,
+      CardText,
+      CardTitle,
+      Col,
+      Container,
+      Row,
+    } from "sveltestrap";
+  </script>
+  
+  <main>
+    <h1>SOS2021-01</h1>
+  
+    <h2>Team</h2>
+    <Container>
+      <Col>
+        <a href="http://github.com/secaasecas">José Carlos Torres Moreno</a>
+      </Col>
+      <Col>
+        <a href="http://github.com/Lucia2712">Lucia Castro Perez</a>
+      </Col>
+      <Col>
+        <a href="http://github.com/AbramsM1A2">Abraham Corta Ramirez</a>
+      </Col>
+    </Container>
+  
+    <h2>Project description</h2>
+    <p>
+        Our aim is to analyze the relationship between drug use,HDI, mental health & unemployment at a global scale.
+    </p>
+  
+    <Container>
+      <Col>
+        <a href="http://github.com/gti-sos/SOS2021-23"
+          ><b>Repository: </b>http://github.com/gti-sos/SOS2021-23</a
+        >
+      </Col>
+      <Col>
+        <a href="http://sos2021-23.herokuapp.com"
+          ><b>URL: </b>http://sos2021-23.herokuapp.com</a
+        >
+      </Col>
+    </Container>
+  
+    <h2>APIs</h2>
+    <Container>
+      <Col xs="auto">
+        <Card class="mb-3">
+          <CardHeader>
+            <CardTitle><h5>Drugs Stats</h5></CardTitle>
+          </CardHeader>
+          <CardBody>
+            <CardSubtitle />
+            <CardText
+              >Drug use data source.</CardText
+            >
+            <a href="https://sos2021-23.herokuapp.com/api/v1/du-stats">
+              <Button color="primary">Backend</Button></a
+            >
+            <a href="/#/du-stats">
+              <Button color="primary">Frontend</Button>
+            </a>
+            <a href="https://documenter.getpostman.com/view/14950269/TzJoDzt6"
+              ><Button color="info">Postman Documentation</Button></a
+            >
+          </CardBody>
+          <CardFooter
+            >developed by
+            <a href="https://github.com/secaasecas">José Carlos Torres Moreno</a
+            ></CardFooter
+          >
+        </Card>
+      </Col>
+      <Col xs="auto">
+        <Card class="mb-3">
+          <CardHeader>
+            <CardTitle><h5>Life-stats</h5></CardTitle>
+          </CardHeader>
+          <CardBody>
+            <CardSubtitle />
+            <CardText
+              >Quality of life index data source by country, which is linked to
+              the purchasing power index and the safety index.</CardText
+            >
+            <a href="https://sos2021-01.herokuapp.com/api/v1/life-stats">
+              <Button color="primary">Backend</Button>
+            </a>
+            <a href="/#/life-stats">
+              <Button color="primary">Frontend</Button>
+            </a>
+            <a href="https://documenter.getpostman.com/view/14961437/TzJoDg1P">
+              <Button color="info">Postman Documentation</Button>
+            </a>
+          </CardBody>
+          <CardFooter
+            >developed by
+            <a href="https://github.com/Lucia2712">Lucia Castro Perez</a>
+          </CardFooter>
+        </Card>
+      </Col>
+      <Col xs="auto">
+        <Card class="mb-3">
+          <CardHeader>
+            <CardTitle><h5>Natality-stats</h5></CardTitle>
+          </CardHeader>
+          <CardBody>
+            <CardSubtitle />
+            <CardText>
+              Men and women born, natality and fertlity ratios by year and
+              country.
+            </CardText>
+            <a href="/api/v1/natality-stats"
+              ><Button color="primary">Backend</Button></a
+            >
+            <a href="/#/natality-stats"
+              ><Button color="primary">Frontend</Button></a
+            >
+            <a href="https://documenter.getpostman.com/view/14932491/TzJrCzRM"
+              ><Button color="info">Postman Documentation</Button></a
+            >
+          </CardBody>
+          <CardFooter
+            >developed by
+            <a href="https://github.com/AbramsM1A2">Abraham Corta Ramírez</a
+            ></CardFooter
+          >
+        </Card>
+      </Col>
+    </Container>
+  </main>
+  
+  <style>
+    main {
+      text-align: center;
+      padding: 1em;
+      max-width: 240px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #ff3e00;
+      text-transform: uppercase;
+      font-size: 4em;
+      font-weight: 100;
+    }
+    b {
+      color: #00c1ff;
+    }
+    @media (min-width: 640px) {
+      main {
+        max-width: none;
+      }
+    }
+  </style>
