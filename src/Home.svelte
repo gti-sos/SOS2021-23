@@ -103,6 +103,29 @@
             </CardFooter>
         </Card>
       </Col>
+      <Col xs="auto">
+        <Card class="mb-3">
+          <CardHeader>
+            <CardTitle><h5>Porcentajes de paro</h5></CardTitle>
+          </CardHeader>
+          <CardBody>
+            <CardSubtitle />
+            <CardText>Porcentaje de paro según diferentes fuentes.</CardText>
+            <a href="https://sos2021-23.herokuapp.com/api/v1/unemployment-stats">
+              <Button color="primary">Backend</Button></a>
+            <a href="/#/unemployment-stats">
+              <Button color="primary">Frontend</Button>
+            </a>
+            <a href="https://documenter.getpostman.com/view/14941751/TzJuAJ6j"
+              ><Button color="info">Documentación Backend en Postman</Button></a>
+            
+          </CardBody>
+          <CardFooter
+            >desarrollado por 
+            <a href="https://github.com/ace58">Antonio Corpas</a>
+            </CardFooter>
+        </Card>
+      </Col>
 
     </Container>
   </main>
