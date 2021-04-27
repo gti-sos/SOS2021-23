@@ -7,6 +7,11 @@
 	import Hamburger from './Hamburger.svelte'
 	import Footer from './Footer.svelte';
 
+	const routes = {
+		"/":Home,
+		"/du-stats": DUtable, 
+		'*': NotFound};
+	
 	function hideTable() {
   		var x = document.getElementById("mhtable");
   		if (x.style.display === "none") {
