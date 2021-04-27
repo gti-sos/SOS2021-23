@@ -87,8 +87,7 @@
           </CardHeader>
           <CardBody>
             <CardSubtitle />
-            <CardText
-              >Drug use data source.</CardText>
+            <CardText>Estadísticas de Salud Mental recogidas en el año 2017 en distintos países.</CardText>
             <a href="https://sos2021-23.herokuapp.com/api/v1/mh-stats">
               <Button color="primary">Backend</Button></a>
             <a href="/#/mh-stats">
@@ -99,7 +98,7 @@
             
           </CardBody>
           <CardFooter
-            >developed by
+            >desarrollado por 
             <a href="https://github.com/Beelthazad">Eduardo Carmona</a>
             </CardFooter>
         </Card>
