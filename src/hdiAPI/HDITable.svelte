@@ -26,6 +26,7 @@
 		hdischolar:"",
 	}
     
+    
     let errorMSG = null;
     onMount(getData);
  
@@ -33,11 +34,11 @@
     async function getData() {
  
         console.log("Fetching HDI Data...");
-        const res = await fetch("/api/v1/hdi-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/hdi-stats");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
-            du_stats = json;
+            hdi_stats = json;
             console.log("Received " + hdi_stats.length + " HDI Data.");
         } else {
             errorMSG= res.status;// + ": " + res.statusText;
@@ -50,7 +51,7 @@
  
         console.log("Fetching hdi data...");
         await fetch("/api/v1/hdi-stats/loadInitialData");
-        const res = await fetch("/api/v1/hdi-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/hdi-stats");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -81,7 +82,7 @@
          else{
              const res = await fetch("/api/v1/hdi-stats",{
              method:"POST",
-             body:JSON.stringify(newData),
+             body:JSON.stringify(data),
              headers:{
                  "Content-Type": "application/json"
              }
@@ -212,6 +213,9 @@
     <Button color="danger" on:click="{deleteALL}">
         Eliminar todo
     </Button>
+    <Button outline color="info" on:click="{getNextPage}">
+        Siguiente
+     </Button>
 
     {#await hdi_stats}
         Loading data...

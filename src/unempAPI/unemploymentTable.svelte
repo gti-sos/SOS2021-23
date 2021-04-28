@@ -26,6 +26,7 @@
 		gfperc:""
 	}
     
+    
     let errorMSG = null;
     onMount(getData);
  

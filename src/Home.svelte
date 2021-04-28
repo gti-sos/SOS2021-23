@@ -136,7 +136,7 @@
           <CardText>Recogidas por la UNDP</CardText>
           <a href="https://sos2021-23.herokuapp.com/api/v1/hdi-stats">
             <Button color="primary">Backend</Button></a>
-          <a href="/">
+          <a href="/#/hdi-stats">
             <Button color="primary">Frontend</Button>
           </a>
           <a href="https://documenter.getpostman.com/view/14943559/TzJoDfQ5"
