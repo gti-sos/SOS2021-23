@@ -23,25 +23,49 @@ function elementExists(obj, obj_t) {
 }
 
 module.exports.register = (app) => {
-    var hdi_countries = [];
+    var hdi_countries = [
+		{
+			"country": "Spain",
+			"year": "2017",
+			"hdi-rank": "25",
+			"hdi-value": "0.903",
+			"hdi-scholar": "17.9"
+		},
+		{
+			"country": "France",
+			"year": "2017",
+			"hdi-rank": "26",
+			"hdi-value": "0.897",
+			"hdi-scholar": "15.5"
+		},
+		{
+			"country": "Germany",
+			"year": "2017",
+			"hdi-rank": "6",
+			"hdi-value": "0.943",
+			"hdi-scholar": "17.0"
+		},
+		{
+			"country": "United Kingdom",
+			"year": "2017",
+			"hdi-rank": "13",
+			"hdi-value": "0.926",
+			"hdi-scholar": "17.5"
+		},
+		{
+			"country": "USA",
+			"year": "2017",
+			"hdi-rank": "17",
+			"hdi-value": "0.924",
+			"hdi-scholar": "16.3"
+		}
+	];
 
     // Methods involving base path
     app.get(BASE_API_PATH_MEM+"/loadInitialData", (request, response) =>{
-        if (hdi_countries.length == 0) {
-            try {
-            let rawdata = fs.readFileSync('./hdi-stats-api/hdi-stats.json');
-            hdi_countries = JSON.parse(rawdata);
-            db.insert(hdi_countries);
-            } catch {
-                console.log('Error parsing .json file');
-        }
-            console.log('[!] hdi-stats.json loaded onto hdi_countries');
-            console.log(JSON.stringify(hdi_countries, null));
-            response.status(200).send("<h3>Successfuly loaded "+ hdi_countries.length + " resources</h3><p>You can head now to /api/v1/hdi-stats to check newly created resources</p>")
-        } else {
-            console.log('[!] GET request to /loadInitialData but resources are already loaded.');
-            response.status(400).send("<h1>Resources already loaded. Head back to /api/v1/hdi-stats to check them.</h1>")
-        }
+		db.insert(hdi_stats);
+		console.log(`Initial data: <${JSON.stringify(hdi_stats, null, 2)}>`);
+		res.sendStatus(200);
     });
     app.get(BASE_API_PATH_MEM, (request, response) =>{
         var limit = parseInt(req.query.limit);
@@ -54,7 +78,7 @@ module.exports.register = (app) => {
 			search["year"] = parseInt(req.query.year);
 		if(req.query.hdirank) 
 			search["hdirank"] = req.query.hdirank;
-		if(req.query.hdivalue 
+		if(req.query.hdivalue )
 			search["hdivalue"] = req.query.hdivalue;
 		if(req.query.hdischolar) 
 			search["hdischolar"] = req.query.hdischolar;
