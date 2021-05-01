@@ -81,9 +81,7 @@ app.get("/api/v1/mh-stats/docs", (request, response) => {
 	response.redirect(301, 'https://documenter.getpostman.com/view/14943559/TzJoDfQ5');
 });
 // Redirect a la nueva doc, 
-app.get("/", (request, response) => {
-	response.redirect(301, "https://sos2021-23.herokuapp.com/#/info");
-})
+
 
 // Inicializar el listener del servidor
 app.listen(port, () => {
