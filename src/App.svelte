@@ -8,7 +8,7 @@
 	import HDISTATS from "./hdiAPI/HDITable.svelte";
 	
 	const routes = {
-		"/":Home,
+		"/info":Home,
 		"/unemployment-stats":UnemploymentTable,
 		"/du-stats":DUSTATS,
 		"/mh-stats":MHST,

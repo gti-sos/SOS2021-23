@@ -1,10 +1,20 @@
-{"country":"Brazil","year":"2017","population":"207,900,000","anxdaly":"554.75","eating":"601,275.09","adhd":"2,061,000","bipolar":"2,041,000","depression":"7,220,000","schizophrenia":"469,324","_id":"1cDaNeAl7PKD44nZ"}
-{"country":"Spain","year":"2017","population":"46,600,000","anxdaly":"463.69","eating":"257,180.25","adhd":"530,553.88","bipolar":"451,100.50","depression":"1,820,000","schizophrenia":"152,911","_id":"5OBpGo5b0hwgYuoU"}
-{"country":"Italy","year":"2017","population":"60,500,000","anxdaly":"499.21","eating":"275,512.61","adhd":"462,874.53","bipolar":"579,379.78","depression":"2,390,000","schizophrenia":"167,800","_id":"II4fe41Jo903FOT4"}
-{"country":"Mexico","year":"2017","population":"129,200,000","anxdaly":"289.05","eating":"395,538.83","adhd":"797,378.30","bipolar":"1,000,000","depression":"3,340,000","schizophrenia":"258,084","_id":"LBwtWa8VgkJoLXGG"}
-{"country":"United Kingdom","year":"2017","population":"66,200,000","anxdaly":"406.09","eating":"292,074.93","adhd":"493,584.81","bipolar":"700,204.25","depression":"2,900,000","schizophrenia":"191,745","_id":"OiqshhMuf5Q4P1Xm"}
-{"country":"Canada","year":"2017","population":"36,700,000","anxdaly":"450.76","eating":"134,371.87","adhd":"346,346.07","bipolar":"252,358.84","depression":"1,440,000","schizophrenia":"124,944","_id":"WxwFg86Q5RM7vA5w"}
-{"country":"Germany","year":"2017","population":"83,100,000","anxdaly":"565.03","eating":"280,994.90","adhd":"217,172.39","bipolar":"651,663.25","depression":"3,660,000","schizophrenia":"239,739","_id":"YCvvtVaevAMR4azI"}
-{"country":"USA","year":"2017","population":"325,400,000","anxdaly":"573.38","eating":"1,036,000","adhd":"3,016,000","bipolar":"2,006,000","depression":"15,500,000","schizophrenia":"1,150,000","_id":"bkI7B3EztwnCa1rl"}
-{"country":"France","year":"2017","population":"65,000,000","anxdaly":"576.03","eating":"280,994.90","adhd":"496,640.31","bipolar":"600,789.21","depression":"2,950,000","schizophrenia":"179,592","_id":"lmgsUZFccXmNnKNn"}
-{"country":"Greenland","year":"2017","population":"56,172","anxdaly":"500.98","eating":"265.02","adhd":"623.68","bipolar":"333.38","depression":"3,455.15","schizophrenia":"196","_id":"w4TFIJaZye4sVIIW"}
+{"country":"Mexico","year":"2017","population":"129,200,000","anxdaly":"289.05","eating":"395,538.83","adhd":"797,378.30","bipolar":"1,000,000","depression":"3,340,000","schizophrenia":"258,084","_id":"5fldphoFLuYDTipr"}
+{"country":"United Kingdom","year":"2017","population":"66,200,000","anxdaly":"406.09","eating":"292,074.93","adhd":"493,584.81","bipolar":"700,204.25","depression":"2,900,000","schizophrenia":"191,745","_id":"BPUYMIlstygtdZOR"}
+{"country":"Germany","year":"2017","population":"83,100,000","anxdaly":"565.03","eating":"280,994.90","adhd":"217,172.39","bipolar":"651,663.25","depression":"3,660,000","schizophrenia":"239,739","_id":"F9yVgTYJCaicR43A"}
+{"country":"Spain","year":"2017","population":"46,600,000","anxdaly":"463.69","eating":"257,180.25","adhd":"530,553.88","bipolar":"451,100.50","depression":"1,820,000","schizophrenia":"152,911","_id":"RGe16RSl3SPvjjHL"}
+{"country":"Brazil","year":"2017","population":"207,900,000","anxdaly":"554.75","eating":"601,275.09","adhd":"2,061,000","bipolar":"2,041,000","depression":"7,220,000","schizophrenia":"469,324","_id":"RUERR4W7bEg1ER5V"}
+{"country":"USA","year":"2017","population":"325,400,000","anxdaly":"573.38","eating":"1,036,000","adhd":"3,016,000","bipolar":"2,006,000","depression":"15,500,000","schizophrenia":"1,150,000","_id":"UZPiQq2tpMwL7cyp"}
+{"country":"Italy","year":"2017","population":"60,500,000","anxdaly":"499.21","eating":"275,512.61","adhd":"462,874.53","bipolar":"579,379.78","depression":"2,390,000","schizophrenia":"167,800","_id":"VLMArsDtAbSt67xC"}
+{"country":"Canada","year":"2017","population":"36,700,000","anxdaly":"450.76","eating":"134,371.87","adhd":"346,346.07","bipolar":"252,358.84","depression":"1,440,000","schizophrenia":"124,944","_id":"XYVvRHtcxerGFBmi"}
+{"country":"France","year":"2017","population":"65,000,000","anxdaly":"576.03","eating":"280,994.90","adhd":"496,640.31","bipolar":"600,789.21","depression":"2,950,000","schizophrenia":"179,592","_id":"pikez9bZFoHYY3L6"}
+{"country":"Greenland","year":"2017","population":"56,172","anxdaly":"500.98","eating":"265.02","adhd":"623.68","bipolar":"333.38","depression":"3,455.15","schizophrenia":"196","_id":"yMQNzPhuj0EHCq6h"}
+{"$$deleted":true,"_id":"5fldphoFLuYDTipr"}
+{"$$deleted":true,"_id":"BPUYMIlstygtdZOR"}
+{"$$deleted":true,"_id":"F9yVgTYJCaicR43A"}
+{"$$deleted":true,"_id":"RGe16RSl3SPvjjHL"}
+{"$$deleted":true,"_id":"RUERR4W7bEg1ER5V"}
+{"$$deleted":true,"_id":"UZPiQq2tpMwL7cyp"}
+{"$$deleted":true,"_id":"VLMArsDtAbSt67xC"}
+{"$$deleted":true,"_id":"XYVvRHtcxerGFBmi"}
+{"$$deleted":true,"_id":"pikez9bZFoHYY3L6"}
+{"$$deleted":true,"_id":"yMQNzPhuj0EHCq6h"}
