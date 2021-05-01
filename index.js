@@ -82,7 +82,7 @@ app.get("/api/v1/mh-stats/docs", (request, response) => {
 });
 // Redirect a la nueva doc, 
 app.get("/", (request, response) => {
-	response.redirect(301, "#/info");
+	response.redirect(301, "/#/info");
 })
 
 // Inicializar el listener del servidor
