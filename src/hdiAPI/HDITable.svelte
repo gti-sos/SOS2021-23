@@ -34,7 +34,7 @@
     async function getData() {
  
         console.log("Fetching HDI Data...");
-        const res = await fetch("/api/v1/hdi-stats");
+        const res = await fetch("/api/v1/hdi-stats?limit=5&offset=1");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
