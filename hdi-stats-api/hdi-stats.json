@@ -2,36 +2,36 @@
     {
         "country": "Spain",
         "year": "2017",
-        "hdi-rank": "25",
-        "hdi-value": "0.903",
-        "hdi-scholar": "17.9"
+        "hdirank": "25",
+        "hdivalue": "0.903",
+        "hdischolar": "17.9"
     },
     {
         "country": "France",
         "year": "2017",
-        "hdi-rank": "26",
-        "hdi-value": "0.897",
-        "hdi-scholar": "15.5"
+        "hdirank": "26",
+        "hdivalue": "0.897",
+        "hdischolar": "15.5"
     },
     {
         "country": "Germany",
         "year": "2017",
-        "hdi-rank": "6",
-        "hdi-value": "0.943",
-        "hdi-scholar": "17.0"
+        "hdirank": "6",
+        "hdivalue": "0.943",
+        "hdischolar": "17.0"
     },
     {
         "country": "United Kingdom",
         "year": "2017",
-        "hdi-rank": "13",
-        "hdi-value": "0.926",
-        "hdi-scholar": "17.5"
+        "hdirank": "13",
+        "hdivalue": "0.926",
+        "hdischolar": "17.5"
     },
     {
         "country": "USA",
         "year": "2017",
-        "hdi-rank": "17",
-        "hdi-value": "0.924",
-        "hdi-scholar": "16.3"
+        "hdirank": "17",
+        "hdivalue": "0.924",
+        "hdischolar": "16.3"
     }
 ]

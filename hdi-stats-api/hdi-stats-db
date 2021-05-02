@@ -1,5 +1,17 @@
-{"country":"France","year":"2017","hdi-rank":"26","hdi-value":"0.897","hdi-scholar":"15.5","_id":"KjQkCKSfPgiBQ8Jk"}
-{"country":"United Kingdom","year":"2017","hdi-rank":"13","hdi-value":"0.926","hdi-scholar":"17.5","_id":"Lo8eElidTPd7sMTJ"}
-{"country":"USA","year":"2017","hdi-rank":"17","hdi-value":"0.924","hdi-scholar":"16.3","_id":"YY0IsRymk7gzcMv9"}
-{"country":"Spain","year":"2017","hdi-rank":"25","hdi-value":"0.903","hdi-scholar":"17.9","_id":"gWumWYYZJKkudAfK"}
-{"country":"Germany","year":"2017","hdi-rank":"6","hdi-value":"0.943","hdi-scholar":"17.0","_id":"w95mW8Wv0pknGDIg"}
+{"country":"France","year":"2017","hdirank":"26","hdivalue":"0.897","hdischolar":"15.5","_id":"7B8lkZlzECIV9ceE"}
+{"country":"United Kingdom","year":"2017","hdirank":"13","hdivalue":"0.926","hdischolar":"17.5","_id":"LKCFIz33DPm2XYXR"}
+{"country":"USA","year":"2017","hdirank":"17","hdivalue":"0.924","hdischolar":"16.3","_id":"V9Yt2hwQRFdEHJYz"}
+{"country":"Spain","year":"2017","hdirank":"25","hdivalue":"0.903","hdischolar":"17.9","_id":"XmyHUerv9KSyRncF"}
+{"country":"Germany","year":"2017","hdirank":"6","hdivalue":"0.943","hdischolar":"17.0","_id":"vKbKj1hkgV2n1P0r"}
+{"country":"j","year":"1","hdirank":"1","hdivalue":"1","hdischolar":"1","_id":"LyQb39DMSio6r24g"}
+{"$$deleted":true,"_id":"LyQb39DMSio6r24g"}
+{"$$deleted":true,"_id":"LKCFIz33DPm2XYXR"}
+{"$$deleted":true,"_id":"7B8lkZlzECIV9ceE"}
+{"$$deleted":true,"_id":"V9Yt2hwQRFdEHJYz"}
+{"$$deleted":true,"_id":"XmyHUerv9KSyRncF"}
+{"$$deleted":true,"_id":"vKbKj1hkgV2n1P0r"}
+{"country":"Spain","year":"2017","hdirank":"25","hdivalue":"0.903","hdischolar":"17.9","_id":"BolaXSoB3immxT6Z"}
+{"country":"France","year":"2017","hdirank":"26","hdivalue":"0.897","hdischolar":"15.5","_id":"OPlATvjWrthBzFyf"}
+{"country":"Germany","year":"2017","hdirank":"6","hdivalue":"0.943","hdischolar":"17.0","_id":"omvDWo2JZQCxVH31"}
+{"country":"United Kingdom","year":"2017","hdirank":"13","hdivalue":"0.926","hdischolar":"17.5","_id":"9PBBk6b78i6OwnEa"}
+{"country":"USA","year":"2017","hdirank":"17","hdivalue":"0.924","hdischolar":"16.3","_id":"n610slyBifPuT3di"}
