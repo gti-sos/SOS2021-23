@@ -181,23 +181,23 @@ module.exports.register = (app) => {
     app.put(BASE_API_PATH_MEM + "/:country/:year", (req, res) => {
         var country = req.params.country;
 		var year = req.params.year;
-		var updatedEmploy = req.body;
+		var updatedhdi = req.body;
 		var query = {"country":country, "year":year};
 	
-		if (!updatedEmploy.country 
-			|| !updatedEmploy.year 
-			|| !updatedEmploy['hdirankc'] 
-			|| !updatedEmploy['hdivaluec'] 
-			|| !updatedEmploy['hdischolarc'] 
-			|| country != updatedEmploy.country 
-			|| year != updatedEmploy.year
-			|| Object.keys(updatedEmploy).length != 5){
-	
+		if (!updatedhdi.country 
+			|| !updatedhdi.year 
+			|| !updatedhdi['hdirank'] 
+			|| !updatedhdi['hdivalue'] 
+			|| !updatedhdi['hdischolar'] 
+			|| country != updatedhdi.country 
+			|| year != updatedhdi.year
+			|| Object.keys(updatedhdi).length != 5){
+           
 			console.log("Missing any field");
 			return res.sendStatus(400);
 		} 
 		else {
-			db.update(query,updatedEmploy,(err,data) =>{
+			db.update(query,updatedhdi,(err,data) =>{
 				if(err){
 					console.error("ERROR accesing DB in PUT");
 					res.sendStatus(500);
