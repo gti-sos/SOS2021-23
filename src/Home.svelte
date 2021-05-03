@@ -71,7 +71,7 @@
             <Button color="primary">Frontend</Button>
           </a>
           <a href="https://documenter.getpostman.com/view/14950269/TzJoDzt6"
-            ><Button color="info">Documentación Backend en Postman</Button></a>
+            ><Button color="info">Documentación Back-end en Postman</Button></a>
         </CardBody>
         <CardFooter
           >developed by
