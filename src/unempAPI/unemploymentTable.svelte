@@ -209,6 +209,7 @@
         <Button outline color="info" on:click="{getNextPage}">
             Siguiente
          </Button>
+         <p>Si quieres editar las estadisticas de un país haz click en el nombre del país. </p>
     
 
     {#await unemployment_stats}
@@ -280,7 +281,7 @@
                         <td>{sc.year}</td>
                         <td>{sc.knoperc}</td>
                         <td>{sc.intperc}</td>
-                        <td>{sc.intperc}</td>
+                        <td>{sc.gfperc}</td>
                         <td><Button outline color="danger" on:click="{deleteData(sc.country, sc.year)}">Borrar</Button></td>
                         
                     </tr>

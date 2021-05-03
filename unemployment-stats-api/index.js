@@ -80,42 +80,38 @@ var unemployment_stats = [
 	});
 
     //GET a la lista de recursos
-    app.get(BASE_API_PATH_ACE , (req, res) => {
-		var limit = parseInt(req.query.limit);
-		var offset = parseInt(req.query.offset);
-		var search = {};
-	
-		if(req.query.country) 
-			search["country"] = req.query.country;
-		if(req.query.year) 
-			search["year"] = parseInt(req.query.year);
-		if(req.query.knoperc) 
-			search["knoperc"] = req.query.knoperc;
-		if(req.query.dudead) 
-			search["intperc"] = req.query.intperc;
-		if(req.query.dudependenceperc) 
-			search["gfperc"] = req.query.gfperc;
-	
-		db.find(search).skip(offset).limit(limit).exec((err,data)=>{
-			if(err){
-				console.error("ERROR accessing DB in GET");
-				res.sendStatus(500);
-			}else {
-				if (data.length != 0){
-					data.forEach((a)=>{delete a._id; }); 
-					console.log(search)
-					return res.send(JSON.stringify(data,null,2));
-					return res.sendStatus(200);
-				} else {
-					console.log(search)
-					console.log("No data found");
-					return res.sendStatus(404);
-				}
-	
-	
-			}
-		});
-	});
+    app.get(BASE_API_PATH_ACE, (request, response) =>{        
+        var offset;
+        var limit;
+
+        var search = {};
+        if (request.query.country) {search["country"] = request.query.country}
+        if (request.query.year) {search["year"] = request.query.year}
+        if (request.query.knoperc) {search["knoperc"] = request.query.knoperc}
+        if (request.query.intperc) {search["intperc"] = request.query.intperc}
+        if (request.query.gfperc) {search["gfperc"] = request.query.gfperc}
+        if (db.count({}) == 0) {
+            console.log('[!] Se ha hecho una petición a los recursos pero no han sido cargados.');
+            return response.status(404).send("<p>No se han cargado los recursos. Para ello dale a cargar datos</p>");
+        } else {
+            var offset;
+            var limit;
+            db.find(search).skip(offset).limit(limit).exec((err, dbdata) => {
+                if (err) {
+                    console.log("[!] Error al acceder a unemployment-stats.db " + err);
+                    return response.status(500).send("<h1>Error al acceder a la base de datos</h1>");
+                } else {
+                    if (dbdata == 0) {
+                        console.log("[!] La base de datos está vacia");
+                        return response.status(404).send("<h1>No se han cargado los recursos. Para ello dale a cargar datos</h1>");
+                    } else {
+                        dbdata.forEach((data) =>{ delete data._id});
+                        return response.status(200).send(JSON.stringify(dbdata,null, 2));
+                    }
+                }
+            })
+        }
+    });
 
     //POST a la lista de recursos
     app.post(BASE_API_PATH_ACE, (req, res) => {

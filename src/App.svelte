@@ -6,13 +6,15 @@
 	import UnemploymentTable from "./unempAPI/unemploymentTable.svelte";
 	import DUSTATS from "./duAPI/DUTable.svelte";
 	import HDISTATS from "./hdiAPI/HDITable.svelte";
+	import EUT from "./unempAPI/EditUnempTable.svelte";
 	
 	const routes = {
 		"/info":Home,
 		"/unemployment-stats":UnemploymentTable,
 		"/du-stats":DUSTATS,
 		"/mh-stats":MHST,
-		"/hdi-stats":HDISTATS};
+		"/hdi-stats":HDISTATS,
+		"/unemployment-stats/:country/:year":EUT};
 </script>
 <main>
 	<Router {routes}> </Router>
