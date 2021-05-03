@@ -130,6 +130,24 @@
              });	
          }
      }
+
+    //EDITAR RECURSO
+
+    let oldcountry = "";
+    let oldyear = "";
+    async function editData(newData) {
+    deleteData(oldcountry, oldyear);
+    getData();
+    insertData(newData);
+    closeForm(); 
+
+    newData.country =  "";
+    newData.year = "";
+    newData.dupopulation =  "";
+    newData.dudead = "";
+    newData.dudependenceperc = "";
+
+  }
     //DELETE SPECIFIC
     async function deleteData(name, year) {
         const res = await fetch("/api/v1/du-stats/" + name + "/" + year, {
