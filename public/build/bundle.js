@@ -10727,7 +10727,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			t = text("Documentación Backend en Postman");
+    			t = text("Documentación Back-end en Postman");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
@@ -10921,7 +10921,7 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "José Carlos Torres Moreno";
     			attr_dev(a, "href", "https://github.com/secaasecas");
-    			add_location(a, file$c, 77, 10, 2012);
+    			add_location(a, file$c, 77, 10, 2013);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -11113,7 +11113,7 @@ var app = (function () {
     		c: function create() {
     			h5 = element("h5");
     			h5.textContent = "Estadísticas de Salud Mental";
-    			add_location(h5, file$c, 85, 21, 2228);
+    			add_location(h5, file$c, 85, 21, 2229);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h5, anchor);
@@ -11364,11 +11364,11 @@ var app = (function () {
     			a2 = element("a");
     			create_component(button2.$$.fragment);
     			attr_dev(a0, "href", "https://sos2021-23.herokuapp.com/api/v1/mh-stats");
-    			add_location(a0, file$c, 90, 10, 2467);
+    			add_location(a0, file$c, 90, 10, 2468);
     			attr_dev(a1, "href", "/#/mh-stats");
-    			add_location(a1, file$c, 92, 10, 2596);
+    			add_location(a1, file$c, 92, 10, 2597);
     			attr_dev(a2, "href", "https://documenter.getpostman.com/view/14943559/TzJoDfQ5");
-    			add_location(a2, file$c, 95, 10, 2701);
+    			add_location(a2, file$c, 95, 10, 2702);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -11470,7 +11470,7 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "Eduardo Carmona";
     			attr_dev(a, "href", "https://github.com/Beelthazad");
-    			add_location(a, file$c, 101, 10, 2944);
+    			add_location(a, file$c, 101, 10, 2945);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -11662,7 +11662,7 @@ var app = (function () {
     		c: function create() {
     			h5 = element("h5");
     			h5.textContent = "Porcentajes de paro";
-    			add_location(h5, file$c, 108, 21, 3148);
+    			add_location(h5, file$c, 108, 21, 3149);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h5, anchor);
@@ -11913,11 +11913,11 @@ var app = (function () {
     			a2 = element("a");
     			create_component(button2.$$.fragment);
     			attr_dev(a0, "href", "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats");
-    			add_location(a0, file$c, 113, 10, 3348);
+    			add_location(a0, file$c, 113, 10, 3349);
     			attr_dev(a1, "href", "/#/unemployment-stats");
-    			add_location(a1, file$c, 115, 10, 3487);
+    			add_location(a1, file$c, 115, 10, 3488);
     			attr_dev(a2, "href", "https://documenter.getpostman.com/view/14951179/TzRLmqcv#97fdbfaa-9230-40ab-ae64-1bf99d2d2271");
-    			add_location(a2, file$c, 118, 10, 3602);
+    			add_location(a2, file$c, 118, 10, 3603);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -12019,7 +12019,7 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "Antonio Corpas";
     			attr_dev(a, "href", "https://github.com/ace58");
-    			add_location(a, file$c, 124, 10, 3882);
+    			add_location(a, file$c, 124, 10, 3883);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -12211,7 +12211,7 @@ var app = (function () {
     		c: function create() {
     			h5 = element("h5");
     			h5.textContent = "Estadísticas HDI";
-    			add_location(h5, file$c, 131, 21, 4080);
+    			add_location(h5, file$c, 131, 21, 4081);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h5, anchor);
@@ -12462,11 +12462,11 @@ var app = (function () {
     			a2 = element("a");
     			create_component(button2.$$.fragment);
     			attr_dev(a0, "href", "https://sos2021-23.herokuapp.com/api/v1/hdi-stats");
-    			add_location(a0, file$c, 136, 10, 4254);
+    			add_location(a0, file$c, 136, 10, 4255);
     			attr_dev(a1, "href", "/#/hdi-stats");
-    			add_location(a1, file$c, 138, 10, 4384);
+    			add_location(a1, file$c, 138, 10, 4385);
     			attr_dev(a2, "href", "https://documenter.getpostman.com/view/14943559/TzJoDfQ5");
-    			add_location(a2, file$c, 141, 10, 4490);
+    			add_location(a2, file$c, 141, 10, 4491);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -12568,7 +12568,7 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "Antonio Maiquez";
     			attr_dev(a, "href", "https://github.com/Jackman97");
-    			add_location(a, file$c, 147, 10, 4733);
+    			add_location(a, file$c, 147, 10, 4734);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
