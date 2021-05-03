@@ -34,7 +34,7 @@
     async function getData() {
  
         console.log("Fetching HDI Data...");
-        const res = await fetch("/api/v1/hdi-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/hdi-stats?limit=5&offset=0");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -56,7 +56,7 @@
             console.log("Ok:");
             const json = await res.json();
             hdi_stats = json;
-            totaldata=8;
+            totaldata=5;
             console.log("Received " + hdi_stats.length + " hdi data.");
             //color = "success";
             //errorMSG = "Datos cargados correctamente";
@@ -160,10 +160,40 @@
 			});
 		}
 	}
-    //SEARCH
-    /*
+    async function editData(name, year) {
+        console.log("Inserting hdi data...");
+         //Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
+         if (data.country == "" || data.country == null || data.year == "" || data.year == null) {
+             alert("Los campos 'Pais' y 'Año' no pueden estar vacios");
+         }
+         else{
+             const res = await fetch("/api/v1/hdi-stats/" + name + "/" + year,{
+             method:"PUT",
+             body:JSON.stringify(data),
+             headers:{
+                 "Content-Type": "application/json"
+             }
+             }).then(function (res) {
+                 if(res.status == 200){
+                     getData();
+                     console.log("Data introduced");
+                     errorMSG = 201;
+                 }
+                 else if(res.status == 400){
+                     console.log("ERROR Data was not correctly introduced");
+                     errorMSG = 400;
+                 }
+                 else if(res.status == 409){
+                     console.log("ERROR There is already a data with that country and year in the database");
+                     errorMSG = 409;
+                 }
+             });	
+         }
+     }
+     
     
-    */
+    
+    
     //getNextPage
     async function getNextPage() {
  
@@ -290,7 +320,7 @@
                         <td>{sc.hdischolar}</td>
                         
                         <td><Button outline color="danger" on:click="{deleteData(sc.country, sc.year)}">Borrar</Button></td>
-                        
+                        <td><Button outline color="success" on:click="{editData(sc.country, sc.year)}">Editar</Button></td>
                     </tr>
                 {/each}
             </tbody>

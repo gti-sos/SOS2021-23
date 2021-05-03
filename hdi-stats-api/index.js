@@ -45,41 +45,47 @@ module.exports.register = (app) => {
     });
 
     app.get(BASE_API_PATH_MEM, (req, res) =>{
-        var limit = parseInt(req.query.limit);
-		var offset = parseInt(req.query.offset);
-		var search = {};
-	
-		if(req.query.country) 
-			search["country"] = req.query.country;
-		if(req.query.year) 
-			search["year"] = parseInt(req.query.year);
-		if(req.query.hdirank) 
-			search["hdirank"] = req.query.hdirank;
-		if(req.query.hdivalue )
-			search["hdivalue"] = req.query.hdivalue;
-		if(req.query.hdischolar) 
-			search["hdischolar"] = req.query.hdischolar;
-	
-		db.find(search).skip(offset).limit(limit).exec((err,data)=>{
-			if(err){
-				console.error("ERROR accessing DB in GET");
-				res.sendStatus(500);
-			}else {
-				if (data.length != 0){
-					data.forEach((a)=>{delete a._id; }); 
-					console.log(search)
-					return res.send(JSON.stringify(data,null,2));
-					return res.sendStatus(200);
-				} else {
-					console.log(search)
-					console.log("No data found");
-					return res.sendStatus(404);
-				}
-	
-	
-			}
-		});
-	});
+		var offset;
+        var limit;
+
+        var search = {};
+        if (req.query.country) {search["country"] = req.query.country}
+        if (req.query.year) {search["year"] = req.query.year}
+        if (req.query.hdirank) {search["hdirank"] = req.query.hdirank}
+        if (req.query.hdivalue) {search["hdivalue"] = req.query.hdivalue}
+        if (req.query.hdischolar) {search["hdischolar"] = req.query.hdischolar}
+        if (db.count({}) == 0) {
+            console.log('[!] Resource hdi_countries has been requested, but are not loaded.');
+            return res.status(404).send("<p>Resources not found. Head to /loadInitialData to create them.</p>");
+        } else {
+            var offset;
+            var limit;
+            if (req.query.offset) {
+                offset = parseInt(req.query.offset);
+                console.log("[INFO] OFFSET: " + offset);
+                delete req.query.offset;
+            }
+            if (req.query.limit) {
+                limit = parseInt(req.query.limit);
+                console.log("[INFO] LIMIT: " + limit);
+                delete req.query.limit;
+            }
+            db.find(search).skip(offset).limit(limit).exec((err, dbdata) => {
+                if (err) {
+                    console.log("[!] Error accessing hdi-stats.db " + err);
+                    return res.status(500).send("<h1>Error accessing database</h1>");
+                } else {
+                    if (dbdata == 0) {
+                        console.log("[!] Database hdi-stats is EMPTY!");
+                        return res.status(404).send("<h1>Resources not found. Head to /loadInitialData to create them.</h1>");
+                    } else {
+                        dbdata.forEach((data) =>{ delete data._id});
+                        return res.status(200).send(JSON.stringify(dbdata,null, 2));
+                    }
+                }
+            })
+        }
+    });
         
 
  app.post(BASE_API_PATH_MEM, (req, res) => {

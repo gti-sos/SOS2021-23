@@ -1,4 +1,82 @@
-{"country":"USA","year":"2017","hdirank":"17","hdivalue":"0.924","hdischolar":"16.3","_id":"5gVaSQ42B1NkDcss"}
-{"country":"Germany","year":"2017","hdirank":"6","hdivalue":"0.943","hdischolar":"17.0","_id":"mrZ3YRlRri9yuivO"}
-{"country":"United Kingdom","year":"2017","hdirank":"13","hdivalue":"0.926","hdischolar":"17.5","_id":"vb2s5dLpMIf6CAzI"}
-{"country":"Spain","year":"2017","hdirank":"1","hdivalue":"0.94","hdischolar":"1","_id":"wY5rhmElT9lJCEbw"}
+{"country":"Spain","year":"2017","hdirank":"25","hdivalue":"0.903","hdischolar":"17.9","_id":"ie4oL4KS3KjZoc8L"}
+{"country":"France","year":"2017","hdirank":"26","hdivalue":"0.897","hdischolar":"15.5","_id":"79wQh8vxAPEL7g40"}
+{"country":"Germany","year":"2017","hdirank":"6","hdivalue":"0.943","hdischolar":"17.0","_id":"SA47ZiIQ8qUUDCvp"}
+{"country":"United Kingdom","year":"2017","hdirank":"13","hdivalue":"0.926","hdischolar":"17.5","_id":"Sc7fh24qameWgRGO"}
+{"country":"USA","year":"2017","hdirank":"17","hdivalue":"0.924","hdischolar":"16.3","_id":"Kg1Bk2tS6EDKp0Ma"}
+{"$$deleted":true,"_id":"ie4oL4KS3KjZoc8L"}
+{"$$deleted":true,"_id":"Sc7fh24qameWgRGO"}
+{"$$deleted":true,"_id":"SA47ZiIQ8qUUDCvp"}
+{"$$deleted":true,"_id":"Kg1Bk2tS6EDKp0Ma"}
+{"$$deleted":true,"_id":"79wQh8vxAPEL7g40"}
+{"country":"Spain","year":"2017","hdirank":"25","hdivalue":"0.903","hdischolar":"17.9","_id":"7SC3s3k0eoreXGTm"}
+{"country":"France","year":"2017","hdirank":"26","hdivalue":"0.897","hdischolar":"15.5","_id":"CsGEq31GvKGmFDGi"}
+{"country":"Germany","year":"2017","hdirank":"6","hdivalue":"0.943","hdischolar":"17.0","_id":"3wSMCrP7qmrVciVo"}
+{"country":"United Kingdom","year":"2017","hdirank":"13","hdivalue":"0.926","hdischolar":"17.5","_id":"SmGCFeV0oUDL82vp"}
+{"country":"USA","year":"2017","hdirank":"17","hdivalue":"0.924","hdischolar":"16.3","_id":"WrDnGe6oniPYJ0WD"}
+{"$$deleted":true,"_id":"WrDnGe6oniPYJ0WD"}
+{"$$deleted":true,"_id":"SmGCFeV0oUDL82vp"}
+{"$$deleted":true,"_id":"CsGEq31GvKGmFDGi"}
+{"$$deleted":true,"_id":"7SC3s3k0eoreXGTm"}
+{"$$deleted":true,"_id":"3wSMCrP7qmrVciVo"}
+{"country":"j","year":"1","hdirank":"1","hdivalue":"1","hdischolar":"1","_id":"phkPLWVcXKXCWOC5"}
+{"$$deleted":true,"_id":"phkPLWVcXKXCWOC5"}
+{"country":"Spain","year":"2017","hdirank":"25","hdivalue":"0.903","hdischolar":"17.9","_id":"OPJuayEhYIi1f1Vm"}
+{"country":"France","year":"2017","hdirank":"26","hdivalue":"0.897","hdischolar":"15.5","_id":"J14LePrk7ycAoPJV"}
+{"country":"Germany","year":"2017","hdirank":"6","hdivalue":"0.943","hdischolar":"17.0","_id":"IKNTiXs56LXbswkj"}
+{"country":"United Kingdom","year":"2017","hdirank":"13","hdivalue":"0.926","hdischolar":"17.5","_id":"NdnuqGHonnpBp89p"}
+{"country":"USA","year":"2017","hdirank":"17","hdivalue":"0.924","hdischolar":"16.3","_id":"OQ6ceWVtzXSZOjSR"}
+{"country":"j","year":"1","hdirank":"1","hdivalue":"1","hdischolar":"1","_id":"H7eW65OaylIxrWT2"}
+{"$$deleted":true,"_id":"OQ6ceWVtzXSZOjSR"}
+{"$$deleted":true,"_id":"OPJuayEhYIi1f1Vm"}
+{"$$deleted":true,"_id":"NdnuqGHonnpBp89p"}
+{"$$deleted":true,"_id":"J14LePrk7ycAoPJV"}
+{"$$deleted":true,"_id":"IKNTiXs56LXbswkj"}
+{"$$deleted":true,"_id":"H7eW65OaylIxrWT2"}
+{"country":"Spain","year":"2017","hdirank":"25","hdivalue":"0.903","hdischolar":"17.9","_id":"Kdiy4kJCr6Bi2n3Z"}
+{"country":"France","year":"2017","hdirank":"26","hdivalue":"0.897","hdischolar":"15.5","_id":"Xc9eP6ek2fCV44Fp"}
+{"country":"Germany","year":"2017","hdirank":"6","hdivalue":"0.943","hdischolar":"17.0","_id":"TGSZqMKXyJWoYCSi"}
+{"country":"United Kingdom","year":"2017","hdirank":"13","hdivalue":"0.926","hdischolar":"17.5","_id":"wqgAw3OrE8vuUQYG"}
+{"country":"USA","year":"2017","hdirank":"17","hdivalue":"0.924","hdischolar":"16.3","_id":"9ArcZraplzNdarpz"}
+{"$$deleted":true,"_id":"wqgAw3OrE8vuUQYG"}
+{"$$deleted":true,"_id":"Xc9eP6ek2fCV44Fp"}
+{"$$deleted":true,"_id":"TGSZqMKXyJWoYCSi"}
+{"$$deleted":true,"_id":"Kdiy4kJCr6Bi2n3Z"}
+{"$$deleted":true,"_id":"9ArcZraplzNdarpz"}
+{"country":"Spain","year":"2017","hdirank":"25","hdivalue":"0.903","hdischolar":"17.9","_id":"LefWYyNYmjWox45e"}
+{"country":"France","year":"2017","hdirank":"26","hdivalue":"0.897","hdischolar":"15.5","_id":"KsPWjNHXLmKdSlbE"}
+{"country":"Germany","year":"2017","hdirank":"6","hdivalue":"0.943","hdischolar":"17.0","_id":"zXMuHSVVa5VNLrrU"}
+{"country":"United Kingdom","year":"2017","hdirank":"13","hdivalue":"0.926","hdischolar":"17.5","_id":"uXoYvdsi3TBJ5x3k"}
+{"country":"USA","year":"2017","hdirank":"17","hdivalue":"0.924","hdischolar":"16.3","_id":"GK3nrGN18SRjgvGu"}
+{"$$deleted":true,"_id":"zXMuHSVVa5VNLrrU"}
+{"$$deleted":true,"_id":"uXoYvdsi3TBJ5x3k"}
+{"$$deleted":true,"_id":"LefWYyNYmjWox45e"}
+{"$$deleted":true,"_id":"GK3nrGN18SRjgvGu"}
+{"$$deleted":true,"_id":"KsPWjNHXLmKdSlbE"}
+{"country":"Spain","year":"2017","hdirank":"25","hdivalue":"0.903","hdischolar":"17.9","_id":"yq5CMFJXLFVZePiK"}
+{"country":"France","year":"2017","hdirank":"26","hdivalue":"0.897","hdischolar":"15.5","_id":"fM1JXBz0qoXd9ICj"}
+{"country":"Germany","year":"2017","hdirank":"6","hdivalue":"0.943","hdischolar":"17.0","_id":"bFsjAyi1nfOeLCuT"}
+{"country":"United Kingdom","year":"2017","hdirank":"13","hdivalue":"0.926","hdischolar":"17.5","_id":"HMSPqaFJSvV75Ibm"}
+{"country":"USA","year":"2017","hdirank":"17","hdivalue":"0.924","hdischolar":"16.3","_id":"mAjPt1iCGEs5yJKY"}
+{"$$deleted":true,"_id":"yq5CMFJXLFVZePiK"}
+{"$$deleted":true,"_id":"mAjPt1iCGEs5yJKY"}
+{"$$deleted":true,"_id":"fM1JXBz0qoXd9ICj"}
+{"$$deleted":true,"_id":"bFsjAyi1nfOeLCuT"}
+{"$$deleted":true,"_id":"HMSPqaFJSvV75Ibm"}
+{"country":"Spain","year":"2017","hdirank":"25","hdivalue":"0.903","hdischolar":"17.9","_id":"Nkm4jV6YZtbxzK2c"}
+{"country":"France","year":"2017","hdirank":"26","hdivalue":"0.897","hdischolar":"15.5","_id":"JgPBbVimj5XWUZXL"}
+{"country":"Germany","year":"2017","hdirank":"6","hdivalue":"0.943","hdischolar":"17.0","_id":"dCgLHXOrlNWQ6w0G"}
+{"country":"United Kingdom","year":"2017","hdirank":"13","hdivalue":"0.926","hdischolar":"17.5","_id":"NDJstBn7YURFe7DU"}
+{"country":"USA","year":"2017","hdirank":"17","hdivalue":"0.924","hdischolar":"16.3","_id":"pvDgsTaMGHU8c64O"}
+{"country":"France","year":"2017","hdirank":"1","hdivalue":"1","hdischolar":"1","_id":"JgPBbVimj5XWUZXL"}
+{"$$deleted":true,"_id":"JgPBbVimj5XWUZXL"}
+{"$$deleted":true,"_id":"NDJstBn7YURFe7DU"}
+{"$$deleted":true,"_id":"Nkm4jV6YZtbxzK2c"}
+{"$$deleted":true,"_id":"dCgLHXOrlNWQ6w0G"}
+{"$$deleted":true,"_id":"pvDgsTaMGHU8c64O"}
+{"country":"Spain","year":"2017","hdirank":"25","hdivalue":"0.903","hdischolar":"17.9","_id":"YAXHpe9h8tlbNnym"}
+{"country":"France","year":"2017","hdirank":"26","hdivalue":"0.897","hdischolar":"15.5","_id":"1QbhoPihRZJCSKUJ"}
+{"country":"Germany","year":"2017","hdirank":"6","hdivalue":"0.943","hdischolar":"17.0","_id":"Bb8n1NH4lWnQRtkJ"}
+{"country":"United Kingdom","year":"2017","hdirank":"13","hdivalue":"0.926","hdischolar":"17.5","_id":"cQFgynXLZolC66Oc"}
+{"country":"USA","year":"2017","hdirank":"17","hdivalue":"0.924","hdischolar":"16.3","_id":"TovZphDU81ittwcs"}
+{"country":"France","year":"2017","hdirank":"1","hdivalue":"1","hdischolar":"1","_id":"1QbhoPihRZJCSKUJ"}
+{"country":"France","year":"2017","hdirank":"5","hdivalue":"1","hdischolar":"1","_id":"1QbhoPihRZJCSKUJ"}
