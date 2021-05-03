@@ -10,6 +10,8 @@ function isAO(val) {
     return val instanceof Array || val instanceof Object ? true : false;
 }
 
+
+
 function elementExists(obj, obj_t) {
 	for (var i = 0; i < obj.length; i++) {
 		if (obj[i] == obj_t) {
@@ -25,7 +27,7 @@ module.exports.register = (app) => {
 
     // Methods involving base path
     app.get(BASE_API_PATH_MEM+"/loadInitialData", (request, response) =>{
-        if (hdi_countries.length == 0) {
+		if (hdi_countries.length == 0) {
             try {
             let rawdata = fs.readFileSync('./hdi-stats-api/hdi-stats.json');
             hdi_countries = JSON.parse(rawdata);
@@ -41,95 +43,73 @@ module.exports.register = (app) => {
             response.status(400).send("<h1>Resources already loaded. Head back to /api/v1/hdi-stats to check them.</h1>")
         }
     });
-    app.get(BASE_API_PATH_MEM, (request, response) =>{
-        
-        var offset;
+
+    app.get(BASE_API_PATH_MEM, (req, res) =>{
+		var offset;
         var limit;
-        /*
-        if (request.query.offset) {
-            console.log("[INFO] OFFSET: " + offset);
-            offset = parseInt(request.query.offset);
-            delete request.query.offset;
-        } else {
-            console.log("[INFO] OFFSET:  not found");
-        }
-        if (request.query.limit) {
-            console.log("[INFO] LIMIT: " + limit);
-            limit = parseInt(request.query.limit);
-            delete request.query.limit;
-        } else {
-            console.log("[INFO] LIMIT: not found");
-        }*/
+
         var search = {};
-        /*if (request.query.country) {search["country"] = request.query.country}
-        if (request.query.year) {search["year"] = parseInt(request.query.year)}
-        if (request.query.mh-population) {search["mh-population"] = parseInt(request.query.mh-population)}
-        if (request.query.mh-anxdaly) {search["mh-anxdaly"] = parseInt(request.query.mh-anxdaly)}
-        if (request.query.mh-eating) {search["mh-eating"] = parseInt(request.query.mh-eating)}
-        if (request.query.mh-adhd) {search["mh-adhd"] = parseInt(request.query.mh-adhd)}
-        if (request.query.mh-bipolar) {search["mh-bipolar"] = parseInt(request.query.mh-bipolar)}
-        if (request.query.mh-depression) {search["mh-depression"] = parseInt(request.query.mh-depression)}
-        if (request.query.mh-schizophrenia) {search["mh-schizophrenia"] = parseInt(request.query.mh-schizophrenia)}*/
+        if (req.query.country) {search["country"] = req.query.country}
+        if (req.query.year) {search["year"] = req.query.year}
+        if (req.query.hdirank) {search["hdirank"] = req.query.hdirank}
+        if (req.query.hdivalue) {search["hdivalue"] = req.query.hdivalue}
+        if (req.query.hdischolar) {search["hdischolar"] = req.query.hdischolar}
         if (db.count({}) == 0) {
             console.log('[!] Resource hdi_countries has been requested, but are not loaded.');
-            return response.status(404).send("<p>Resources not found. Head to /loadInitialData to create them.</p>");
+            return res.status(404).send("<p>Resources not found. Head to /loadInitialData to create them.</p>");
         } else {
             var offset;
             var limit;
-            if (request.query.offset) {
-                offset = parseInt(request.query.offset);
+            if (req.query.offset) {
+                offset = parseInt(req.query.offset);
                 console.log("[INFO] OFFSET: " + offset);
-                delete request.query.offset;
-            } else {
-                console.log("[INFO] OFFSET:  not found");
+                delete req.query.offset;
             }
-            if (request.query.limit) {
-                limit = parseInt(request.query.limit);
+            if (req.query.limit) {
+                limit = parseInt(req.query.limit);
                 console.log("[INFO] LIMIT: " + limit);
-                delete request.query.limit;
-            } else {
-                console.log("[INFO] LIMIT: not found");
+                delete req.query.limit;
             }
             db.find(search).skip(offset).limit(limit).exec((err, dbdata) => {
                 if (err) {
                     console.log("[!] Error accessing hdi-stats.db " + err);
-                    return response.status(500).send("<h1>Error accessing database</h1>");
+                    return res.status(500).send("<h1>Error accessing database</h1>");
                 } else {
                     if (dbdata == 0) {
                         console.log("[!] Database hdi-stats is EMPTY!");
-                        return response.status(404).send("<h1>Resources not found. Head to /loadInitialData to create them.</h1>");
+                        return res.status(404).send("<h1>Resources not found. Head to /loadInitialData to create them.</h1>");
                     } else {
                         dbdata.forEach((data) =>{ delete data._id});
-                        return response.status(200).send(JSON.stringify(dbdata,null, 2));
+                        return res.status(200).send(JSON.stringify(dbdata,null, 2));
                     }
                 }
             })
         }
     });
+        
 
  app.post(BASE_API_PATH_MEM, (req, res) => {
-        var newData = req.body;
-        db.find({country: newData.country, year: parseInt(newData.year)}, (err, dbdata) =>{
-            if (err) {
-                console.error("[!] Error accessing hdi-stats.db "+ err);
-                res.sendStatus(500);
-            } else {
-                if(dbdata == 0){  
-                    if(!newData.country || !newData.year || !newData['hdi-rank'] || !newData['hdi-value'] || !newData['hdi-scholar'] ) {
-                        console.log("[!] Data is missing or incorrect.");
-                        return res.sendStatus(400);
-                    }else {                        
-                        console.log(`[+] New resource added to the database <${JSON.stringify(newData, null, 2)}>`);
-                        db.insert(newData);
-                        return res.status(201).send("<h1>Created resource</h1>");
-                    }
-                }else {
-                    console.log("[!] A resource already exists with the same country and date");
-                    return res.sendStatus(409);
-                }
+    var newData = req.body;
+    var country = req.body.country;
+    var year = req.body.year; //lo tenemos pasado como string el valor, sino deberíamos usar un parseInt
+    db.find({$and: [{country: newData.country}, {year: newData.year}]},
+
+        (err, resources) =>{
+            if(resources.length !=0){
+                console.log("El recurso ya existe");
+                res.sendStatus(409);
+            }else if(!newData.country || !newData.year ||!newData.hdirank ||!newData.hdivalue || !newData.hdischolar ||Object.keys(newData).length != 5){
+                    console.log("El número de campos no es el correcto");
+                    res.sendStatus(400);
+            }else{
+                console.log(`new resource <${newData.country}/${newData.year}> added`)
+                db.insert(newData);
+                res.status(201).json(newData);
             }
-        });
-    });
+
+        }
+    );
+});
 
     app.put(BASE_API_PATH_MEM, (request, response) => {
         console.log("[!] Method (PUT) not allowed at " + BASE_API_PATH_MEM);
@@ -165,36 +145,29 @@ module.exports.register = (app) => {
 
     // Methods involving path+object_fields
     app.get(BASE_API_PATH_MEM + "/:country/:year", (req, res) => {
-        var req_data = req.params; 
-        let limit;
-        let offset;
-        if (req.query.offset) {
-            offset = parseInt(req.query.offset);
-            delete req.query.offset;
-        } 
-        if (req.query.limit) {
-            limit = parseInt(req.query.limit);
-            delete req.query.limit;
-            console.log(limit);
-        }
-        console.log(offset);
-        console.log(limit);
-        db.find({country: req.params.country, year: req.params.year}).skip(offset).limit(limit).exec((err, dataInDB) => {
-            if (err) {
-                console.error("[!] ERROR accesing DB " + err);
-                res.sendStatus(500);
-            } else {
-                if (dataInDB == 0) {
-                    console.error("[!] No DATA found");
-                    res.status(404).send("<h1>Resource not found</h1>");
-                } else {
-                    delete dataInDB._id;
-                    res.status(200).send(JSON.stringify(dataInDB, null, 2)); 
-                    console.log(`GET stat by country: <${req_data.country}> and date: <${req_data.year}>`);
-                }
-            }
-        });
-    });
+        var countryToGet = req.params.country;
+		var yearToGet = req.params.year;
+		
+		
+		db.find({country: countryToGet, year: yearToGet}, function(err, employsInDB){
+		console.log("Searching "+countryToGet+" "+yearToGet);
+			if(err) {
+				console.error(err);
+				res.sendStatus(404);
+			}
+			if(employsInDB.length==0){
+				console.log("Resource not found: "+countryToGet+" "+yearToGet);
+				res.sendStatus(404); // NOT FOUND
+			}else{
+				console.log(employsInDB);
+				var employsToSend = employsInDB.map((c)=>{
+					return {country : c.country, year : c.year, hdirankc : c.hdirankc, hdivaluec : c.hdivaluec, hdischolarc : c.hdischolarc};
+				});
+				res.send(JSON.stringify(employsToSend[0],null,2));
+			}
+			
+		})
+	});
 
     app.delete(BASE_API_PATH_MEM + "/:country/:year", (req, res) => {
         var country = req.params.country;
@@ -212,24 +185,40 @@ module.exports.register = (app) => {
     });
 
     app.put(BASE_API_PATH_MEM + "/:country/:year", (req, res) => {
-        var countryx = req.params.country;
-        var yearx = req.params.year;
-        var updatemh = req.body;
-        var exists;
-        db.find({country: countryx, year: yearx}).exec((err, dbdata) => {
-            if (err) {
-                console.log("[!] Error accessing DB " + err);
-                return res.status(500).send("Error processing query...");
-            } else {
-                if (dbdata.country) {
-                    db.remove({country: countryx, year: yearx});
-                    db.update({ country: countryx, year: yearx }, updatemh, { upsert: false });
-                    return res.status(200).send("<h1> Resource updated </h1>");
-                } else {
-                    return res.status(409).send("<h1> Conflict </h1>");
-                }
-            }
-        });
-    });
-
+        var country = req.params.country;
+		var year = req.params.year;
+		var updatedhdi = req.body;
+		var query = {"country":country, "year":year};
+	
+		if (!updatedhdi.country 
+			|| !updatedhdi.year 
+			|| !updatedhdi['hdirank'] 
+			|| !updatedhdi['hdivalue'] 
+			|| !updatedhdi['hdischolar'] 
+			|| country != updatedhdi.country 
+			|| year != updatedhdi.year
+			|| Object.keys(updatedhdi).length != 5){
+           
+			console.log("Missing any field");
+			return res.sendStatus(400);
+		} 
+		else {
+			db.update(query,updatedhdi,(err,data) =>{
+				if(err){
+					console.error("ERROR accesing DB in PUT");
+					res.sendStatus(500);
+				}
+				else{
+					if(data == 0){
+						res.sendStatus(404);
+						console.log("No data in the database");
+					}
+					else{
+						res.sendStatus(200);
+						console.log("Resource updated");
+					}
+				}
+			});
+		}
+	});
 }

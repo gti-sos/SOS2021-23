@@ -23,6 +23,7 @@ var hdi_api = require("./hdi-stats-api");
 hdi_api.register(app);
 //unemployment-stats
 var unemployment_api = require("./unemployment-stats-api");
+const { request, response } = require("express");
 unemployment_api.register(app);
 
 // Raíces del servicio
@@ -79,6 +80,10 @@ app.get("/cool",(request, response) => {
 app.get("/api/v1/mh-stats/docs", (request, response) => {
 	response.redirect(301, 'https://documenter.getpostman.com/view/14943559/TzJoDfQ5');
 });
+// Redirect a la nueva doc, 
+app.get("/", (request, response) => {
+	response.redirect(301, 'https://sos2021-23.herokuapp.com/#/info');
+})
 
 // Inicializar el listener del servidor
 app.listen(port, () => {
