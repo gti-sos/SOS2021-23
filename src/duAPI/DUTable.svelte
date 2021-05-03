@@ -322,7 +322,7 @@
                         <td>{sc.dudependenceperc}</td>
                         <td>{sc.dudaly}</td>
                         <td><Button outline color="danger" on:click="{deleteData(sc.country, sc.year)}">Borrar</Button></td>
-                        
+                        <td><Button outline color="success" on:click="{editData(sc.country, sc.year)}">Editar</Button></td>
                     </tr>
                 {/each}
             </tbody>
