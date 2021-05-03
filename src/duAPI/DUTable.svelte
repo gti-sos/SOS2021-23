@@ -27,24 +27,6 @@
         dudaly:""
 	}
 
-    let newStat = {
-    country: "",
-    year: "",
-    dupopulation: "",
-    dudead: "",
-    dudependenceperc: "",
-    dudaly: "",
-  };
-
-  let insStat = {
-    country: "",
-    year: "",
-    dupopulation: "",
-    dudead: "",
-    dudependenceperc: "",
-    dudaly: "",
-  };
-
     
     let errorMSG = null;
     onMount(getData);
@@ -131,23 +113,8 @@
          }
      }
 
-    //EDITAR RECURSO
+  
 
-    let oldcountry = "";
-    let oldyear = "";
-    async function editData(newData) {
-    deleteData(oldcountry, oldyear);
-    getData();
-    insertData(newData);
-    closeForm(); 
-
-    newData.country =  "";
-    newData.year = "";
-    newData.dupopulation =  "";
-    newData.dudead = "";
-    newData.dudependenceperc = "";
-
-  }
     //DELETE SPECIFIC
     async function deleteData(name, year) {
         const res = await fetch("/api/v1/du-stats/" + name + "/" + year, {
@@ -199,10 +166,39 @@
 			});
 		}
 	}
-    //SEARCH
-    /*
     
-    */
+    async function editData(name, year) {
+        console.log("Inserting du data...");
+         //Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
+         if (data.country == "" || data.country == null || data.year == "" || data.year == null) {
+             alert("Los campos 'Pais' y 'Año' no pueden estar vacios");
+         }
+         else{
+             const res = await fetch("/api/v1/du-stats/" + name + "/" + year,{
+             method:"PUT",
+             body:JSON.stringify(data),
+             headers:{
+                 "Content-Type": "application/json"
+             }
+             }).then(function (res) {
+                 if(res.status == 200){
+                     getData();
+                     console.log("Data introduced");
+                     errorMSG = 201;
+                 }
+                 else if(res.status == 400){
+                     console.log("ERROR Data was not correctly introduced");
+                     errorMSG = 400;
+                 }
+                 else if(res.status == 409){
+                     console.log("ERROR There is already a data with that country and year in the database");
+                     errorMSG = 409;
+                 }
+             });	
+         }
+     }
+    
+    
     //getNextPage
     async function getNextPage() {
  
