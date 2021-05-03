@@ -26,9 +26,30 @@
 		dudependenceperc:"",
         dudaly:""
 	}
+
+    let newStat = {
+    country: "",
+    year: "",
+    dupopulation: "",
+    dudead: "",
+    dudependenceperc: "",
+    dudaly: "",
+  };
+
+  let insStat = {
+    country: "",
+    year: "",
+    dupopulation: "",
+    dudead: "",
+    dudependenceperc: "",
+    dudaly: "",
+  };
+
     
     let errorMSG = null;
     onMount(getData);
+
+    
  
     //GET
     async function getData() {
