@@ -57,12 +57,12 @@
     <Col xs="auto">
       <Card class="mb-3">
         <CardHeader>
-          <CardTitle><h5>Drugs Stats</h5></CardTitle>
+          <CardTitle><h5>Estadísticas sobre drogas</h5></CardTitle>
         </CardHeader>
         <CardBody>
           <CardSubtitle />
           <CardText
-            >Drug use data source.</CardText>
+            >Estadísticas del consumo de drogas recogidas en el año 2017 en distintos países.</CardText>
           
           <a href="https://sos2021-23.herokuapp.com/api/v1/du-stats">
             <Button color="primary">Backend</Button></a>
