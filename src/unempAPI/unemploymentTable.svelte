@@ -77,7 +77,7 @@
          console.log("Inserting unemployment data...");
          //Comprobamos que el año y la fecha no estén vacíos, el string vacio no es null
          if (data.country == "" || data.country == null || data.year == "" || data.year == null) {
-             alert("Los campos 'Pais' y 'Año' no pueden estar vacios");
+             alert("Debes insertar el nombre del país y el año.");
          }
          else{
              const res = await fetch("/api/v1/unemployment-stats",{
@@ -135,16 +135,12 @@
 				if(res.ok){
                     totaldata = 0;
 					getData();
-                    //color = "success";
-					//errorMSG="Datos eliminados correctamente";
                     errorMSG = 200.3;
-					console.log("OK All data erased");
+					console.log("Datos eliminados correctamente");
                     location.reload();
 				}
 				else{
-					console.log("ERROR Data was not erased");
-                    //color = "danger";
-					//errorMSG= "No se han podido eliminar los datos";
+					console.log("Ha habido un fallo. No se han eliminado los datos");
                     errorMSG = 404.2;
 				}
 			});
@@ -181,7 +177,7 @@
         if (page-5>=1) {
             page-=5; 
         } else page = 1
-        console.log("Charging page " +page);
+        console.log("Cargando página " +page);
         const res = await fetch("/api/v1/unemployment-stats?limit=5&offset="+page);
         if (res.ok) {
             console.log("Ok:");
@@ -197,11 +193,11 @@
 </script>
 
 <main>
-            <Button color="success" on:click="{loadInitialData}">
-            Cargar datos inciales
+        <Button color="success" on:click="{loadInitialData}">
+            Cargar datos
         </Button>
         <Button color="danger" on:click="{deleteALL}">
-            Eliminar todo
+            Eliminar datos
         </Button>
         <Button outline color="info" on:click="{getPreviewPage}">
            Atrás
@@ -259,9 +255,9 @@
                 <tr>
                     <th>País</th>
                     <th>Año</th>
-                    <th>Porcentaje según Knoema </th>
-                    <th>Porcentaje según Gfmag </th>
-                    <th>Porcentaje según InternetWorldStats</th>
+                    <th>Porcentaje según Knoema.es </th>
+                    <th>Porcentaje según InternetWorldStats.com </th>
+                    <th>Porcentaje según Gfmag.com</th>
                     <th>Acciones</th> 
                 </tr>
             </thead>
