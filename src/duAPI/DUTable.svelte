@@ -299,7 +299,7 @@
                     <th>Poblacion</th>
                     <th>Muertes</th>
                     <th>Dependencia a las drogas</th>
-                    <th>Daly</th>
+                    <th>D.A.L.Y</th>
                 </tr>
             </thead>
             <tbody>
