@@ -35,7 +35,7 @@ async function getPais(){
     }
 }
 async function actualizaPais(){
-		console.log("Updating country...." + JSON.stringify(params.country));
+		console.log("Updating country..." + JSON.stringify(params.country));
 		const res = await fetch("/api/v1/du-stats/" + params.country + "/" + params.year,{
 			method: "PUT",
 			body: JSON.stringify({
