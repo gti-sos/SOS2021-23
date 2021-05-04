@@ -22,8 +22,8 @@ async function getPais(){
         console.log("Ok:");
         const json = await res.json();
         du_stat = json;
-        updatedCountry = unemployment_stat.country;
-        updatedYear = unemployment_stat.year;
+        updatedCountry = du_stat.country;
+        updatedYear = du_stat.year;
         updatedDupopulation = du_stat.dupopulation;
         updatedDudead = du_stat.dudead;
         updatedDudependenceperc = du_stat.dudependenceperc;
