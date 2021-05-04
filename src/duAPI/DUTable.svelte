@@ -85,7 +85,7 @@
          else{
              const res = await fetch("/api/v1/du-stats",{
              method:"POST",
-             body:JSON.stringify(newData),
+             body:JSON.stringify(data),
              headers:{
                  "Content-Type": "application/json"
              }
@@ -248,7 +248,13 @@
     <Button color="danger" on:click="{deleteALL}">
         Eliminar todo
     </Button>
-
+    <Button outline color="info" on:click="{getPreviewPage}">
+        Atrás
+     </Button>
+     <Button outline color="info" on:click="{getNextPage}">
+         Siguiente
+        </Button>
+       
     {#await du_stats}
         Loading data...
     {:then du_stats}
