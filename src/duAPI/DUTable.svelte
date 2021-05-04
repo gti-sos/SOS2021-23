@@ -303,8 +303,8 @@
                     <th>País</th>
                     <th>Año</th>
                     <th>Poblacion</th>
-                    <th>Muertes</th>
-                    <th>Dependencia a las drogas</th>
+                    <th>Porcentaje de Muertes</th>
+                    <th>Porcentaje de dependencia a las drogas</th>
                     <th>D.A.L.Y</th>
                 </tr>
             </thead>
