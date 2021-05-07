@@ -18,6 +18,8 @@
     let page = 1;
     let totaldata=8;
     let du_stats = [];
+    let searchcountry = "";
+    let searchyear = 0;
 	let data = {
 		country: "",
 		year: "",
@@ -111,7 +113,7 @@
                  }
              });	
          }
-     }
+    }
 
   
 
@@ -166,6 +168,10 @@
 			});
 		}
 	}
+    //Busquedas
+    let searchCountry= "";
+	let searchYear = "";
+
     
     async function editData(name, year) {
         console.log("Inserting du data...");
@@ -196,7 +202,7 @@
                  }
              });	
          }
-     }
+    }
     
     
     //getNextPage
@@ -218,6 +224,27 @@
         } else {
             errorMSG= res.status + ": " + res.statusText;
             console.log("ERROR!");
+        }
+    }
+
+    async function buscaRegistro(country, year) {
+		console.log("Realizando búsqueda del país: " + country + " y del año: " + year);
+        
+        year=parseInt(year);
+        
+        var url = "/api/v1/du-stats";
+        
+		if (country != "" && year != "") {
+            url = url + "?country=" + country + "&year=" + year;
+            console.log(url);
+        } 
+        else if (country != "" && year == "") {
+            url = url + "?country=" + country;
+            console.log(url);
+        } 
+        else if (country == "" && year != "") {
+            url = url + "?year=" + year;
+            console.log(url);
         }
     }
     //getPreviewPage
@@ -316,8 +343,18 @@
                     <td><input bind:value="{data.dudead}"></td>    
                     <td><input bind:value="{data.dudependenceperc}"></td> 
                     <td><input bind:value="{data.dudaly}"></td>   
-                    <td><Button outline color="primary" on:click={insertData}>Insertar</Button></td>           
+                    <td><Button outline color="primary" on:click={insertData}>Insertar</Button></td>
+                    <td><Button outline color="secondary" style="font-size: 16px;border-radius: 4px;background-color: white;" on:click="{buscaRegistro(searchcountry, searchyear)}" class="button-search"> Buscar </Button></td>           
                 </tr>
+                <tr>
+                    <td>Introducir datos para realizar una busqueda:</td>
+                    <td>Pais</td>
+                    <td><input bind:value="{searchcountry}"></td>
+                    <td>Año</td>
+					<td><input type=number bind:value={searchyear}></td>
+					<td><Button on:click={buscaRegistro(searchcountry, searchyear)}>Buscar</Button>
+                </td>
+            </tr>
  
                 {#each du_stats as sc}
                     <tr>
