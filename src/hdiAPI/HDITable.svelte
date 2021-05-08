@@ -190,7 +190,33 @@
              });	
          }
      }
-     
+
+       //Busquedas
+    let searchcountry= "";
+	let searchyear = "";
+     async function buscaRegistro(country, year) {
+		console.log("Realizando búsqueda del país: " + country + " y del año: " + year);
+        
+        year=parseInt(year);
+        
+        var url = "/api/v1/hdi-stats";
+        
+		if (country != "" && year != "") {
+            url = url + "?country=" + country + "&year=" + year;
+            console.log(url);
+        } 
+        else if (country != "" && year == "") {
+            url = url + "?country=" + country;
+            console.log(url);
+        } 
+        else if (country == "" && year != "") {
+            url = url + "?year=" + year;
+            console.log(url);
+        }
+        const res = await fetch(url);
+        const json = await res.json();
+            hdi_stats = json;
+    }
     
     
     
@@ -308,7 +334,16 @@
                     <td><input bind:value="{data.hdivalue}"></td>    
                     <td><input bind:value="{data.hdischolar}"></td> 
                      
-                    <td><Button outline color="primary" on:click={insertData}>Insertar</Button></td>           
+                    <td><Button outline color="primary" on:click={insertData}>Insertar</Button></td>
+                               
+                </tr>
+                <tr>
+                    <td>Introducir datos para realizar una busqueda:</td>
+                    <td>Pais buscado:<input bind:value="{searchcountry}"></td>
+                    <td></td>
+                    <td>Año buscado:<input type=number bind:value={searchyear}></td>
+                    <td></td>
+                    <td><Button on:click={buscaRegistro(searchcountry, searchyear)}>Buscar</Button></td>
                 </tr>
  
                 {#each hdi_stats as sc}
@@ -322,6 +357,7 @@
                         <td><Button outline color="danger" on:click="{deleteData(sc.country, sc.year)}">Borrar</Button></td>
                         <td><Button outline color="success" on:click="{editData(sc.country, sc.year)}">Editar</Button></td>
                     </tr>
+                    
                 {/each}
             </tbody>
         </Table>

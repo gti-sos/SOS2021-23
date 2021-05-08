@@ -149,21 +149,73 @@ module.exports.register = (app) => {
 		var yearToGet = req.params.year;
 		
 		
-		db.find({country: countryToGet, year: yearToGet}, function(err, employsInDB){
+		db.find({country: countryToGet, year: yearToGet}, function(err, hdiInDB){
 		console.log("Searching "+countryToGet+" "+yearToGet);
 			if(err) {
 				console.error(err);
 				res.sendStatus(404);
 			}
-			if(employsInDB.length==0){
+			if(hdiInDB.length==0){
 				console.log("Resource not found: "+countryToGet+" "+yearToGet);
 				res.sendStatus(404); // NOT FOUND
 			}else{
-				console.log(employsInDB);
-				var employsToSend = employsInDB.map((c)=>{
+				console.log(hdiInDB);
+				var hdiToSend = hdiInDB.map((c)=>{
 					return {country : c.country, year : c.year, hdirankc : c.hdirankc, hdivaluec : c.hdivaluec, hdischolarc : c.hdischolarc};
 				});
-				res.send(JSON.stringify(employsToSend[0],null,2));
+				res.send(JSON.stringify(hdiToSend[0],null,2));
+			}
+			
+		})
+	});
+
+     // Get a un recurso concreto
+     app.get(BASE_API_PATH_MEM + "/:country", (req, res) => {
+        var countryToGet = req.params.country;
+		
+		
+		
+		db.find({country: countryToGet}, function(err, hdiInDB){
+		console.log("Searching "+countryToGet);
+			if(err) {
+				console.error(err);
+				res.sendStatus(404);
+			}
+			if(hdiInDB.length==0){
+				console.log("Resource not found: "+countryToGet);
+				res.sendStatus(404); // NOT FOUND
+			}else{
+				console.log(hdiInDB);
+				var hdiToSend = hdiInDB.map((c)=>{
+					return {country : c.country, year : c.year, hdirankc : c.hdirankc, hdivaluec : c.hdivaluec, hdischolarc : c.hdischolarc};
+				});
+				res.send(JSON.stringify(hdiToSend[0],null,2));
+			}
+			
+		})
+	});
+
+     // Methods involving path+object_fields
+     app.get(BASE_API_PATH_MEM + "/:year", (req, res) => {
+       
+		var yearToGet = req.params.year;
+		
+		
+		db.find({year: yearToGet}, function(err, hdiInDB){
+		console.log("Searching "+yearToGet);
+			if(err) {
+				console.error(err);
+				res.sendStatus(404);
+			}
+			if(hdiInDB.length==0){
+				console.log("Resource not found: "+yearToGet);
+				res.sendStatus(404); // NOT FOUND
+			}else{
+				console.log(hdiInDB);
+				var hdiToSend = hdiInDB.map((c)=>{
+					return {country : c.country, year : c.year, hdirankc : c.hdirankc, hdivaluec : c.hdivaluec, hdischolarc : c.hdischolarc};
+				});
+				res.send(JSON.stringify(hdiToSend[0],null,2));
 			}
 			
 		})
