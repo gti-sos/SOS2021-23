@@ -472,8 +472,11 @@
                 <td><label>Porcentaje de Muertes Max: <input bind:value="{DeadMax}"></label></td>
                 <td><label>Porcentaje Dependencia Max: <input bind:value="{PercMax}"></label></td>
                 <td><label>Porcentaje D.A.L.Y Max: <input bind:value="{DalyMax}"></label></td>
+             </tr>
 
-            </tr>
+             <Button outline color="primary"
+                on:click="{busqueda (Country, Year, PopulationMin , PopulationMax , DeadMin 
+                    , DeadMax , PercMin , PercMax, DalyMin, DalyMax)}">Buscar</Button>
             </thead>
             <tbody>
                 <tr>
