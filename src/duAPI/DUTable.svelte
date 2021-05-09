@@ -29,7 +29,6 @@
         dudaly:""
 	}
 
-  
     
     let errorMSG = null;
     onMount(getData);
@@ -40,7 +39,7 @@
     async function getData() {
  
         console.log("Fetching Drugs Data...");
-        const res = await fetch("/api/v1/du-stats?limit=10&offset=1");
+        const res = await fetch("/api/v1/du-stats?limit=5&offset=1");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -57,7 +56,7 @@
  
         console.log("Fetching du data...");
         await fetch("/api/v1/du-stats/loadInitialData");
-        const res = await fetch("/api/v1/du-stats?limit=10&offset=1");
+        const res = await fetch("/api/v1/du-stats?limit=5&offset=1");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -216,7 +215,7 @@
             page+=5
         }
         console.log("Charging page "+ page);
-        const res = await fetch("/api/v1/du-stats?limit=10&offset="+page);
+        const res = await fetch("/api/v1/du-stats?limit=5&offset="+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -247,34 +246,7 @@
             url = url + "?year=" + year;
             console.log(url);
         }
-        const res = await fetch(url);
-        
-		        if (res.ok) {
-			        console.log("OK");
-			        const json = await res.json();
-                console.log(json);
-			        du_stats=[json];	
-                console.log("du_stats now is that:");
-                console.log(du_stats);	
-                console.log(du_stats.length);
-			        console.log("Encontrados " + du_stats.length + " registros.");
-            
-            if(du_stats.length > 0 || du_stats[0]!=[]){
-                window.alert("Se han encontrado: "+ du_stats.length + " resultados.");
-                
-            }
-            else{
-                window.alert("No se han encontrado registros para esta busqueda");
-            }
-        } 
-        else {
-			console.log("ERROR");
-		}
-		
-	}
-    
-
-    
+    }
     //getPreviewPage
     async function getPreviewPage() {
  
@@ -282,7 +254,7 @@
             page-=5; 
         } else page = 1
         console.log("Charging page " +page);
-        const res = await fetch("/api/v1/du-stats?limit=10&offset="+page);
+        const res = await fetch("/api/v1/du-stats?limit=5&offset="+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -375,7 +347,7 @@
                     <td><Button outline color="secondary" style="font-size: 16px;border-radius: 4px;background-color: white;" on:click="{buscaRegistro(searchcountry, searchyear)}" class="button-search"> Buscar </Button></td>           
                 </tr>
                 <tr>
-                    <td>Buscar:</td>
+                    <td>Introducir datos para realizar una busqueda:</td>
                     <td>Pais</td>
                     <td><input bind:value="{searchcountry}"></td>
                     <td>Año</td>
