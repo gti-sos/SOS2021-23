@@ -65,7 +65,7 @@ async function actualizaPais(){
 				<tr>
 					<th>Pais</th>
 					<th>Año</th>
-					<th>Poblacion </th>
+					<th>Poblacion (Millones)</th>
 					<th>Porcentaje de muertes</th>
 					<th>Porcentaje de dependencia</th>
                     <th>Daly</th>
