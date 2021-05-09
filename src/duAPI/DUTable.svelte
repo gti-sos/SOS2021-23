@@ -40,7 +40,7 @@
     async function getData() {
  
         console.log("Fetching Drugs Data...");
-        const res = await fetch("/api/v1/du-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/du-stats?limit=10&offset=1");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -57,7 +57,7 @@
  
         console.log("Fetching du data...");
         await fetch("/api/v1/du-stats/loadInitialData");
-        const res = await fetch("/api/v1/du-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/du-stats?limit=10&offset=1");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -216,7 +216,7 @@
             page+=5
         }
         console.log("Charging page "+ page);
-        const res = await fetch("/api/v1/du-stats?limit=5&offset="+page);
+        const res = await fetch("/api/v1/du-stats?limit=10&offset="+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -282,7 +282,7 @@
             page-=5; 
         } else page = 1
         console.log("Charging page " +page);
-        const res = await fetch("/api/v1/du-stats?limit=5&offset="+page);
+        const res = await fetch("/api/v1/du-stats?limit=10&offset="+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -375,7 +375,7 @@
                     <td><Button outline color="secondary" style="font-size: 16px;border-radius: 4px;background-color: white;" on:click="{buscaRegistro(searchcountry, searchyear)}" class="button-search"> Buscar </Button></td>           
                 </tr>
                 <tr>
-                    <td>Introducir datos para realizar una busqueda:</td>
+                    <td>Buscar:</td>
                     <td>Pais</td>
                     <td><input bind:value="{searchcountry}"></td>
                     <td>Año</td>
