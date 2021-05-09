@@ -253,7 +253,7 @@
 			        console.log("OK");
 			        const json = await res.json();
                 console.log(json);
-			        du_stats=json;	
+			        du_stats=[json];	
                 console.log("du_stats now is that:");
                 console.log(du_stats);	
                 console.log(du_stats.length);
