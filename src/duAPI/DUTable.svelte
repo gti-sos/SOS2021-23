@@ -57,7 +57,7 @@
     async function getData() {
  
         console.log("Fetching Drugs Data...");
-        const res = await fetch("/api/v1/du-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/du-stats?limit=10&offset=1");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -74,7 +74,7 @@
  
         console.log("Fetching du data...");
         await fetch("/api/v1/du-stats/loadInitialData");
-        const res = await fetch("/api/v1/du-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/du-stats?limit=10&offset=1");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -233,7 +233,7 @@
             page+=5
         }
         console.log("Charging page "+ page);
-        const res = await fetch("/api/v1/du-stats?limit=5&offset="+page);
+        const res = await fetch("/api/v1/du-stats?limit=10&offset="+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -245,26 +245,7 @@
         }
     }
 
-    async function buscaRegistro(country, year) {
-		console.log("Realizando búsqueda del país: " + country + " y del año: " + year);
-        
-        year=parseInt(year);
-        
-        var url = "/api/v1/du-stats";
-        
-		if (country != "" && year != "") {
-            url = url + "?country=" + country + "&year=" + year;
-            console.log(url);
-        } 
-        else if (country != "" && year == "") {
-            url = url + "?country=" + country;
-            console.log(url);
-        } 
-        else if (country == "" && year != "") {
-            url = url + "?year=" + year;
-            console.log(url);
-        }
-    }
+    
     //getPreviewPage
     async function getPreviewPage() {
  
@@ -272,7 +253,7 @@
             page-=5; 
         } else page = 1
         console.log("Charging page " +page);
-        const res = await fetch("/api/v1/du-stats?limit=5&offset="+page);
+        const res = await fetch("/api/v1/du-stats?limit=10&offset="+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -479,16 +460,18 @@
                 <h6>Seccion de busqueda: </h6>
             <tr>
                 <td><label>Pais: <input bind:value="{Country}"></label></td>
-                <td><label>Año: <input bind:value="{Year}"></label></td>
                 <td><label>Poblacion Min: <input bind:value="{PopulationMin}"></label></td>
-                <td><label>Poblacion Max: <input bind:value="{PopulationMax}"></label></td>
                 <td><label>Porcentaje de Muertes Min: <input bind:value="{DeadMin}"></label></td>
-                <td><label>Porcentaje de Muertes Max: <input bind:value="{DeadMax}"></label></td>
-                <td><label>Porcentaje Dependencia Min: <input bind:value="{PercMin}"></label></td>
-                <td><label>Porcentaje Dependencia Max: <input bind:value="{PercMax}"></label></td>
+                <td><label>Porcentaje Dependencia Min: <input bind:value="{PercMin}"></label></td> 
                 <td><label>Porcentaje D.A.L.Y Min: <input bind:value="{DalyMin}"></label></td>
-                <td><label>Porcentaje D.A.L.Y Max: <input bind:value="{DalyMax}"></label></td>
+            </tr>
 
+            <tr>
+                <td><label>Año: <input bind:value="{Year}"></label></td>
+                <td><label>Poblacion Max: <input bind:value="{PopulationMax}"></label></td>
+                <td><label>Porcentaje de Muertes Max: <input bind:value="{DeadMax}"></label></td>
+                <td><label>Porcentaje Dependencia Max: <input bind:value="{PercMax}"></label></td>
+                <td><label>Porcentaje D.A.L.Y Max: <input bind:value="{DalyMax}"></label></td>
 
             </tr>
             </thead>
@@ -500,18 +483,9 @@
                     <td><input bind:value="{data.dudead}"></td>    
                     <td><input bind:value="{data.dudependenceperc}"></td> 
                     <td><input bind:value="{data.dudaly}"></td>   
-                    <td><Button outline color="primary" on:click={insertData}>Insertar</Button></td>
-                    <td><Button outline color="secondary" style="font-size: 16px;border-radius: 4px;background-color: white;" on:click="{buscaRegistro(searchcountry, searchyear)}" class="button-search"> Buscar </Button></td>           
+                    <td><Button outline color="primary" on:click={insertData}>Insertar</Button></td>         
                 </tr>
-                <tr>
-                    <td>Introducir datos para realizar una busqueda:</td>
-                    <td>Pais</td>
-                    <td><input bind:value="{searchcountry}"></td>
-                    <td>Año</td>
-					<td><input type=number bind:value={searchyear}></td>
-					<td><Button on:click={buscaRegistro(searchcountry, searchyear)}>Buscar</Button>
-                </td>
-            </tr>
+            
  
                 {#each du_stats as sc}
                     <tr>
