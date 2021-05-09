@@ -399,8 +399,8 @@ async function searchStat() {
                     <td><input type="text" placeholder="País"  bind:value={insStat.country}/></td> 
                     <td><input type="text" placeholder="Año"  bind:value={insStat.year}/></td>
                     <td><input type="text" placeholder="Población"  bind:value={insStat.population}/></td>
-                    <td><input type="text" placeholder="Porcentaje Muertes"  bind:value={insStat.dead}/></td>
-                    <td><input type="text" placeholder="Porcentaje Dependientes"  bind:value={insStat.percde}/></td>
+                    <td><input type="text" placeholder="Porcentaje de Muertes"  bind:value={insStat.dead}/></td>
+                    <td><input type="text" placeholder="Porcentaje de Dependientes"  bind:value={insStat.percde}/></td>
                     <td><input type="text" placeholder="D.A.L.Y.S"  bind:value={insStat.daly}/></td>
                     <td><Button color="warning" on:click={searchStat}>Buscar</Button></td>
                  </tr>
