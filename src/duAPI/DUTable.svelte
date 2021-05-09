@@ -14,7 +14,8 @@
     //ALERTAS
     let visible = false;
     let color = "danger";
-    
+    let BASE_SEC_API = "/api/v1/du-stats"
+    let du_sv = [];
     let totaldata=8;
     let du_stats = [];
     let searchcountry = "";
@@ -32,24 +33,29 @@
     //pag vars
     let page = 0;
     let numero;
-    let limit = 10;
+    
     let succMsg;
     // search vars
-    let Country = "";
-    let Year = "";
-    let PopulationMin = 0;
-    let PopulationMax = "";
-    let DeadMin = 0;
-    let DeadMax = "";
-    let PercMin = 0;
-    let PercMax = "";
-    let DalyMin = 0;
-    let DalyMax = "";
+    l
     
     let errorMSG = null;
     onMount(getData);
 
-    
+        //Pagination
+    let current_offset = 0;
+    let limit = 10;
+    let current_page = 1;
+    let last_page = 1;
+    let total = 0;
+
+    let insStat = {
+    country: "",
+    year: "",
+    population: "",
+    dead: "",
+    percde: "",
+    daly: "",
+    }
 
     
  
@@ -132,6 +138,14 @@
              });	
          }
     }
+
+     // Vacia el objeto para evitar comportamientos indeseados
+     insStat.country =  "";
+    insStat.year = "";
+    insStat.population =  "";
+    insStat.dead = "";
+    insStat.percde = "";
+    insStat.daly = "";
 
   
 
@@ -265,130 +279,53 @@
         }
     }
 
-    //Busqueda
-    
-    async function busqueda(Country, Year, PopulationMin , PopulationMax , DeadMin 
-    , DeadMax , PercMin , PercMax, DalyMin, DalyMax  ) {
-        if (typeof Country == 'undefined') {
-            Country = "";
-        }
-        if (typeof Year == 'undefined') {
-            Year = "";
-        }
-        if (typeof PopulationMin == 'undefined') {
-            PopulationMin = "";
-        }
-        if (typeof PopulationMax  == 'undefined') {
-            PopulationMax = "";
-        }
-        if (typeof DeadMin == 'undefined') {
-            DeadMin = "";
-        }
-        if (typeof DeadMax  == 'undefined') {
-            DeadMax  = "";
-        }
-        if (typeof PercMin  == 'undefined') {
-            PercMin  = "";
-        }
-        if (typeof PercMax  == 'undefined') {
-            PercMax  = "";
-        }
-        if (typeof DalyMin   == 'undefined') {
-            DalyMin   = "";
-        }
-        if (typeof DalyMax   == 'undefined') {
-            DalyMax   = "";
-        }
-        const res = await fetch("/api/v1/du-stats?country=" + Country  + "&year=" + Year
-            + "&PopulationMin =" + PopulationMin  + "&PopulationMax =" + PopulationMax  + "&DeadMin =" + DeadMin  + "&DeadMax" + DeadMax 
-            + "&PercMin" + PercMin + + "&PercMax" + PercMax + "&DalyMin" + DalyMin + "&DalyMax" + DalyMax)
+   // Buscar dato
+async function searchStat() {
+  error = 0;
+  errorMsg = null;
+  console.log("Searching data...");
+      var campos = new Map(
+        Object.entries(insStat).filter((o) => {
+          return o[1] != "";
+        })
+      );
+      let querySymbol = "?";
+      for (var [clave, valor] of campos.entries()) {
+        querySymbol += clave + "=" + valor + "&";
+      }
+      fullQuery = querySymbol.slice(0, -1);
+      if (fullQuery != "") {
+        const res = await fetch(
+          BASE_SEC_API + fullQuery
+        );
         if (res.ok) {
-            const json = await res.json();
-            du_stats = json;
-            console.log("Found: " + du_stats.length + " stats");
-            if (du_stats.length == 1) {
-                succMsg = "Se ha encontrado " + du_stats.length + " muestra";
-            } else {
-                succMsg = "Se han encontrado " + du_stats.length + " muestras";
-            }
-        } else if (res.status == 400) {
-            window.alert("No se han encontrado muestras con los parametros introducidos");
+          console.log("OK");
+          const json = await res.json();
+          du_sv = json;
+          error = 0;
+          okMsg = "Búsqueda realizada con éxito";
+        } else {
+          console.log("OKa");
+          du_sv = [];
+          if (res.status === 404) {
+            console.log("OKe");
+            error = 404;
+            errorMsg = "No se encuentra el dato solicitado";
+          } else if (res.status === 500) {
+            console.log("OKa");
+            error = 500;
+            errorMsg = "No se han podido acceder a la base de datos";
+          }
+          okMsg = "";
+          console.log("ERROR!" + errorMsg);
         }
+      } else {
+        errorMsg = "Búsqueda vacía";
+        console.log("OKv");
+        error = 1000;
+      }
     }
 
-    //Paginacion
-    async function paginacion(Country, Year, PopulationMin , PopulationMax , DeadMin 
-    , DeadMax , PercMin , PercMax, DalyMin, DalyMax, numero) {
-        if (typeof Country == 'undefined') {
-            Country = "";
-        }
-        if (typeof Year == 'undefined') {
-            Year = "";
-        }
-        if (typeof PopulationMin == 'undefined') {
-            PopulationMin = "";
-        }
-        if (typeof PopulationMax  == 'undefined') {
-            PopulationMax = "";
-        }
-        if (typeof DeadMin == 'undefined') {
-            DeadMin = "";
-        }
-        if (typeof DeadMax  == 'undefined') {
-            DeadMax  = "";
-        }
-        if (typeof PercMin  == 'undefined') {
-            PercMin  = "";
-        }
-        if (typeof PercMax  == 'undefined') {
-            PercMax  = "";
-        }
-        if (typeof DalyMin   == 'undefined') {
-            DalyMin   = "";
-        }
-        if (typeof DalyMax   == 'undefined') {
-            DalyMax   = "";
-        }
-        if (numero == 1) {
-            page = page - limit;
-            if (page < 0) {
-                page = 0;
-                const res = await fetch("/api/v1/du-stats?country=" + Country  + "&year=" + Year
-            + "&PopulationMin =" + PopulationMin  + "&PopulationMax =" + PopulationMax  + "&DeadMin =" + DeadMin  + "&DeadMax" + DeadMax 
-            + "&PercMin" + PercMin + + "&PercMax" + PercMax + "&DalyMin" + DalyMin + "&DalyMax" + DalyMax + "&limit=" + limit + "&offset=" + page
-                )
-                if (res.ok) {
-                    const json = await res.json();
-                    du_stats = json;
-                    numero = num;
-                }
-            } else {
-                const res = await fetch("/api/v1/du-stats?country=" + Country  + "&year=" + Year
-            + "&PopulationMin =" + PopulationMin  + "&PopulationMax =" + PopulationMax  + "&DeadMin =" + DeadMin  + "&DeadMax" + DeadMax 
-            + "&PercMin" + PercMin + + "&PercMax" + PercMax + "&DalyMin" + DalyMin + "&DalyMax" + DalyMax + "&limit=" + limit + "&offset=" + page
-                )
-                if (res.ok) {
-                    const json = await res.json();
-                    du_stats = json;
-                    numero = num;
-                }
-            }
-        } else {
-            page = page + limit;
-            const res = await fetch("/api/v1/du-stats?country=" + Country  + "&year=" + Year
-            + "&PopulationMin =" + PopulationMin  + "&PopulationMax =" + PopulationMax  + "&DeadMin =" + DeadMin  + "&DeadMax" + DeadMax 
-            + "&PercMin" + PercMin + + "&PercMax" + PercMax + "&DalyMin" + DalyMin + "&DalyMax" + DalyMax + "&limit=" + limit + "&offset=" + page
-                
-            )
-            if (res.ok) {
-                const json = await res.json();
-                electricity = json;
-                numero = num;
-            } else if (res.status == 404) {
-                window.alert("No existen mas muestras");
-            }
-        }
-    }
 </script>
 
 <main>
@@ -458,25 +395,15 @@
                     <th>D.A.L.Y</th>
                 </tr>
                 <h6>Seccion de busqueda: </h6>
-            <tr>
-                <td><label>Pais: <input bind:value="{Country}"></label></td>
-                <td><label>Poblacion Min: <input bind:value="{PopulationMin}"></label></td>
-                <td><label>Porcentaje de Muertes Min: <input bind:value="{DeadMin}"></label></td>
-                <td><label>Porcentaje Dependencia Min: <input bind:value="{PercMin}"></label></td> 
-                <td><label>Porcentaje D.A.L.Y Min: <input bind:value="{DalyMin}"></label></td>
-            </tr>
-
-            <tr>
-                <td><label>Año: <input bind:value="{Year}"></label></td>
-                <td><label>Poblacion Max: <input bind:value="{PopulationMax}"></label></td>
-                <td><label>Porcentaje de Muertes Max: <input bind:value="{DeadMax}"></label></td>
-                <td><label>Porcentaje Dependencia Max: <input bind:value="{PercMax}"></label></td>
-                <td><label>Porcentaje D.A.L.Y Max: <input bind:value="{DalyMax}"></label></td>
-             </tr>
-
-             <Button outline color="primary"
-                on:click="{busqueda (Country, Year, PopulationMin , PopulationMax , DeadMin 
-                    , DeadMax , PercMin , PercMax, DalyMin, DalyMax)}">Buscar</Button>
+                <tr>
+                    <td><input type="text" placeholder="País"  bind:value={insStat.country}/></td> 
+                    <td><input type="text" placeholder="Año"  bind:value={insStat.year}/></td>
+                    <td><input type="text" placeholder="Población"  bind:value={insStat.population}/></td>
+                    <td><input type="text" placeholder="Porcentaje Muertes"  bind:value={insStat.dead}/></td>
+                    <td><input type="text" placeholder="Porcentaje Dependientes"  bind:value={insStat.percde}/></td>
+                    <td><input type="text" placeholder="D.A.L.Y.S"  bind:value={insStat.daly}/></td>
+                    <td><Button color="warning" on:click={searchStat}>Buscar</Button></td>
+                 </tr>
             </thead>
             <tbody>
                 <tr>

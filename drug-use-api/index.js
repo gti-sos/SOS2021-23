@@ -114,7 +114,7 @@ var du_stats = [
 	   "dupopulation": "30,5",
 	   "dudead": "0.20",
 	   "dudependenceperc": "0.34",
-	   "dudaly": "127.95"
+	   "dudaly": "127.5"
 	 }
 ];
 
