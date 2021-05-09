@@ -108,5 +108,82 @@
    "bipolar": "579,379.78",
    "depression": "2,390,000",
    "schizophrenia": "167,800"
+ },
+ {
+   "country": "Colombia",
+   "year": "2015",
+   "population": "30,500,000",
+   "anxdaly": "492.21",
+   "eating": "271,512.61",
+   "adhd": "410,874.53",
+   "bipolar": "479,379.78",
+   "depression": "1,390,000",
+   "schizophrenia": "163,800"
+ },
+ {
+   "country": "Kazajistan",
+   "year": "2019",
+   "population": "100,500,000",
+   "anxdaly": "900.21",
+   "eating": "240,512.61",
+   "adhd": "492,874.53",
+   "bipolar": "79,379.78",
+   "depression": "4,390,000",
+   "schizophrenia": "117,800"
+ },
+ {
+   "country": "Japan",
+   "year": "2011",
+   "population": "90,500,000",
+   "anxdaly": "493.21",
+   "eating": "215,512.61",
+   "adhd": "402,874.53",
+   "bipolar": "599,379.78",
+   "depression": "3,390,000",
+   "schizophrenia": "267,800"
+ },
+ {
+   "country": "Italy",
+   "year": "2017",
+   "population": "60,500,000",
+   "anxdaly": "499.21",
+   "eating": "275,512.61",
+   "adhd": "462,874.53",
+   "bipolar": "579,379.78",
+   "depression": "2,390,000",
+   "schizophrenia": "167,800"
+ },
+ {
+   "country": "Italy",
+   "year": "2017",
+   "population": "60,500,000",
+   "anxdaly": "499.21",
+   "eating": "275,512.61",
+   "adhd": "462,874.53",
+   "bipolar": "579,379.78",
+   "depression": "2,390,000",
+   "schizophrenia": "167,800"
+ },
+ {
+   "country": "Italy",
+   "year": "2017",
+   "population": "60,500,000",
+   "anxdaly": "499.21",
+   "eating": "275,512.61",
+   "adhd": "462,874.53",
+   "bipolar": "579,379.78",
+   "depression": "2,390,000",
+   "schizophrenia": "167,800"
+ },
+ {
+   "country": "Italy",
+   "year": "2017",
+   "population": "60,500,000",
+   "anxdaly": "499.21",
+   "eating": "275,512.61",
+   "adhd": "462,874.53",
+   "bipolar": "579,379.78",
+   "depression": "2,390,000",
+   "schizophrenia": "167,800"
  }
 ]

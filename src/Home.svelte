@@ -18,7 +18,7 @@
 <main>
   <h1>SOS2021-23</h1>
 
-  <h2>Team</h2>
+  <h2>Equipo</h2>
   <Container>
     <Col>
       <a href="http://github.com/secaasecas">José Carlos Torres Moreno</a>
@@ -34,9 +34,9 @@
     </Col>
   </Container>
 
-  <h2>Project description</h2>
+  <h2>Descripción</h2>
   <p>
-      Our aim is to analyze the relationship between drug use, HDI, mental health & unemployment at a global scale.
+      El objetivo del proyecto es analizar la relación entre el consumo de drogas, salud mental, paro y HDI.
   </p>
 
   <Container>
@@ -65,10 +65,10 @@
             >Estadísticas del consumo de drogas recogidas en el año 2017 en distintos países.</CardText>
           
           <a href="https://sos2021-23.herokuapp.com/api/v1/du-stats">
-            <Button color="primary">Backend</Button></a>
+            <Button color="primary">API</Button></a>
           
           <a href="/#/du-stats">
-            <Button color="primary">Frontend</Button>
+            <Button color="primary">Interfaz</Button>
           </a>
           <a href="https://documenter.getpostman.com/view/14950269/TzJoDzt6"
             ><Button color="info">Documentación Back-end en Postman</Button></a>
@@ -89,9 +89,9 @@
           <CardSubtitle />
           <CardText>Estadísticas de Salud Mental recogidas en el año 2017 en distintos países.</CardText>
           <a href="https://sos2021-23.herokuapp.com/api/v1/mh-stats">
-            <Button color="primary">Backend</Button></a>
+            <Button color="primary">API</Button></a>
           <a href="/#/mh-stats">
-            <Button color="primary">Frontend</Button>
+            <Button color="primary">Interfaz</Button>
           </a>
           <a href="https://documenter.getpostman.com/view/14943559/TzJoDfQ5"
             ><Button color="info">Documentación Backend en Postman</Button></a>
@@ -112,9 +112,9 @@
           <CardSubtitle />
           <CardText>Porcentaje de paro según diferentes fuentes.</CardText>
           <a href="https://sos2021-23.herokuapp.com/api/v1/unemployment-stats">
-            <Button color="primary">Backend</Button></a>
+            <Button color="primary">API</Button></a>
           <a href="/#/unemployment-stats">
-            <Button color="primary">Frontend</Button>
+            <Button color="primary">Interfaz</Button>
           </a>
           <a href="https://documenter.getpostman.com/view/14951179/TzRLmqcv#97fdbfaa-9230-40ab-ae64-1bf99d2d2271"
             ><Button color="info">Documentación Backend en Postman</Button></a>
@@ -135,9 +135,9 @@
           <CardSubtitle />
           <CardText>Recogidas por la UNDP</CardText>
           <a href="https://sos2021-23.herokuapp.com/api/v1/hdi-stats">
-            <Button color="primary">Backend</Button></a>
+            <Button color="primary">API</Button></a>
           <a href="/#/hdi-stats">
-            <Button color="primary">Frontend</Button>
+            <Button color="primary">Interfaz</Button>
           </a>
           <a href="https://documenter.getpostman.com/view/14943559/TzJoDfQ5"
             ><Button color="info">Documentación Backend en Postman</Button></a>
