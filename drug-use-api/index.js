@@ -23,7 +23,7 @@ var du_stats = [
     {
    "country": "Spain",
    "year": "2017",
-   "dupopulation": "46,600,000",
+   "dupopulation": "46,.6",
    "dudead": "1.83",
    "dudependenceperc": "1.47",
    "dudaly": "249.83"
@@ -31,7 +31,7 @@ var du_stats = [
  {
    "country": "France",
    "year": "2017",
-   "dupopulation": "65,000,000",
+   "dupopulation": "65.0",
    "dudead": "5.5",
    "dudependenceperc": "1.18",
    "dudaly": "254.95"
@@ -39,7 +39,7 @@ var du_stats = [
  {
    "country": "Germany",
    "year": "2017",
-   "dupopulation": "83,100,000",
+   "dupopulation": "83.1",
    "dudead": "6.7",
    "dudependenceperc": "1.66",
    "dudaly": "241.92"
@@ -47,7 +47,7 @@ var du_stats = [
  {
    "country": "United Kingdom",
    "year": "2017",
-   "dupopulation": "66,200,000",
+   "dupopulation": "66.2",
    "dudead": "6.98",
    "dudependenceperc": "1.66",
    "dudaly": "527.75"
@@ -55,7 +55,7 @@ var du_stats = [
  {
    "country": "USA",
    "year": "2017",
-   "dupopulation": "325,400,000",
+   "dupopulation": "325.4",
    "dudead": "21.99",
    "dudependenceperc": "3.45",
    "dudaly": "1.695.55"
@@ -63,7 +63,7 @@ var du_stats = [
  {
    "country": "Brazil",
    "year": "2017",
-   "dupopulation": "207,900,000",
+   "dupopulation": "207.9",
    "dudead": "5.5",
    "dudependenceperc": "1.06",
    "dudaly": "276.1"
@@ -71,7 +71,7 @@ var du_stats = [
  {
   "country": "Mexico",
    "year": "2017",
-   "dupopulation": "129,200,000",
+   "dupopulation": "129.2",
    "dudead": "5.09",
    "dudependenceperc": "0.82",
    "dudaly": "248.29"
@@ -79,7 +79,7 @@ var du_stats = [
  {
    "country": "Canada",
    "year": "2017",
-   "dupopulation": "36,700,000",
+   "dupopulation": "36.7",
    "dudead": "7.27",
    "dudependenceperc": "2.28",
    "dudaly": "756.15"
@@ -87,7 +87,7 @@ var du_stats = [
  {
    "country": "Greenland",
    "year": "2017",
-   "dupopulation": "56,000,000",
+   "dupopulation": "56.0",
    "dudead": "13.93",
    "dudependenceperc": "1.99",
    "dudaly": "480.89"
@@ -95,11 +95,27 @@ var du_stats = [
  {
   "country": "Italy",
    "year": "2017",
-   "dupopulation": "60,500,000",
+   "dupopulation": "60.5",
    "dudead": "1.19",
    "dudependenceperc": "1.15",
    "dudaly": "257.85"
- }
+ },
+ {
+	"country": "Argentine",
+	 "year": "2013",
+	 "dupopulation": "20,5",
+	 "dudead": "0.80",
+	 "dudependenceperc": "1.54",
+	 "dudaly": "143.45"
+   },
+   {
+	  "country": "Denmark",
+	   "year": "2020",
+	   "dupopulation": "30,5",
+	   "dudead": "0.20",
+	   "dudependenceperc": "0.34",
+	   "dudaly": "127.95"
+	 }
 ];
 
  module.exports.register = (app) => {

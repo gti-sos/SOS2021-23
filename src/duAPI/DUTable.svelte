@@ -15,7 +15,6 @@
     let visible = false;
     let color = "danger";
     
-    let page = 1;
     let totaldata=8;
     let du_stats = [];
     let searchcountry = "";
@@ -30,8 +29,27 @@
 	}
 
     
+    //pag vars
+    let page = 0;
+    let numero;
+    let limit = 10;
+    let succMsg;
+    // search vars
+    let Country = "";
+    let Year = "";
+    let PopulationMin = 0;
+    let PopulationMax = "";
+    let DeadMin = 0;
+    let DeadMax = "";
+    let PercMin = 0;
+    let PercMax = "";
+    let DalyMin = 0;
+    let DalyMax = "";
+    
     let errorMSG = null;
     onMount(getData);
+
+    
 
     
  
@@ -39,7 +57,7 @@
     async function getData() {
  
         console.log("Fetching Drugs Data...");
-        const res = await fetch("/api/v1/du-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/du-stats?limit=10&offset=1");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -56,7 +74,7 @@
  
         console.log("Fetching du data...");
         await fetch("/api/v1/du-stats/loadInitialData");
-        const res = await fetch("/api/v1/du-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/du-stats?limit=10&offset=1");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -215,7 +233,7 @@
             page+=5
         }
         console.log("Charging page "+ page);
-        const res = await fetch("/api/v1/du-stats?limit=5&offset="+page);
+        const res = await fetch("/api/v1/du-stats?limit=10&offset="+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -227,26 +245,7 @@
         }
     }
 
-    async function buscaRegistro(country, year) {
-		console.log("Realizando búsqueda del país: " + country + " y del año: " + year);
-        
-        year=parseInt(year);
-        
-        var url = "/api/v1/du-stats";
-        
-		if (country != "" && year != "") {
-            url = url + "?country=" + country + "&year=" + year;
-            console.log(url);
-        } 
-        else if (country != "" && year == "") {
-            url = url + "?country=" + country;
-            console.log(url);
-        } 
-        else if (country == "" && year != "") {
-            url = url + "?year=" + year;
-            console.log(url);
-        }
-    }
+    
     //getPreviewPage
     async function getPreviewPage() {
  
@@ -254,7 +253,7 @@
             page-=5; 
         } else page = 1
         console.log("Charging page " +page);
-        const res = await fetch("/api/v1/du-stats?limit=5&offset="+page);
+        const res = await fetch("/api/v1/du-stats?limit=10&offset="+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -265,7 +264,131 @@
             console.log("ERROR!");
         }
     }
+
+    //Busqueda
     
+    async function busqueda(Country, Year, PopulationMin , PopulationMax , DeadMin 
+    , DeadMax , PercMin , PercMax, DalyMin, DalyMax  ) {
+        if (typeof Country == 'undefined') {
+            Country = "";
+        }
+        if (typeof Year == 'undefined') {
+            Year = "";
+        }
+        if (typeof PopulationMin == 'undefined') {
+            PopulationMin = "";
+        }
+        if (typeof PopulationMax  == 'undefined') {
+            PopulationMax = "";
+        }
+        if (typeof DeadMin == 'undefined') {
+            DeadMin = "";
+        }
+        if (typeof DeadMax  == 'undefined') {
+            DeadMax  = "";
+        }
+        if (typeof PercMin  == 'undefined') {
+            PercMin  = "";
+        }
+        if (typeof PercMax  == 'undefined') {
+            PercMax  = "";
+        }
+        if (typeof DalyMin   == 'undefined') {
+            DalyMin   = "";
+        }
+        if (typeof DalyMax   == 'undefined') {
+            DalyMax   = "";
+        }
+        const res = await fetch("/api/v1/du-stats?country=" + Country  + "&year=" + Year
+            + "&PopulationMin =" + PopulationMin  + "&PopulationMax =" + PopulationMax  + "&DeadMin =" + DeadMin  + "&DeadMax" + DeadMax 
+            + "&PercMin" + PercMin + + "&PercMax" + PercMax + "&DalyMin" + DalyMin + "&DalyMax" + DalyMax)
+        if (res.ok) {
+            const json = await res.json();
+            du_stats = json;
+            console.log("Found: " + du_stats.length + " stats");
+            if (du_stats.length == 1) {
+                succMsg = "Se ha encontrado " + du_stats.length + " muestra";
+            } else {
+                succMsg = "Se han encontrado " + du_stats.length + " muestras";
+            }
+        } else if (res.status == 400) {
+            window.alert("No se han encontrado muestras con los parametros introducidos");
+        }
+    }
+
+    //Paginacion
+    async function paginacion(Country, Year, PopulationMin , PopulationMax , DeadMin 
+    , DeadMax , PercMin , PercMax, DalyMin, DalyMax, numero) {
+        if (typeof Country == 'undefined') {
+            Country = "";
+        }
+        if (typeof Year == 'undefined') {
+            Year = "";
+        }
+        if (typeof PopulationMin == 'undefined') {
+            PopulationMin = "";
+        }
+        if (typeof PopulationMax  == 'undefined') {
+            PopulationMax = "";
+        }
+        if (typeof DeadMin == 'undefined') {
+            DeadMin = "";
+        }
+        if (typeof DeadMax  == 'undefined') {
+            DeadMax  = "";
+        }
+        if (typeof PercMin  == 'undefined') {
+            PercMin  = "";
+        }
+        if (typeof PercMax  == 'undefined') {
+            PercMax  = "";
+        }
+        if (typeof DalyMin   == 'undefined') {
+            DalyMin   = "";
+        }
+        if (typeof DalyMax   == 'undefined') {
+            DalyMax   = "";
+        }
+        if (numero == 1) {
+            page = page - limit;
+            if (page < 0) {
+                page = 0;
+                const res = await fetch("/api/v1/du-stats?country=" + Country  + "&year=" + Year
+            + "&PopulationMin =" + PopulationMin  + "&PopulationMax =" + PopulationMax  + "&DeadMin =" + DeadMin  + "&DeadMax" + DeadMax 
+            + "&PercMin" + PercMin + + "&PercMax" + PercMax + "&DalyMin" + DalyMin + "&DalyMax" + DalyMax + "&limit=" + limit + "&offset=" + page
+                )
+                if (res.ok) {
+                    const json = await res.json();
+                    du_stats = json;
+                    numero = num;
+                }
+            } else {
+                const res = await fetch("/api/v1/du-stats?country=" + Country  + "&year=" + Year
+            + "&PopulationMin =" + PopulationMin  + "&PopulationMax =" + PopulationMax  + "&DeadMin =" + DeadMin  + "&DeadMax" + DeadMax 
+            + "&PercMin" + PercMin + + "&PercMax" + PercMax + "&DalyMin" + DalyMin + "&DalyMax" + DalyMax + "&limit=" + limit + "&offset=" + page
+                )
+                if (res.ok) {
+                    const json = await res.json();
+                    du_stats = json;
+                    numero = num;
+                }
+            }
+        } else {
+            page = page + limit;
+            const res = await fetch("/api/v1/du-stats?country=" + Country  + "&year=" + Year
+            + "&PopulationMin =" + PopulationMin  + "&PopulationMax =" + PopulationMax  + "&DeadMin =" + DeadMin  + "&DeadMax" + DeadMax 
+            + "&PercMin" + PercMin + + "&PercMax" + PercMax + "&DalyMin" + DalyMin + "&DalyMax" + DalyMax + "&limit=" + limit + "&offset=" + page
+                
+            )
+            if (res.ok) {
+                const json = await res.json();
+                electricity = json;
+                numero = num;
+            } else if (res.status == 404) {
+                window.alert("No existen mas muestras");
+            }
+        }
+    }
 </script>
 
 <main>
@@ -334,6 +457,26 @@
                     <th>Porcentaje de dependencia a las drogas</th>
                     <th>D.A.L.Y</th>
                 </tr>
+                <h6>Seccion de busqueda: </h6>
+            <tr>
+                <td><label>Pais: <input bind:value="{Country}"></label></td>
+                <td><label>Poblacion Min: <input bind:value="{PopulationMin}"></label></td>
+                <td><label>Porcentaje de Muertes Min: <input bind:value="{DeadMin}"></label></td>
+                <td><label>Porcentaje Dependencia Min: <input bind:value="{PercMin}"></label></td> 
+                <td><label>Porcentaje D.A.L.Y Min: <input bind:value="{DalyMin}"></label></td>
+            </tr>
+
+            <tr>
+                <td><label>Año: <input bind:value="{Year}"></label></td>
+                <td><label>Poblacion Max: <input bind:value="{PopulationMax}"></label></td>
+                <td><label>Porcentaje de Muertes Max: <input bind:value="{DeadMax}"></label></td>
+                <td><label>Porcentaje Dependencia Max: <input bind:value="{PercMax}"></label></td>
+                <td><label>Porcentaje D.A.L.Y Max: <input bind:value="{DalyMax}"></label></td>
+             </tr>
+
+             <Button outline color="primary"
+                on:click="{busqueda (Country, Year, PopulationMin , PopulationMax , DeadMin 
+                    , DeadMax , PercMin , PercMax, DalyMin, DalyMax)}">Buscar</Button>
             </thead>
             <tbody>
                 <tr>
@@ -343,18 +486,9 @@
                     <td><input bind:value="{data.dudead}"></td>    
                     <td><input bind:value="{data.dudependenceperc}"></td> 
                     <td><input bind:value="{data.dudaly}"></td>   
-                    <td><Button outline color="primary" on:click={insertData}>Insertar</Button></td>
-                    <td><Button outline color="secondary" style="font-size: 16px;border-radius: 4px;background-color: white;" on:click="{buscaRegistro(searchcountry, searchyear)}" class="button-search"> Buscar </Button></td>           
+                    <td><Button outline color="primary" on:click={insertData}>Insertar</Button></td>         
                 </tr>
-                <tr>
-                    <td>Introducir datos para realizar una busqueda:</td>
-                    <td>Pais</td>
-                    <td><input bind:value="{searchcountry}"></td>
-                    <td>Año</td>
-					<td><input type=number bind:value={searchyear}></td>
-					<td><Button on:click={buscaRegistro(searchcountry, searchyear)}>Buscar</Button>
-                </td>
-            </tr>
+            
  
                 {#each du_stats as sc}
                     <tr>
