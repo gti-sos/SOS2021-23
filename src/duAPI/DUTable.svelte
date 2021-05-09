@@ -29,6 +29,7 @@
         dudaly:""
 	}
 
+  
     
     let errorMSG = null;
     onMount(getData);
@@ -246,7 +247,34 @@
             url = url + "?year=" + year;
             console.log(url);
         }
-    }
+        const res = await fetch(url);
+        
+		        if (res.ok) {
+			        console.log("OK");
+			        const json = await res.json();
+                console.log(json);
+			        du_stats=[json];	
+                console.log("du_stats now is that:");
+                console.log(du_stats);	
+                console.log(du_stats.length);
+			        console.log("Encontrados " + du_stats.length + " registros.");
+            
+            if(du_stats.length > 0 || du_stats[0]!=[]){
+                window.alert("Se han encontrado: "+ du_stats.length + " resultados.");
+                
+            }
+            else{
+                window.alert("No se han encontrado registros para esta busqueda");
+            }
+        } 
+        else {
+			console.log("ERROR");
+		}
+		
+	}
+    
+
+    
     //getPreviewPage
     async function getPreviewPage() {
  
