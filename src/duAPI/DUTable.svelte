@@ -145,7 +145,7 @@
     insStat.population =  "";
     insStat.dead = "";
     insStat.percde = "";
-    insStat.daly = "";
+    insStat.daly = " ";
 
   
 
@@ -159,7 +159,7 @@
             if (res.status==200) {
                 totaldata--;
                 //color = "success";
-                //errorMSG = "Recurso" + country + year + "borrado correctamente";
+                //errorMSG = "Recurso" + country + year + "borrado correctamentee";
                 errorMSG = 200.2;
                 console.log("Deleted " + name);            
             }else if (res.status==404) {
@@ -399,8 +399,8 @@ async function searchStat() {
                     <td><input type="text" placeholder="País"  bind:value={insStat.country}/></td> 
                     <td><input type="text" placeholder="Año"  bind:value={insStat.year}/></td>
                     <td><input type="text" placeholder="Población"  bind:value={insStat.population}/></td>
-                    <td><input type="text" placeholder="Porcentaje de Muertes"  bind:value={insStat.dead}/></td>
-                    <td><input type="text" placeholder="Porcentaje de Dependientes"  bind:value={insStat.percde}/></td>
+                    <td><input type="text" placeholder="Porcentaje Muertes"  bind:value={insStat.dead}/></td>
+                    <td><input type="text" placeholder="Porcentaje Dependientes"  bind:value={insStat.percde}/></td>
                     <td><input type="text" placeholder="D.A.L.Y.S"  bind:value={insStat.daly}/></td>
                     <td><Button color="warning" on:click={searchStat}>Buscar</Button></td>
                  </tr>
@@ -415,7 +415,7 @@ async function searchStat() {
                     <td><input bind:value="{data.dudaly}"></td>   
                     <td><Button outline color="primary" on:click={insertData}>Insertar</Button></td>         
                 </tr>
-            
+        
  
                 {#each du_stats as sc}
                     <tr>
