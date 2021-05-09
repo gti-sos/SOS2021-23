@@ -272,7 +272,7 @@
 		}
 		
 	}
-    onMount(getRegisters);
+    
 
     
     //getPreviewPage
