@@ -17574,7 +17574,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (258:8) <Button color="success" on:click="{loadInitialData}">
+    // (255:8) <Button color="success" on:click="{loadInitialData}">
     function create_default_slot_14$1(ctx) {
     	let t;
 
@@ -17594,14 +17594,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_14$1.name,
     		type: "slot",
-    		source: "(258:8) <Button color=\\\"success\\\" on:click=\\\"{loadInitialData}\\\">",
+    		source: "(255:8) <Button color=\\\"success\\\" on:click=\\\"{loadInitialData}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (261:8) <Button color="danger" on:click="{deleteALL}">
+    // (258:8) <Button color="danger" on:click="{deleteALL}">
     function create_default_slot_13$2(ctx) {
     	let t;
 
@@ -17621,14 +17621,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_13$2.name,
     		type: "slot",
-    		source: "(261:8) <Button color=\\\"danger\\\" on:click=\\\"{deleteALL}\\\">",
+    		source: "(258:8) <Button color=\\\"danger\\\" on:click=\\\"{deleteALL}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (264:2) <Button on:click="{getPreviewPage}">
+    // (261:2) <Button on:click="{getPreviewPage}">
     function create_default_slot_12$2(ctx) {
     	let t;
 
@@ -17648,14 +17648,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_12$2.name,
     		type: "slot",
-    		source: "(264:2) <Button on:click=\\\"{getPreviewPage}\\\">",
+    		source: "(261:2) <Button on:click=\\\"{getPreviewPage}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (267:2) <Button on:click="{getNextPage}">
+    // (264:2) <Button on:click="{getNextPage}">
     function create_default_slot_11$2(ctx) {
     	let t;
 
@@ -17675,14 +17675,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_11$2.name,
     		type: "slot",
-    		source: "(267:2) <Button on:click=\\\"{getNextPage}\\\">",
+    		source: "(264:2) <Button on:click=\\\"{getNextPage}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (272:2) <Table borderless responsive>
+    // (269:2) <Table borderless responsive>
     function create_default_slot_10$2(ctx) {
     	let tr;
     	let td0;
@@ -17749,27 +17749,27 @@ var app = (function () {
     			label4 = element("label");
     			t8 = text("Porcentaje de Gfmag: ");
     			input4 = element("input");
-    			add_location(input0, file$6, 273, 29, 9150);
-    			add_location(label0, file$6, 273, 16, 9137);
-    			add_location(strong0, file$6, 273, 8, 9129);
-    			add_location(td0, file$6, 273, 4, 9125);
-    			add_location(input1, file$6, 274, 28, 9233);
-    			add_location(label1, file$6, 274, 16, 9221);
-    			add_location(strong1, file$6, 274, 8, 9213);
-    			add_location(td1, file$6, 274, 4, 9209);
-    			add_location(input2, file$6, 275, 45, 9330);
-    			add_location(label2, file$6, 275, 16, 9301);
-    			add_location(strong2, file$6, 275, 8, 9293);
-    			add_location(td2, file$6, 275, 4, 9289);
-    			add_location(input3, file$6, 276, 57, 9441);
-    			add_location(label3, file$6, 276, 16, 9400);
-    			add_location(strong3, file$6, 276, 8, 9392);
-    			add_location(td3, file$6, 276, 4, 9388);
-    			add_location(input4, file$6, 277, 44, 9539);
-    			add_location(label4, file$6, 277, 16, 9511);
-    			add_location(strong4, file$6, 277, 8, 9503);
-    			add_location(td4, file$6, 277, 4, 9499);
-    			add_location(tr, file$6, 272, 3, 9115);
+    			add_location(input0, file$6, 270, 29, 9144);
+    			add_location(label0, file$6, 270, 16, 9131);
+    			add_location(strong0, file$6, 270, 8, 9123);
+    			add_location(td0, file$6, 270, 4, 9119);
+    			add_location(input1, file$6, 271, 28, 9227);
+    			add_location(label1, file$6, 271, 16, 9215);
+    			add_location(strong1, file$6, 271, 8, 9207);
+    			add_location(td1, file$6, 271, 4, 9203);
+    			add_location(input2, file$6, 272, 45, 9324);
+    			add_location(label2, file$6, 272, 16, 9295);
+    			add_location(strong2, file$6, 272, 8, 9287);
+    			add_location(td2, file$6, 272, 4, 9283);
+    			add_location(input3, file$6, 273, 57, 9435);
+    			add_location(label3, file$6, 273, 16, 9394);
+    			add_location(strong3, file$6, 273, 8, 9386);
+    			add_location(td3, file$6, 273, 4, 9382);
+    			add_location(input4, file$6, 274, 44, 9533);
+    			add_location(label4, file$6, 274, 16, 9505);
+    			add_location(strong4, file$6, 274, 8, 9497);
+    			add_location(td4, file$6, 274, 4, 9493);
+    			add_location(tr, file$6, 269, 3, 9109);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -17852,14 +17852,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_10$2.name,
     		type: "slot",
-    		source: "(272:2) <Table borderless responsive>",
+    		source: "(269:2) <Table borderless responsive>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (282:3) <Button outline color="primary" on:click="{busqueda (Ucountry, Uyear,knoperc,intperc,gfperc)}">
+    // (279:3) <Button outline color="primary" on:click="{busqueda (Ucountry, Uyear,knoperc,intperc,gfperc)}">
     function create_default_slot_9$2(ctx) {
     	let t;
 
@@ -17879,7 +17879,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_9$2.name,
     		type: "slot",
-    		source: "(282:3) <Button outline color=\\\"primary\\\" on:click=\\\"{busqueda (Ucountry, Uyear,knoperc,intperc,gfperc)}\\\">",
+    		source: "(279:3) <Button outline color=\\\"primary\\\" on:click=\\\"{busqueda (Ucountry, Uyear,knoperc,intperc,gfperc)}\\\">",
     		ctx
     	});
 
@@ -17908,7 +17908,7 @@ var app = (function () {
     	return block;
     }
 
-    // (289:4) {:then unemployment_stats}
+    // (286:4) {:then unemployment_stats}
     function create_then_block$2(ctx) {
     	let t0;
     	let t1;
@@ -18169,14 +18169,14 @@ var app = (function () {
     		block,
     		id: create_then_block$2.name,
     		type: "then",
-    		source: "(289:4) {:then unemployment_stats}",
+    		source: "(286:4) {:then unemployment_stats}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (291:8) {#if errorMSG === 200.1}
+    // (288:8) {#if errorMSG === 200.1}
     function create_if_block_6$2(ctx) {
     	let uncontrolledalert;
     	let current;
@@ -18216,14 +18216,14 @@ var app = (function () {
     		block,
     		id: create_if_block_6$2.name,
     		type: "if",
-    		source: "(291:8) {#if errorMSG === 200.1}",
+    		source: "(288:8) {#if errorMSG === 200.1}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (292:8) <UncontrolledAlert  color="success" >
+    // (289:8) <UncontrolledAlert  color="success" >
     function create_default_slot_8$2(ctx) {
     	let t;
 
@@ -18243,14 +18243,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8$2.name,
     		type: "slot",
-    		source: "(292:8) <UncontrolledAlert  color=\\\"success\\\" >",
+    		source: "(289:8) <UncontrolledAlert  color=\\\"success\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (297:8) {#if errorMSG === 200.2}
+    // (294:8) {#if errorMSG === 200.2}
     function create_if_block_5$2(ctx) {
     	let uncontrolledalert;
     	let current;
@@ -18290,14 +18290,14 @@ var app = (function () {
     		block,
     		id: create_if_block_5$2.name,
     		type: "if",
-    		source: "(297:8) {#if errorMSG === 200.2}",
+    		source: "(294:8) {#if errorMSG === 200.2}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (298:8) <UncontrolledAlert  color="warning" >
+    // (295:8) <UncontrolledAlert  color="warning" >
     function create_default_slot_7$2(ctx) {
     	let t;
 
@@ -18317,14 +18317,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7$2.name,
     		type: "slot",
-    		source: "(298:8) <UncontrolledAlert  color=\\\"warning\\\" >",
+    		source: "(295:8) <UncontrolledAlert  color=\\\"warning\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (303:8) {#if errorMSG === 200.3}
+    // (300:8) {#if errorMSG === 200.3}
     function create_if_block_4$2(ctx) {
     	let uncontrolledalert;
     	let current;
@@ -18364,14 +18364,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4$2.name,
     		type: "if",
-    		source: "(303:8) {#if errorMSG === 200.3}",
+    		source: "(300:8) {#if errorMSG === 200.3}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (304:8) <UncontrolledAlert  color="warning" >
+    // (301:8) <UncontrolledAlert  color="warning" >
     function create_default_slot_6$2(ctx) {
     	let t;
 
@@ -18391,14 +18391,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6$2.name,
     		type: "slot",
-    		source: "(304:8) <UncontrolledAlert  color=\\\"warning\\\" >",
+    		source: "(301:8) <UncontrolledAlert  color=\\\"warning\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (309:8) {#if errorMSG === 201}
+    // (306:8) {#if errorMSG === 201}
     function create_if_block_3$2(ctx) {
     	let uncontrolledalert;
     	let current;
@@ -18438,14 +18438,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$2.name,
     		type: "if",
-    		source: "(309:8) {#if errorMSG === 201}",
+    		source: "(306:8) {#if errorMSG === 201}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (310:8) <UncontrolledAlert  color="success" >
+    // (307:8) <UncontrolledAlert  color="success" >
     function create_default_slot_5$2(ctx) {
     	let t;
 
@@ -18465,14 +18465,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5$2.name,
     		type: "slot",
-    		source: "(310:8) <UncontrolledAlert  color=\\\"success\\\" >",
+    		source: "(307:8) <UncontrolledAlert  color=\\\"success\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (315:8) {#if errorMSG === 404.2}
+    // (312:8) {#if errorMSG === 404.2}
     function create_if_block_2$2(ctx) {
     	let uncontrolledalert;
     	let current;
@@ -18512,14 +18512,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$2.name,
     		type: "if",
-    		source: "(315:8) {#if errorMSG === 404.2}",
+    		source: "(312:8) {#if errorMSG === 404.2}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (316:8) <UncontrolledAlert  color="danger" >
+    // (313:8) <UncontrolledAlert  color="danger" >
     function create_default_slot_4$2(ctx) {
     	let t;
 
@@ -18539,14 +18539,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$2.name,
     		type: "slot",
-    		source: "(316:8) <UncontrolledAlert  color=\\\"danger\\\" >",
+    		source: "(313:8) <UncontrolledAlert  color=\\\"danger\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (321:8) {#if errorMSG === 409}
+    // (318:8) {#if errorMSG === 409}
     function create_if_block_1$2(ctx) {
     	let uncontrolledalert;
     	let current;
@@ -18586,14 +18586,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$2.name,
     		type: "if",
-    		source: "(321:8) {#if errorMSG === 409}",
+    		source: "(318:8) {#if errorMSG === 409}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (322:8) <UncontrolledAlert  color="danger" >
+    // (319:8) <UncontrolledAlert  color="danger" >
     function create_default_slot_3$2(ctx) {
     	let t;
 
@@ -18613,14 +18613,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$2.name,
     		type: "slot",
-    		source: "(322:8) <UncontrolledAlert  color=\\\"danger\\\" >",
+    		source: "(319:8) <UncontrolledAlert  color=\\\"danger\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (347:24) <Button outline color="primary" on:click={insertData}>
+    // (344:24) <Button outline color="primary" on:click={insertData}>
     function create_default_slot_2$5(ctx) {
     	let t;
 
@@ -18640,14 +18640,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$5.name,
     		type: "slot",
-    		source: "(347:24) <Button outline color=\\\"primary\\\" on:click={insertData}>",
+    		source: "(344:24) <Button outline color=\\\"primary\\\" on:click={insertData}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (357:28) <Button outline color="danger" on:click="{deleteData(sc.country, sc.year)}">
+    // (354:28) <Button outline color="danger" on:click="{deleteData(sc.country, sc.year)}">
     function create_default_slot_1$5(ctx) {
     	let t;
 
@@ -18667,14 +18667,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$5.name,
     		type: "slot",
-    		source: "(357:28) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteData(sc.country, sc.year)}\\\">",
+    		source: "(354:28) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteData(sc.country, sc.year)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (350:16) {#each unemployment_stats as sc}
+    // (347:16) {#each unemployment_stats as sc}
     function create_each_block$2(ctx) {
     	let tr;
     	let td0;
@@ -18741,14 +18741,14 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			t10 = space();
     			attr_dev(a, "href", a_href_value = "#/unemployment-stats/" + /*sc*/ ctx[33].country + "/" + /*sc*/ ctx[33].year);
-    			add_location(a, file$6, 351, 28, 12063);
-    			add_location(td0, file$6, 351, 24, 12059);
-    			add_location(td1, file$6, 352, 24, 12164);
-    			add_location(td2, file$6, 353, 24, 12208);
-    			add_location(td3, file$6, 354, 24, 12255);
-    			add_location(td4, file$6, 355, 24, 12302);
-    			add_location(td5, file$6, 356, 24, 12348);
-    			add_location(tr, file$6, 350, 20, 12029);
+    			add_location(a, file$6, 348, 28, 12057);
+    			add_location(td0, file$6, 348, 24, 12053);
+    			add_location(td1, file$6, 349, 24, 12158);
+    			add_location(td2, file$6, 350, 24, 12202);
+    			add_location(td3, file$6, 351, 24, 12249);
+    			add_location(td4, file$6, 352, 24, 12296);
+    			add_location(td5, file$6, 353, 24, 12342);
+    			add_location(tr, file$6, 347, 20, 12023);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -18812,14 +18812,14 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(350:16) {#each unemployment_stats as sc}",
+    		source: "(347:16) {#each unemployment_stats as sc}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (329:8) <Table bordered responsive hover>
+    // (326:8) <Table bordered responsive hover>
     function create_default_slot$5(ctx) {
     	let thead;
     	let tr0;
@@ -18929,27 +18929,27 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$6, 331, 20, 11124);
-    			add_location(th1, file$6, 332, 20, 11159);
-    			add_location(th2, file$6, 333, 20, 11193);
-    			add_location(th3, file$6, 334, 20, 11251);
-    			add_location(th4, file$6, 335, 20, 11322);
-    			add_location(th5, file$6, 336, 20, 11379);
-    			add_location(tr0, file$6, 330, 16, 11098);
-    			add_location(thead, file$6, 329, 12, 11073);
-    			add_location(input0, file$6, 341, 24, 11511);
-    			add_location(td0, file$6, 341, 20, 11507);
-    			add_location(input1, file$6, 342, 24, 11577);
-    			add_location(td1, file$6, 342, 20, 11573);
-    			add_location(input2, file$6, 343, 24, 11640);
-    			add_location(td2, file$6, 343, 20, 11636);
-    			add_location(input3, file$6, 344, 24, 11707);
-    			add_location(td3, file$6, 344, 20, 11703);
-    			add_location(input4, file$6, 345, 24, 11777);
-    			add_location(td4, file$6, 345, 20, 11773);
-    			add_location(td5, file$6, 346, 20, 11840);
-    			add_location(tr1, file$6, 340, 16, 11481);
-    			add_location(tbody, file$6, 339, 12, 11456);
+    			add_location(th0, file$6, 328, 20, 11118);
+    			add_location(th1, file$6, 329, 20, 11153);
+    			add_location(th2, file$6, 330, 20, 11187);
+    			add_location(th3, file$6, 331, 20, 11245);
+    			add_location(th4, file$6, 332, 20, 11316);
+    			add_location(th5, file$6, 333, 20, 11373);
+    			add_location(tr0, file$6, 327, 16, 11092);
+    			add_location(thead, file$6, 326, 12, 11067);
+    			add_location(input0, file$6, 338, 24, 11505);
+    			add_location(td0, file$6, 338, 20, 11501);
+    			add_location(input1, file$6, 339, 24, 11571);
+    			add_location(td1, file$6, 339, 20, 11567);
+    			add_location(input2, file$6, 340, 24, 11634);
+    			add_location(td2, file$6, 340, 20, 11630);
+    			add_location(input3, file$6, 341, 24, 11701);
+    			add_location(td3, file$6, 341, 20, 11697);
+    			add_location(input4, file$6, 342, 24, 11771);
+    			add_location(td4, file$6, 342, 20, 11767);
+    			add_location(td5, file$6, 343, 20, 11834);
+    			add_location(tr1, file$6, 337, 16, 11475);
+    			add_location(tbody, file$6, 336, 12, 11450);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -19102,14 +19102,14 @@ var app = (function () {
     		block,
     		id: create_default_slot$5.name,
     		type: "slot",
-    		source: "(329:8) <Table bordered responsive hover>",
+    		source: "(326:8) <Table bordered responsive hover>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (364:8) {#if unemployment_stats.length === 0}
+    // (361:8) {#if unemployment_stats.length === 0}
     function create_if_block$5(ctx) {
     	let p;
 
@@ -19117,7 +19117,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "No se han encontrado datos, por favor, carga los datos iniciales.";
-    			add_location(p, file$6, 364, 12, 12629);
+    			add_location(p, file$6, 361, 12, 12623);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -19131,14 +19131,14 @@ var app = (function () {
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(364:8) {#if unemployment_stats.length === 0}",
+    		source: "(361:8) {#if unemployment_stats.length === 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (287:31)           Loading unemployment data...      {:then unemployment_stats}
+    // (284:31)           Loading unemployment data...      {:then unemployment_stats}
     function create_pending_block$2(ctx) {
     	let t;
 
@@ -19161,7 +19161,7 @@ var app = (function () {
     		block,
     		id: create_pending_block$2.name,
     		type: "pending",
-    		source: "(287:31)           Loading unemployment data...      {:then unemployment_stats}",
+    		source: "(284:31)           Loading unemployment data...      {:then unemployment_stats}",
     		ctx
     	});
 
@@ -19293,12 +19293,12 @@ var app = (function () {
     			p1.textContent = "Si quieres editar algún recurso haz click en el nombre del país.";
     			t9 = space();
     			info.block.c();
-    			add_location(p0, file$6, 270, 2, 8987);
+    			add_location(p0, file$6, 267, 2, 8981);
     			set_style(div, "text-align", "center");
     			set_style(div, "padding-bottom", "1%");
-    			add_location(div, file$6, 280, 2, 9616);
-    			add_location(p1, file$6, 283, 2, 9795);
-    			add_location(main, file$6, 256, 0, 8599);
+    			add_location(div, file$6, 277, 2, 9610);
+    			add_location(p1, file$6, 280, 2, 9789);
+    			add_location(main, file$6, 253, 0, 8593);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
