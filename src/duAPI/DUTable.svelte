@@ -36,6 +36,13 @@
 	}
 
     
+    //Pagination
+    let current_offset = 0;
+    let limit = 10;
+    let current_page = 1;
+    let last_page = 1;
+    let total = 0;
+    
     let errorMSG = null;
     onMount(getData);
 
@@ -281,6 +288,23 @@ async function searchStat() {
       }
     }
 
+     //Cambio de pagina
+     function changePage(page, offset) {
+      console.log("------Change page------");
+      console.log("Params page: " + page + " offset: " + offset);
+      last_page = Math.ceil(total / 10);
+      console.log("new last page: " + last_page);
+      if (page !== current_page) {
+        console.log("enter if");
+        current_offset = offset;
+        current_page = page;
+        console.log("page: " + page);
+        console.log("current_offset: " + current_offset);
+        console.log("current_page: " + current_page);
+        getStats();
+      }
+      console.log("---------Exit change page-------");
+    }
 
     //getPreviewPage
     async function getPreviewPage() {
@@ -379,7 +403,7 @@ async function searchStat() {
                     <td><input bind:value="{data.dudependenceperc}"></td> 
                     <td><input bind:value="{data.dudaly}"></td>   
                     <td><Button outline color="primary" on:click={insertData}>Insertar</Button></td>
-                    <td><Button outline color="primary" on:click={searchStat}>Buscar</Button></td>
+                    <td><Button color="warning" on:click={searchStat}>Buscar</Button></td>
             </tr>
  
                 {#each du_stats as sc}
