@@ -20741,7 +20741,7 @@ var app = (function () {
     	return block;
     }
 
-    // (419:20) <Button color="warning" on:click={searchStat}>
+    // (419:20) <Button color="warning" on:click={busqueda}>
     function create_default_slot_3$1(ctx) {
     	let t;
 
@@ -20761,7 +20761,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$1.name,
     		type: "slot",
-    		source: "(419:20) <Button color=\\\"warning\\\" on:click={searchStat}>",
+    		source: "(419:20) <Button color=\\\"warning\\\" on:click={busqueda}>",
     		ctx
     	});
 
@@ -20916,16 +20916,16 @@ var app = (function () {
     			create_component(button1.$$.fragment);
     			t13 = space();
     			attr_dev(a, "href", a_href_value = "#/du-stats/" + /*sc*/ ctx[51].country + "/" + /*sc*/ ctx[51].year);
-    			add_location(a, file$5, 423, 28, 14107);
-    			add_location(td0, file$5, 423, 24, 14103);
-    			add_location(td1, file$5, 424, 24, 14198);
-    			add_location(td2, file$5, 425, 24, 14242);
-    			add_location(td3, file$5, 426, 24, 14294);
-    			add_location(td4, file$5, 427, 24, 14340);
-    			add_location(td5, file$5, 428, 24, 14396);
-    			add_location(td6, file$5, 429, 24, 14442);
-    			add_location(td7, file$5, 430, 24, 14568);
-    			add_location(tr, file$5, 422, 20, 14073);
+    			add_location(a, file$5, 423, 28, 14141);
+    			add_location(td0, file$5, 423, 24, 14137);
+    			add_location(td1, file$5, 424, 24, 14232);
+    			add_location(td2, file$5, 425, 24, 14276);
+    			add_location(td3, file$5, 426, 24, 14328);
+    			add_location(td4, file$5, 427, 24, 14374);
+    			add_location(td5, file$5, 428, 24, 14430);
+    			add_location(td6, file$5, 429, 24, 14476);
+    			add_location(td7, file$5, 430, 24, 14602);
+    			add_location(tr, file$5, 422, 20, 14107);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -21099,7 +21099,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button1.$on("click", searchStat);
+    	button1.$on("click", /*busqueda*/ ctx[10]);
     	let each_value = /*du_stats*/ ctx[3];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -21184,55 +21184,55 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$5, 393, 20, 12369);
-    			add_location(th1, file$5, 394, 20, 12404);
-    			add_location(th2, file$5, 395, 20, 12438);
-    			add_location(th3, file$5, 396, 20, 12478);
-    			add_location(th4, file$5, 397, 20, 12530);
-    			add_location(th5, file$5, 398, 20, 12599);
-    			add_location(tr0, file$5, 392, 16, 12343);
-    			add_location(thead, file$5, 391, 12, 12318);
-    			add_location(input0, file$5, 403, 24, 12729);
-    			add_location(td0, file$5, 403, 20, 12725);
-    			add_location(input1, file$5, 404, 24, 12795);
-    			add_location(td1, file$5, 404, 20, 12791);
-    			add_location(input2, file$5, 405, 24, 12858);
-    			add_location(td2, file$5, 405, 20, 12854);
-    			add_location(input3, file$5, 406, 24, 12930);
-    			add_location(td3, file$5, 406, 20, 12926);
-    			add_location(input4, file$5, 407, 24, 12999);
-    			add_location(td4, file$5, 407, 20, 12995);
-    			add_location(input5, file$5, 408, 24, 13075);
-    			add_location(td5, file$5, 408, 20, 13071);
-    			add_location(td6, file$5, 409, 20, 13139);
-    			add_location(tr1, file$5, 402, 16, 12699);
+    			add_location(th0, file$5, 393, 20, 12405);
+    			add_location(th1, file$5, 394, 20, 12440);
+    			add_location(th2, file$5, 395, 20, 12474);
+    			add_location(th3, file$5, 396, 20, 12514);
+    			add_location(th4, file$5, 397, 20, 12566);
+    			add_location(th5, file$5, 398, 20, 12635);
+    			add_location(tr0, file$5, 392, 16, 12379);
+    			add_location(thead, file$5, 391, 12, 12354);
+    			add_location(input0, file$5, 403, 24, 12765);
+    			add_location(td0, file$5, 403, 20, 12761);
+    			add_location(input1, file$5, 404, 24, 12831);
+    			add_location(td1, file$5, 404, 20, 12827);
+    			add_location(input2, file$5, 405, 24, 12894);
+    			add_location(td2, file$5, 405, 20, 12890);
+    			add_location(input3, file$5, 406, 24, 12966);
+    			add_location(td3, file$5, 406, 20, 12962);
+    			add_location(input4, file$5, 407, 24, 13035);
+    			add_location(td4, file$5, 407, 20, 13031);
+    			add_location(input5, file$5, 408, 24, 13111);
+    			add_location(td5, file$5, 408, 20, 13107);
+    			add_location(td6, file$5, 409, 20, 13175);
+    			add_location(tr1, file$5, 402, 16, 12735);
     			attr_dev(input6, "type", "text");
     			attr_dev(input6, "placeholder", "País");
-    			add_location(input6, file$5, 412, 20, 13278);
-    			add_location(td7, file$5, 412, 16, 13274);
+    			add_location(input6, file$5, 412, 20, 13314);
+    			add_location(td7, file$5, 412, 16, 13310);
     			attr_dev(input7, "type", "text");
     			attr_dev(input7, "placeholder", "Año");
-    			add_location(input7, file$5, 413, 20, 13375);
-    			add_location(td8, file$5, 413, 16, 13371);
+    			add_location(input7, file$5, 413, 20, 13411);
+    			add_location(td8, file$5, 413, 16, 13407);
     			attr_dev(input8, "type", "text");
     			attr_dev(input8, "placeholder", "Población");
-    			add_location(input8, file$5, 414, 20, 13467);
-    			add_location(td9, file$5, 414, 16, 13463);
+    			add_location(input8, file$5, 414, 20, 13503);
+    			add_location(td9, file$5, 414, 16, 13499);
     			attr_dev(input9, "type", "text");
     			attr_dev(input9, "placeholder", "Porcentaje de Muertes");
-    			add_location(input9, file$5, 415, 20, 13573);
-    			add_location(td10, file$5, 415, 16, 13569);
+    			add_location(input9, file$5, 415, 20, 13609);
+    			add_location(td10, file$5, 415, 16, 13605);
     			attr_dev(input10, "type", "text");
     			attr_dev(input10, "placeholder", "Porcentaje de dependencia a las drogas");
-    			add_location(input10, file$5, 416, 20, 13685);
-    			add_location(td11, file$5, 416, 16, 13681);
+    			add_location(input10, file$5, 416, 20, 13721);
+    			add_location(td11, file$5, 416, 16, 13717);
     			attr_dev(input11, "type", "text");
     			attr_dev(input11, "placeholder", "D.A.L.Y");
-    			add_location(input11, file$5, 417, 20, 13824);
-    			add_location(td12, file$5, 417, 16, 13820);
-    			add_location(td13, file$5, 418, 16, 13918);
-    			add_location(tr2, file$5, 411, 12, 13252);
-    			add_location(tbody, file$5, 401, 12, 12674);
+    			add_location(input11, file$5, 417, 20, 13860);
+    			add_location(td12, file$5, 417, 16, 13856);
+    			add_location(td13, file$5, 418, 16, 13954);
+    			add_location(tr2, file$5, 411, 12, 13288);
+    			add_location(tbody, file$5, 401, 12, 12710);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -21315,18 +21315,18 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[11]),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[12]),
-    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[13]),
-    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[14]),
-    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[15]),
-    					listen_dev(input5, "input", /*input5_input_handler*/ ctx[16]),
-    					listen_dev(input6, "input", /*input6_input_handler*/ ctx[17]),
-    					listen_dev(input7, "input", /*input7_input_handler*/ ctx[18]),
-    					listen_dev(input8, "input", /*input8_input_handler*/ ctx[19]),
-    					listen_dev(input9, "input", /*input9_input_handler*/ ctx[20]),
-    					listen_dev(input10, "input", /*input10_input_handler*/ ctx[21]),
-    					listen_dev(input11, "input", /*input11_input_handler*/ ctx[22])
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[12]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[13]),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[14]),
+    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[15]),
+    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[16]),
+    					listen_dev(input5, "input", /*input5_input_handler*/ ctx[17]),
+    					listen_dev(input6, "input", /*input6_input_handler*/ ctx[18]),
+    					listen_dev(input7, "input", /*input7_input_handler*/ ctx[19]),
+    					listen_dev(input8, "input", /*input8_input_handler*/ ctx[20]),
+    					listen_dev(input9, "input", /*input9_input_handler*/ ctx[21]),
+    					listen_dev(input10, "input", /*input10_input_handler*/ ctx[22]),
+    					listen_dev(input11, "input", /*input11_input_handler*/ ctx[23])
     				];
 
     				mounted = true;
@@ -21478,7 +21478,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "No se han encontrado datos, por favor, carga los datos iniciales.";
-    			add_location(p, file$5, 437, 12, 14812);
+    			add_location(p, file$5, 437, 12, 14846);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -21574,7 +21574,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button2.$on("click", /*getPreviewPage*/ ctx[10]);
+    	button2.$on("click", /*getPreviewPage*/ ctx[11]);
 
     	button3 = new Button({
     			props: {
@@ -21614,7 +21614,7 @@ var app = (function () {
     			create_component(button3.$$.fragment);
     			t3 = space();
     			info.block.c();
-    			add_location(main, file$5, 334, 0, 10749);
+    			add_location(main, file$5, 334, 0, 10785);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -21767,13 +21767,13 @@ var app = (function () {
     	};
 
     	//VARIABLES PARA BUSQUEDA
-    	let country = "";
+    	let Dcountry = "";
 
-    	let year = "";
-    	let dupopulation = "";
-    	let dudead = "";
-    	let dudependenceperc = "";
-    	let dudaly = "";
+    	let Dyear = "";
+    	let Ddupopulation = "";
+    	let Ddudead = "";
+    	let Ddudependenceperc = "";
+    	let Ddudaly = "";
 
     	//GET
     	async function getData() {
@@ -21968,32 +21968,32 @@ var app = (function () {
     	}
 
     	// Buscar dato
-    	async function busqueda(country, year, dupopulation, dudead, dudependenceperc, dudaly) {
-    		if (typeof country == "undefined") {
-    			country = "";
+    	async function busqueda(Dcountry, Dyear, Ddupopulation, Ddudead, Ddudependenceperc, Ddudaly) {
+    		if (typeof Dcountry == "undefined") {
+    			Dcountry = "";
     		}
 
-    		if (typeof year == "undefined") {
-    			year = "";
+    		if (typeof Dyear == "undefined") {
+    			Dyear = "";
     		}
 
-    		if (typeof dupopulation == "undefined") {
-    			dupopulation = "";
+    		if (typeof Ddupopulation == "undefined") {
+    			Ddupopulation = "";
     		}
 
-    		if (typeof dudead == "undefined") {
-    			dudead = "";
+    		if (typeof Ddudead == "undefined") {
+    			Ddudead = "";
     		}
 
-    		if (typeof dudependenceperc == "undefined") {
-    			dudependenceperc = "";
+    		if (typeof Ddudependenceperc == "undefined") {
+    			Ddudependenceperc = "";
     		}
 
-    		if (typeof dudaly == "undefined") {
-    			dudaly = "";
+    		if (typeof Ddudaly == "undefined") {
+    			Ddudaly = "";
     		}
 
-    		const res = await fetch("/api/v1/du-stats?country=" + country + "&year=" + year + "&dupopulation=" + dupopulation + "&dudead=" + dudead + "&dudependenceperc=" + dudependenceperc + "&dudaly=" + dudaly);
+    		const res = await fetch("/api/v1/du-stats?Dcountry=" + Dcountry + "&Dyear=" + Dyear + "&Ddupopulation=" + Ddupopulation + "&Ddudead=" + Ddudead + "&Ddudependenceperc=" + Ddudependenceperc + "&Ddudaly=" + Ddudaly);
 
     		if (res.ok) {
     			const json = await res.json();
@@ -22156,12 +22156,12 @@ var app = (function () {
     		total,
     		errorMSG,
     		insStat,
-    		country,
-    		year,
-    		dupopulation,
-    		dudead,
-    		dudependenceperc,
-    		dudaly,
+    		Dcountry,
+    		Dyear,
+    		Ddupopulation,
+    		Ddudead,
+    		Ddudependenceperc,
+    		Ddudaly,
     		getData,
     		loadInitialData,
     		insertData,
@@ -22198,12 +22198,12 @@ var app = (function () {
     		if ("total" in $$props) total = $$props.total;
     		if ("errorMSG" in $$props) $$invalidate(1, errorMSG = $$props.errorMSG);
     		if ("insStat" in $$props) $$invalidate(2, insStat = $$props.insStat);
-    		if ("country" in $$props) country = $$props.country;
-    		if ("year" in $$props) year = $$props.year;
-    		if ("dupopulation" in $$props) dupopulation = $$props.dupopulation;
-    		if ("dudead" in $$props) dudead = $$props.dudead;
-    		if ("dudependenceperc" in $$props) dudependenceperc = $$props.dudependenceperc;
-    		if ("dudaly" in $$props) dudaly = $$props.dudaly;
+    		if ("Dcountry" in $$props) Dcountry = $$props.Dcountry;
+    		if ("Dyear" in $$props) Dyear = $$props.Dyear;
+    		if ("Ddupopulation" in $$props) Ddupopulation = $$props.Ddupopulation;
+    		if ("Ddudead" in $$props) Ddudead = $$props.Ddudead;
+    		if ("Ddudependenceperc" in $$props) Ddudependenceperc = $$props.Ddudependenceperc;
+    		if ("Ddudaly" in $$props) Ddudaly = $$props.Ddudaly;
     		if ("searchCountry" in $$props) searchCountry = $$props.searchCountry;
     		if ("searchYear" in $$props) searchYear = $$props.searchYear;
     	};
@@ -22223,6 +22223,7 @@ var app = (function () {
     		deleteALL,
     		editData,
     		getNextPage,
+    		busqueda,
     		getPreviewPage,
     		input0_input_handler,
     		input1_input_handler,
