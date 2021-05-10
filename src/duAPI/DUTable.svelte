@@ -45,6 +45,7 @@
     
     let errorMSG = null;
 
+    //BUSQUEDA
     let country = "";
 	let year = "";
 	let dupopulation="";
@@ -412,7 +413,8 @@
                 <td><input type="text" placeholder="Porcentaje de Muertes"  bind:value={dudead}/></td>
                 <td><input type="text" placeholder="Porcentaje de dependencia a las drogas"  bind:value={dudependenceperc}/></td>
                 <td><input type="text" placeholder="D.A.L.Y"  bind:value={dudaly}/></td>
-                <td><Button color="warning" on:click={busqueda}>Buscar</Button></td>
+                <Button outline color="primary" on:click="{busqueda (country, year,dupopulation,dudead,dudependenceperc,dudaly)}">Buscar</Button>
+                //<td><Button color="warning" on:click={busqueda}>Buscar</Button></td>
              </tr>
  
                 {#each du_stats as sc}
