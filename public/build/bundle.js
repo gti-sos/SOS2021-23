@@ -5480,7 +5480,7 @@ var app = (function () {
     		if (/*type*/ ctx[3] === "file") return create_if_block_4$4;
     		if (/*type*/ ctx[3] === "checkbox") return create_if_block_5$3;
     		if (/*type*/ ctx[3] === "radio") return create_if_block_6$3;
-    		if (/*type*/ ctx[3] === "url") return create_if_block_7;
+    		if (/*type*/ ctx[3] === "url") return create_if_block_7$1;
     		if (/*type*/ ctx[3] === "number") return create_if_block_8;
     		if (/*type*/ ctx[3] === "date") return create_if_block_9;
     		if (/*type*/ ctx[3] === "time") return create_if_block_10;
@@ -6178,7 +6178,7 @@ var app = (function () {
     }
 
     // (186:27) 
-    function create_if_block_7(ctx) {
+    function create_if_block_7$1(ctx) {
     	let input;
     	let mounted;
     	let dispose;
@@ -6248,7 +6248,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_7.name,
+    		id: create_if_block_7$1.name,
     		type: "if",
     		source: "(186:27) ",
     		ctx
@@ -11766,7 +11766,7 @@ var app = (function () {
     }
 
     // (115:12) <Button color="primary">
-    function create_default_slot_17(ctx) {
+    function create_default_slot_17$1(ctx) {
     	let t;
 
     	const block = {
@@ -11783,7 +11783,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_17.name,
+    		id: create_default_slot_17$1.name,
     		type: "slot",
     		source: "(115:12) <Button color=\\\"primary\\\">",
     		ctx
@@ -11793,7 +11793,7 @@ var app = (function () {
     }
 
     // (117:12) <Button color="primary">
-    function create_default_slot_16(ctx) {
+    function create_default_slot_16$1(ctx) {
     	let t;
 
     	const block = {
@@ -11810,7 +11810,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_16.name,
+    		id: create_default_slot_16$1.name,
     		type: "slot",
     		source: "(117:12) <Button color=\\\"primary\\\">",
     		ctx
@@ -11820,7 +11820,7 @@ var app = (function () {
     }
 
     // (120:13) <Button color="info">
-    function create_default_slot_15(ctx) {
+    function create_default_slot_15$1(ctx) {
     	let t;
 
     	const block = {
@@ -11837,7 +11837,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_15.name,
+    		id: create_default_slot_15$1.name,
     		type: "slot",
     		source: "(120:13) <Button color=\\\"info\\\">",
     		ctx
@@ -11874,7 +11874,7 @@ var app = (function () {
     	button0 = new Button({
     			props: {
     				color: "primary",
-    				$$slots: { default: [create_default_slot_17] },
+    				$$slots: { default: [create_default_slot_17$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11883,7 +11883,7 @@ var app = (function () {
     	button1 = new Button({
     			props: {
     				color: "primary",
-    				$$slots: { default: [create_default_slot_16] },
+    				$$slots: { default: [create_default_slot_16$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -11892,7 +11892,7 @@ var app = (function () {
     	button2 = new Button({
     			props: {
     				color: "info",
-    				$$slots: { default: [create_default_slot_15] },
+    				$$slots: { default: [create_default_slot_15$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -13555,7 +13555,7 @@ var app = (function () {
     	window.location.hash = (location.charAt(0) == "#" ? "" : "#") + location;
     }
 
-    async function pop() {
+    async function pop$1() {
     	// Execute this code when the current call stack is complete
     	await tick();
 
@@ -13964,7 +13964,7 @@ var app = (function () {
     		location: location$1,
     		querystring,
     		push,
-    		pop,
+    		pop: pop$1,
     		replace,
     		link,
     		updateLink,
@@ -19872,8 +19872,8 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (333:4) <Button color="success" on:click="{loadInitialData}">
-    function create_default_slot_14(ctx) {
+    // (352:4) <Button color="success" on:click="{loadInitialData}">
+    function create_default_slot_17(ctx) {
     	let t;
 
     	const block = {
@@ -19890,17 +19890,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_14.name,
+    		id: create_default_slot_17.name,
     		type: "slot",
-    		source: "(333:4) <Button color=\\\"success\\\" on:click=\\\"{loadInitialData}\\\">",
+    		source: "(352:4) <Button color=\\\"success\\\" on:click=\\\"{loadInitialData}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (336:4) <Button color="danger" on:click="{deleteALL}">
-    function create_default_slot_13$1(ctx) {
+    // (355:4) <Button color="danger" on:click="{deleteALL}">
+    function create_default_slot_16(ctx) {
     	let t;
 
     	const block = {
@@ -19917,17 +19917,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_13$1.name,
+    		id: create_default_slot_16.name,
     		type: "slot",
-    		source: "(336:4) <Button color=\\\"danger\\\" on:click=\\\"{deleteALL}\\\">",
+    		source: "(355:4) <Button color=\\\"danger\\\" on:click=\\\"{deleteALL}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (339:4) <Button outline color="info" on:click="{getPreviewPage}">
-    function create_default_slot_12$1(ctx) {
+    // (358:4) <Button outline color="info" on:click="{getPreviewPage}">
+    function create_default_slot_15(ctx) {
     	let t;
 
     	const block = {
@@ -19944,17 +19944,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_12$1.name,
+    		id: create_default_slot_15.name,
     		type: "slot",
-    		source: "(339:4) <Button outline color=\\\"info\\\" on:click=\\\"{getPreviewPage}\\\">",
+    		source: "(358:4) <Button outline color=\\\"info\\\" on:click=\\\"{getPreviewPage}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (342:5) <Button outline color="info" on:click="{getNextPage}">
-    function create_default_slot_11$1(ctx) {
+    // (361:5) <Button outline color="info" on:click="{getNextPage}">
+    function create_default_slot_14(ctx) {
     	let t;
 
     	const block = {
@@ -19971,9 +19971,9 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_11$1.name,
+    		id: create_default_slot_14.name,
     		type: "slot",
-    		source: "(342:5) <Button outline color=\\\"info\\\" on:click=\\\"{getNextPage}\\\">",
+    		source: "(361:5) <Button outline color=\\\"info\\\" on:click=\\\"{getNextPage}\\\">",
     		ctx
     	});
 
@@ -20002,7 +20002,7 @@ var app = (function () {
     	return block;
     }
 
-    // (348:4) {:then du_stats}
+    // (367:4) {:then du_stats}
     function create_then_block$1(ctx) {
     	let t0;
     	let t1;
@@ -20012,27 +20012,59 @@ var app = (function () {
     	let t5;
     	let table;
     	let t6;
-    	let if_block6_anchor;
+    	let button0;
+    	let t7;
+    	let t8;
+    	let t9;
+    	let t10;
+    	let br0;
+    	let t11;
+    	let br1;
+    	let button1;
+    	let t12;
+    	let if_block7_anchor;
     	let current;
-    	let if_block0 = /*errorMSG*/ ctx[1] === 200.1 && create_if_block_6$1(ctx);
-    	let if_block1 = /*errorMSG*/ ctx[1] === 200.2 && create_if_block_5$1(ctx);
-    	let if_block2 = /*errorMSG*/ ctx[1] === 200.3 && create_if_block_4$1(ctx);
-    	let if_block3 = /*errorMSG*/ ctx[1] === 201 && create_if_block_3$1(ctx);
-    	let if_block4 = /*errorMSG*/ ctx[1] === 404.2 && create_if_block_2$1(ctx);
-    	let if_block5 = /*errorMSG*/ ctx[1] === 409 && create_if_block_1$1(ctx);
+    	let if_block0 = /*errorMSG*/ ctx[1] === 200.1 && create_if_block_7(ctx);
+    	let if_block1 = /*errorMSG*/ ctx[1] === 200.2 && create_if_block_6$1(ctx);
+    	let if_block2 = /*errorMSG*/ ctx[1] === 200.3 && create_if_block_5$1(ctx);
+    	let if_block3 = /*errorMSG*/ ctx[1] === 201 && create_if_block_4$1(ctx);
+    	let if_block4 = /*errorMSG*/ ctx[1] === 404.2 && create_if_block_3$1(ctx);
+    	let if_block5 = /*errorMSG*/ ctx[1] === 409 && create_if_block_2$1(ctx);
 
     	table = new Table({
     			props: {
     				bordered: true,
     				responsive: true,
     				hover: true,
+    				$$slots: { default: [create_default_slot_3$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button0 = new Button({
+    			props: {
+    				color: "info",
+    				$$slots: { default: [create_default_slot_2$4] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button0.$on("click", /*pagBefore*/ ctx[18]);
+    	let if_block6 = !/*maxpag*/ ctx[10] && create_if_block_1$1(ctx);
+
+    	button1 = new Button({
+    			props: {
+    				style: "background-color:darkgray ",
     				$$slots: { default: [create_default_slot$4] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	let if_block6 = /*du_stats*/ ctx[8].length === 0 && create_if_block$4(ctx);
+    	button1.$on("click", pop);
+    	let if_block7 = /*du_stats*/ ctx[8].length === 0 && create_if_block$4(ctx);
 
     	const block = {
     		c: function create() {
@@ -20050,8 +20082,21 @@ var app = (function () {
     			t5 = space();
     			create_component(table.$$.fragment);
     			t6 = space();
+    			create_component(button0.$$.fragment);
+    			t7 = text("        \r\n        Número de datos en esta página: ");
+    			t8 = text(/*numTotal*/ ctx[9]);
+    			t9 = space();
     			if (if_block6) if_block6.c();
-    			if_block6_anchor = empty();
+    			t10 = space();
+    			br0 = element("br");
+    			t11 = space();
+    			br1 = element("br");
+    			create_component(button1.$$.fragment);
+    			t12 = space();
+    			if (if_block7) if_block7.c();
+    			if_block7_anchor = empty();
+    			add_location(br0, file$5, 459, 8, 15394);
+    			add_location(br1, file$5, 459, 14, 15400);
     		},
     		m: function mount(target, anchor) {
     			if (if_block0) if_block0.m(target, anchor);
@@ -20068,8 +20113,19 @@ var app = (function () {
     			insert_dev(target, t5, anchor);
     			mount_component(table, target, anchor);
     			insert_dev(target, t6, anchor);
+    			mount_component(button0, target, anchor);
+    			insert_dev(target, t7, anchor);
+    			insert_dev(target, t8, anchor);
+    			insert_dev(target, t9, anchor);
     			if (if_block6) if_block6.m(target, anchor);
-    			insert_dev(target, if_block6_anchor, anchor);
+    			insert_dev(target, t10, anchor);
+    			insert_dev(target, br0, anchor);
+    			insert_dev(target, t11, anchor);
+    			insert_dev(target, br1, anchor);
+    			mount_component(button1, target, anchor);
+    			insert_dev(target, t12, anchor);
+    			if (if_block7) if_block7.m(target, anchor);
+    			insert_dev(target, if_block7_anchor, anchor);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -20079,7 +20135,7 @@ var app = (function () {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_6$1(ctx);
+    					if_block0 = create_if_block_7(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(t0.parentNode, t0);
@@ -20100,7 +20156,7 @@ var app = (function () {
     						transition_in(if_block1, 1);
     					}
     				} else {
-    					if_block1 = create_if_block_5$1(ctx);
+    					if_block1 = create_if_block_6$1(ctx);
     					if_block1.c();
     					transition_in(if_block1, 1);
     					if_block1.m(t1.parentNode, t1);
@@ -20121,7 +20177,7 @@ var app = (function () {
     						transition_in(if_block2, 1);
     					}
     				} else {
-    					if_block2 = create_if_block_4$1(ctx);
+    					if_block2 = create_if_block_5$1(ctx);
     					if_block2.c();
     					transition_in(if_block2, 1);
     					if_block2.m(t2.parentNode, t2);
@@ -20142,7 +20198,7 @@ var app = (function () {
     						transition_in(if_block3, 1);
     					}
     				} else {
-    					if_block3 = create_if_block_3$1(ctx);
+    					if_block3 = create_if_block_4$1(ctx);
     					if_block3.c();
     					transition_in(if_block3, 1);
     					if_block3.m(t3.parentNode, t3);
@@ -20163,7 +20219,7 @@ var app = (function () {
     						transition_in(if_block4, 1);
     					}
     				} else {
-    					if_block4 = create_if_block_2$1(ctx);
+    					if_block4 = create_if_block_3$1(ctx);
     					if_block4.c();
     					transition_in(if_block4, 1);
     					if_block4.m(t4.parentNode, t4);
@@ -20184,7 +20240,7 @@ var app = (function () {
     						transition_in(if_block5, 1);
     					}
     				} else {
-    					if_block5 = create_if_block_1$1(ctx);
+    					if_block5 = create_if_block_2$1(ctx);
     					if_block5.c();
     					transition_in(if_block5, 1);
     					if_block5.m(t5.parentNode, t5);
@@ -20206,16 +20262,31 @@ var app = (function () {
     			}
 
     			table.$set(table_changes);
+    			const button0_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 16777216) {
+    				button0_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button0.$set(button0_changes);
+    			if (!/*maxpag*/ ctx[10]) if_block6.p(ctx, dirty);
+    			const button1_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 16777216) {
+    				button1_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button1.$set(button1_changes);
 
     			if (/*du_stats*/ ctx[8].length === 0) {
-    				if (if_block6) ; else {
-    					if_block6 = create_if_block$4(ctx);
-    					if_block6.c();
-    					if_block6.m(if_block6_anchor.parentNode, if_block6_anchor);
+    				if (if_block7) ; else {
+    					if_block7 = create_if_block$4(ctx);
+    					if_block7.c();
+    					if_block7.m(if_block7_anchor.parentNode, if_block7_anchor);
     				}
-    			} else if (if_block6) {
-    				if_block6.d(1);
-    				if_block6 = null;
+    			} else if (if_block7) {
+    				if_block7.d(1);
+    				if_block7 = null;
     			}
     		},
     		i: function intro(local) {
@@ -20227,6 +20298,9 @@ var app = (function () {
     			transition_in(if_block4);
     			transition_in(if_block5);
     			transition_in(table.$$.fragment, local);
+    			transition_in(button0.$$.fragment, local);
+    			transition_in(if_block6);
+    			transition_in(button1.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
@@ -20237,6 +20311,9 @@ var app = (function () {
     			transition_out(if_block4);
     			transition_out(if_block5);
     			transition_out(table.$$.fragment, local);
+    			transition_out(button0.$$.fragment, local);
+    			transition_out(if_block6);
+    			transition_out(button1.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -20254,8 +20331,19 @@ var app = (function () {
     			if (detaching) detach_dev(t5);
     			destroy_component(table, detaching);
     			if (detaching) detach_dev(t6);
+    			destroy_component(button0, detaching);
+    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(t8);
+    			if (detaching) detach_dev(t9);
     			if (if_block6) if_block6.d(detaching);
-    			if (detaching) detach_dev(if_block6_anchor);
+    			if (detaching) detach_dev(t10);
+    			if (detaching) detach_dev(br0);
+    			if (detaching) detach_dev(t11);
+    			if (detaching) detach_dev(br1);
+    			destroy_component(button1, detaching);
+    			if (detaching) detach_dev(t12);
+    			if (if_block7) if_block7.d(detaching);
+    			if (detaching) detach_dev(if_block7_anchor);
     		}
     	};
 
@@ -20263,15 +20351,237 @@ var app = (function () {
     		block,
     		id: create_then_block$1.name,
     		type: "then",
-    		source: "(348:4) {:then du_stats}",
+    		source: "(367:4) {:then du_stats}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (350:8) {#if errorMSG === 200.1}
+    // (369:8) {#if errorMSG === 200.1}
+    function create_if_block_7(ctx) {
+    	let uncontrolledalert;
+    	let current;
+
+    	uncontrolledalert = new UncontrolledAlert({
+    			props: {
+    				color: "success",
+    				$$slots: { default: [create_default_slot_13$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(uncontrolledalert.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(uncontrolledalert, target, anchor);
+    			current = true;
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(uncontrolledalert.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(uncontrolledalert.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(uncontrolledalert, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_7.name,
+    		type: "if",
+    		source: "(369:8) {#if errorMSG === 200.1}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (370:8) <UncontrolledAlert  color="success" >
+    function create_default_slot_13$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Datos cargados con éxito.");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_13$1.name,
+    		type: "slot",
+    		source: "(370:8) <UncontrolledAlert  color=\\\"success\\\" >",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (375:8) {#if errorMSG === 200.2}
     function create_if_block_6$1(ctx) {
+    	let uncontrolledalert;
+    	let current;
+
+    	uncontrolledalert = new UncontrolledAlert({
+    			props: {
+    				color: "warning",
+    				$$slots: { default: [create_default_slot_12$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(uncontrolledalert.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(uncontrolledalert, target, anchor);
+    			current = true;
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(uncontrolledalert.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(uncontrolledalert.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(uncontrolledalert, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_6$1.name,
+    		type: "if",
+    		source: "(375:8) {#if errorMSG === 200.2}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (376:8) <UncontrolledAlert  color="warning" >
+    function create_default_slot_12$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Recurso eliminado con éxito.");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_12$1.name,
+    		type: "slot",
+    		source: "(376:8) <UncontrolledAlert  color=\\\"warning\\\" >",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (381:8) {#if errorMSG === 200.3}
+    function create_if_block_5$1(ctx) {
+    	let uncontrolledalert;
+    	let current;
+
+    	uncontrolledalert = new UncontrolledAlert({
+    			props: {
+    				color: "warning",
+    				$$slots: { default: [create_default_slot_11$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(uncontrolledalert.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(uncontrolledalert, target, anchor);
+    			current = true;
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(uncontrolledalert.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(uncontrolledalert.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(uncontrolledalert, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_5$1.name,
+    		type: "if",
+    		source: "(381:8) {#if errorMSG === 200.3}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (382:8) <UncontrolledAlert  color="warning" >
+    function create_default_slot_11$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Elementos borrados con éxito.");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_11$1.name,
+    		type: "slot",
+    		source: "(382:8) <UncontrolledAlert  color=\\\"warning\\\" >",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (387:8) {#if errorMSG === 201}
+    function create_if_block_4$1(ctx) {
     	let uncontrolledalert;
     	let current;
 
@@ -20308,22 +20618,22 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_6$1.name,
+    		id: create_if_block_4$1.name,
     		type: "if",
-    		source: "(350:8) {#if errorMSG === 200.1}",
+    		source: "(387:8) {#if errorMSG === 201}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (351:8) <UncontrolledAlert  color="success" >
+    // (388:8) <UncontrolledAlert  color="success" >
     function create_default_slot_10$1(ctx) {
     	let t;
 
     	const block = {
     		c: function create() {
-    			t = text("Datos cargados con éxito.");
+    			t = text("Recurso instertado con éxito.");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
@@ -20337,170 +20647,22 @@ var app = (function () {
     		block,
     		id: create_default_slot_10$1.name,
     		type: "slot",
-    		source: "(351:8) <UncontrolledAlert  color=\\\"success\\\" >",
+    		source: "(388:8) <UncontrolledAlert  color=\\\"success\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (356:8) {#if errorMSG === 200.2}
-    function create_if_block_5$1(ctx) {
-    	let uncontrolledalert;
-    	let current;
-
-    	uncontrolledalert = new UncontrolledAlert({
-    			props: {
-    				color: "warning",
-    				$$slots: { default: [create_default_slot_9$1] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	const block = {
-    		c: function create() {
-    			create_component(uncontrolledalert.$$.fragment);
-    		},
-    		m: function mount(target, anchor) {
-    			mount_component(uncontrolledalert, target, anchor);
-    			current = true;
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(uncontrolledalert.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(uncontrolledalert.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			destroy_component(uncontrolledalert, detaching);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block_5$1.name,
-    		type: "if",
-    		source: "(356:8) {#if errorMSG === 200.2}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (357:8) <UncontrolledAlert  color="warning" >
-    function create_default_slot_9$1(ctx) {
-    	let t;
-
-    	const block = {
-    		c: function create() {
-    			t = text("Recurso eliminado con éxito.");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, t, anchor);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_default_slot_9$1.name,
-    		type: "slot",
-    		source: "(357:8) <UncontrolledAlert  color=\\\"warning\\\" >",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (362:8) {#if errorMSG === 200.3}
-    function create_if_block_4$1(ctx) {
-    	let uncontrolledalert;
-    	let current;
-
-    	uncontrolledalert = new UncontrolledAlert({
-    			props: {
-    				color: "warning",
-    				$$slots: { default: [create_default_slot_8$1] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	const block = {
-    		c: function create() {
-    			create_component(uncontrolledalert.$$.fragment);
-    		},
-    		m: function mount(target, anchor) {
-    			mount_component(uncontrolledalert, target, anchor);
-    			current = true;
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(uncontrolledalert.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(uncontrolledalert.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			destroy_component(uncontrolledalert, detaching);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block_4$1.name,
-    		type: "if",
-    		source: "(362:8) {#if errorMSG === 200.3}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (363:8) <UncontrolledAlert  color="warning" >
-    function create_default_slot_8$1(ctx) {
-    	let t;
-
-    	const block = {
-    		c: function create() {
-    			t = text("Elementos borrados con éxito.");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, t, anchor);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_default_slot_8$1.name,
-    		type: "slot",
-    		source: "(363:8) <UncontrolledAlert  color=\\\"warning\\\" >",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (368:8) {#if errorMSG === 201}
+    // (393:8) {#if errorMSG === 404.2}
     function create_if_block_3$1(ctx) {
     	let uncontrolledalert;
     	let current;
 
     	uncontrolledalert = new UncontrolledAlert({
     			props: {
-    				color: "success",
-    				$$slots: { default: [create_default_slot_7$1] },
+    				color: "danger",
+    				$$slots: { default: [create_default_slot_9$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -20532,20 +20694,20 @@ var app = (function () {
     		block,
     		id: create_if_block_3$1.name,
     		type: "if",
-    		source: "(368:8) {#if errorMSG === 201}",
+    		source: "(393:8) {#if errorMSG === 404.2}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (369:8) <UncontrolledAlert  color="success" >
-    function create_default_slot_7$1(ctx) {
+    // (394:8) <UncontrolledAlert  color="danger" >
+    function create_default_slot_9$1(ctx) {
     	let t;
 
     	const block = {
     		c: function create() {
-    			t = text("Recurso instertado con éxito.");
+    			t = text("La base de datos ya esta vacía.");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
@@ -20557,16 +20719,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_7$1.name,
+    		id: create_default_slot_9$1.name,
     		type: "slot",
-    		source: "(369:8) <UncontrolledAlert  color=\\\"success\\\" >",
+    		source: "(394:8) <UncontrolledAlert  color=\\\"danger\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (374:8) {#if errorMSG === 404.2}
+    // (399:8) {#if errorMSG === 409}
     function create_if_block_2$1(ctx) {
     	let uncontrolledalert;
     	let current;
@@ -20574,7 +20736,7 @@ var app = (function () {
     	uncontrolledalert = new UncontrolledAlert({
     			props: {
     				color: "danger",
-    				$$slots: { default: [create_default_slot_6$1] },
+    				$$slots: { default: [create_default_slot_8$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -20606,89 +20768,15 @@ var app = (function () {
     		block,
     		id: create_if_block_2$1.name,
     		type: "if",
-    		source: "(374:8) {#if errorMSG === 404.2}",
+    		source: "(399:8) {#if errorMSG === 409}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (375:8) <UncontrolledAlert  color="danger" >
-    function create_default_slot_6$1(ctx) {
-    	let t;
-
-    	const block = {
-    		c: function create() {
-    			t = text("La base de datos ya esta vacía.");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, t, anchor);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_default_slot_6$1.name,
-    		type: "slot",
-    		source: "(375:8) <UncontrolledAlert  color=\\\"danger\\\" >",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (380:8) {#if errorMSG === 409}
-    function create_if_block_1$1(ctx) {
-    	let uncontrolledalert;
-    	let current;
-
-    	uncontrolledalert = new UncontrolledAlert({
-    			props: {
-    				color: "danger",
-    				$$slots: { default: [create_default_slot_5$1] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	const block = {
-    		c: function create() {
-    			create_component(uncontrolledalert.$$.fragment);
-    		},
-    		m: function mount(target, anchor) {
-    			mount_component(uncontrolledalert, target, anchor);
-    			current = true;
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(uncontrolledalert.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(uncontrolledalert.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			destroy_component(uncontrolledalert, detaching);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block_1$1.name,
-    		type: "if",
-    		source: "(380:8) {#if errorMSG === 409}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (381:8) <UncontrolledAlert  color="danger" >
-    function create_default_slot_5$1(ctx) {
+    // (400:8) <UncontrolledAlert  color="danger" >
+    function create_default_slot_8$1(ctx) {
     	let t;
 
     	const block = {
@@ -20705,17 +20793,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$1.name,
+    		id: create_default_slot_8$1.name,
     		type: "slot",
-    		source: "(381:8) <UncontrolledAlert  color=\\\"danger\\\" >",
+    		source: "(400:8) <UncontrolledAlert  color=\\\"danger\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (407:24) <Button outline color="primary" on:click={insertData}>
-    function create_default_slot_4$1(ctx) {
+    // (426:24) <Button outline color="primary" on:click={insertData}>
+    function create_default_slot_7$1(ctx) {
     	let t;
 
     	const block = {
@@ -20732,17 +20820,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4$1.name,
+    		id: create_default_slot_7$1.name,
     		type: "slot",
-    		source: "(407:24) <Button outline color=\\\"primary\\\" on:click={insertData}>",
+    		source: "(426:24) <Button outline color=\\\"primary\\\" on:click={insertData}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (416:16) <Button outline color="primary" on:click="{busqueda (country,year,dupopulation,dudead,dudependenceperc,dudaly)}">
-    function create_default_slot_3$1(ctx) {
+    // (435:20) <Button outline color="primary" on:click="{busqueda (country, year,dupopulation,dudead,dudependenceperc,dudaly)}">
+    function create_default_slot_6$1(ctx) {
     	let t;
 
     	const block = {
@@ -20759,17 +20847,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$1.name,
+    		id: create_default_slot_6$1.name,
     		type: "slot",
-    		source: "(416:16) <Button outline color=\\\"primary\\\" on:click=\\\"{busqueda (country,year,dupopulation,dudead,dudependenceperc,dudaly)}\\\">",
+    		source: "(435:20) <Button outline color=\\\"primary\\\" on:click=\\\"{busqueda (country, year,dupopulation,dudead,dudependenceperc,dudaly)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (428:28) <Button outline color="danger" on:click="{deleteData(sc.country, sc.year)}">
-    function create_default_slot_2$4(ctx) {
+    // (447:28) <Button outline color="danger" on:click="{deleteData(sc.country, sc.year)}">
+    function create_default_slot_5$1(ctx) {
     	let t;
 
     	const block = {
@@ -20786,17 +20874,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$4.name,
+    		id: create_default_slot_5$1.name,
     		type: "slot",
-    		source: "(428:28) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteData(sc.country, sc.year)}\\\">",
+    		source: "(447:28) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteData(sc.country, sc.year)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (429:28) <Button outline color="success" on:click="{editData(sc.country, sc.year)}">
-    function create_default_slot_1$4(ctx) {
+    // (448:28) <Button outline color="success" on:click="{editData(sc.country, sc.year)}">
+    function create_default_slot_4$1(ctx) {
     	let t;
 
     	const block = {
@@ -20813,16 +20901,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1$4.name,
+    		id: create_default_slot_4$1.name,
     		type: "slot",
-    		source: "(429:28) <Button outline color=\\\"success\\\" on:click=\\\"{editData(sc.country, sc.year)}\\\">",
+    		source: "(448:28) <Button outline color=\\\"success\\\" on:click=\\\"{editData(sc.country, sc.year)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (420:16) {#each du_stats as sc}
+    // (439:16) {#each du_stats as sc}
     function create_each_block$1(ctx) {
     	let tr;
     	let td0;
@@ -20863,28 +20951,28 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "danger",
-    				$$slots: { default: [create_default_slot_2$4] },
+    				$$slots: { default: [create_default_slot_5$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
     	button0.$on("click", function () {
-    		if (is_function(/*deleteData*/ ctx[11](/*sc*/ ctx[52].country, /*sc*/ ctx[52].year))) /*deleteData*/ ctx[11](/*sc*/ ctx[52].country, /*sc*/ ctx[52].year).apply(this, arguments);
+    		if (is_function(/*deleteData*/ ctx[13](/*sc*/ ctx[52].country, /*sc*/ ctx[52].year))) /*deleteData*/ ctx[13](/*sc*/ ctx[52].country, /*sc*/ ctx[52].year).apply(this, arguments);
     	});
 
     	button1 = new Button({
     			props: {
     				outline: true,
     				color: "success",
-    				$$slots: { default: [create_default_slot_1$4] },
+    				$$slots: { default: [create_default_slot_4$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
     	button1.$on("click", function () {
-    		if (is_function(/*editData*/ ctx[13](/*sc*/ ctx[52].country, /*sc*/ ctx[52].year))) /*editData*/ ctx[13](/*sc*/ ctx[52].country, /*sc*/ ctx[52].year).apply(this, arguments);
+    		if (is_function(/*editData*/ ctx[15](/*sc*/ ctx[52].country, /*sc*/ ctx[52].year))) /*editData*/ ctx[15](/*sc*/ ctx[52].country, /*sc*/ ctx[52].year).apply(this, arguments);
     	});
 
     	const block = {
@@ -20916,16 +21004,16 @@ var app = (function () {
     			create_component(button1.$$.fragment);
     			t13 = space();
     			attr_dev(a, "href", a_href_value = "#/du-stats/" + /*sc*/ ctx[52].country + "/" + /*sc*/ ctx[52].year);
-    			add_location(a, file$5, 421, 28, 14045);
-    			add_location(td0, file$5, 421, 24, 14041);
-    			add_location(td1, file$5, 422, 24, 14136);
-    			add_location(td2, file$5, 423, 24, 14180);
-    			add_location(td3, file$5, 424, 24, 14232);
-    			add_location(td4, file$5, 425, 24, 14278);
-    			add_location(td5, file$5, 426, 24, 14334);
-    			add_location(td6, file$5, 427, 24, 14380);
-    			add_location(td7, file$5, 428, 24, 14506);
-    			add_location(tr, file$5, 420, 20, 14011);
+    			add_location(a, file$5, 440, 28, 14492);
+    			add_location(td0, file$5, 440, 24, 14488);
+    			add_location(td1, file$5, 441, 24, 14583);
+    			add_location(td2, file$5, 442, 24, 14627);
+    			add_location(td3, file$5, 443, 24, 14679);
+    			add_location(td4, file$5, 444, 24, 14725);
+    			add_location(td5, file$5, 445, 24, 14781);
+    			add_location(td6, file$5, 446, 24, 14827);
+    			add_location(td7, file$5, 447, 24, 14953);
+    			add_location(tr, file$5, 439, 20, 14458);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -21006,15 +21094,15 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(420:16) {#each du_stats as sc}",
+    		source: "(439:16) {#each du_stats as sc}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (388:8) <Table bordered responsive hover>
-    function create_default_slot$4(ctx) {
+    // (407:8) <Table bordered responsive hover>
+    function create_default_slot_3$1(ctx) {
     	let thead;
     	let tr0;
     	let th0;
@@ -21071,6 +21159,7 @@ var app = (function () {
     	let td12;
     	let input11;
     	let t24;
+    	let td13;
     	let button1;
     	let t25;
     	let current;
@@ -21081,26 +21170,26 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_4$1] },
+    				$$slots: { default: [create_default_slot_7$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	button0.$on("click", /*insertData*/ ctx[10]);
+    	button0.$on("click", /*insertData*/ ctx[12]);
 
     	button1 = new Button({
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_3$1] },
+    				$$slots: { default: [create_default_slot_6$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
     	button1.$on("click", function () {
-    		if (is_function(/*busqueda*/ ctx[15](/*country*/ ctx[2], /*year*/ ctx[3], /*dupopulation*/ ctx[4], /*dudead*/ ctx[5], /*dudependenceperc*/ ctx[6], /*dudaly*/ ctx[7]))) /*busqueda*/ ctx[15](/*country*/ ctx[2], /*year*/ ctx[3], /*dupopulation*/ ctx[4], /*dudead*/ ctx[5], /*dudependenceperc*/ ctx[6], /*dudaly*/ ctx[7]).apply(this, arguments);
+    		if (is_function(/*busqueda*/ ctx[17](/*country*/ ctx[2], /*year*/ ctx[3], /*dupopulation*/ ctx[4], /*dudead*/ ctx[5], /*dudependenceperc*/ ctx[6], /*dudaly*/ ctx[7]))) /*busqueda*/ ctx[17](/*country*/ ctx[2], /*year*/ ctx[3], /*dupopulation*/ ctx[4], /*dudead*/ ctx[5], /*dudependenceperc*/ ctx[6], /*dudaly*/ ctx[7]).apply(this, arguments);
     	});
 
     	let each_value = /*du_stats*/ ctx[8];
@@ -21179,6 +21268,7 @@ var app = (function () {
     			td12 = element("td");
     			input11 = element("input");
     			t24 = space();
+    			td13 = element("td");
     			create_component(button1.$$.fragment);
     			t25 = space();
 
@@ -21186,54 +21276,55 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$5, 390, 20, 12279);
-    			add_location(th1, file$5, 391, 20, 12314);
-    			add_location(th2, file$5, 392, 20, 12348);
-    			add_location(th3, file$5, 393, 20, 12388);
-    			add_location(th4, file$5, 394, 20, 12440);
-    			add_location(th5, file$5, 395, 20, 12509);
-    			add_location(tr0, file$5, 389, 16, 12253);
-    			add_location(thead, file$5, 388, 12, 12228);
-    			add_location(input0, file$5, 400, 24, 12639);
-    			add_location(td0, file$5, 400, 20, 12635);
-    			add_location(input1, file$5, 401, 24, 12705);
-    			add_location(td1, file$5, 401, 20, 12701);
-    			add_location(input2, file$5, 402, 24, 12768);
-    			add_location(td2, file$5, 402, 20, 12764);
-    			add_location(input3, file$5, 403, 24, 12840);
-    			add_location(td3, file$5, 403, 20, 12836);
-    			add_location(input4, file$5, 404, 24, 12909);
-    			add_location(td4, file$5, 404, 20, 12905);
-    			add_location(input5, file$5, 405, 24, 12985);
-    			add_location(td5, file$5, 405, 20, 12981);
-    			add_location(td6, file$5, 406, 20, 13049);
-    			add_location(tr1, file$5, 399, 16, 12609);
+    			add_location(th0, file$5, 409, 20, 12716);
+    			add_location(th1, file$5, 410, 20, 12751);
+    			add_location(th2, file$5, 411, 20, 12785);
+    			add_location(th3, file$5, 412, 20, 12825);
+    			add_location(th4, file$5, 413, 20, 12877);
+    			add_location(th5, file$5, 414, 20, 12946);
+    			add_location(tr0, file$5, 408, 16, 12690);
+    			add_location(thead, file$5, 407, 12, 12665);
+    			add_location(input0, file$5, 419, 24, 13076);
+    			add_location(td0, file$5, 419, 20, 13072);
+    			add_location(input1, file$5, 420, 24, 13142);
+    			add_location(td1, file$5, 420, 20, 13138);
+    			add_location(input2, file$5, 421, 24, 13205);
+    			add_location(td2, file$5, 421, 20, 13201);
+    			add_location(input3, file$5, 422, 24, 13277);
+    			add_location(td3, file$5, 422, 20, 13273);
+    			add_location(input4, file$5, 423, 24, 13346);
+    			add_location(td4, file$5, 423, 20, 13342);
+    			add_location(input5, file$5, 424, 24, 13422);
+    			add_location(td5, file$5, 424, 20, 13418);
+    			add_location(td6, file$5, 425, 20, 13486);
+    			add_location(tr1, file$5, 418, 16, 13046);
     			attr_dev(input6, "type", "text");
     			attr_dev(input6, "placeholder", "País");
-    			add_location(input6, file$5, 409, 20, 13188);
-    			add_location(td7, file$5, 409, 16, 13184);
+    			add_location(input6, file$5, 428, 20, 13625);
+    			add_location(td7, file$5, 428, 16, 13621);
     			attr_dev(input7, "type", "text");
     			attr_dev(input7, "placeholder", "Año");
-    			add_location(input7, file$5, 410, 20, 13277);
-    			add_location(td8, file$5, 410, 16, 13273);
+    			add_location(input7, file$5, 429, 20, 13714);
+    			add_location(td8, file$5, 429, 16, 13710);
     			attr_dev(input8, "type", "text");
     			attr_dev(input8, "placeholder", "Población");
-    			add_location(input8, file$5, 411, 20, 13361);
-    			add_location(td9, file$5, 411, 16, 13357);
+    			add_location(input8, file$5, 430, 20, 13798);
+    			add_location(td9, file$5, 430, 16, 13794);
     			attr_dev(input9, "type", "text");
     			attr_dev(input9, "placeholder", "Porcentaje de Muertes");
-    			add_location(input9, file$5, 412, 20, 13459);
-    			add_location(td10, file$5, 412, 16, 13455);
+    			add_location(input9, file$5, 431, 20, 13896);
+    			add_location(td10, file$5, 431, 16, 13892);
     			attr_dev(input10, "type", "text");
     			attr_dev(input10, "placeholder", "Porcentaje de dependencia a las drogas");
-    			add_location(input10, file$5, 413, 20, 13563);
-    			add_location(td11, file$5, 413, 16, 13559);
+    			add_location(input10, file$5, 432, 20, 14000);
+    			add_location(td11, file$5, 432, 16, 13996);
     			attr_dev(input11, "type", "text");
     			attr_dev(input11, "placeholder", "D.A.L.Y");
-    			add_location(input11, file$5, 414, 20, 13694);
-    			add_location(td12, file$5, 414, 16, 13690);
-    			add_location(tr2, file$5, 408, 12, 13162);
-    			add_location(tbody, file$5, 398, 12, 12584);
+    			add_location(input11, file$5, 433, 20, 14131);
+    			add_location(td12, file$5, 433, 16, 14127);
+    			add_location(td13, file$5, 434, 16, 14217);
+    			add_location(tr2, file$5, 427, 12, 13599);
+    			add_location(tbody, file$5, 417, 12, 13021);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -21304,7 +21395,8 @@ var app = (function () {
     			append_dev(td12, input11);
     			set_input_value(input11, /*dudaly*/ ctx[7]);
     			append_dev(tr2, t24);
-    			mount_component(button1, tr2, null);
+    			append_dev(tr2, td13);
+    			mount_component(button1, td13, null);
     			append_dev(tbody, t25);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -21315,18 +21407,18 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[17]),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[18]),
-    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[19]),
-    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[20]),
-    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[21]),
-    					listen_dev(input5, "input", /*input5_input_handler*/ ctx[22]),
-    					listen_dev(input6, "input", /*input6_input_handler*/ ctx[23]),
-    					listen_dev(input7, "input", /*input7_input_handler*/ ctx[24]),
-    					listen_dev(input8, "input", /*input8_input_handler*/ ctx[25]),
-    					listen_dev(input9, "input", /*input9_input_handler*/ ctx[26]),
-    					listen_dev(input10, "input", /*input10_input_handler*/ ctx[27]),
-    					listen_dev(input11, "input", /*input11_input_handler*/ ctx[28])
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[21]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[22]),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[23]),
+    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[24]),
+    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[25]),
+    					listen_dev(input5, "input", /*input5_input_handler*/ ctx[26]),
+    					listen_dev(input6, "input", /*input6_input_handler*/ ctx[27]),
+    					listen_dev(input7, "input", /*input7_input_handler*/ ctx[28]),
+    					listen_dev(input8, "input", /*input8_input_handler*/ ctx[29]),
+    					listen_dev(input9, "input", /*input9_input_handler*/ ctx[30]),
+    					listen_dev(input10, "input", /*input10_input_handler*/ ctx[31]),
+    					listen_dev(input11, "input", /*input11_input_handler*/ ctx[32])
     				];
 
     				mounted = true;
@@ -21399,7 +21491,7 @@ var app = (function () {
 
     			button1.$set(button1_changes);
 
-    			if (dirty[0] & /*editData, du_stats, deleteData*/ 10496) {
+    			if (dirty[0] & /*editData, du_stats, deleteData*/ 41216) {
     				each_value = /*du_stats*/ ctx[8];
     				validate_each_argument(each_value);
     				let i;
@@ -21463,16 +21555,155 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$4.name,
+    		id: create_default_slot_3$1.name,
     		type: "slot",
-    		source: "(388:8) <Table bordered responsive hover>",
+    		source: "(407:8) <Table bordered responsive hover>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (435:8) {#if du_stats.length === 0}
+    // (454:8) <Button color="info" on:click={pagBefore}>
+    function create_default_slot_2$4(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("ANTERIOR");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_2$4.name,
+    		type: "slot",
+    		source: "(454:8) <Button color=\\\"info\\\" on:click={pagBefore}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (456:8) {#if !maxpag}
+    function create_if_block_1$1(ctx) {
+    	let button;
+    	let current;
+
+    	button = new Button({
+    			props: {
+    				color: "info",
+    				$$slots: { default: [create_default_slot_1$4] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", /*pagNext*/ ctx[19]);
+
+    	const block = {
+    		c: function create() {
+    			create_component(button.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(button, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const button_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 16777216) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(button, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$1.name,
+    		type: "if",
+    		source: "(456:8) {#if !maxpag}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (457:8) <Button color="info" on:click={pagNext}>
+    function create_default_slot_1$4(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("SIGUIENTE");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1$4.name,
+    		type: "slot",
+    		source: "(457:8) <Button color=\\\"info\\\" on:click={pagNext}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (460:19) <Button style="background-color:darkgray " on:click="{pop}">
+    function create_default_slot$4(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Volver");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$4.name,
+    		type: "slot",
+    		source: "(460:19) <Button style=\\\"background-color:darkgray \\\" on:click=\\\"{pop}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (463:8) {#if du_stats.length === 0}
     function create_if_block$4(ctx) {
     	let p;
 
@@ -21480,7 +21711,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "No se han encontrado datos, por favor, carga los datos iniciales.";
-    			add_location(p, file$5, 435, 12, 14750);
+    			add_location(p, file$5, 463, 12, 15537);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -21494,14 +21725,14 @@ var app = (function () {
     		block,
     		id: create_if_block$4.name,
     		type: "if",
-    		source: "(435:8) {#if du_stats.length === 0}",
+    		source: "(463:8) {#if du_stats.length === 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (346:21)           Loading data...      {:then du_stats}
+    // (365:21)           Loading data...      {:then du_stats}
     function create_pending_block$1(ctx) {
     	let t;
 
@@ -21524,7 +21755,7 @@ var app = (function () {
     		block,
     		id: create_pending_block$1.name,
     		type: "pending",
-    		source: "(346:21)           Loading data...      {:then du_stats}",
+    		source: "(365:21)           Loading data...      {:then du_stats}",
     		ctx
     	});
 
@@ -21547,48 +21778,48 @@ var app = (function () {
     	button0 = new Button({
     			props: {
     				color: "success",
+    				$$slots: { default: [create_default_slot_17] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button0.$on("click", /*loadInitialData*/ ctx[11]);
+
+    	button1 = new Button({
+    			props: {
+    				color: "danger",
+    				$$slots: { default: [create_default_slot_16] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button1.$on("click", /*deleteALL*/ ctx[14]);
+
+    	button2 = new Button({
+    			props: {
+    				outline: true,
+    				color: "info",
+    				$$slots: { default: [create_default_slot_15] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button2.$on("click", /*getPreviewPage*/ ctx[20]);
+
+    	button3 = new Button({
+    			props: {
+    				outline: true,
+    				color: "info",
     				$$slots: { default: [create_default_slot_14] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	button0.$on("click", /*loadInitialData*/ ctx[9]);
-
-    	button1 = new Button({
-    			props: {
-    				color: "danger",
-    				$$slots: { default: [create_default_slot_13$1] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	button1.$on("click", /*deleteALL*/ ctx[12]);
-
-    	button2 = new Button({
-    			props: {
-    				outline: true,
-    				color: "info",
-    				$$slots: { default: [create_default_slot_12$1] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	button2.$on("click", /*getPreviewPage*/ ctx[16]);
-
-    	button3 = new Button({
-    			props: {
-    				outline: true,
-    				color: "info",
-    				$$slots: { default: [create_default_slot_11$1] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	button3.$on("click", /*getNextPage*/ ctx[14]);
+    	button3.$on("click", /*getNextPage*/ ctx[16]);
 
     	let info = {
     		ctx,
@@ -21616,7 +21847,7 @@ var app = (function () {
     			create_component(button3.$$.fragment);
     			t3 = space();
     			info.block.c();
-    			add_location(main, file$5, 331, 0, 10659);
+    			add_location(main, file$5, 350, 0, 11096);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -21719,6 +21950,25 @@ var app = (function () {
     	return block;
     }
 
+    function changePage(page, offset) {
+    	console.log("------Change page------");
+    	console.log("Params page: " + page + " offset: " + offset);
+    	last_page = Math.ceil(total / 10);
+    	console.log("new last page: " + last_page);
+
+    	if (page !== current_page) {
+    		console.log("enter if");
+    		current_offset = offset;
+    		current_page = page;
+    		console.log("page: " + page);
+    		console.log("current_offset: " + current_offset);
+    		console.log("current_page: " + current_page);
+    		getStats();
+    	}
+
+    	console.log("---------Exit change page-------");
+    }
+
     function instance$5($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("DUTable", slots, []);
@@ -21749,13 +21999,12 @@ var app = (function () {
     		dudaly: ""
     	};
 
-    	//Pagination
-    	let current_offset = 0;
+    	/*pagination*/
+    	let limit = 10; /*limit es el número de elementos por página*/
 
-    	let limit = 10;
-    	let current_page = 1;
-    	let last_page = 1;
-    	let total = 0;
+    	let offset = 0; /*offset indica desde qué elemento se va a empezar a mostrar*/
+    	let numTotal = 0;
+    	let maxpag = numTotal >= limit;
     	let errorMSG = null;
 
     	//BUSQUEDA
@@ -22007,24 +22256,26 @@ var app = (function () {
     		}
     	}
 
-    	//Cambio de pagina
-    	function changePage(page, offset) {
-    		console.log("------Change page------");
-    		console.log("Params page: " + page + " offset: " + offset);
-    		last_page = Math.ceil(total / 10);
-    		console.log("new last page: " + last_page);
+    	async function pagBefore() {
+    		correctMsg = "";
+    		errorMsg = "";
 
-    		if (page !== current_page) {
-    			console.log("enter if");
-    			current_offset = offset;
-    			current_page = page;
-    			console.log("page: " + page);
-    			console.log("current_offset: " + current_offset);
-    			console.log("current_page: " + current_page);
-    			getStats();
+    		if (offset >= 10) {
+    			offset = offset - limit;
     		}
 
-    		console.log("---------Exit change page-------");
+    		getData();
+    	}
+
+    	async function pagNext() {
+    		correctMsg = "";
+    		errorMsg = "";
+
+    		if (offset <= numTotal) {
+    			offset = offset + limit;
+    		}
+
+    		getData();
     	}
 
     	//getPreviewPage
@@ -22146,11 +22397,10 @@ var app = (function () {
     		searchcountry,
     		searchyear,
     		data,
-    		current_offset,
     		limit,
-    		current_page,
-    		last_page,
-    		total,
+    		offset,
+    		numTotal,
+    		maxpag,
     		errorMSG,
     		country,
     		year,
@@ -22169,6 +22419,8 @@ var app = (function () {
     		editData,
     		getNextPage,
     		busqueda,
+    		pagBefore,
+    		pagNext,
     		changePage,
     		getPreviewPage
     	});
@@ -22189,11 +22441,10 @@ var app = (function () {
     		if ("searchcountry" in $$props) searchcountry = $$props.searchcountry;
     		if ("searchyear" in $$props) searchyear = $$props.searchyear;
     		if ("data" in $$props) $$invalidate(0, data = $$props.data);
-    		if ("current_offset" in $$props) current_offset = $$props.current_offset;
     		if ("limit" in $$props) limit = $$props.limit;
-    		if ("current_page" in $$props) current_page = $$props.current_page;
-    		if ("last_page" in $$props) last_page = $$props.last_page;
-    		if ("total" in $$props) total = $$props.total;
+    		if ("offset" in $$props) offset = $$props.offset;
+    		if ("numTotal" in $$props) $$invalidate(9, numTotal = $$props.numTotal);
+    		if ("maxpag" in $$props) $$invalidate(10, maxpag = $$props.maxpag);
     		if ("errorMSG" in $$props) $$invalidate(1, errorMSG = $$props.errorMSG);
     		if ("country" in $$props) $$invalidate(2, country = $$props.country);
     		if ("year" in $$props) $$invalidate(3, year = $$props.year);
@@ -22220,6 +22471,8 @@ var app = (function () {
     		dudependenceperc,
     		dudaly,
     		du_stats,
+    		numTotal,
+    		maxpag,
     		loadInitialData,
     		insertData,
     		deleteData,
@@ -22227,6 +22480,8 @@ var app = (function () {
     		editData,
     		getNextPage,
     		busqueda,
+    		pagBefore,
+    		pagNext,
     		getPreviewPage,
     		input0_input_handler,
     		input1_input_handler,
@@ -24714,7 +24969,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button.$on("click", pop);
+    	button.$on("click", pop$1);
 
     	const block = {
     		c: function create() {
@@ -24897,7 +25152,7 @@ var app = (function () {
     		Table,
     		Button,
     		onMount,
-    		pop,
+    		pop: pop$1,
     		params,
     		unemployment_stat,
     		updatedCountry,
@@ -25333,7 +25588,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button.$on("click", pop);
+    	button.$on("click", pop$1);
 
     	const block = {
     		c: function create() {
@@ -25524,7 +25779,7 @@ var app = (function () {
     		Table,
     		Button,
     		onMount,
-    		pop,
+    		pop: pop$1,
     		params,
     		du_stat,
     		updatedCountry,
@@ -25939,7 +26194,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button.$on("click", pop);
+    	button.$on("click", pop$1);
 
     	const block = {
     		c: function create() {
@@ -26122,7 +26377,7 @@ var app = (function () {
     		Table,
     		Button,
     		onMount,
-    		pop,
+    		pop: pop$1,
     		params,
     		hdi_stat,
     		updatedCountry,

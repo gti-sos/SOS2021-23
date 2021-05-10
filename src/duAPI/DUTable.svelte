@@ -36,12 +36,11 @@
 	}
 
     
-    //Pagination
-    let current_offset = 0;
-    let limit = 10;
-    let current_page = 1;
-    let last_page = 1;
-    let total = 0;
+     /*pagination*/
+     let limit = 10; /*limit es el número de elementos por página*/
+	let offset = 0; /*offset indica desde qué elemento se va a empezar a mostrar*/
+    let numTotal=0;
+	let maxpag = numTotal>=limit; 
     
     let errorMSG = null;
 
@@ -290,6 +289,26 @@
 			console.log("ERROR");
 		}
 	}
+
+
+    async function pagBefore(){
+        correctMsg="";
+        errorMsg="";
+		if (offset >= 10){
+            offset = offset - limit;
+        } 
+		getData();
+	
+	}
+    async function pagNext(){
+        correctMsg="";
+        errorMsg="";
+		if(offset<=numTotal){
+            offset = offset + limit;
+        }
+		getData();
+	
+    }
   //Cambio de pagina
   function changePage(page, offset) {
       console.log("------Change page------");
@@ -413,7 +432,7 @@
                 <td><input type="text" placeholder="Porcentaje de Muertes"  bind:value={dudead}/></td>
                 <td><input type="text" placeholder="Porcentaje de dependencia a las drogas"  bind:value={dudependenceperc}/></td>
                 <td><input type="text" placeholder="D.A.L.Y"  bind:value={dudaly}/></td>
-                <Button outline color="primary" on:click="{busqueda (country,year,dupopulation,dudead,dudependenceperc,dudaly)}">Buscar</Button>
+                <td><Button outline color="primary" on:click="{busqueda (country, year,dupopulation,dudead,dudependenceperc,dudaly)}">Buscar</Button></td>
                 
              </tr>
  
@@ -431,6 +450,15 @@
                 {/each}
             </tbody>
         </Table>
+
+        <Button color="info" on:click={pagBefore}>ANTERIOR</Button>        
+        Número de datos en esta página: {numTotal}
+        {#if !maxpag}
+        <Button color="info" on:click={pagNext}>SIGUIENTE</Button> 
+        {/if}
+
+        <br/> <br/><Button style="background-color:darkgray " on:click="{pop}"> Volver </Button>
+
 
         {#if du_stats.length === 0}
             <p>No se han encontrado datos, por favor, carga los datos iniciales.</p>
