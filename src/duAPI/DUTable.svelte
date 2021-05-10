@@ -55,12 +55,13 @@
     dudaly: "",
   };
   //VARIABLES PARA BUSQUEDA
-	let Dcountry = "";
-	let Dyear = "";
-	let Ddupopulation="";
-	let Ddudead="";
-	let Ddudependenceperc="";
-    let Ddudaly="";
+	let country = "";
+	let year = "";
+	let dupopulation="";
+	let dudead="";
+	let dudependenceperc="";
+    let dudaly="";
+    let exitoMsg ="";
     
  
     //GET
@@ -257,27 +258,27 @@
 
    
     // Buscar dato
-    async function busqueda (Dcountry,Dyear, Ddupopulation, Ddudead, Ddudependenceperc, Ddudaly){
-		if(typeof Dcountry=='undefined'){
-			Dcountry="";
+    async function busqueda (country,year, dupopulation, dudead, dudependenceperc, dudaly){
+		if(typeof country=='undefined'){
+			country="";
 		}
-		if(typeof Dyear=='undefined'){
-			Dyear="";
+		if(typeof year=='undefined'){
+			year="";
 		}
-		if(typeof Ddupopulation=='undefined'){
-			Ddupopulation="";
+		if(typeof dupopulation=='undefined'){
+			dupopulation="";
 		}
-		if(typeof Ddudead=='undefined'){
-			Ddudead="";
+		if(typeof dudead=='undefined'){
+			dudead="";
 		}
-		if(typeof Ddudependenceperc=='undefined'){
-			Ddudependenceperc="";
+		if(typeof dudependenceperc=='undefined'){
+			dudependenceperc="";
 		}
-        if(typeof Ddudaly=='undefined'){
-			Ddudaly="";
+        if(typeof dudaly=='undefined'){
+			dudaly="";
 		}
-		const res = await fetch("/api/v1/du-stats?Dcountry="+Dcountry+"&Dyear="+Dyear+"&Ddupopulation="+Ddupopulation+"&Ddudead="+Ddudead+
-        "&Ddudependenceperc="+Ddudependenceperc+"&Ddudaly="+Ddudaly)
+		const res = await fetch("/api/v1/du-stats?country="+country+"&year="+year+"&dupopulation="+dupopulation+"&dudead="+dudead+
+        "&dudependenceperc="+dudependenceperc+"&dudaly="+dudaly)
 		if (res.ok){
 			const json = await res.json();
 			du_stats = json;
