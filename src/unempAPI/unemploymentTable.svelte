@@ -28,7 +28,6 @@
 	}
     
 	let exitoMsg="";
-
 	//VARIABLES PARA BUSQUEDA
 	let Ucountry = "";
 	let Uyear = "";
@@ -103,7 +102,6 @@
 		if(typeof gfperc=='undefined'){
 			gfperc="";
 		}
-
 		const res = await fetch("/api/v1/unemployment-stats?country="+Ucountry+"&year="+Uyear+"&knoperc="+knoperc+"&intperc="+intperc+"&gfperc="+gfperc)
 		if (res.ok){
 			const json = await res.json();
@@ -173,7 +171,6 @@
                 console.log("ERROR!");
             }
         }
-
     
     //INSERT
     
