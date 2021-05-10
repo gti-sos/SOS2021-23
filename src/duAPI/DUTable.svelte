@@ -10,7 +10,7 @@
 	
     
     let isOpen = false;
-    //let busquedas = "/api/v1/du-stats?";
+    let busquedas = "/api/v1/du-stats?";
     //ALERTAS
     let visible = false;
     let color = "danger";
@@ -44,25 +44,20 @@
     let total = 0;
     
     let errorMSG = null;
-    onMount(getData);
 
-    let insStat = {
-    country: "",
-    year: "",
-    dupopulation: "",
-    dudead: "",
-    dudependenceperc: "",
-    dudaly: "",
-  };
-  //VARIABLES PARA BUSQUEDA
-	let country = "";
+    let country = "";
 	let year = "";
 	let dupopulation="";
 	let dudead="";
 	let dudependenceperc="";
     let dudaly="";
     let exitoMsg ="";
+
     
+  //VARIABLES PARA BUSQUEDA
+	
+
+    onMount(getData);
  
     //GET
     async function getData() {
@@ -258,7 +253,7 @@
 
    
     // Buscar dato
-    async function busqueda (country,year, dupopulation, dudead, dudependenceperc, dudaly){
+    async function busqueda (country, year, dupopulation, dudead, dudependenceperc, dudaly){
 		if(typeof country=='undefined'){
 			country="";
 		}
@@ -411,12 +406,12 @@
                     <td><Button outline color="primary" on:click={insertData}>Insertar</Button></td>
             </tr>
             <tr>
-                <td><input type="text" placeholder="País"  bind:value={insStat.country}/></td> 
-                <td><input type="text" placeholder="Año"  bind:value={insStat.year}/></td>
-                <td><input type="text" placeholder="Población"  bind:value={insStat.dupopulation}/></td>
-                <td><input type="text" placeholder="Porcentaje de Muertes"  bind:value={insStat.dudead}/></td>
-                <td><input type="text" placeholder="Porcentaje de dependencia a las drogas"  bind:value={insStat.dudependenceperc}/></td>
-                <td><input type="text" placeholder="D.A.L.Y"  bind:value={insStat.dudaly}/></td>
+                <td><input type="text" placeholder="País"  bind:value={country}/></td> 
+                <td><input type="text" placeholder="Año"  bind:value={year}/></td>
+                <td><input type="text" placeholder="Población"  bind:value={dupopulation}/></td>
+                <td><input type="text" placeholder="Porcentaje de Muertes"  bind:value={dudead}/></td>
+                <td><input type="text" placeholder="Porcentaje de dependencia a las drogas"  bind:value={dudependenceperc}/></td>
+                <td><input type="text" placeholder="D.A.L.Y"  bind:value={dudaly}/></td>
                 <td><Button color="warning" on:click={busqueda}>Buscar</Button></td>
              </tr>
  
