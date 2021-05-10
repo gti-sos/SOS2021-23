@@ -258,7 +258,7 @@
 		if(typeof country=='undefined'){
 			country="";
 		}
-		if(typeof year=='undefined'){
+        if(typeof year=='undefined'){
 			year="";
 		}
 		if(typeof dupopulation=='undefined'){
@@ -413,8 +413,8 @@
                 <td><input type="text" placeholder="Porcentaje de Muertes"  bind:value={dudead}/></td>
                 <td><input type="text" placeholder="Porcentaje de dependencia a las drogas"  bind:value={dudependenceperc}/></td>
                 <td><input type="text" placeholder="D.A.L.Y"  bind:value={dudaly}/></td>
-                <Button outline color="primary" on:click="{busqueda (country, year,dupopulation,dudead,dudependenceperc,dudaly)}">Buscar</Button>
-                //<td><Button color="warning" on:click={busqueda}>Buscar</Button></td>
+                <Button outline color="primary" on:click="{busqueda (country,year,dupopulation,dudead,dudependenceperc,dudaly)}">Buscar</Button>
+                
              </tr>
  
                 {#each du_stats as sc}
