@@ -15,7 +15,7 @@
     let visible = false;
     let color = "danger";
     
-    let BASE_SEC_API = "/api/v1/du-stats"
+    let BASE_API_PATH_SEC = "/api/v1/du-stats"
     let open = false;
     let error = null;
     let okMsg = "";
@@ -46,6 +46,14 @@
     let errorMSG = null;
     onMount(getData);
 
+    let insStat = {
+    country: "",
+    year: "",
+    dupopulation: "",
+    dudead: "",
+    dudependenceperc: "",
+    dudaly: "",
+  };
     
  
     //GET
@@ -258,7 +266,7 @@ async function searchStat() {
       fullQuery = querySymbol.slice(0, -1);
       if (fullQuery != "") {
         const res = await fetch(
-            BASE_SEC_API + fullQuery
+            BASE_API_PATH_SEC + fullQuery
         );
         if (res.ok) {
           console.log("OK");
@@ -405,6 +413,15 @@ async function searchStat() {
                     <td><Button outline color="primary" on:click={insertData}>Insertar</Button></td>
                     <td><Button color="warning" on:click={searchStat}>Buscar</Button></td>
             </tr>
+            <tr>
+                <td><input type="text" placeholder="País"  bind:value={insStat.country}/></td> 
+                <td><input type="text" placeholder="Año"  bind:value={insStat.year}/></td>
+                <td><input type="text" placeholder="Población"  bind:value={insStat.dupopulation}/></td>
+                <td><input type="text" placeholder="Porcentaje de Muertes"  bind:value={insStat.dudead}/></td>
+                <td><input type="text" placeholder="Porcentaje de dependencia a las drogas"  bind:value={insStat.dudependenceperc}/></td>
+                <td><input type="text" placeholder="D.A.L.Y"  bind:value={insStat.dudaly}/></td>
+                <td><Button color="warning" on:click={searchStat}>Buscar</Button></td>
+             </tr>
  
                 {#each du_stats as sc}
                     <tr>
