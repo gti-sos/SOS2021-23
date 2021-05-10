@@ -67,7 +67,36 @@ var unemployment_stats = [
       "knoperc": "12",
       "intperc": "11.6",
       "gfperc": "13.3"
+    },
+    {
+      "country": "Argentina",
+      "year": "2019",
+      "knoperc": "23",
+      "intperc": "10.6",
+      "gfperc": "33.3"
+    },
+    {
+      "country": "Sudáfrica",
+      "year": "2019",
+      "knoperc": "22",
+      "intperc": "21.8",
+      "gfperc": "23.6"
+    },
+    {
+      "country": "Holanda",
+      "year": "2018",
+      "knoperc": "14.5",
+      "intperc": "9.6",
+      "gfperc": "7.4"
+    },
+    {
+      "country": "Israel",
+      "year": "2017",
+      "knoperc": "1.9",
+      "intperc": "6.4",
+      "gfperc": "3.3"
     }
+
 ];
 
 
@@ -81,10 +110,10 @@ var unemployment_stats = [
 
     //GET a la lista de recursos
     app.get(BASE_API_PATH_ACE, (request, response) =>{        
-        var offset;
-        var limit;
-
+        var offset= parseInt(request.query.offset);
+        var limit=parseInt(request.query.limit);
         var search = {};
+
         if (request.query.country) {search["country"] = request.query.country}
         if (request.query.year) {search["year"] = request.query.year}
         if (request.query.knoperc) {search["knoperc"] = request.query.knoperc}
@@ -94,8 +123,6 @@ var unemployment_stats = [
             console.log('[!] Se ha hecho una petición a los recursos pero no han sido cargados.');
             return response.status(404).send("<p>No se han cargado los recursos. Para ello dale a cargar datos</p>");
         } else {
-            var offset;
-            var limit;
             db.find(search).skip(offset).limit(limit).exec((err, dbdata) => {
                 if (err) {
                     console.log("[!] Error al acceder a unemployment-stats.db " + err);

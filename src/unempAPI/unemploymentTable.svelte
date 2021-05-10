@@ -14,8 +14,10 @@
     //ALERTAS
     let visible = false;
     let color = "danger";
-    
-    let page = 1;
+	//Paginación
+	let limit =10;
+	let pag=0;
+	//Finpaginacion
     let totaldata=8;
     let unemployment_stats = [];
 	let data = {
@@ -25,6 +27,22 @@
 		intperc:"",
 		gfperc:""
 	}
+	let exitoMsg="";
+
+	//VARIABLES PARA BUSQUEDA
+	let Ucountry = "";
+	let Uyear = "";
+	//let Ufrom = "";
+	//let Uto = "";
+	//let Uknoperc_min = "";
+	//let Uknoperc_max = "";
+	//let Uintperc_min = "";
+	//let Uintperc_max = "";
+	//let Ugfperc_min= "";
+	//let Ugfperc_max = "";
+	let knoperc="";
+	let intperc="";
+	let gfperc="";
     
     
     let errorMSG = null;
@@ -34,7 +52,7 @@
     async function getData() {
  
         console.log("Fetching unemployment Data...");
-        const res = await fetch("/api/v1/unemployment-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/unemployment-stats?limit="+limit+"&offset="+pag);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -51,7 +69,7 @@
  
         console.log("Fetching unemployment data...");
         await fetch("/api/v1/unemployment-stats/loadInitialData");
-        const res = await fetch("/api/v1/unemployment-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/unemployment-stats?limit="+limit+"&offset="+pag);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -69,6 +87,83 @@
             console.log("ERROR!");
         }
     }
+	async function busqueda (Ucountry,Uyear, knoperc, intperc, gfperc){
+		if(typeof Ucountry=='undefined'){
+			Ucountry="";
+		}
+		if(typeof Uyear=='undefined'){
+			Uyear="";
+		}
+		if(typeof knoperc=='undefined'){
+			knoperc="";
+		}
+		if(typeof intperc=='undefined'){
+			intperc="";
+		}
+		if(typeof gfperc=='undefined'){
+			gfperc="";
+		}
+
+		const res = await fetch("/api/v1/unemployment-stats?country="+Ucountry+"&year="+Uyear+"&knoperc="+knoperc+"&intperc="+intperc+"&gfperc="+gfperc)
+		if (res.ok){
+			const json = await res.json();
+			unemployment_stats = json;
+			console.log("Found "+ unemployment_stats.length + " countries");
+			
+			if(unemployment_stats.length==1){
+				exitoMsg = "Se ha encontrado " + unemployment_stats.length + " paises";
+			}else{
+				exitoMsg = "Se han encontrado " + unemployment_stats.length + " paises";
+			}
+		}else if (res.status==404){
+			window.alert("No hay países con los parámetros introducidos");
+			console.log("ERROR");
+		}
+	}
+
+	async function paginacion(Ucountry,Uyear, knoperc, intperc, gfperc, num){
+		if(typeof Ucountry=='undefined'){
+			Ucountry="";
+		}
+		if(typeof Uyear=='undefined'){
+			Uyear="";
+		}
+		if(typeof knoperc=='undefined'){
+			knoperc="";
+		}
+		if(typeof intperc=='undefined'){
+			intperc="";
+		}
+		if(typeof gfperc=='undefined'){
+			gfperc="";
+		}
+		if(num==1){
+			pag=pag-limit;
+			if(pag<0){
+				pag=0;
+				const res = await fetch("/api/v1/unemployment-stats?country="+Ucountry+"&year="+Uyear+"&knoperc="+knoperc+"&intperc="+intperc+"&gfperc="+gfperc)
+				if (res.ok){
+					const json = await res.json();
+					unemployment_stats = json;					
+				}
+			}else{
+				const res = await fetch("/api/v1/unemployment-stats?country="+Ucountry+"&year="+Uyear+"&knoperc="+knoperc+"&intperc="+intperc+"&gfperc="+gfperc)
+				if (res.ok){
+					const json = await res.json();
+					unemployment_stats = json;			
+				}
+			}
+		}else{
+			pag = pag+limit;
+			const res = await fetch("/api/v1/unemployment-stats?country="+Ucountry+"&year="+Uyear+"&knoperc="+knoperc+"&intperc="+intperc+"&gfperc="+gfperc)
+			if (res.ok){
+					const json = await res.json();
+					unemployment_stats = json;					
+			}else if(res.status==404){
+			window.alert("No hay más países, vuelta a la página anterior");
+			}
+		}
+	}
     
     //INSERT
     
@@ -146,49 +241,6 @@
 			});
 		}
 	}
-    //SEARCH
-    /*
-    
-    */
-    //getNextPage
-    async function getNextPage() {
- 
-        console.log(totaldata);
-        if (page+5 > totaldata) {
-            page = 1
-        } else {
-            page+=5
-        }
-        console.log("Charging page "+ page);
-        const res = await fetch("/api/v1/unemployment-stats?limit=5&offset="+page);
-        if (res.ok) {
-            console.log("Ok:");
-            const json = await res.json();
-            unemployment_stats = json;
-            console.log("Received " + unemployment_stats.length + " data.");
-        } else {
-            errorMSG= res.status + ": " + res.statusText;
-            console.log("ERROR!");
-        }
-    }
-    //getPreviewPage
-    async function getPreviewPage() {
- 
-        if (page-5>=1) {
-            page-=5; 
-        } else page = 1
-        console.log("Cargando página " +page);
-        const res = await fetch("/api/v1/unemployment-stats?limit=5&offset="+page);
-        if (res.ok) {
-            console.log("Ok:");
-            const json = await res.json();
-            unemployment_stats = json;
-            console.log("Received " + unemployment_stats.length + " resources.");
-        } else {
-            errorMSG= res.status + ": " + res.statusText;
-            console.log("ERROR!");
-        }
-    }
     
 </script>
 
@@ -199,13 +251,27 @@
         <Button color="danger" on:click="{deleteALL}">
             Eliminar datos
         </Button>
-        <Button outline color="info" on:click="{getPreviewPage}">
-           Atrás
+		<Button on:click="{paginacion}">
+            Atrás
         </Button>
-        <Button outline color="info" on:click="{getNextPage}">
+		<Button on:click="{paginacion}">
             Siguiente
-         </Button>
-         <p>Si quieres editar las estadisticas de un país haz click en el nombre del país. </p>
+        </Button>
+        
+		<p>Si quieres filtar por algún atributo introduce el valor de búsqueda en la casilla. </p>
+		<Table borderless responsive>
+			<tr>
+				<td><strong><label>Pais: <input bind:value="{Ucountry}"></label></strong></td>
+				<td><strong><label>Año: <input bind:value="{Uyear}"></label></strong></td>
+				<td><strong><label>Porcentaje de Knoema: <input bind:value="{knoperc}"></label></strong></td>
+				<td><strong><label>Porcentaje de InternetWorldStats: <input bind:value="{intperc}"></label></strong></td>
+				<td><strong><label>Porcentaje de Gfmag: <input bind:value="{gfperc}"></label></strong></td>
+			</tr>
+		</Table>
+		<div style="text-align:center;padding-bottom: 1%">
+			<Button outline color="primary" on:click="{busqueda (Ucountry, Uyear,knoperc,intperc,gfperc)}">Buscar</Button>
+		</div>
+		<p>Si quieres editar algún recurso haz click en el nombre del país. </p>
     
 
     {#await unemployment_stats}
