@@ -10,7 +10,7 @@
 	
     
     let isOpen = false;
-    let busquedas = "/api/v1/du-stats?";
+    //let busquedas = "/api/v1/du-stats?";
     //ALERTAS
     let visible = false;
     let color = "danger";
@@ -54,6 +54,13 @@
     dudependenceperc: "",
     dudaly: "",
   };
+  //VARIABLES PARA BUSQUEDA
+	let country = "";
+	let year = "";
+	let dupopulation="";
+	let dudead="";
+	let dudependenceperc="";
+    let dudaly="";
     
  
     //GET
@@ -250,54 +257,44 @@
 
    
     // Buscar dato
-async function searchStat() {
-  error = 0;
-  errorMsg = null;
-  console.log("Searching data...");
-      var campos = new Map(
-        Object.entries(insStat).filter((o) => {
-          return o[1] != "";
-        })
-      );
-      let querySymbol = "?";
-      for (var [clave, valor] of campos.entries()) {
-        querySymbol += clave + "=" + valor + "&";
-      }
-      fullQuery = querySymbol.slice(0, -1);
-      if (fullQuery != "") {
-        const res = await fetch(
-            BASE_API_PATH_SEC + fullQuery
-        );
-        if (res.ok) {
-          console.log("OK");
-          const json = await res.json();
-          du_stats = json;
-          error = 0;
-          okMsg = "Búsqueda realizada con éxito";
-        } else {
-          console.log("OKa");
-          du_stats = [];
-          if (res.status === 404) {
-            console.log("OKe");
-            error = 404;
-            errorMsg = "No se encuentra el dato solicitado";
-          } else if (res.status === 500) {
-            console.log("OKa");
-            error = 500;
-            errorMsg = "No se han podido acceder a la base de datos";
-          }
-          okMsg = "";
-          console.log("ERROR!" + errorMsg);
-        }
-      } else {
-        errorMsg = "Búsqueda vacía";
-        console.log("OKv");
-        error = 1000;
-      }
-    }
-
-     //Cambio de pagina
-     function changePage(page, offset) {
+    async function busqueda (country,year, dupopulation, dudead, dudependenceperc, dudaly){
+		if(typeof country=='undefined'){
+			country="";
+		}
+		if(typeof year=='undefined'){
+			year="";
+		}
+		if(typeof dupopulation=='undefined'){
+			dupopulation="";
+		}
+		if(typeof dudead=='undefined'){
+			dudead="";
+		}
+		if(typeof dudependenceperc=='undefined'){
+			dudependenceperc="";
+		}
+        if(typeof dudaly=='undefined'){
+			dudaly="";
+		}
+		const res = await fetch("/api/v1/du-stats?country="+country+"&year="+year+"&dupopulation="+dupopulation+"&dudead="+dudead+
+        "&dudependenceperc="+dudependenceperc+"&dudaly="+dudaly)
+		if (res.ok){
+			const json = await res.json();
+			du_stats = json;
+			console.log("Found "+ du_stats.length + " countries");
+			
+			if(du_stats.length==1){
+				exitoMsg = "Se ha encontrado " + du_stats.length + " paises";
+			}else{
+				exitoMsg = "Se han encontrado " + du_stats.length + " paises";
+			}
+		}else if (res.status==404){
+			window.alert("No hay países con los parámetros introducidos");
+			console.log("ERROR");
+		}
+	}
+  //Cambio de pagina
+  function changePage(page, offset) {
       console.log("------Change page------");
       console.log("Params page: " + page + " offset: " + offset);
       last_page = Math.ceil(total / 10);
@@ -411,7 +408,6 @@ async function searchStat() {
                     <td><input bind:value="{data.dudependenceperc}"></td> 
                     <td><input bind:value="{data.dudaly}"></td>   
                     <td><Button outline color="primary" on:click={insertData}>Insertar</Button></td>
-                    <td><Button color="warning" on:click={searchStat}>Buscar</Button></td>
             </tr>
             <tr>
                 <td><input type="text" placeholder="País"  bind:value={insStat.country}/></td> 
@@ -420,7 +416,7 @@ async function searchStat() {
                 <td><input type="text" placeholder="Porcentaje de Muertes"  bind:value={insStat.dudead}/></td>
                 <td><input type="text" placeholder="Porcentaje de dependencia a las drogas"  bind:value={insStat.dudependenceperc}/></td>
                 <td><input type="text" placeholder="D.A.L.Y"  bind:value={insStat.dudaly}/></td>
-                <td><Button color="warning" on:click={searchStat}>Buscar</Button></td>
+                <td><Button color="warning" on:click={busqueda}>Buscar</Button></td>
              </tr>
  
                 {#each du_stats as sc}
