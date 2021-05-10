@@ -15,6 +15,12 @@
     let visible = false;
     let color = "danger";
     
+    let BASE_SEC_API = "/api/v1/du-stats"
+    let open = false;
+    let error = null;
+    let okMsg = "";
+    let fullQuery = "";
+
     let page = 1;
     let totaldata=8;
     let du_stats = [];
@@ -39,7 +45,7 @@
     async function getData() {
  
         console.log("Fetching Drugs Data...");
-        const res = await fetch("/api/v1/du-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/du-stats?limit=10&offset=1");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -56,7 +62,7 @@
  
         console.log("Fetching du data...");
         await fetch("/api/v1/du-stats/loadInitialData");
-        const res = await fetch("/api/v1/du-stats?limit=5&offset=1");
+        const res = await fetch("/api/v1/du-stats?limit=10&offset=1");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -215,7 +221,7 @@
             page+=5
         }
         console.log("Charging page "+ page);
-        const res = await fetch("/api/v1/du-stats?limit=5&offset="+page);
+        const res = await fetch("/api/v1/du-stats?limit=10&offset="+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -227,6 +233,54 @@
         }
     }
 
+   
+    // Buscar dato
+async function searchStat() {
+  error = 0;
+  errorMsg = null;
+  console.log("Searching data...");
+      var campos = new Map(
+        Object.entries(insStat).filter((o) => {
+          return o[1] != "";
+        })
+      );
+      let querySymbol = "?";
+      for (var [clave, valor] of campos.entries()) {
+        querySymbol += clave + "=" + valor + "&";
+      }
+      fullQuery = querySymbol.slice(0, -1);
+      if (fullQuery != "") {
+        const res = await fetch(
+            BASE_SEC_API + fullQuery
+        );
+        if (res.ok) {
+          console.log("OK");
+          const json = await res.json();
+          du_stats = json;
+          error = 0;
+          okMsg = "Búsqueda realizada con éxito";
+        } else {
+          console.log("OKa");
+          du_stats = [];
+          if (res.status === 404) {
+            console.log("OKe");
+            error = 404;
+            errorMsg = "No se encuentra el dato solicitado";
+          } else if (res.status === 500) {
+            console.log("OKa");
+            error = 500;
+            errorMsg = "No se han podido acceder a la base de datos";
+          }
+          okMsg = "";
+          console.log("ERROR!" + errorMsg);
+        }
+      } else {
+        errorMsg = "Búsqueda vacía";
+        console.log("OKv");
+        error = 1000;
+      }
+    }
+
 
     //getPreviewPage
     async function getPreviewPage() {
@@ -235,7 +289,7 @@
             page-=5; 
         } else page = 1
         console.log("Charging page " +page);
-        const res = await fetch("/api/v1/du-stats?limit=5&offset="+page);
+        const res = await fetch("/api/v1/du-stats?limit=10&offset="+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -325,6 +379,7 @@
                     <td><input bind:value="{data.dudependenceperc}"></td> 
                     <td><input bind:value="{data.dudaly}"></td>   
                     <td><Button outline color="primary" on:click={insertData}>Insertar</Button></td>
+                    <td><Button outline color="primary" on:click={searchStat}>Buscar</Button></td>
             </tr>
  
                 {#each du_stats as sc}
