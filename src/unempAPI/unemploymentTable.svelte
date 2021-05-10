@@ -15,10 +15,9 @@
     let visible = false;
     let color = "danger";
 	//Paginación
-	let limit =10;
-	let pag=0;
+	let pag=1;
 	//Finpaginacion
-    let totaldata=8;
+    let totaldata=11;
     let unemployment_stats = [];
 	let data = {
 		country: "",
@@ -27,8 +26,8 @@
 		intperc:"",
 		gfperc:""
 	}
+    
 	let exitoMsg="";
-
 	//VARIABLES PARA BUSQUEDA
 	let Ucountry = "";
 	let Uyear = "";
@@ -52,7 +51,7 @@
     async function getData() {
  
         console.log("Fetching unemployment Data...");
-        const res = await fetch("/api/v1/unemployment-stats?limit="+limit+"&offset="+pag);
+        const res = await fetch("/api/v1/unemployment-stats?limit=10"+"&offset="+pag);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -69,12 +68,12 @@
  
         console.log("Fetching unemployment data...");
         await fetch("/api/v1/unemployment-stats/loadInitialData");
-        const res = await fetch("/api/v1/unemployment-stats?limit="+limit+"&offset="+pag);
+        const res = await fetch("/api/v1/unemployment-stats?limit=10"+"&offset="+pag);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
             unemployment_stats = json;
-            totaldata=8;
+            totaldata=11;
             console.log("Received " + unemployment_stats.length + " unemployment data.");
             //color = "success";
             //errorMSG = "Datos cargados correctamente";
@@ -103,7 +102,6 @@
 		if(typeof gfperc=='undefined'){
 			gfperc="";
 		}
-
 		const res = await fetch("/api/v1/unemployment-stats?country="+Ucountry+"&year="+Uyear+"&knoperc="+knoperc+"&intperc="+intperc+"&gfperc="+gfperc)
 		if (res.ok){
 			const json = await res.json();
@@ -120,50 +118,59 @@
 			console.log("ERROR");
 		}
 	}
-
-	async function paginacion(Ucountry,Uyear, knoperc, intperc, gfperc, num){
-		if(typeof Ucountry=='undefined'){
-			Ucountry="";
-		}
-		if(typeof Uyear=='undefined'){
-			Uyear="";
-		}
-		if(typeof knoperc=='undefined'){
-			knoperc="";
-		}
-		if(typeof intperc=='undefined'){
-			intperc="";
-		}
-		if(typeof gfperc=='undefined'){
-			gfperc="";
-		}
-		if(num==1){
-			pag=pag-limit;
-			if(pag<0){
-				pag=0;
-				const res = await fetch("/api/v1/unemployment-stats?country="+Ucountry+"&year="+Uyear+"&knoperc="+knoperc+"&intperc="+intperc+"&gfperc="+gfperc)
-				if (res.ok){
-					const json = await res.json();
-					unemployment_stats = json;					
-				}
-			}else{
-				const res = await fetch("/api/v1/unemployment-stats?country="+Ucountry+"&year="+Uyear+"&knoperc="+knoperc+"&intperc="+intperc+"&gfperc="+gfperc)
-				if (res.ok){
-					const json = await res.json();
-					unemployment_stats = json;			
-				}
-			}
-		}else{
-			pag = pag+limit;
-			const res = await fetch("/api/v1/unemployment-stats?country="+Ucountry+"&year="+Uyear+"&knoperc="+knoperc+"&intperc="+intperc+"&gfperc="+gfperc)
-			if (res.ok){
-					const json = await res.json();
-					unemployment_stats = json;					
-			}else if(res.status==404){
-			window.alert("No hay más países, vuelta a la página anterior");
-			}
-		}
-	}
+    async function getNextPage() {
+ 
+        console.log(totaldata);
+        if (page+10 > totaldata) {
+            page = 1
+        } else {
+            page+=10
+        }
+        
+        visible = true;
+        console.log("Charging page... Listing since: "+page);
+        const res = await fetch("/api/v2/life-expectancy-stats?limit=10&offset="+(-1+page));
+        //condicional imprime msg
+        color = "success";
+        checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
+        if (totaldata == 0){
+            console.log("ERROR Data was not erased");
+            color = "danger";
+            checkMSG= "¡No hay datos!";
+        }else if (res.ok) {
+            console.log("Ok:");
+            const json = await res.json();
+            LifeExpectancyStats = json;
+            console.log("Received " + LifeExpectancyStats.length + " resources.");
+        } else {
+            checkMSG= res.status + ": " + res.statusText;
+            console.log("ERROR!");
+        }
+    }
+    async function getPreviewPage() {
+            console.log(limit);
+            if (page-10 > 1) {
+                page-=10; 
+            } else page = 1
+            visible = true;
+            console.log("Charging page... Listing since: "+page);
+            const res = await fetch("/api/v2/life-expectancy-stats?limit=10&offset="+(-1+page));
+            color = "success";
+            checkMSG = (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
+            if (totaldata == 0){
+                console.log("ERROR Data was not erased");
+                color = "danger";
+                checkMSG = "¡No hay datos!";
+            }else if (res.ok) {
+                console.log("Ok:");
+                const json = await res.json();
+                LifeExpectancyStats = json;
+                console.log("Received "+LifeExpectancyStats.length+" resources.");
+            } else {
+                checkMSG = res.status+": "+res.statusText;
+                console.log("ERROR!");
+            }
+        }
     
     //INSERT
     
@@ -251,10 +258,10 @@
         <Button color="danger" on:click="{deleteALL}">
             Eliminar datos
         </Button>
-		<Button on:click="{paginacion}">
+		<Button on:click="{getPreviewPage}">
             Atrás
         </Button>
-		<Button on:click="{paginacion}">
+		<Button on:click="{getNextPage}">
             Siguiente
         </Button>
         
