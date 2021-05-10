@@ -14,8 +14,8 @@
     //ALERTAS
     let visible = false;
     let color = "danger";
-    let BASE_SEC_API = "/api/v1/du-stats"
-    let du_sv = [];
+    
+    let page = 1;
     let totaldata=8;
     let du_stats = [];
     let searchcountry = "";
@@ -30,32 +30,8 @@
 	}
 
     
-    //pag vars
-    let page = 0;
-    let numero;
-    
-    let succMsg;
-    // search vars
-    l
-    
     let errorMSG = null;
     onMount(getData);
-
-        //Pagination
-    let current_offset = 0;
-    let limit = 10;
-    let current_page = 1;
-    let last_page = 1;
-    let total = 0;
-
-    let insStat = {
-    country: "",
-    year: "",
-    population: "",
-    dead: "",
-    percde: "",
-    daly: "",
-    }
 
     
  
@@ -63,7 +39,7 @@
     async function getData() {
  
         console.log("Fetching Drugs Data...");
-        const res = await fetch("/api/v1/du-stats?limit=10&offset=1");
+        const res = await fetch("/api/v1/du-stats?limit=5&offset=1");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -80,7 +56,7 @@
  
         console.log("Fetching du data...");
         await fetch("/api/v1/du-stats/loadInitialData");
-        const res = await fetch("/api/v1/du-stats?limit=10&offset=1");
+        const res = await fetch("/api/v1/du-stats?limit=5&offset=1");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -139,14 +115,6 @@
          }
     }
 
-     // Vacia el objeto para evitar comportamientos indeseados
-     insStat.country =  "";
-    insStat.year = "";
-    insStat.population =  "";
-    insStat.dead = "";
-    insStat.percde = "";
-    insStat.daly = " ";
-
   
 
     //DELETE SPECIFIC
@@ -159,7 +127,7 @@
             if (res.status==200) {
                 totaldata--;
                 //color = "success";
-                //errorMSG = "Recurso" + country + year + "borrado correctamentee";
+                //errorMSG = "Recurso" + country + year + "borrado correctamente";
                 errorMSG = 200.2;
                 console.log("Deleted " + name);            
             }else if (res.status==404) {
@@ -247,7 +215,7 @@
             page+=5
         }
         console.log("Charging page "+ page);
-        const res = await fetch("/api/v1/du-stats?limit=10&offset="+page);
+        const res = await fetch("/api/v1/du-stats?limit=5&offset="+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -259,7 +227,7 @@
         }
     }
 
-    
+
     //getPreviewPage
     async function getPreviewPage() {
  
@@ -267,7 +235,7 @@
             page-=5; 
         } else page = 1
         console.log("Charging page " +page);
-        const res = await fetch("/api/v1/du-stats?limit=10&offset="+page);
+        const res = await fetch("/api/v1/du-stats?limit=5&offset="+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -278,54 +246,7 @@
             console.log("ERROR!");
         }
     }
-
-   // Buscar dato
-async function searchStat() {
-  error = 0;
-  errorMsg = null;
-  console.log("Searching data...");
-      var campos = new Map(
-        Object.entries(insStat).filter((o) => {
-          return o[1] != "";
-        })
-      );
-      let querySymbol = "?";
-      for (var [clave, valor] of campos.entries()) {
-        querySymbol += clave + "=" + valor + "&";
-      }
-      fullQuery = querySymbol.slice(0, -1);
-      if (fullQuery != "") {
-        const res = await fetch(
-          BASE_SEC_API + fullQuery
-        );
-        if (res.ok) {
-          console.log("OK");
-          const json = await res.json();
-          du_sv = json;
-          error = 0;
-          okMsg = "Búsqueda realizada con éxito";
-        } else {
-          console.log("OKa");
-          du_sv = [];
-          if (res.status === 404) {
-            console.log("OKe");
-            error = 404;
-            errorMsg = "No se encuentra el dato solicitado";
-          } else if (res.status === 500) {
-            console.log("OKa");
-            error = 500;
-            errorMsg = "No se han podido acceder a la base de datos";
-          }
-          okMsg = "";
-          console.log("ERROR!" + errorMsg);
-        }
-      } else {
-        errorMsg = "Búsqueda vacia";
-        console.log("OKv");
-        error = 1000;
-      }
-    }
-
+    
 </script>
 
 <main>
@@ -394,16 +315,6 @@ async function searchStat() {
                     <th>Porcentaje de dependencia a las drogas</th>
                     <th>D.A.L.Y</th>
                 </tr>
-                <h6>Seccion de busqueda: </h6>
-                <tr>s
-                    <td><input type="text" placeholder="País"  bind:value={insStat.country}/></td> 
-                    <td><input type="text" placeholder="Año"  bind:value={insStat.year}/></td>
-                    <td><input type="text" placeholder="Población"  bind:value={insStat.population}/></td>
-                    <td><input type="text" placeholder="Porcentaje Muertes"  bind:value={insStat.dead}/></td>
-                    <td><input type="text" placeholder="Porcentaje Dependientes"  bind:value={insStat.percde}/></td>
-                    <td><input type="text" placeholder="D.A.L.Y.S"  bind:value={insStat.daly}/></td>
-                    <td><Button color="warning" on:click={searchStat}>Buscar</Button></td>
-                 </tr>
             </thead>
             <tbody>
                 <tr>
@@ -413,9 +324,8 @@ async function searchStat() {
                     <td><input bind:value="{data.dudead}"></td>    
                     <td><input bind:value="{data.dudependenceperc}"></td> 
                     <td><input bind:value="{data.dudaly}"></td>   
-                    <td><Button outline color="primary" on:click={insertData}>Insertar</Button></td>         
-                </tr>
-        
+                    <td><Button outline color="primary" on:click={insertData}>Insertar</Button></td>
+            </tr>
  
                 {#each du_stats as sc}
                     <tr>
