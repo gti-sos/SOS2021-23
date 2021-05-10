@@ -2,6 +2,7 @@
 	import { onMount } from "svelte";
 	import Table from "sveltestrap/src/Table.svelte"; 
 	import Button from "sveltestrap/src/Button.svelte";
+    import { pop } from "svelte-spa-router";
 	import { Pagination, PaginationItem, PaginationLink } from 'sveltestrap';
 	import { Form, FormGroup, FormText, Input, Label } from 'sveltestrap';
 	import { Alert, UncontrolledAlert } from 'sveltestrap';
