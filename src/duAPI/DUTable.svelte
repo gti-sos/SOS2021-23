@@ -320,7 +320,7 @@ async function searchStat() {
           console.log("ERROR!" + errorMsg);
         }
       } else {
-        errorMsg = "Búsqueda vacía";
+        errorMsg = "Búsqueda vacia";
         console.log("OKv");
         error = 1000;
       }
@@ -395,7 +395,7 @@ async function searchStat() {
                     <th>D.A.L.Y</th>
                 </tr>
                 <h6>Seccion de busqueda: </h6>
-                <tr>
+                <tr>s
                     <td><input type="text" placeholder="País"  bind:value={insStat.country}/></td> 
                     <td><input type="text" placeholder="Año"  bind:value={insStat.year}/></td>
                     <td><input type="text" placeholder="Población"  bind:value={insStat.population}/></td>
