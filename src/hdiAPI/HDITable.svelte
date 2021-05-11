@@ -10,7 +10,18 @@
 	
     
     let isOpen = false;
-    let busquedas = "/api/v1/hdi-stats?";
+    let BASE_HDI_API = "/api/v1/hdi-stats"
+    let error = null;
+    let errorMsg = "";
+    let okMsg = "";
+    let fullQuery = "";
+    
+    async function resetErrors() {
+      error = null;
+      errorMsg = null;
+      okMsg = null;
+    }
+    
     //ALERTAS
     let visible = false;
     let color = "danger";
@@ -192,30 +203,51 @@
      }
 
        //Busquedas
-    let searchcountry= "";
-	let searchyear = "";
-     async function buscaRegistro(country, year) {
-		console.log("Realizando búsqueda del país: " + country + " y del año: " + year);
-        
-        year=parseInt(year);
-        
-        var url = "/api/v1/hdi-stats";
-        
-		if (country != "" && year != "") {
-            url = url + "?country=" + country + "&year=" + year;
-            console.log(url);
-        } 
-        else if (country != "" && year == "") {
-            url = url + "?country=" + country;
-            console.log(url);
-        } 
-        else if (country == "" && year != "") {
-            url = url + "?year=" + year;
-            console.log(url);
+// Buscar dato
+async function searchStat() {
+  error = 0;
+  errorMsg = null;
+  console.log("Searching data...");
+      var campos = new Map(
+        Object.entries(data).filter((o) => {
+          return o[1] != "";
+        })
+      );
+      let querySymbol = "?";
+      for (var [clave, valor] of campos.entries()) {
+        querySymbol += clave + "=" + valor + "&";
+      }
+      fullQuery = querySymbol.slice(0, -1);
+      if (fullQuery != "") {
+        const res = await fetch(
+          BASE_HDI_API + fullQuery
+        );
+        if (res.ok) {
+          console.log("OK");
+          const json = await res.json();
+          hdi_stats = json;
+          error = 0;
+          okMsg = "Búsqueda realizada con éxito";
+        } else {
+          console.log("OKa");
+          hdi_stats = [];
+          if (res.status === 404) {
+            console.log("OKe");
+            error = 404;
+            errorMsg = "No se encuentra el dato solicitado";
+          } else if (res.status === 500) {
+            console.log("OKa");
+            error = 500;
+            errorMsg = "No se han podido acceder a la base de datos";
+          }
+          okMsg = "";
+          console.log("ERROR!" + errorMsg);
         }
-        const res = await fetch(url);
-        const json = await res.json();
-            hdi_stats = json;
+      } else {
+        errorMsg = "Búsqueda vacía";
+        console.log("OKv");
+        error = 1000;
+      }
     }
     
     
@@ -268,6 +300,9 @@
     </Button>
     <Button color="danger" on:click="{deleteALL}">
         Eliminar todo
+    </Button>
+    <Button on:click="{getPreviewPage}">
+        Atrás
     </Button>
     <Button outline color="info" on:click="{getNextPage}">
         Siguiente
@@ -334,17 +369,11 @@
                     <td><input bind:value="{data.hdivalue}"></td>    
                     <td><input bind:value="{data.hdischolar}"></td> 
                      
-                    <td><Button outline color="primary" on:click={insertData}>Insertar</Button></td>
+                    <td><Button outline color="primary" on:click={insertData}>Insertar</Button>
+                        <Button color="warning" on:click={searchStat}>Buscar</Button></td>
                                
                 </tr>
-                <tr>
-                    <td>Introducir datos para realizar una busqueda:</td>
-                    <td>Pais buscado:<input bind:value="{searchcountry}"></td>
-                    <td></td>
-                    <td>Año buscado:<input type=number bind:value={searchyear}></td>
-                    <td></td>
-                    <td><Button on:click={buscaRegistro(searchcountry, searchyear)}>Buscar</Button></td>
-                </tr>
+                
  
                 {#each hdi_stats as sc}
                     <tr>
