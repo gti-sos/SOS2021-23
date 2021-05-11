@@ -99,23 +99,7 @@ var du_stats = [
    "dudead": "1.19",
    "dudependenceperc": "1.15",
    "dudaly": "257.85"
- },
- {
-	"country": "Argentine",
-	 "year": "2013",
-	 "dupopulation": "20,5",
-	 "dudead": "0.80",
-	 "dudependenceperc": "1.54",
-	 "dudaly": "143.45"
-   },
-   {
-	  "country": "Denmark",
-	   "year": "2020",
-	   "dupopulation": "30,5",
-	   "dudead": "0.20",
-	   "dudependenceperc": "0.34",
-	   "dudaly": "127.5"
-	 }
+ }
 ];
 
  module.exports.register = (app) => {
