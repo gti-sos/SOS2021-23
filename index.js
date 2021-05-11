@@ -22,9 +22,10 @@ du_api.register(app);
 var hdi_api = require("./hdi-stats-api");
 hdi_api.register(app);
 //unemployment-stats
-var unemployment_api = require("./unemployment-stats-api");
+var unemployment_api_v1 = require("./unemployment-stats-api/v1");
+var unemployment_api_v2 = require("./unemployment-stats-api/v2");
 const { request, response } = require("express");
-unemployment_api.register(app);
+unemployment_api_v2.register(app);
 
 // Raíces del servicio
 app.use('/public', serveIndex('public')); // shows you the file list

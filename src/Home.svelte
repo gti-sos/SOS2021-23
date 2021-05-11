@@ -112,12 +112,16 @@
           <CardSubtitle />
           <CardText>Porcentaje de paro según diferentes fuentes.</CardText>
           <a href="https://sos2021-23.herokuapp.com/api/v1/unemployment-stats">
-            <Button color="primary">API</Button></a>
+            <Button color="primary">V1</Button></a>
+          <a href="https://sos2021-23.herokuapp.com/api/v2/unemployment-stats">
+              <Button color="primary">V2</Button></a>
           <a href="/#/unemployment-stats">
-            <Button color="primary">Interfaz</Button>
+            <Button color="primary">Frontend</Button>
           </a>
           <a href="https://documenter.getpostman.com/view/14941751/TzJuAJ6j"
-            ><Button color="info">Documentación Backend en Postman</Button></a>
+            ><Button color="info">Postman V1</Button></a>
+          <a href="https://documenter.getpostman.com/view/14941751/TzRSh81k"
+            ><Button color="info">Postman V2</Button></a>
           
         </CardBody>
         <CardFooter
