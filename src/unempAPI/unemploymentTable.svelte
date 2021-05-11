@@ -29,8 +29,8 @@
 	//VARIABLES PARA BUSQUEDA
 	let Ucountry = "";
 	let Uyear = "";
-	//let Ufrom = "";
-	//let Uto = "";
+	let Ufrom = "";
+	let Uto = "";
 	//let Uknoperc_min = "";
 	//let Uknoperc_max = "";
 	//let Uintperc_min = "";
@@ -84,12 +84,18 @@
             console.log("ERROR!");
         }
     }
-	async function busqueda (Ucountry,Uyear, knoperc, intperc, gfperc){
+	async function busqueda (Ucountry,Uyear,Ufrom,Uto, knoperc, intperc, gfperc){
 		if(typeof Ucountry=='undefined'){
 			Ucountry="";
 		}
 		if(typeof Uyear=='undefined'){
 			Uyear="";
+		}
+        if(typeof Ufrom=='undefined'){
+			Ufrom="";
+		}
+        if(typeof Uto=='undefined'){
+			Uto="";
 		}
 		if(typeof knoperc=='undefined'){
 			knoperc="";
@@ -100,7 +106,7 @@
 		if(typeof gfperc=='undefined'){
 			gfperc="";
 		}
-		const res = await fetch("/api/v2/unemployment-stats?country="+Ucountry+"&year="+Uyear+"&knoperc="+knoperc+"&intperc="+intperc+"&gfperc="+gfperc)
+		const res = await fetch("/api/v2/unemployment-stats?country="+Ucountry+"&year="+Uyear+"&from="+Ufrom+"&to="+Uto+"&knoperc="+knoperc+"&intperc="+intperc+"&gfperc="+gfperc)
 		if (res.ok){
 			const json = await res.json();
 			unemployment_stats = json;
@@ -271,9 +277,14 @@
 				<td><strong><label>Porcentaje de InternetWorldStats: <input bind:value="{intperc}"></label></strong></td>
 				<td><strong><label>Porcentaje de Gfmag: <input bind:value="{gfperc}"></label></strong></td>
 			</tr>
+            <tr>
+				<td><strong><label>Año(Desde): <input bind:value="{Ufrom}"></label></strong></td>
+				<td><strong><label>Año(Hasta): <input bind:value="{Uto}"></label></strong></td>
+
+			</tr>
 		</Table>
 		<div style="text-align:center;padding-bottom: 1%">
-			<Button outline color="primary" on:click="{busqueda (Ucountry, Uyear,knoperc,intperc,gfperc)}">Buscar</Button>
+			<Button outline color="primary" on:click="{busqueda (Ucountry, Uyear,Ufrom,Uto,knoperc,intperc,gfperc)}">Buscar</Button>
 		</div>
 		<p>Si quieres editar algún recurso haz click en el nombre del país. </p>
     

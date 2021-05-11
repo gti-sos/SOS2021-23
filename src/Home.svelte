@@ -106,7 +106,7 @@
     <Col xs="auto">
       <Card class="mb-3">
         <CardHeader>
-          <CardTitle><h5>Porcentajes de paro</h5></CardTitle>
+          <CardTitle><h5>Porcentaje de paro(API UNEMPLOYMENT)</h5></CardTitle>
         </CardHeader>
         <CardBody>
           <CardSubtitle />

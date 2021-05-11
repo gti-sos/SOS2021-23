@@ -115,7 +115,11 @@ var unemployment_stats = [
         var search = {};
 
         if (request.query.country) {search["country"] = request.query.country}
-        if (request.query.year) {search["year"] = request.query.year}
+        if (request.query.year) {
+          search['year'] = (request.query.year);
+        }else if(request.query.from || request.query.to) {
+          search['year'] = { $gte:(request.query.from), $lte:(request.query.to) };
+        }
         if (request.query.knoperc) {search["knoperc"] = request.query.knoperc}
         if (request.query.intperc) {search["intperc"] = request.query.intperc}
         if (request.query.gfperc) {search["gfperc"] = request.query.gfperc}
