@@ -26,7 +26,7 @@
 	}
     
 	let exitoMsg="";
-	//VARIABLES PARA BUSQUEDA
+	//BUSQUEDA
 	let Ucountry = "";
 	let Uyear = "";
 	let Ufrom = "";
