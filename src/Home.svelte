@@ -133,7 +133,7 @@
     <Col xs="auto">
       <Card class="mb-3">
         <CardHeader>
-          <CardTitle><h5>Estadísticas HDI</h5></CardTitle>
+          <CardTitle><h5>Estadística HDI</h5></CardTitle>
         </CardHeader>
         <CardBody>
           <CardSubtitle />
