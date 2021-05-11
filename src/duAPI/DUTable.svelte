@@ -38,9 +38,9 @@
 
     
      /*pagination*/
-     let limit = 10; /*limit es el número de elementos por página*/
+        let limit = 10; /*limit es el número de elementos por página*/
 	let offset = 0; /*offset indica desde qué elemento se va a empezar a mostrar*/
-    let numTotal=0;
+        let numTotal=0;
 	let maxpag = numTotal>=limit; 
     
     let errorMSG = null;
@@ -359,9 +359,10 @@
     <Button outline color="info" on:click="{getPreviewPage}">
         Atrás
      </Button>
+     {#if !maxpag}
      <Button outline color="info" on:click="{getNextPage}">
          Siguiente
-        </Button>
+        </Button>{/if}
        
     {#await du_stats}
         Loading data...
@@ -452,10 +453,10 @@
             </tbody>
         </Table>
 
-        <Button color="info" on:click={pagBefore}>ANTERIOR</Button>        
+        <Button color="info" on:click={getPreviewPage}>Anterior</Button>        
         Número de datos en esta página: {numTotal}
         {#if !maxpag}
-        <Button color="info" on:click={pagNext}>SIGUIENTE</Button> 
+        <Button color="info" on:click={getNextPage}>Siguiente</Button> 
         {/if}
 
         <br/> <br/><Button style="background-color:darkgray " on:click="{pop}"> Volver </Button>
