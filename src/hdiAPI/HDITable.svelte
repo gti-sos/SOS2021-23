@@ -202,8 +202,9 @@
          }
      }
 
-       //Busquedas
-// Buscar dato
+       
+     //Busquedas
+
 async function searchStat() {
   error = 0;
   errorMsg = null;
@@ -252,42 +253,55 @@ async function searchStat() {
     
     
     
-    //getNextPage
     async function getNextPage() {
- 
         console.log(totaldata);
-        if (page+5 > totaldata) {
+        if (page+10 > totaldata) {
             page = 1
         } else {
-            page+=5
+            page+=10
         }
-        console.log("Charging page "+ page);
-        const res = await fetch("/api/v1/hdi-stats?limit=5&offset="+page);
-        if (res.ok) {
-            console.log("Ok:");
-            const json = await res.json();
-            hdi_stats = json;
-            console.log("Received " + hdi_stats.length + " data.");
-        } else {
-            errorMSG= res.status + ": " + res.statusText;
-            console.log("ERROR!");
-        }
-    }
-    //getPreviewPage
-    async function getPreviewPage() {
- 
-        if (page-5>=1) {
-            page-=5; 
-        } else page = 1
-        console.log("Charging page " +page);
-        const res = await fetch("/api/v1/hdi-stats?limit=5&offset="+page);
-        if (res.ok) {
+        
+        visible = true;
+        console.log("Charging page... Listing since: "+page);
+        const res = await fetch("/api/v1/hdi-stats?limit=10&offset="+(-1+page));
+        color = "success";
+        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
+        if (totaldata == 0){
+            console.log("ERROR Data was not erased");
+            color = "danger";
+            errorMSG= "¡No hay datos!";
+        }else if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
             hdi_stats = json;
             console.log("Received " + hdi_stats.length + " resources.");
         } else {
             errorMSG= res.status + ": " + res.statusText;
+            console.log("ERROR!");
+        }
+    }
+    //getPreviewPage    
+    async function getPreviewPage() {
+        console.log(totaldata);
+        if (page-10 > 1) {
+            page-=5; 
+        } else page = 1
+        visible = true;
+        console.log("Charging page... Listing since: "+page);
+        const res = await fetch("/api/v1/hdi-stats?limit=10&offset="+(-1+page));
+        color = "success";
+        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
+        if (totaldata == 0){
+            console.log("ERROR Data was not erased");
+            color = "danger";
+            errorMSG= "¡No hay datos!";
+        }else if (res.ok) {
+            console.log("Ok:");
+            const json = await res.json();
+            hdi_stats = json;
+            console.log("Received "+hdi_stats.length+" resources.");
+        } else {
+            errorMSG= res.status+": "+res.statusText;
             console.log("ERROR!");
         }
     }

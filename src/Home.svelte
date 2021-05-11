@@ -143,7 +143,7 @@
           <a href="/#/hdi-stats">
             <Button color="primary">Interfaz</Button>
           </a>
-          <a href="https://documenter.getpostman.com/view/14943559/TzJoDfQ5"
+          <a href="https://documenter.getpostman.com/view/14951179/TzJoF21c"
             ><Button color="info">Documentación Backend en Postman</Button></a>
           
         </CardBody>
