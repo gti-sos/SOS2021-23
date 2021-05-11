@@ -121,7 +121,7 @@ var unemployment_stats = [
         if (request.query.gfperc) {search["gfperc"] = request.query.gfperc}
         if (db.count({}) == 0) {
             console.log('[!] Se ha hecho una petición a los recursos pero no han sido cargados.');
-            return response.status(404).send("<p>No se han cargado los recursos. Para ello dale a cargar datos</p>");
+            return response.status(404).send("<p>No se han cargado los recursos. Para ello añade en la dirección /loadInitialData</p>");
         } else {
             db.find(search).skip(offset).limit(limit).exec((err, dbdata) => {
                 if (err) {
@@ -130,7 +130,7 @@ var unemployment_stats = [
                 } else {
                     if (dbdata == 0) {
                         console.log("[!] La base de datos está vacia");
-                        return response.status(404).send("<h1>No se han cargado los recursos. Para ello dale a cargar datos</h1>");
+                        return response.status(404).send("<h1>No se han cargado los recursos. Para ello añade en la dirección /loadInitialData</h1>");
                     } else {
                         dbdata.forEach((data) =>{ delete data._id});
                         return response.status(200).send(JSON.stringify(dbdata,null, 2));
