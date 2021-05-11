@@ -106,18 +106,22 @@
     <Col xs="auto">
       <Card class="mb-3">
         <CardHeader>
-          <CardTitle><h5>Porcentajes de paro</h5></CardTitle>
+          <CardTitle><h5>Porcentaje de paro(API UNEMPLOYMENT)</h5></CardTitle>
         </CardHeader>
         <CardBody>
           <CardSubtitle />
           <CardText>Porcentaje de paro según diferentes fuentes.</CardText>
           <a href="https://sos2021-23.herokuapp.com/api/v1/unemployment-stats">
-            <Button color="primary">API</Button></a>
+            <Button color="primary">V1</Button></a>
+          <a href="https://sos2021-23.herokuapp.com/api/v2/unemployment-stats">
+              <Button color="primary">V2</Button></a>
           <a href="/#/unemployment-stats">
-            <Button color="primary">Interfaz</Button>
+            <Button color="primary">Frontend</Button>
           </a>
           <a href="https://documenter.getpostman.com/view/14941751/TzJuAJ6j"
-            ><Button color="info">Documentación Backend en Postman</Button></a>
+            ><Button color="info">Postman V1</Button></a>
+          <a href="https://documenter.getpostman.com/view/14941751/TzRSh81k"
+            ><Button color="info">Postman V2</Button></a>
           
         </CardBody>
         <CardFooter
@@ -129,7 +133,7 @@
     <Col xs="auto">
       <Card class="mb-3">
         <CardHeader>
-          <CardTitle><h5>Estadísticas HDI</h5></CardTitle>
+          <CardTitle><h5>Estadística HDI</h5></CardTitle>
         </CardHeader>
         <CardBody>
           <CardSubtitle />
@@ -139,7 +143,7 @@
           <a href="/#/hdi-stats">
             <Button color="primary">Interfaz</Button>
           </a>
-          <a href="https://documenter.getpostman.com/view/14943559/TzJoDfQ5"
+          <a href="https://documenter.getpostman.com/view/14951179/TzJoF21c"
             ><Button color="info">Documentación Backend en Postman</Button></a>
           
         </CardBody>

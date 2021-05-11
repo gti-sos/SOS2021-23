@@ -143,31 +143,38 @@ module.exports.register = (app) => {
         }
     });
 
-    // Methods involving path+object_fields
-    app.get(BASE_API_PATH_MEM + "/:country/:year", (req, res) => {
-        var countryToGet = req.params.country;
-		var yearToGet = req.params.year;
-		
-		
-		db.find({country: countryToGet, year: yearToGet}, function(err, hdiInDB){
-		console.log("Searching "+countryToGet+" "+yearToGet);
-			if(err) {
-				console.error(err);
-				res.sendStatus(404);
-			}
-			if(hdiInDB.length==0){
-				console.log("Resource not found: "+countryToGet+" "+yearToGet);
-				res.sendStatus(404); // NOT FOUND
-			}else{
-				console.log(hdiInDB);
-				var hdiToSend = hdiInDB.map((c)=>{
-					return {country : c.country, year : c.year, hdirankc : c.hdirankc, hdivaluec : c.hdivaluec, hdischolarc : c.hdischolarc};
-				});
-				res.send(JSON.stringify(hdiToSend[0],null,2));
-			}
-			
-		})
-	});
+     // Methods involving path+object_fields
+     app.get(BASE_API_PATH_MEM + "/:country/:year", (req, res) => {
+        var req_data = req.params; 
+        let limit;
+        let offset;
+        if (req.query.offset) {
+            offset = parseInt(req.query.offset);
+            delete req.query.offset;
+        } 
+        if (req.query.limit) {
+            limit = parseInt(req.query.limit);
+            delete req.query.limit;
+            console.log(limit);
+        }
+        console.log(offset);
+        console.log(limit);
+        db.find({country: req.params.country, year: req.params.year}).skip(offset).limit(limit).exec((err, dataInDB) => {
+            if (err) {
+                console.error("[!] ERROR accesing DB " + err);
+                res.sendStatus(500);
+            } else {
+                if (dataInDB == 0) {
+                    console.error("[!] No DATA found");
+                    res.status(404).send("<h1>Resource not found</h1>");
+                } else {
+                    dataInDB.forEach((data) =>{delete data._id});
+                    res.status(200).send(JSON.stringify(dataInDB[0], null, 2)); 
+                    console.log(`GET stat by country: <${req_data.country}> and date: <${req_data.year}>`);
+                }
+            }
+        });
+    });
 
      // Get a un recurso concreto
      app.get(BASE_API_PATH_MEM + "/:country", (req, res) => {

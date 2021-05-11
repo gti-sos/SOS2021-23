@@ -9,13 +9,11 @@
 	
 	
     
-    let isOpen = false;
-    let busquedas = "/api/v1/unemployment-stats?";
     //ALERTAS
     let visible = false;
     let color = "danger";
 	//Paginación
-	let pag=1;
+	let page=1;
 	//Finpaginacion
     let totaldata=11;
     let unemployment_stats = [];
@@ -28,11 +26,11 @@
 	}
     
 	let exitoMsg="";
-	//VARIABLES PARA BUSQUEDA
+	//BUSQUEDA
 	let Ucountry = "";
 	let Uyear = "";
-	//let Ufrom = "";
-	//let Uto = "";
+	let Ufrom = "";
+	let Uto = "";
 	//let Uknoperc_min = "";
 	//let Uknoperc_max = "";
 	//let Uintperc_min = "";
@@ -51,7 +49,7 @@
     async function getData() {
  
         console.log("Fetching unemployment Data...");
-        const res = await fetch("/api/v1/unemployment-stats?limit=10"+"&offset="+pag);
+        const res = await fetch("/api/v2/unemployment-stats?limit=10"+"&offset="+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -67,8 +65,8 @@
     async function loadInitialData() {
  
         console.log("Fetching unemployment data...");
-        await fetch("/api/v1/unemployment-stats/loadInitialData");
-        const res = await fetch("/api/v1/unemployment-stats?limit=10"+"&offset="+pag);
+        await fetch("/api/v2/unemployment-stats/loadInitialData");
+        const res = await fetch("/api/v2/unemployment-stats?limit=10"+"&offset="+page);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -86,12 +84,18 @@
             console.log("ERROR!");
         }
     }
-	async function busqueda (Ucountry,Uyear, knoperc, intperc, gfperc){
+	async function busqueda (Ucountry,Uyear,Ufrom,Uto, knoperc, intperc, gfperc){
 		if(typeof Ucountry=='undefined'){
 			Ucountry="";
 		}
 		if(typeof Uyear=='undefined'){
 			Uyear="";
+		}
+        if(typeof Ufrom=='undefined'){
+			Ufrom="";
+		}
+        if(typeof Uto=='undefined'){
+			Uto="";
 		}
 		if(typeof knoperc=='undefined'){
 			knoperc="";
@@ -102,7 +106,7 @@
 		if(typeof gfperc=='undefined'){
 			gfperc="";
 		}
-		const res = await fetch("/api/v1/unemployment-stats?country="+Ucountry+"&year="+Uyear+"&knoperc="+knoperc+"&intperc="+intperc+"&gfperc="+gfperc)
+		const res = await fetch("/api/v2/unemployment-stats?country="+Ucountry+"&year="+Uyear+"&from="+Ufrom+"&to="+Uto+"&knoperc="+knoperc+"&intperc="+intperc+"&gfperc="+gfperc)
 		if (res.ok){
 			const json = await res.json();
 			unemployment_stats = json;
@@ -119,7 +123,6 @@
 		}
 	}
     async function getNextPage() {
- 
         console.log(totaldata);
         if (page+10 > totaldata) {
             page = 1
@@ -129,48 +132,48 @@
         
         visible = true;
         console.log("Charging page... Listing since: "+page);
-        const res = await fetch("/api/v2/life-expectancy-stats?limit=10&offset="+(-1+page));
-        //condicional imprime msg
+        const res = await fetch("/api/v2/unemployment-stats?limit=10&offset="+(-1+page));
         color = "success";
-        checkMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
+        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
         if (totaldata == 0){
             console.log("ERROR Data was not erased");
             color = "danger";
-            checkMSG= "¡No hay datos!";
+            errorMSG= "¡No hay datos!";
         }else if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
-            LifeExpectancyStats = json;
-            console.log("Received " + LifeExpectancyStats.length + " resources.");
+            unemployment_stats = json;
+            console.log("Received " + unemployment_stats.length + " resources.");
         } else {
-            checkMSG= res.status + ": " + res.statusText;
+            errorMSG= res.status + ": " + res.statusText;
             console.log("ERROR!");
         }
     }
+    //getPreviewPage    
     async function getPreviewPage() {
-            console.log(limit);
-            if (page-10 > 1) {
-                page-=10; 
-            } else page = 1
-            visible = true;
-            console.log("Charging page... Listing since: "+page);
-            const res = await fetch("/api/v2/life-expectancy-stats?limit=10&offset="+(-1+page));
-            color = "success";
-            checkMSG = (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
-            if (totaldata == 0){
-                console.log("ERROR Data was not erased");
-                color = "danger";
-                checkMSG = "¡No hay datos!";
-            }else if (res.ok) {
-                console.log("Ok:");
-                const json = await res.json();
-                LifeExpectancyStats = json;
-                console.log("Received "+LifeExpectancyStats.length+" resources.");
-            } else {
-                checkMSG = res.status+": "+res.statusText;
-                console.log("ERROR!");
-            }
+        console.log(totaldata);
+        if (page-10 > 1) {
+            page-=5; 
+        } else page = 1
+        visible = true;
+        console.log("Charging page... Listing since: "+page);
+        const res = await fetch("/api/v2/unemployment-stats?limit=10&offset="+(-1+page));
+        color = "success";
+        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
+        if (totaldata == 0){
+            console.log("ERROR Data was not erased");
+            color = "danger";
+            errorMSG= "¡No hay datos!";
+        }else if (res.ok) {
+            console.log("Ok:");
+            const json = await res.json();
+            unemployment_stats = json;
+            console.log("Received "+unemployment_stats.length+" resources.");
+        } else {
+            errorMSG= res.status+": "+res.statusText;
+            console.log("ERROR!");
         }
+    }
     
     //INSERT
     
@@ -182,7 +185,7 @@
              alert("Debes insertar el nombre del país y el año.");
          }
          else{
-             const res = await fetch("/api/v1/unemployment-stats",{
+             const res = await fetch("/api/v2/unemployment-stats",{
              method:"POST",
              body:JSON.stringify(data),
              headers:{
@@ -207,7 +210,7 @@
      }
     //DELETE SPECIFIC
     async function deleteData(name, year) {
-        const res = await fetch("/api/v1/unemployment-stats/" + name + "/" + year, {
+        const res = await fetch("/api/v2/unemployment-stats/" + name + "/" + year, {
             method: "DELETE"
         }).then(function (res) {
             visible = true;
@@ -231,7 +234,7 @@
 		console.log("Deleting unemployment data...");
 		if(confirm("¿Está seguro de que desea eliminar todas las entradas?")){
 			console.log("Deleting all unemployment data...");
-			const res = await fetch("/api/v1/unemployment-stats/", {
+			const res = await fetch("/api/v2/unemployment-stats/", {
 				method: "DELETE"
 			}).then(function (res) {
 				if(res.ok){
@@ -274,9 +277,14 @@
 				<td><strong><label>Porcentaje de InternetWorldStats: <input bind:value="{intperc}"></label></strong></td>
 				<td><strong><label>Porcentaje de Gfmag: <input bind:value="{gfperc}"></label></strong></td>
 			</tr>
+            <tr>
+				<td><strong><label>Año(Desde): <input bind:value="{Ufrom}"></label></strong></td>
+				<td><strong><label>Año(Hasta): <input bind:value="{Uto}"></label></strong></td>
+
+			</tr>
 		</Table>
 		<div style="text-align:center;padding-bottom: 1%">
-			<Button outline color="primary" on:click="{busqueda (Ucountry, Uyear,knoperc,intperc,gfperc)}">Buscar</Button>
+			<Button outline color="primary" on:click="{busqueda (Ucountry, Uyear,Ufrom,Uto,knoperc,intperc,gfperc)}">Buscar</Button>
 		</div>
 		<p>Si quieres editar algún recurso haz click en el nombre del país. </p>
     
