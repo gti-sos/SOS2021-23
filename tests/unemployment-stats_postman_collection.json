@@ -1,12 +1,12 @@
 {
 	"info": {
-		"_postman_id": "d4caeaea-1eb1-419d-9e1f-86eafa365569",
-		"name": "sos2021-23-unemployment-stats-entrega1 V2",
+		"_postman_id": "43a6b529-a38d-40f9-890b-c1dcea7b0acd",
+		"name": "sos2021-23-unemployment-stats-entrega1",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/",
+			"name": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/",
 			"event": [
 				{
 					"listen": "test",
@@ -24,7 +24,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/",
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/",
 					"protocol": "https",
 					"host": [
 						"sos2021-23",
@@ -33,7 +33,7 @@
 					],
 					"path": [
 						"api",
-						"v2",
+						"v1",
 						"unemployment-stats",
 						""
 					]
@@ -42,7 +42,7 @@
 			"response": []
 		},
 		{
-			"name": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/loadInitialData",
+			"name": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/loadInitialData",
 			"event": [
 				{
 					"listen": "test",
@@ -61,7 +61,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/loadInitialData",
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/loadInitialData",
 					"protocol": "https",
 					"host": [
 						"sos2021-23",
@@ -70,7 +70,7 @@
 					],
 					"path": [
 						"api",
-						"v2",
+						"v1",
 						"unemployment-stats",
 						"loadInitialData"
 					]
@@ -79,7 +79,7 @@
 			"response": []
 		},
 		{
-			"name": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/",
+			"name": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/",
 			"event": [
 				{
 					"listen": "test",
@@ -101,7 +101,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/",
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/",
 					"protocol": "https",
 					"host": [
 						"sos2021-23",
@@ -110,7 +110,7 @@
 					],
 					"path": [
 						"api",
-						"v2",
+						"v1",
 						"unemployment-stats",
 						""
 					]
@@ -119,7 +119,7 @@
 			"response": []
 		},
 		{
-			"name": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/",
+			"name": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/",
 			"event": [
 				{
 					"listen": "test",
@@ -146,7 +146,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/",
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/",
 					"protocol": "https",
 					"host": [
 						"sos2021-23",
@@ -155,7 +155,7 @@
 					],
 					"path": [
 						"api",
-						"v2",
+						"v1",
 						"unemployment-stats",
 						""
 					]
@@ -164,7 +164,7 @@
 			"response": []
 		},
 		{
-			"name": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/",
+			"name": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/",
 			"event": [
 				{
 					"listen": "test",
@@ -191,7 +191,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/",
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/",
 					"protocol": "https",
 					"host": [
 						"sos2021-23",
@@ -200,7 +200,7 @@
 					],
 					"path": [
 						"api",
-						"v2",
+						"v1",
 						"unemployment-stats",
 						""
 					]
@@ -209,7 +209,7 @@
 			"response": []
 		},
 		{
-			"name": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/",
+			"name": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/",
 			"event": [
 				{
 					"listen": "test",
@@ -236,7 +236,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/",
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/",
 					"protocol": "https",
 					"host": [
 						"sos2021-23",
@@ -245,7 +245,7 @@
 					],
 					"path": [
 						"api",
-						"v2",
+						"v1",
 						"unemployment-stats",
 						""
 					]
@@ -254,7 +254,7 @@
 			"response": []
 		},
 		{
-			"name": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/Canada/2020",
+			"name": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/Canada/2020",
 			"event": [
 				{
 					"listen": "test",
@@ -284,7 +284,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/Euskadi/2020",
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/Euskadi/2020",
 					"protocol": "https",
 					"host": [
 						"sos2021-23",
@@ -293,7 +293,7 @@
 					],
 					"path": [
 						"api",
-						"v2",
+						"v1",
 						"unemployment-stats",
 						"Euskadi",
 						"2020"
@@ -303,7 +303,7 @@
 			"response": []
 		},
 		{
-			"name": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/",
+			"name": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/",
 			"event": [
 				{
 					"listen": "test",
@@ -325,7 +325,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/",
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/",
 					"protocol": "https",
 					"host": [
 						"sos2021-23",
@@ -334,7 +334,7 @@
 					],
 					"path": [
 						"api",
-						"v2",
+						"v1",
 						"unemployment-stats",
 						""
 					]
@@ -343,7 +343,7 @@
 			"response": []
 		},
 		{
-			"name": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats?limit=2&offset=4&withYear=2020",
+			"name": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats?limit=2&offset=4&withYear=2020",
 			"event": [
 				{
 					"listen": "test",
@@ -373,7 +373,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats?limit=2&offset=4&withYear=2020",
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats?limit=2&offset=4&withYear=2020",
 					"protocol": "https",
 					"host": [
 						"sos2021-23",
@@ -382,7 +382,7 @@
 					],
 					"path": [
 						"api",
-						"v2",
+						"v1",
 						"unemployment-stats"
 					],
 					"query": [
@@ -404,7 +404,7 @@
 			"response": []
 		},
 		{
-			"name": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats?knoperc=12",
+			"name": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats?knoperc=12",
 			"event": [
 				{
 					"listen": "test",
@@ -434,7 +434,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats?knoperc=12",
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats?knoperc=12",
 					"protocol": "https",
 					"host": [
 						"sos2021-23",
@@ -443,7 +443,7 @@
 					],
 					"path": [
 						"api",
-						"v2",
+						"v1",
 						"unemployment-stats"
 					],
 					"query": [
@@ -457,7 +457,7 @@
 			"response": []
 		},
 		{
-			"name": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/Euskadi/2020",
+			"name": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/Euskadi/2020",
 			"event": [
 				{
 					"listen": "test",
@@ -484,7 +484,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/Euskadi/2020",
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/Euskadi/2020",
 					"protocol": "https",
 					"host": [
 						"sos2021-23",
@@ -493,7 +493,7 @@
 					],
 					"path": [
 						"api",
-						"v2",
+						"v1",
 						"unemployment-stats",
 						"Euskadi",
 						"2020"
@@ -503,7 +503,7 @@
 			"response": []
 		},
 		{
-			"name": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/Euskadi/2020",
+			"name": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/Euskadi/2020",
 			"event": [
 				{
 					"listen": "test",
@@ -533,7 +533,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/Euskadi/2020",
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/Euskadi/2020",
 					"protocol": "https",
 					"host": [
 						"sos2021-23",
@@ -542,7 +542,7 @@
 					],
 					"path": [
 						"api",
-						"v2",
+						"v1",
 						"unemployment-stats",
 						"Euskadi",
 						"2020"
@@ -552,7 +552,7 @@
 			"response": []
 		},
 		{
-			"name": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/Euskadi/2020",
+			"name": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/Euskadi/2020",
 			"event": [
 				{
 					"listen": "test",
@@ -570,7 +570,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/Euskadi/2020",
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/Euskadi/2020",
 					"protocol": "https",
 					"host": [
 						"sos2021-23",
@@ -579,7 +579,7 @@
 					],
 					"path": [
 						"api",
-						"v2",
+						"v1",
 						"unemployment-stats",
 						"Euskadi",
 						"2020"
@@ -619,7 +619,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/Euskadi/2020",
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/Euskadi/2020",
 					"protocol": "https",
 					"host": [
 						"sos2021-23",
@@ -628,7 +628,7 @@
 					],
 					"path": [
 						"api",
-						"v2",
+						"v1",
 						"unemployment-stats",
 						"Euskadi",
 						"2020"
@@ -638,7 +638,7 @@
 			"response": []
 		},
 		{
-			"name": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/Canada/2020",
+			"name": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/Canada/2020",
 			"event": [
 				{
 					"listen": "test",
@@ -665,7 +665,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/Canada/2020",
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/Canada/2020",
 					"protocol": "https",
 					"host": [
 						"sos2021-23",
@@ -674,7 +674,7 @@
 					],
 					"path": [
 						"api",
-						"v2",
+						"v1",
 						"unemployment-stats",
 						"Canada",
 						"2020"
@@ -684,7 +684,7 @@
 			"response": []
 		},
 		{
-			"name": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/",
+			"name": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/",
 			"event": [
 				{
 					"listen": "test",
@@ -711,7 +711,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/",
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/",
 					"protocol": "https",
 					"host": [
 						"sos2021-23",
@@ -720,7 +720,7 @@
 					],
 					"path": [
 						"api",
-						"v2",
+						"v1",
 						"unemployment-stats",
 						""
 					]
@@ -729,7 +729,7 @@
 			"response": []
 		},
 		{
-			"name": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/",
+			"name": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/",
 			"event": [
 				{
 					"listen": "test",
@@ -747,7 +747,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/",
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/",
 					"protocol": "https",
 					"host": [
 						"sos2021-23",
@@ -756,7 +756,7 @@
 					],
 					"path": [
 						"api",
-						"v2",
+						"v1",
 						"unemployment-stats",
 						""
 					]
@@ -765,7 +765,7 @@
 			"response": []
 		},
 		{
-			"name": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/",
+			"name": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/",
 			"event": [
 				{
 					"listen": "test",
@@ -783,7 +783,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/",
+					"raw": "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/",
 					"protocol": "https",
 					"host": [
 						"sos2021-23",
@@ -792,7 +792,7 @@
 					],
 					"path": [
 						"api",
-						"v2",
+						"v1",
 						"unemployment-stats",
 						""
 					]
