@@ -33,5 +33,40 @@
         "hdirank": "17",
         "hdivalue": "0.924",
         "hdischolar": "16.3"
+    },
+    {
+        "country": "Brazil",
+        "year": "2017",
+        "hdirank": "17",
+        "hdivalue": "0.924",
+        "hdischolar": "16.3"
+    },
+    {
+        "country": "Mexico",
+        "year": "2017",
+        "hdirank": "17",
+        "hdivalue": "0.924",
+        "hdischolar": "16.3"
+    },
+    {
+        "country": "Canada",
+        "year": "2017",
+        "hdirank": "17",
+        "hdivalue": "0.924",
+        "hdischolar": "16.3"
+    },
+    {
+        "country": "Greenland",
+        "year": "2017",
+        "hdirank": "17",
+        "hdivalue": "0.924",
+        "hdischolar": "16.3"
+    },
+    {
+        "country": "Italy",
+        "year": "2017",
+        "hdirank": "17",
+        "hdivalue": "0.924",
+        "hdischolar": "16.3"
     }
 ]
