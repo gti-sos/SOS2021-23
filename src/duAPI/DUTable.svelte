@@ -363,6 +363,9 @@
      <Button outline color="info" on:click="{getNextPage}">
          Siguiente
         </Button>{/if}
+    <Button href ="/#/du-stats/DrugsAnalytic">
+            Analítica
+       </Button>
        
     {#await du_stats}
         Loading data...

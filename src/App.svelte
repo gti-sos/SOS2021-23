@@ -9,6 +9,8 @@
 	import EUT from "./unempAPI/EditUnempTable.svelte";
 	import DUS from "./duAPI/EditDUTable.svelte";
 	import EHDI from "./hdiAPI/EditHDITable.svelte";
+	import UnemploymentCharts from "./unempAPI/unemploymentChart.svelte";
+	import DrugChart from "./duAPI/DrugsAnalytic.svelte";
 	
 	const routes = {
 		"/info":Home,
@@ -18,7 +20,9 @@
 		"/hdi-stats":HDISTATS,
 		"/unemployment-stats/:country/:year":EUT,
 		"/du-stats/:country/:year":DUS,
-		"/hdi-stats/:country/:year":EHDI
+		"/hdi-stats/:country/:year":EHDI,
+		"/unemployment-stats/unemploymentCharts":UnemploymentCharts,
+		"/du-stats/DrugsAnalytic":DrugChart
 		};
 </script>
 <main>

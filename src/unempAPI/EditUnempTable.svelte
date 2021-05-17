@@ -50,6 +50,9 @@ async function actualizaPais(){
             
             if(res.status==200){
                 window.alert("El pais se ha modificado correctamente");
+            }else if(res.status == 400){
+                window.alert("ERROR No se introdujeron bien los datos");
+                errorMSG = 400;
             }
 		});
 	}
