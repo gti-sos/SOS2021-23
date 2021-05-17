@@ -45,8 +45,6 @@ module.exports.register = (app) => {
     });
 
     app.get(BASE_API_PATH_MEM, (req, res) =>{
-		var offset;
-        var limit;
 
         var search = {};
         if (req.query.country) {search["country"] = req.query.country}
@@ -75,12 +73,15 @@ module.exports.register = (app) => {
                     console.log("[!] Error accessing hdi-stats.db " + err);
                     return res.status(500).send("<h1>Error accessing database</h1>");
                 } else {
-                    if (dbdata == 0) {
-                        console.log("[!] Database hdi-stats is EMPTY!");
-                        return res.status(404).send("<h1>Resources not found. Head to /loadInitialData to create them.</h1>");
+                    if (dbdata.length != 0){
+                        dbdata.forEach((a)=>{delete a._id; }); 
+                        console.log(search)
+                        return res.send(JSON.stringify(dbdata,null,2));
+                        return res.sendStatus(200);
                     } else {
-                        dbdata.forEach((data) =>{ delete data._id});
-                        return res.status(200).send(JSON.stringify(dbdata,null, 2));
+                        console.log(search)
+                        console.log("No data found");
+                        return res.sendStatus(404);
                     }
                 }
             })

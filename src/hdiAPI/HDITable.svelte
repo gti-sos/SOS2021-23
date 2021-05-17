@@ -8,23 +8,19 @@
     import { UncontrolledCollapse, Collapse, CardBody, Card } from "sveltestrap";
 	
 	
-    
-    let isOpen = false;
-    let BASE_HDI_API = "/api/v1/hdi-stats"
+
+    let BHDI = "/api/v1/hdi-stats"
+    let errorMsg = null;
+    let visible = false;
     let error = null;
-    let errorMsg = "";
     let okMsg = "";
     let fullQuery = "";
+     let limit = 10; /*limit es el número de elementos por página*/
+	let offset = 0; /*offset indica desde qué elemento se va a empezar a mostrar*/
+        let numTotal=0;
+	let maxpag = numTotal>=limit; 
     
-    async function resetErrors() {
-      error = null;
-      errorMsg = null;
-      okMsg = null;
-    }
-    
-    //ALERTAS
-    let visible = false;
-    let color = "danger";
+
     
     let page = 1;
     let totaldata=8;
@@ -45,7 +41,7 @@
     async function getData() {
  
         console.log("Fetching HDI Data...");
-        const res = await fetch("/api/v1/hdi-stats?limit=5&offset=0");
+        const res = await fetch(BHDI+"?limit=10&offset=1");
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
@@ -61,13 +57,13 @@
     async function loadInitialData() {
  
         console.log("Fetching hdi data...");
-        await fetch("/api/v1/hdi-stats/loadInitialData");
-        const res = await fetch("/api/v1/hdi-stats");
+        await fetch(BHDI+"/loadInitialData");
+        const res = await fetch(BHDI);
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
             hdi_stats = json;
-            totaldata=5;
+            totaldata=8;
             console.log("Received " + hdi_stats.length + " hdi data.");
             //color = "success";
             //errorMSG = "Datos cargados correctamente";
@@ -91,7 +87,7 @@
              alert("Los campos 'Pais' y 'Año' no pueden estar vacios");
          }
          else{
-             const res = await fetch("/api/v1/hdi-stats",{
+             const res = await fetch(BHDI,{
              method:"POST",
              body:JSON.stringify(data),
              headers:{
@@ -104,6 +100,7 @@
                      //color = "success";
                      //errorMSG="Entrada introducida correctamente a la base de datos";
                      errorMSG = 201;
+                     
                  }
                  else if(res.status == 400){
                      console.log("ERROR Data was not correctly introduced");
@@ -122,7 +119,7 @@
      }
     //DELETE SPECIFIC
     async function deleteData(name, year) {
-        const res = await fetch("/api/v1/hdi-stats/" + name + "/" + year, {
+        const res = await fetch(BHDI+"/" + name + "/" + year, {
             method: "DELETE"
         }).then(function (res) {
             visible = true;
@@ -150,7 +147,7 @@
 		console.log("Deleting hdi data...");
 		if(confirm("¿Está seguro de que desea eliminar todas las entradas?")){
 			console.log("Deleting all drug data...");
-			const res = await fetch("/api/v1/hdi-stats/", {
+			const res = await fetch(BHDI+"/", {
 				method: "DELETE"
 			}).then(function (res) {
 				if(res.ok){
@@ -178,7 +175,7 @@
              alert("Los campos 'Pais' y 'Año' no pueden estar vacios");
          }
          else{
-             const res = await fetch("/api/v1/hdi-stats/" + name + "/" + year,{
+             const res = await fetch(BHDI+"/" + name + "/" + year,{
              method:"PUT",
              body:JSON.stringify(data),
              headers:{
@@ -221,7 +218,7 @@ async function searchStat() {
       fullQuery = querySymbol.slice(0, -1);
       if (fullQuery != "") {
         const res = await fetch(
-          BASE_HDI_API + fullQuery
+          BHDI + fullQuery
         );
         if (res.ok) {
           console.log("OK");
@@ -251,26 +248,78 @@ async function searchStat() {
       }
     }
     
-    
-    
+   
+
+
     async function getNextPage() {
         console.log(totaldata);
-        if (page+10 > totaldata) {
+        if (page+5 > totaldata) {
             page = 1
         } else {
-            page+=10
+            page+=5
         }
         
         visible = true;
         console.log("Charging page... Listing since: "+page);
-        const res = await fetch("/api/v1/hdi-stats?limit=10&offset="+(-1+page));
-        color = "success";
-        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
-        if (totaldata == 0){
-            console.log("ERROR Data was not erased");
-            color = "danger";
-            errorMSG= "¡No hay datos!";
-        }else if (res.ok) {
+        const res = await fetch(BHDI+"?limit=10&offset="+page);
+        if (res.ok) {
+            console.log("Ok:");
+            const json = await res.json();
+            hdi_stats = json;
+            console.log("Received " + hdi_stats.length + " data.");
+        } else {
+            errorMSG= res.status + ": " + res.statusText;
+            console.log("ERROR!");
+        }
+    }
+
+    async function pagBefore(){
+        correctMsg="";
+        errorMsg="";
+		if (offset >= 10){
+            offset = offset - limit;
+        } 
+		getData();
+	
+	}
+
+    async function pagNext(){
+        correctMsg="";
+        errorMsg="";
+		if(offset<=numTotal){
+            offset = offset + limit;
+        }
+		getData();
+	
+    }
+    function changePage(page, offset) {
+      console.log("------Change page------");
+      console.log("Params page: " + page + " offset: " + offset);
+      last_page = Math.ceil(total / 10);
+      console.log("new last page: " + last_page);
+      if (page !== current_page) {
+        console.log("enter if");
+        current_offset = offset;
+        current_page = page;
+        console.log("page: " + page);
+        console.log("current_offset: " + current_offset);
+        console.log("current_page: " + current_page);
+        getStats();
+      }
+      console.log("---------Exit change page-------");
+    }
+
+
+    //getPreviewPage    
+    async function getPreviewPage() {
+        console.log(totaldata);
+        if (page-5 > 1) {
+            page-=5; 
+        } else page = 1
+        visible = true;
+        console.log("Charging page... Listing since: "+page);
+        const res = await fetch(BHDI+"?limit=10&offset="+page);
+        if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
             hdi_stats = json;
@@ -280,31 +329,10 @@ async function searchStat() {
             console.log("ERROR!");
         }
     }
-    //getPreviewPage    
-    async function getPreviewPage() {
-        console.log(totaldata);
-        if (page-10 > 1) {
-            page-=5; 
-        } else page = 1
-        visible = true;
-        console.log("Charging page... Listing since: "+page);
-        const res = await fetch("/api/v1/hdi-stats?limit=10&offset="+(-1+page));
-        color = "success";
-        errorMSG= (page+5 > totaldata) ? "Mostrando elementos "+(page)+"-"+totaldata : "Mostrando elementos "+(page)+"-"+(page+9);
-        if (totaldata == 0){
-            console.log("ERROR Data was not erased");
-            color = "danger";
-            errorMSG= "¡No hay datos!";
-        }else if (res.ok) {
-            console.log("Ok:");
-            const json = await res.json();
-            hdi_stats = json;
-            console.log("Received "+hdi_stats.length+" resources.");
-        } else {
-            errorMSG= res.status+": "+res.statusText;
-            console.log("ERROR!");
-        }
-    }
+
+
+    
+    
     
 </script>
 
@@ -315,7 +343,7 @@ async function searchStat() {
     <Button color="danger" on:click="{deleteALL}">
         Eliminar todo
     </Button>
-    <Button on:click="{getPreviewPage}">
+    <Button outline color="info" on:click="{getPreviewPage}">
         Atrás
     </Button>
     <Button outline color="info" on:click="{getNextPage}">
