@@ -10,7 +10,7 @@
 	import DUS from "./duAPI/EditDUTable.svelte";
 	import EHDI from "./hdiAPI/EditHDITable.svelte";
 	import UnemploymentCharts from "./unempAPI/UnemploymentChart.svelte";
-	import DrugChart from "./duAPI/DrugsAnalytic.svelte";
+	import DrugChart from "./duAPI/Graph.svelte";
 	import MHSTChart from "./mhAPI/MHSTChart.svelte";
 	
 	const routes = {
@@ -23,7 +23,7 @@
 		"/du-stats/:country/:year":DUS,
 		"/hdi-stats/:country/:year":EHDI,
 		"/unemployment-stats/unemploymentCharts":UnemploymentCharts,
-		"/du-stats/DrugsAnalytic":DrugChart,
+		"/du-stats/Graph":DrugChart,
 		"/mh-stats/chart":MHSTChart,
 		};
 </script>
