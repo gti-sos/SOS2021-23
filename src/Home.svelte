@@ -70,6 +70,9 @@
           <a href="/#/du-stats">
             <Button color="primary">Interfaz</Button>
           </a>
+          <a href="#/du-stats/Graph">
+            <Button color="primary">Gráfica</Button>
+          </a>
           <a href="https://documenter.getpostman.com/view/14950269/TzJoDzt6"
             ><Button color="info">Documentación Back-end en Postman</Button></a>
         </CardBody>
