@@ -364,7 +364,7 @@
          Siguiente
         </Button>{/if}
     <Button href ="/#/du-stats/Graph">
-            Analítica
+            Analíticas
        </Button>
        
     {#await du_stats}
