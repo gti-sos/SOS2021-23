@@ -19,83 +19,83 @@ function elementExists(obj, obj_t) {
 	}
 }
 var unemployment_stats = [
-    {
-      "country": "Canada",
-      "year": "2020",
-      "knoperc": "5.4",
-      "intperc": "5.6",
-      "gfperc": "9.7"
-    },
-    {
-      "country": "United States",
-      "year": "2020",
-      "knoperc": "3.9",
-      "intperc": "4.4",
-      "gfperc": "8.8"
-    },
-    {
-      "country": "United Kingdom",
-      "year": "2020",
-      "knoperc": "4.1",
-      "intperc": "3.9",
-      "gfperc": "5.3"
-    },
-    {
-      "country": "Germany",
-      "year": "2020",
-      "knoperc": "3",
-      "intperc": "3.2",
-      "gfperc": "4.2"
-    },
-    {
-      "country": "Japan",
-      "year": "2020",
-      "knoperc": "2.3",
-      "intperc": "2.4",
-      "gfperc": "3.3"
-    },
-    {
-      "country": "Spain",
-      "year": "2020",
-      "knoperc": "13",
-      "intperc": "13.6",
-      "gfperc": "16.8"
-    },
-    {
-      "country": "Brazil",
-      "year": "2020",
-      "knoperc": "12",
-      "intperc": "11.6",
-      "gfperc": "13.3"
-    },
-    {
-      "country": "Argentina",
-      "year": "2019",
-      "knoperc": "23",
-      "intperc": "10.6",
-      "gfperc": "33.3"
-    },
-    {
-      "country": "Sudáfrica",
-      "year": "2019",
-      "knoperc": "22",
-      "intperc": "21.8",
-      "gfperc": "23.6"
-    },
-    {
-      "country": "Holanda",
-      "year": "2018",
-      "knoperc": "14.5",
-      "intperc": "9.6",
-      "gfperc": "7.4"
-    },
-    {
-      "country": "Israel",
-      "year": "2017",
-      "knoperc": "1.9",
-      "intperc": "6.4",
-      "gfperc": "3.3"
-    }
+  {
+    "country": "Canada",
+    "year": 2020,
+    "knoperc": 5.4,
+    "intperc": 5.6,
+    "gfperc": 9.7
+  },
+  {
+    "country": "United States",
+    "year": "2020",
+    "knoperc": 3.9,
+    "intperc": 4.4,
+    "gfperc": 8.8
+  },
+  {
+    "country": "United Kingdom",
+    "year": 2020,
+    "knoperc": 4.1,
+    "intperc": 3.9,
+    "gfperc": 5.3
+  },
+  {
+    "country": "Germany",
+    "year": 2020,
+    "knoperc": 3,
+    "intperc": 3.2,
+    "gfperc": 4.2
+  },
+  {
+    "country": "Japan",
+    "year": 2020,
+    "knoperc": 2.3,
+    "intperc": 2.4,
+    "gfperc": 3.3
+  },
+  {
+    "country": "Spain",
+    "year": 2020,
+    "knoperc": 13,
+    "intperc": 13.6,
+    "gfperc": 16.8
+  },
+  {
+    "country": "Brazil",
+    "year": 2020,
+    "knoperc": 12,
+    "intperc": 11.6,
+    "gfperc": 13.3
+  },
+  {
+    "country": "Argentina",
+    "year": 2019,
+    "knoperc": 23,
+    "intperc": 10.6,
+    "gfperc": 33.3
+  },
+  {
+    "country": "Sudáfrica",
+    "year": 2019,
+    "knoperc": 22,
+    "intperc": 21.8,
+    "gfperc": 23.6
+  },
+  {
+    "country": "Holanda",
+    "year": 2018,
+    "knoperc": 14.5,
+    "intperc": 9.6,
+    "gfperc": 7.4
+  },
+  {
+    "country": "Israel",
+    "year": 2017,
+    "knoperc": 1.9,
+    "intperc": 6.4,
+    "gfperc": 3.3
+  }
 
 ];
 
