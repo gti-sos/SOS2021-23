@@ -26,7 +26,7 @@
 	}
     
 	let exitoMsg="";
-	//BUSQUEDA
+	//VARIABLES PARA BUSQUEDA
 	let Ucountry = "";
 	let Uyear = "";
 	let Ufrom = "";
@@ -194,14 +194,17 @@
              }).then(function (res) {
                  if(res.status == 201){
                     getData();
+                    window.alert("Se introdujo el dato");
                      console.log("Data introduced");
                      errorMSG = 201;
                  }
                  else if(res.status == 400){
+                     window.alert("No se introdujo bien el dato");
                      console.log("ERROR Data was not correctly introduced");
                      errorMSG = 400;
                  }
                  else if(res.status == 409){
+                     window.alert("Ya existe ese recurso en la base de datos");
                      console.log("ERROR There is already a data with that country and year in the database");
                      errorMSG = 409;
                  }
@@ -241,6 +244,7 @@
                     totaldata = 0;
 					getData();
                     errorMSG = 200.3;
+                    window.alert("Datos eliminados correctamente");
 					console.log("Datos eliminados correctamente");
                     location.reload();
 				}
@@ -267,6 +271,7 @@
 		<Button on:click="{getNextPage}">
             Siguiente
         </Button>
+
         <Button href ="/#/unemployment-stats/unemploymentCharts">
             Analíticas
         </Button>
@@ -280,10 +285,10 @@
 				<td><strong><label>Porcentaje de InternetWorldStats: <input bind:value="{intperc}"></label></strong></td>
 				<td><strong><label>Porcentaje de Gfmag: <input bind:value="{gfperc}"></label></strong></td>
 			</tr>
+
             <tr>
 				<td><strong><label>Año(Desde): <input bind:value="{Ufrom}"></label></strong></td>
 				<td><strong><label>Año(Hasta): <input bind:value="{Uto}"></label></strong></td>
-
 			</tr>
 		</Table>
 		<div style="text-align:center;padding-bottom: 1%">
