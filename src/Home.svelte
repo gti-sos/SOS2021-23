@@ -51,6 +51,7 @@
       >
     </Col>
   </Container>
+  <Button href="http://sos2021-23.herokuapp.com/#/commonChart">Gráfica</Button>
 
   <h2>APIs</h2>
   <Container>

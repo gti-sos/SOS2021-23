@@ -15,6 +15,7 @@
 	import HDIChart from "./hdiAPI/Graph.svelte";
 	import commonChart from "./commonChart.svelte";
 	const routes = {
+		"/":Home,
 		"/info":Home,
 		"/unemployment-stats":UnemploymentTable,
 		"/du-stats":DUSTATS,
