@@ -15,9 +15,12 @@
       if (res.ok) {
         unemploymentData.forEach(stat => {
           unemploymentChartCountryYear.push(stat.country+"-"+stat.year);
-          unemploymentChartKnoperc.push(stat["knoperc"]);
-          unemploymentChartIntperc.push(stat["intperc"]);
-          unemploymentChartGfperc.push(stat["gfperc"]);  
+          //unemploymentChartKnoperc.push(stat["knoperc"]);
+          //unemploymentChartIntperc.push(stat["intperc"]);
+          //unemploymentChartGfperc.push(stat["gfperc"]);  
+          unemploymentChartKnoperc.push(parseFloat(stat.knoperc));
+          unemploymentChartIntperc.push(parseFloat(stat.intperc));
+          unemploymentChartGfperc.push(parseFloat(stat.gfperc));
           });
           cargados=true;
       }
