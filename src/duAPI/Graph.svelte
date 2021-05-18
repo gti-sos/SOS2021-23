@@ -4,15 +4,15 @@
   const BASE_API_PATH_SEC="/api/v1";
 
   let drugData = [];
-  let drugChartData = [];
-  let drugChartCountryDateData = []; 
+
+  let drugChartChartCountryYear = []; 
   let drugChartPopulation = [];
   let drugChartDead = [];
   let drugChartDependence = [];
   let drugChartDaly = [];
 
   
-  let errorMsg="Tiene que cargar los datos para visualizar las analÃ­ticas.";
+  let errorMsg="Tiene que cargar los datos para visualizar las analíticas.";
   let cargados = false;
 
   async function loadChart() {
@@ -23,7 +23,7 @@
       
       if (res.ok) {
           drugData.forEach(stat => {
-          drugChartCountryDateData.push(parseFloat(stat.country+"/"+stat.year));
+            drugChartChartCountryYear.push(parseFloat(stat.country+"/"+stat.year));
           drugChartPopulation.push(parseFloat(stat["dupopulation"]));
           drugChartDead.push(parseFloat(stat["dudead"]));   
           drugChartDependence.push(parseFloat(stat["dudependenceperc"])); 
@@ -32,7 +32,7 @@
         cargados=true;
       }
       
-      console.log("Drug use chart: " + drugChartData);
+      console.log("Drug use chart: " + drugData);
       Highcharts.chart("container", {
         title: {
           text: "Consumo de drogas",
@@ -44,7 +44,7 @@
         },
         xAxis: {
           title: {
-            text: "PaÃ­s/AÃ±o",
+            text: "País/Año",
           },
           categories: drugChartCountryDateData,
         },
@@ -70,7 +70,7 @@
         ],
         series: [
           {
-            name: "PoblaciÃ³n",
+            name: "Población",
             data: drugChartPopulation,
           },
           {
@@ -118,7 +118,7 @@
   <main>
     <Nav>
       <NavItem>
-        <NavLink href="#/info">PÃ¡gina Principal</NavLink>
+        <NavLink href="#/info">Página Principal</NavLink>
       </NavItem>
       <NavItem>
         <NavLink href="#/du-stats">Datos</NavLink>
@@ -126,14 +126,14 @@
   </Nav>
   
       <div>
-          <h1 style="text-align: center;">AnalÃ­tica <strong>(Consumo de drogas)</strong></h1>
+          <h1 style="text-align: center;">Analítica <strong>(Consumo de drogas)</strong></h1>
         </div>
       
       <div>
           <figure class="highcharts-figure">
             <div id="container" />
             <p class="highcharts-description">
-              GrÃ¡fico de lÃ­neas bÃ¡sico que muestra valores con respecto al consumo de drogas en varios paÃ­ses
+              Gráfico de lí­neas básico que muestra valores con respecto al consumo de drogas en varios países
             </p>
           </figure>
         </div>
