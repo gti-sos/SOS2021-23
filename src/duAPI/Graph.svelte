@@ -23,7 +23,7 @@
       
       if (res.ok) {
           drugData.forEach(stat => {
-            drugChartChartCountryYear.push(parseFloat(stat.country+"/"+stat.year));
+          drugChartChartCountryYear.push(stat.country+"/"+stat.year);
           drugChartPopulation.push(parseFloat(stat["dupopulation"]));
           drugChartDead.push(parseFloat(stat["dudead"]));   
           drugChartDependence.push(parseFloat(stat["dudependenceperc"])); 
