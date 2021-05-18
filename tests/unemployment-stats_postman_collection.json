@@ -138,7 +138,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"country\": \"Euskadi\",\r\n\"year\": \"2020\",\r\n\"knoperc\": \"19.2\",\r\n\"intperc\": \"20.2\",\r\n\"gfperc\": \"24.2\"\r\n}",
+					"raw": "{\r\n\"country\": \"Euskadi\",\r\n\"year\": \"2020\",\r\n\"knoperc\": 19.2,\r\n\"intperc\": 20.2,\r\n\"gfperc\": 24.2\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -397,59 +397,6 @@
 						{
 							"key": "withYear",
 							"value": "2020"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats?knoperc=12",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Encuentra el elemento creado\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats?knoperc=12",
-					"protocol": "https",
-					"host": [
-						"sos2021-23",
-						"herokuapp",
-						"com"
-					],
-					"path": [
-						"api",
-						"v2",
-						"unemployment-stats"
-					],
-					"query": [
-						{
-							"key": "knoperc",
-							"value": "12"
 						}
 					]
 				}
