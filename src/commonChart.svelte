@@ -33,11 +33,14 @@
     const dataB = await fetch("/api/v1/hdi-stats");
     const dataC = await fetch("/api/v1/mh-stats");
     const dataD = await fetch(BASE_API_PATH + "/unemployment-stats");
+    
     if (dataA.ok && dataB.ok && dataC.ok && dataD.ok) { 
       drugs = await dataA.json();
       hdis = await dataB.json();
       mhs= await dataC.json();
       unemps= await dataD.json();
+
+    
       // Se añaden las claves de cada banco de datos
       drugs.forEach(element=>{
         xKeys.push(element.country+","+parseInt(element.year));
@@ -62,7 +65,8 @@
       hdis.sort((a,b) => (a.year > b.year) ? 1 : ((b.year > a.year) ? -1 : 0));
       hdis.sort((a,b) => (a.country > b.country) ? 1 : ((b.country > a.country) ? -1 : 0));
       hdis.forEach(element=>{
-        hdisGraph.push(element.hdischolar);
+        hdisGraph.push(parseInt(element.hdischolar));
+   
       });
       // Mhs
       mhs.sort((a,b) => (a.year > b.year) ? 1 : ((b.year > a.year) ? -1 : 0));
@@ -197,7 +201,6 @@
           . Mhs <br />
           . Unemps <br />
          
-
         </p>
       </figure>
     </div>
