@@ -22,83 +22,83 @@ function elementExists(obj, obj_t) {
 var du_stats = [
     {
    "country": "Spain",
-   "year": 2017,
-   "dupopulation": 46.6,
-   "dudead": 1.83,
-   "dudependenceperc": 1.47,
-   "dudaly": 249.83
+   "year": "2017",
+   "dupopulation": "46.6",
+   "dudead": "1.83",
+   "dudependenceperc": "1.47",
+   "dudaly": "249.83"
  },
  {
    "country": "France",
-   "year": 2017,
-   "dupopulation": 65.0,
-   "dudead": 5.5,
-   "dudependenceperc": 1.18,
-   "dudaly": 254.95
+   "year": "2017",
+   "dupopulation": "65.0",
+   "dudead": "5.5",
+   "dudependenceperc": "1.18",
+   "dudaly": "254.95"
  },
  {
    "country": "Germany",
-   "year": 2017,
-   "dupopulation": 83.1,
-   "dudead": 6.7,
-   "dudependenceperc": 1.66,
-   "dudaly": 241.92
+   "year": "2017",
+   "dupopulation": "83.1",
+   "dudead": "6.7",
+   "dudependenceperc": "1.66",
+   "dudaly": "241.92"
  },
  {
    "country": "United Kingdom",
-   "year": 2017,
-   "dupopulation": 66.2,
-   "dudead": 6.98,
-   "dudependenceperc": 1.66,
-   "dudaly": 527.75
+   "year": "2017",
+   "dupopulation": "66.2",
+   "dudead": "6.98",
+   "dudependenceperc": "1.66",
+   "dudaly": "527.75"
  },
  {
    "country": "USA",
-   "year": 2017,
-   "dupopulation": 325.4,
-   "dudead": 21.99,
-   "dudependenceperc": 3.45,
-   "dudaly": 1.695
+   "year": "2017",
+   "dupopulation": "325.4",
+   "dudead": "21.99",
+   "dudependenceperc": "3.45",
+   "dudaly": "1.695,88"
  },
  {
    "country": "Brazil",
-   "year": 2017,
-   "dupopulation": 207.9,
-   "dudead": 5.5,
-   "dudependenceperc": 1.06,
-   "dudaly": 276.1
+   "year": "2017",
+   "dupopulation": "207.9",
+   "dudead": "5.5",
+   "dudependenceperc": "1.06",
+   "dudaly": "276.1"
  },
  {
   "country": "Mexico",
-   "year": 2017,
-   "dupopulation": 129.2,
-   "dudead": 5.09,
-   "dudependenceperc": 0.82,
-   "dudaly": 248.29
+   "year": "2017",
+   "dupopulation": "129.2",
+   "dudead": "5.09",
+   "dudependenceperc": "0.82",
+   "dudaly": "248.29"
  },
  {
    "country": "Canada",
-   "year": 2017,
-   "dupopulation": 36.7,
-   "dudead": 7.27,
-   "dudependenceperc": 2.28,
-   "dudaly": 756.15
+   "year": "2017",
+   "dupopulation": "36.7",
+   "dudead": "7.27",
+   "dudependenceperc": "2.28",
+   "dudaly": "756.15"
  },
  {
    "country": "Greenland",
-   "year": 2017,
-   "dupopulation": 56.0,
-   "dudead": 13.93,
-   "dudependenceperc": 1.99,
-   "dudaly": 480.89
+   "year": "2017",
+   "dupopulation": "56.0",
+   "dudead": "13.93",
+   "dudependenceperc": "1.99",
+   "dudaly": "480.89"
  },
  {
   "country": "Italy",
-   "year": 2017,
-   "dupopulation": 60.5,
-   "dudead": 1.19,
-   "dudependenceperc": 1.15,
-   "dudaly": 257.85
+   "year": "2017",
+   "dupopulation": "60.5",
+   "dudead": "1.19",
+   "dudependenceperc": "1.15",
+   "dudaly": "257.85"
  }
 ];
 

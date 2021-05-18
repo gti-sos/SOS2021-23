@@ -21017,7 +21017,7 @@ var app = (function () {
     	return block;
     }
 
-    // (366:4) <Button href ="/#/du-stats/DrugsAnalytic">
+    // (366:4) <Button href ="/#/du-stats/Graph">
     function create_default_slot_14$1(ctx) {
     	let t;
 
@@ -21037,7 +21037,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_14$1.name,
     		type: "slot",
-    		source: "(366:4) <Button href =\\\"/#/du-stats/DrugsAnalytic\\\">",
+    		source: "(366:4) <Button href =\\\"/#/du-stats/Graph\\\">",
     		ctx
     	});
 
@@ -21159,8 +21159,8 @@ var app = (function () {
     			t12 = space();
     			if (if_block7) if_block7.c();
     			if_block7_anchor = empty();
-    			add_location(br0, file$8, 464, 8, 15570);
-    			add_location(br1, file$8, 464, 14, 15576);
+    			add_location(br0, file$8, 464, 8, 15562);
+    			add_location(br1, file$8, 464, 14, 15568);
     		},
     		m: function mount(target, anchor) {
     			if (if_block0) if_block0.m(target, anchor);
@@ -22068,16 +22068,16 @@ var app = (function () {
     			create_component(button1.$$.fragment);
     			t13 = space();
     			attr_dev(a, "href", a_href_value = "#/du-stats/" + /*sc*/ ctx[52].country + "/" + /*sc*/ ctx[52].year);
-    			add_location(a, file$8, 445, 28, 14659);
-    			add_location(td0, file$8, 445, 24, 14655);
-    			add_location(td1, file$8, 446, 24, 14750);
-    			add_location(td2, file$8, 447, 24, 14794);
-    			add_location(td3, file$8, 448, 24, 14846);
-    			add_location(td4, file$8, 449, 24, 14892);
-    			add_location(td5, file$8, 450, 24, 14948);
-    			add_location(td6, file$8, 451, 24, 14994);
-    			add_location(td7, file$8, 452, 24, 15120);
-    			add_location(tr, file$8, 444, 20, 14625);
+    			add_location(a, file$8, 445, 28, 14651);
+    			add_location(td0, file$8, 445, 24, 14647);
+    			add_location(td1, file$8, 446, 24, 14742);
+    			add_location(td2, file$8, 447, 24, 14786);
+    			add_location(td3, file$8, 448, 24, 14838);
+    			add_location(td4, file$8, 449, 24, 14884);
+    			add_location(td5, file$8, 450, 24, 14940);
+    			add_location(td6, file$8, 451, 24, 14986);
+    			add_location(td7, file$8, 452, 24, 15112);
+    			add_location(tr, file$8, 444, 20, 14617);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -22340,55 +22340,55 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$8, 414, 20, 12883);
-    			add_location(th1, file$8, 415, 20, 12918);
-    			add_location(th2, file$8, 416, 20, 12952);
-    			add_location(th3, file$8, 417, 20, 12992);
-    			add_location(th4, file$8, 418, 20, 13044);
-    			add_location(th5, file$8, 419, 20, 13113);
-    			add_location(tr0, file$8, 413, 16, 12857);
-    			add_location(thead, file$8, 412, 12, 12832);
-    			add_location(input0, file$8, 424, 24, 13243);
-    			add_location(td0, file$8, 424, 20, 13239);
-    			add_location(input1, file$8, 425, 24, 13309);
-    			add_location(td1, file$8, 425, 20, 13305);
-    			add_location(input2, file$8, 426, 24, 13372);
-    			add_location(td2, file$8, 426, 20, 13368);
-    			add_location(input3, file$8, 427, 24, 13444);
-    			add_location(td3, file$8, 427, 20, 13440);
-    			add_location(input4, file$8, 428, 24, 13513);
-    			add_location(td4, file$8, 428, 20, 13509);
-    			add_location(input5, file$8, 429, 24, 13589);
-    			add_location(td5, file$8, 429, 20, 13585);
-    			add_location(td6, file$8, 430, 20, 13653);
-    			add_location(tr1, file$8, 423, 16, 13213);
+    			add_location(th0, file$8, 414, 20, 12875);
+    			add_location(th1, file$8, 415, 20, 12910);
+    			add_location(th2, file$8, 416, 20, 12944);
+    			add_location(th3, file$8, 417, 20, 12984);
+    			add_location(th4, file$8, 418, 20, 13036);
+    			add_location(th5, file$8, 419, 20, 13105);
+    			add_location(tr0, file$8, 413, 16, 12849);
+    			add_location(thead, file$8, 412, 12, 12824);
+    			add_location(input0, file$8, 424, 24, 13235);
+    			add_location(td0, file$8, 424, 20, 13231);
+    			add_location(input1, file$8, 425, 24, 13301);
+    			add_location(td1, file$8, 425, 20, 13297);
+    			add_location(input2, file$8, 426, 24, 13364);
+    			add_location(td2, file$8, 426, 20, 13360);
+    			add_location(input3, file$8, 427, 24, 13436);
+    			add_location(td3, file$8, 427, 20, 13432);
+    			add_location(input4, file$8, 428, 24, 13505);
+    			add_location(td4, file$8, 428, 20, 13501);
+    			add_location(input5, file$8, 429, 24, 13581);
+    			add_location(td5, file$8, 429, 20, 13577);
+    			add_location(td6, file$8, 430, 20, 13645);
+    			add_location(tr1, file$8, 423, 16, 13205);
     			attr_dev(input6, "type", "text");
     			attr_dev(input6, "placeholder", "País");
-    			add_location(input6, file$8, 433, 20, 13792);
-    			add_location(td7, file$8, 433, 16, 13788);
+    			add_location(input6, file$8, 433, 20, 13784);
+    			add_location(td7, file$8, 433, 16, 13780);
     			attr_dev(input7, "type", "text");
     			attr_dev(input7, "placeholder", "Año");
-    			add_location(input7, file$8, 434, 20, 13881);
-    			add_location(td8, file$8, 434, 16, 13877);
+    			add_location(input7, file$8, 434, 20, 13873);
+    			add_location(td8, file$8, 434, 16, 13869);
     			attr_dev(input8, "type", "text");
     			attr_dev(input8, "placeholder", "Población");
-    			add_location(input8, file$8, 435, 20, 13965);
-    			add_location(td9, file$8, 435, 16, 13961);
+    			add_location(input8, file$8, 435, 20, 13957);
+    			add_location(td9, file$8, 435, 16, 13953);
     			attr_dev(input9, "type", "text");
     			attr_dev(input9, "placeholder", "Porcentaje de Muertes");
-    			add_location(input9, file$8, 436, 20, 14063);
-    			add_location(td10, file$8, 436, 16, 14059);
+    			add_location(input9, file$8, 436, 20, 14055);
+    			add_location(td10, file$8, 436, 16, 14051);
     			attr_dev(input10, "type", "text");
     			attr_dev(input10, "placeholder", "Porcentaje de dependencia a las drogas");
-    			add_location(input10, file$8, 437, 20, 14167);
-    			add_location(td11, file$8, 437, 16, 14163);
+    			add_location(input10, file$8, 437, 20, 14159);
+    			add_location(td11, file$8, 437, 16, 14155);
     			attr_dev(input11, "type", "text");
     			attr_dev(input11, "placeholder", "D.A.L.Y");
-    			add_location(input11, file$8, 438, 20, 14298);
-    			add_location(td12, file$8, 438, 16, 14294);
-    			add_location(td13, file$8, 439, 16, 14384);
-    			add_location(tr2, file$8, 432, 12, 13766);
-    			add_location(tbody, file$8, 422, 12, 13188);
+    			add_location(input11, file$8, 438, 20, 14290);
+    			add_location(td12, file$8, 438, 16, 14286);
+    			add_location(td13, file$8, 439, 16, 14376);
+    			add_location(tr2, file$8, 432, 12, 13758);
+    			add_location(tbody, file$8, 422, 12, 13180);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -22775,7 +22775,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "No se han encontrado datos, por favor, carga los datos iniciales.";
-    			add_location(p, file$8, 468, 12, 15713);
+    			add_location(p, file$8, 468, 12, 15705);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -22877,7 +22877,7 @@ var app = (function () {
 
     	button3 = new Button({
     			props: {
-    				href: "/#/du-stats/DrugsAnalytic",
+    				href: "/#/du-stats/Graph",
     				$$slots: { default: [create_default_slot_14$1] },
     				$$scope: { ctx }
     			},
@@ -28407,7 +28407,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = `${/*errorMsg*/ ctx[1]}`;
     			attr_dev(p, "class", "error svelte-vg03i4");
-    			add_location(p, file$2, 141, 12, 3996);
+    			add_location(p, file$2, 141, 12, 4008);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -28498,33 +28498,33 @@ var app = (function () {
     			div3 = element("div");
     			if (if_block) if_block.c();
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$2, 109, 4, 2842);
+    			add_location(script0, file$2, 109, 4, 2854);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$2, 110, 4, 2932);
+    			add_location(script1, file$2, 110, 4, 2944);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$2, 111, 4, 3013);
+    			add_location(script2, file$2, 111, 4, 3025);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$2, 112, 4, 3091);
+    			add_location(script3, file$2, 112, 4, 3103);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$2, 113, 4, 3171);
-    			add_location(strong, file$2, 128, 53, 3562);
+    			add_location(script4, file$2, 113, 4, 3183);
+    			add_location(strong, file$2, 128, 53, 3574);
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$2, 128, 10, 3519);
+    			add_location(h1, file$2, 128, 10, 3531);
     			attr_dev(div0, "class", "svelte-vg03i4");
-    			add_location(div0, file$2, 127, 6, 3502);
+    			add_location(div0, file$2, 127, 6, 3514);
     			attr_dev(div1, "id", "container");
     			attr_dev(div1, "class", "svelte-vg03i4");
-    			add_location(div1, file$2, 133, 12, 3700);
+    			add_location(div1, file$2, 133, 12, 3712);
     			attr_dev(p, "class", "highcharts-description svelte-vg03i4");
-    			add_location(p, file$2, 134, 12, 3736);
+    			add_location(p, file$2, 134, 12, 3748);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$2, 132, 10, 3652);
+    			add_location(figure, file$2, 132, 10, 3664);
     			attr_dev(div2, "class", "svelte-vg03i4");
-    			add_location(div2, file$2, 131, 6, 3635);
+    			add_location(div2, file$2, 131, 6, 3647);
     			attr_dev(div3, "class", "svelte-vg03i4");
-    			add_location(div3, file$2, 139, 8, 3950);
+    			add_location(div3, file$2, 139, 8, 3962);
     			attr_dev(main, "class", "svelte-vg03i4");
-    			add_location(main, file$2, 117, 2, 3281);
+    			add_location(main, file$2, 117, 2, 3293);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -28638,7 +28638,7 @@ var app = (function () {
 
     		if (res.ok) {
     			drugData.forEach(stat => {
-    				drugChartCountryDateData.push(stat.country + "/" + stat.year);
+    				drugChartCountryDateData.push(parseFloat(stat.country + "/" + stat.year));
     				drugChartPopulation.push(parseFloat(stat["dupopulation"]));
     				drugChartDead.push(parseFloat(stat["dudead"]));
     				drugChartDependence.push(parseFloat(stat["dudependenceperc"]));
