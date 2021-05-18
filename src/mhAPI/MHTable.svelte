@@ -2,11 +2,11 @@
     import {
         onMount
     } from "svelte";
-    import UncontrolledAlert from "../node_modules/sveltestrap/src/UncontrolledAlert.svelte";
-    import Button from "../node_modules/sveltestrap/src/Button.svelte";
-    import Pagination from "../node_modules/sveltestrap/src/Pagination.svelte";
-    import PaginationItem from "../node_modules/sveltestrap/src/PaginationItem.svelte";
-    import PaginationLink from "../node_modules/sveltestrap/src/PaginationLink.svelte";
+    import UncontrolledAlert from "../../node_modules/sveltestrap/src/UncontrolledAlert.svelte";
+    import Button from "../../node_modules/sveltestrap/src/Button.svelte";
+    import Pagination from "../../node_modules/sveltestrap/src/Pagination.svelte";
+    import PaginationItem from "../../node_modules/sveltestrap/src/PaginationItem.svelte";
+    import PaginationLink from "../../node_modules/sveltestrap/src/PaginationLink.svelte";
 import { insert } from "svelte/internal";
 
     let BASE_EDU_API = "/api/v1/mh-stats"

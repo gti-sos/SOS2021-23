@@ -2,7 +2,7 @@
   
 	import Home from "./Home.svelte";
 	import Router from 'svelte-spa-router';
-	import MHST from "./MHST.svelte";
+	import MHST from "./mhAPI/MHST.svelte";
 	import UnemploymentTable from "./unempAPI/unemploymentTable.svelte";
 	import DUSTATS from "./duAPI/DUTable.svelte";
 	import HDISTATS from "./hdiAPI/HDITable.svelte";
@@ -11,7 +11,7 @@
 	import EHDI from "./hdiAPI/EditHDITable.svelte";
 	import UnemploymentCharts from "./unempAPI/UnemploymentChart.svelte";
 	import DrugChart from "./duAPI/DrugsAnalytic.svelte";
-	import MHSTChart from "./MHSTChart.svelte";
+	import MHSTChart from "./mhAPI/MHSTChart.svelte";
 	
 	const routes = {
 		"/info":Home,

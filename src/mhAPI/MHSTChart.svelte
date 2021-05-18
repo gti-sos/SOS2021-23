@@ -11,14 +11,7 @@
     let mhChartBipolar = [];
     let mhChartDepression = [];
     let mhChartSchizophrenia = [];
-  /*
-  let mhChartCountryDateData = [];
-  let mhChartBornData = [];
-  let mhChartMenBornData = [];
-  let mhChartWomenBornData = [];
-  let mhChartNatalityRateData = [];
-  let mhChartFertilityRateData = [];
-  */
+
     var msg = "";
     async function loadChart() {
       console.log("Obteniendo datos...");
