@@ -144,10 +144,14 @@
         <CardBody>
           <CardSubtitle />
           <CardText>Recogidas por la UNDP</CardText>
+          
           <a href="https://sos2021-23.herokuapp.com/api/v1/hdi-stats">
             <Button color="primary">API</Button></a>
           <a href="/#/hdi-stats">
             <Button color="primary">Interfaz</Button>
+          </a>
+          <a href="#/hdi-stats/Graph">
+            <Button color="primary">Gráfica</Button>
           </a>
           <a href="https://documenter.getpostman.com/view/14951179/TzJoF21c"
             ><Button color="info">Documentación Backend en Postman</Button></a>

@@ -12,7 +12,7 @@
 	import UnemploymentCharts from "./unempAPI/UnemploymentChart.svelte";
 	import DrugChart from "./duAPI/Graph.svelte";
 	import MHSTChart from "./mhAPI/MHSTChart.svelte";
-	
+	import HDIChart from "./hdiAPI/Graph.svelte";
 	const routes = {
 		"/info":Home,
 		"/unemployment-stats":UnemploymentTable,
@@ -25,6 +25,9 @@
 		"/unemployment-stats/unemploymentCharts":UnemploymentCharts,
 		"/du-stats/Graph":DrugChart,
 		"/mh-stats/chart":MHSTChart,
+		"/hdi-stats/Graph":HDIChart,
+          
+          
 		};
 </script>
 <main>
