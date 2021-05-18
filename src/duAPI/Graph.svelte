@@ -4,8 +4,7 @@
   const BASE_API_PATH_SEC="/api/v1";
 
   let drugData = [];
-
-  let drugChartChartCountryYear = []; 
+  let drugChartCountryDateData = []; 
   let drugChartPopulation = [];
   let drugChartDead = [];
   let drugChartDependence = [];
@@ -16,14 +15,14 @@
   let cargados = false;
 
   async function loadChart() {
-      console.log("Fetching data...");
+      console.log("Fetching data..");
       
       const res = await fetch(BASE_API_PATH_SEC + "/du-stats");
       drugData = await res.json();
       
       if (res.ok) {
           drugData.forEach(stat => {
-          drugChartChartCountryYear.push(stat.country+"/"+stat.year);
+          drugChartCountryDateData.push(stat.country+"/"+stat.year);
           drugChartPopulation.push(parseFloat(stat["dupopulation"]));
           drugChartDead.push(parseFloat(stat["dudead"]));   
           drugChartDependence.push(parseFloat(stat["dudependenceperc"])); 
@@ -44,7 +43,7 @@
         },
         xAxis: {
           title: {
-            text: "País/Año",
+            text: "País/Añoo",
           },
           categories: drugChartCountryDateData,
         },
