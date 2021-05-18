@@ -13,6 +13,7 @@
 	import DrugChart from "./duAPI/Graph.svelte";
 	import MHSTChart from "./mhAPI/MHSTChart.svelte";
 	import HDIChart from "./hdiAPI/Graph.svelte";
+	import commonChart from "./commonChart.svelte";
 	const routes = {
 		"/info":Home,
 		"/unemployment-stats":UnemploymentTable,
@@ -26,6 +27,7 @@
 		"/du-stats/Graph":DrugChart,
 		"/mh-stats/chart":MHSTChart,
 		"/hdi-stats/Graph":HDIChart,
+		"/commonChart":commonChart
           
           
 		};
