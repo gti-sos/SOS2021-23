@@ -422,7 +422,9 @@ onMount(resetErrors);
            <Button color="warning" on:click={searchStat}>Buscar</Button></td>
         </tr>
     </tbody>
+    <p>La búsqueda solo puede realizarse por país y/o año.</p>
 </table>
+
 </div>
 <div style="display:inline;">
 <div>

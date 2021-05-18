@@ -93,6 +93,9 @@
           <a href="/#/mh-stats">
             <Button color="primary">Interfaz</Button>
           </a>
+          <a href="#/mh-stats/chart">
+            <Button color="primary">Gráfica</Button>
+          </a>
           <a href="https://documenter.getpostman.com/view/14943559/TzJoDfQ5"
             ><Button color="info">Documentación Backend en Postman</Button></a>
           
