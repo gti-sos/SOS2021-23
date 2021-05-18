@@ -23,11 +23,11 @@
         
         if (res.ok) {
             drugData.forEach(stat => {
-            drugChartCountryDateData.push(stat.country+"/"+stat.year);
-            drugChartPopulation.push(stat["drug_use_population"]);
-            drugChartDead.push(stat["drug_use_dead"]);   
-            drugChartDependence.push(stat["drug_use_dependence"]); 
-            drugChartDaly.push(stat["drug_use_daly"]);   
+            drugChartCountryDateData.push(parseFloat(stat.country+"/"+stat.year));
+            drugChartPopulation.push(parseFloat(stat["drug_use_population"]));
+            drugChartDead.push(parseFloat(stat["drug_use_dead"]));   
+            drugChartDependence.push(parseFloat(stat["drug_use_dependence"])); 
+            drugChartDaly.push(parseFloat(stat["drug_use_daly"]));   
           });
           cargados=true;
         }
@@ -116,6 +116,14 @@
     </svelte:head>
     
     <main>
+      <Nav>
+        <NavItem>
+          <NavLink href="#/info">Página Principal</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="#/du-stats">Datos</NavLink>
+        </NavItem>
+    </Nav>
     
         <div>
             <h1 style="text-align: center;">Analítica <strong>(Consumo de drogas)</strong></h1>

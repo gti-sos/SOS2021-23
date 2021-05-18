@@ -10,7 +10,7 @@
 	import DUS from "./duAPI/EditDUTable.svelte";
 	import EHDI from "./hdiAPI/EditHDITable.svelte";
 	import UnemploymentCharts from "./unempAPI/UnemploymentChart.svelte";
-	import DrugChart from "./duAPI/DrugsAnalytic.svelte";
+	import DrugChart from "./duAPI/Graph.svelte";
 	import MHSTChart from "./MHSTChart.svelte";
 	
 	const routes = {
