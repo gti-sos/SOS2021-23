@@ -28407,7 +28407,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = `${/*errorMsg*/ ctx[1]}`;
     			attr_dev(p, "class", "error svelte-vg03i4");
-    			add_location(p, file$2, 141, 12, 3948);
+    			add_location(p, file$2, 141, 12, 3996);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -28498,33 +28498,33 @@ var app = (function () {
     			div3 = element("div");
     			if (if_block) if_block.c();
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$2, 109, 4, 2794);
+    			add_location(script0, file$2, 109, 4, 2842);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$2, 110, 4, 2884);
+    			add_location(script1, file$2, 110, 4, 2932);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$2, 111, 4, 2965);
+    			add_location(script2, file$2, 111, 4, 3013);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$2, 112, 4, 3043);
+    			add_location(script3, file$2, 112, 4, 3091);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$2, 113, 4, 3123);
-    			add_location(strong, file$2, 128, 53, 3514);
+    			add_location(script4, file$2, 113, 4, 3171);
+    			add_location(strong, file$2, 128, 53, 3562);
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$2, 128, 10, 3471);
+    			add_location(h1, file$2, 128, 10, 3519);
     			attr_dev(div0, "class", "svelte-vg03i4");
-    			add_location(div0, file$2, 127, 6, 3454);
+    			add_location(div0, file$2, 127, 6, 3502);
     			attr_dev(div1, "id", "container");
     			attr_dev(div1, "class", "svelte-vg03i4");
-    			add_location(div1, file$2, 133, 12, 3652);
+    			add_location(div1, file$2, 133, 12, 3700);
     			attr_dev(p, "class", "highcharts-description svelte-vg03i4");
-    			add_location(p, file$2, 134, 12, 3688);
+    			add_location(p, file$2, 134, 12, 3736);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$2, 132, 10, 3604);
+    			add_location(figure, file$2, 132, 10, 3652);
     			attr_dev(div2, "class", "svelte-vg03i4");
-    			add_location(div2, file$2, 131, 6, 3587);
+    			add_location(div2, file$2, 131, 6, 3635);
     			attr_dev(div3, "class", "svelte-vg03i4");
-    			add_location(div3, file$2, 139, 8, 3902);
+    			add_location(div3, file$2, 139, 8, 3950);
     			attr_dev(main, "class", "svelte-vg03i4");
-    			add_location(main, file$2, 117, 2, 3233);
+    			add_location(main, file$2, 117, 2, 3281);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -28639,10 +28639,10 @@ var app = (function () {
     		if (res.ok) {
     			drugData.forEach(stat => {
     				drugChartCountryDateData.push(stat.country + "/" + stat.year);
-    				drugChartPopulation.push(stat["dupopulation"]);
-    				drugChartDead.push(stat["dudead"]);
-    				drugChartDependence.push(stat["dudependenceperc"]);
-    				drugChartDaly.push(stat["dudaly"]);
+    				drugChartPopulation.push(parseFloat(stat["dupopulation"]));
+    				drugChartDead.push(parseFloat(stat["dudead"]));
+    				drugChartDependence.push(parseFloat(stat["dudependenceperc"]));
+    				drugChartDaly.push(parseFloat(stat["dudaly"]));
     			});
 
     			$$invalidate(0, cargados = true);

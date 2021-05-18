@@ -24,10 +24,10 @@
       if (res.ok) {
           drugData.forEach(stat => {
           drugChartCountryDateData.push(stat.country+"/"+stat.year);
-          drugChartPopulation.push(stat["dupopulation"]);
-          drugChartDead.push(stat["dudead"]);   
-          drugChartDependence.push(stat["dudependenceperc"]); 
-          drugChartDaly.push(stat["dudaly"]);   
+          drugChartPopulation.push(parseFloat(stat["dupopulation"]));
+          drugChartDead.push(parseFloat(stat["dudead"]));   
+          drugChartDependence.push(parseFloat(stat["dudependenceperc"])); 
+          drugChartDaly.push(parseFloat(stat["dudaly"]));   
         });
         cargados=true;
       }
