@@ -25,7 +25,7 @@
 	import Graph01Divorce from './unempAPI/analytics/ApiG01Divorce.svelte';
 	import Graph01Life from './unempAPI/analytics/ApiG01Life.svelte';
 	import Graph02 from './unempAPI/analytics/ApiG02.svelte';
-	import Graph24 from './unempAPI/analytics/Apig24.svelte';
+	import Graph24 from './unempAPI/analytics/ApiG24.svelte';
 
 
 
