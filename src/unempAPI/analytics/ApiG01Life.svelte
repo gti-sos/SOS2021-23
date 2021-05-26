@@ -1,0 +1,1 @@
+https://sos2021-01.herokuapp.com/api/v2/life-stats

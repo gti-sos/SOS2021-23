@@ -6,12 +6,14 @@ var serveIndex = require('serve-index');
 var path = require("path");
 var bodyParser = require("body-parser");
 const fs = require('fs');
+var cors = require("cors");
 
 // Inicialización de puerto
 var port = process.env.PORT || 11337;
 
 // Inicialización de APIs
 app.use(bodyParser.json());
+app.use(cors());
 //mh-stats
 var mh_api = require("./mh-stats-api");
 mh_api.register(app);
@@ -25,6 +27,7 @@ hdi_api.register(app);
 var unemployment_api_v1 = require("./unemployment-stats-api/v1");
 var unemployment_api_v2 = require("./unemployment-stats-api/v2");
 const { request, response } = require("express");
+unemployment_api_v1.register(app);
 unemployment_api_v2.register(app);
 
 // Raíces del servicio

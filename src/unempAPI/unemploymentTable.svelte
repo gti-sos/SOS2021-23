@@ -271,10 +271,6 @@
 		<Button on:click="{getNextPage}">
             Siguiente
         </Button>
-
-        <Button href ="/#/unemployment-stats/unemploymentCharts">
-            Analíticas
-        </Button>
         
 		<p>Si quieres filtar por algún atributo introduce el valor de búsqueda en la casilla. </p>
 		<Table borderless responsive>
