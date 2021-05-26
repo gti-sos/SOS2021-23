@@ -31537,14 +31537,14 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			t10 = space();
     			attr_dev(a, "href", a_href_value = "#/unemployment-stats/" + /*sc*/ ctx[35].country + "/" + /*sc*/ ctx[35].year);
-    			add_location(a, file$4, 360, 28, 12504);
-    			add_location(td0, file$4, 360, 24, 12500);
-    			add_location(td1, file$4, 361, 24, 12605);
-    			add_location(td2, file$4, 362, 24, 12649);
-    			add_location(td3, file$4, 363, 24, 12696);
-    			add_location(td4, file$4, 364, 24, 12743);
-    			add_location(td5, file$4, 365, 24, 12789);
-    			add_location(tr, file$4, 359, 20, 12470);
+    			add_location(a, file$4, 360, 28, 12556);
+    			add_location(td0, file$4, 360, 24, 12552);
+    			add_location(td1, file$4, 361, 24, 12657);
+    			add_location(td2, file$4, 362, 24, 12701);
+    			add_location(td3, file$4, 363, 24, 12748);
+    			add_location(td4, file$4, 364, 24, 12795);
+    			add_location(td5, file$4, 365, 24, 12841);
+    			add_location(tr, file$4, 359, 20, 12522);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -31735,15 +31735,19 @@ var app = (function () {
     			add_location(thead, file$4, 338, 12, 11514);
     			add_location(input0, file$4, 350, 24, 11952);
     			add_location(td0, file$4, 350, 20, 11948);
+    			attr_dev(input1, "type", "number");
     			add_location(input1, file$4, 351, 24, 12018);
     			add_location(td1, file$4, 351, 20, 12014);
-    			add_location(input2, file$4, 352, 24, 12081);
-    			add_location(td2, file$4, 352, 20, 12077);
-    			add_location(input3, file$4, 353, 24, 12148);
-    			add_location(td3, file$4, 353, 20, 12144);
-    			add_location(input4, file$4, 354, 24, 12218);
-    			add_location(td4, file$4, 354, 20, 12214);
-    			add_location(td5, file$4, 355, 20, 12281);
+    			attr_dev(input2, "type", "number");
+    			add_location(input2, file$4, 352, 24, 12094);
+    			add_location(td2, file$4, 352, 20, 12090);
+    			attr_dev(input3, "type", "number");
+    			add_location(input3, file$4, 353, 24, 12174);
+    			add_location(td3, file$4, 353, 20, 12170);
+    			attr_dev(input4, "type", "number");
+    			add_location(input4, file$4, 354, 24, 12257);
+    			add_location(td4, file$4, 354, 20, 12253);
+    			add_location(td5, file$4, 355, 20, 12333);
     			add_location(tr1, file$4, 349, 16, 11922);
     			add_location(tbody, file$4, 348, 12, 11897);
     		},
@@ -31811,19 +31815,19 @@ var app = (function () {
     				set_input_value(input0, /*data*/ ctx[0].country);
     			}
 
-    			if (dirty[0] & /*data*/ 1 && input1.value !== /*data*/ ctx[0].year) {
+    			if (dirty[0] & /*data*/ 1 && to_number(input1.value) !== /*data*/ ctx[0].year) {
     				set_input_value(input1, /*data*/ ctx[0].year);
     			}
 
-    			if (dirty[0] & /*data*/ 1 && input2.value !== /*data*/ ctx[0].knoperc) {
+    			if (dirty[0] & /*data*/ 1 && to_number(input2.value) !== /*data*/ ctx[0].knoperc) {
     				set_input_value(input2, /*data*/ ctx[0].knoperc);
     			}
 
-    			if (dirty[0] & /*data*/ 1 && input3.value !== /*data*/ ctx[0].intperc) {
+    			if (dirty[0] & /*data*/ 1 && to_number(input3.value) !== /*data*/ ctx[0].intperc) {
     				set_input_value(input3, /*data*/ ctx[0].intperc);
     			}
 
-    			if (dirty[0] & /*data*/ 1 && input4.value !== /*data*/ ctx[0].gfperc) {
+    			if (dirty[0] & /*data*/ 1 && to_number(input4.value) !== /*data*/ ctx[0].gfperc) {
     				set_input_value(input4, /*data*/ ctx[0].gfperc);
     			}
 
@@ -31913,7 +31917,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "No se han encontrado datos, por favor, carga los datos iniciales.";
-    			add_location(p, file$4, 373, 12, 13070);
+    			add_location(p, file$4, 373, 12, 13122);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -32544,22 +32548,22 @@ var app = (function () {
     	}
 
     	function input1_input_handler_1() {
-    		data.year = this.value;
+    		data.year = to_number(this.value);
     		$$invalidate(0, data);
     	}
 
     	function input2_input_handler_1() {
-    		data.knoperc = this.value;
+    		data.knoperc = to_number(this.value);
     		$$invalidate(0, data);
     	}
 
     	function input3_input_handler_1() {
-    		data.intperc = this.value;
+    		data.intperc = to_number(this.value);
     		$$invalidate(0, data);
     	}
 
     	function input4_input_handler_1() {
-    		data.gfperc = this.value;
+    		data.gfperc = to_number(this.value);
     		$$invalidate(0, data);
     	}
 
@@ -32810,13 +32814,16 @@ var app = (function () {
     			add_location(thead, file$3, 63, 3, 2201);
     			add_location(td0, file$3, 75, 20, 2488);
     			add_location(td1, file$3, 76, 20, 2535);
+    			attr_dev(input0, "type", "number");
     			add_location(input0, file$3, 77, 24, 2583);
     			add_location(td2, file$3, 77, 20, 2579);
-    			add_location(input1, file$3, 78, 24, 2651);
-    			add_location(td3, file$3, 78, 20, 2647);
-    			add_location(input2, file$3, 79, 24, 2719);
-    			add_location(td4, file$3, 79, 20, 2715);
-    			add_location(td5, file$3, 80, 20, 2782);
+    			attr_dev(input1, "type", "number");
+    			add_location(input1, file$3, 78, 24, 2664);
+    			add_location(td3, file$3, 78, 20, 2660);
+    			attr_dev(input2, "type", "number");
+    			add_location(input2, file$3, 79, 24, 2745);
+    			add_location(td4, file$3, 79, 20, 2741);
+    			add_location(td5, file$3, 80, 20, 2821);
     			add_location(tr1, file$3, 74, 16, 2462);
     			attr_dev(tbody, "class", "svelte-v9ti0w");
     			add_location(tbody, file$3, 73, 3, 2437);
@@ -32874,15 +32881,15 @@ var app = (function () {
     			if (!current || dirty & /*updatedCountry*/ 2) set_data_dev(t12, /*updatedCountry*/ ctx[1]);
     			if (!current || dirty & /*updatedYear*/ 4) set_data_dev(t14, /*updatedYear*/ ctx[2]);
 
-    			if (dirty & /*updatedKnoperc*/ 8 && input0.value !== /*updatedKnoperc*/ ctx[3]) {
+    			if (dirty & /*updatedKnoperc*/ 8 && to_number(input0.value) !== /*updatedKnoperc*/ ctx[3]) {
     				set_input_value(input0, /*updatedKnoperc*/ ctx[3]);
     			}
 
-    			if (dirty & /*updatedIntperc*/ 16 && input1.value !== /*updatedIntperc*/ ctx[4]) {
+    			if (dirty & /*updatedIntperc*/ 16 && to_number(input1.value) !== /*updatedIntperc*/ ctx[4]) {
     				set_input_value(input1, /*updatedIntperc*/ ctx[4]);
     			}
 
-    			if (dirty & /*updatedGfperc*/ 32 && input2.value !== /*updatedGfperc*/ ctx[5]) {
+    			if (dirty & /*updatedGfperc*/ 32 && to_number(input2.value) !== /*updatedGfperc*/ ctx[5]) {
     				set_input_value(input2, /*updatedGfperc*/ ctx[5]);
     			}
 
@@ -32934,7 +32941,7 @@ var app = (function () {
     			p = element("p");
     			t = text(/*erroMsg*/ ctx[6]);
     			set_style(p, "color", "red");
-    			add_location(p, file$3, 85, 8, 2952);
+    			add_location(p, file$3, 85, 8, 2991);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -33185,17 +33192,17 @@ var app = (function () {
     	});
 
     	function input0_input_handler() {
-    		updatedKnoperc = this.value;
+    		updatedKnoperc = to_number(this.value);
     		$$invalidate(3, updatedKnoperc);
     	}
 
     	function input1_input_handler() {
-    		updatedIntperc = this.value;
+    		updatedIntperc = to_number(this.value);
     		$$invalidate(4, updatedIntperc);
     	}
 
     	function input2_input_handler() {
-    		updatedGfperc = this.value;
+    		updatedGfperc = to_number(this.value);
     		$$invalidate(5, updatedGfperc);
     	}
 

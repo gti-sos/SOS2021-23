@@ -69,21 +69,21 @@ var unemployment_stats = [
     "gfperc": "13.3"
   },
   {
-    "country": "Argentina",
+    "country": "Argentine",
     "year": "2019",
     "knoperc": "23",
     "intperc": "10.6",
     "gfperc": "33.3"
   },
   {
-    "country": "Sudáfrica",
+    "country": "South Africa",
     "year": "2019",
     "knoperc": "22",
     "intperc": "21.8",
     "gfperc": "23.6"
   },
   {
-    "country": "Holanda",
+    "country": "Netherlands",
     "year": "2018",
     "knoperc": "14.5",
     "intperc": "9.6",

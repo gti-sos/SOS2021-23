@@ -349,10 +349,10 @@
             <tbody>
                 <tr>
                     <td><input bind:value="{data.country}"></td>
-                    <td><input bind:value="{data.year}"></td>
-                    <td><input bind:value="{data.knoperc}"></td> 
-                    <td><input bind:value="{data.intperc}"></td>    
-                    <td><input bind:value="{data.gfperc}"></td>  
+                    <td><input type =number bind:value="{data.year}"></td>
+                    <td><input type =number bind:value="{data.knoperc}"></td> 
+                    <td><input type =number bind:value="{data.intperc}"></td>    
+                    <td><input type =number bind:value="{data.gfperc}"></td>  
                     <td><Button outline color="primary" on:click={insertData}>Insertar</Button></td>           
                 </tr>
  
