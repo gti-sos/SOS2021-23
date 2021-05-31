@@ -1,4 +1,3 @@
-# SOS2021-23-sandbox
 [![Known Vulnerabilities](https://snyk.io/test/github/gti-sos/SOS2021-23/badge.svg)](https://snyk.io/test/github/gti-sos/SOS2021-23/badge.svg)
 ## SOS2021-23
 
