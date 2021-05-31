@@ -1,4 +1,5 @@
 # SOS2021-23-sandbox
+[![Vulnerabilidades](https://snyk.io/test/github/git-sos/SOS2021-23/badge.svg)](https://snyk.io/test/github/{username}/
 ## SOS2021-23
 
 - **_Team_**
