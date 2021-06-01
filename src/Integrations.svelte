@@ -45,7 +45,7 @@
             <li><a href="#/du-stats/graph1">Api Externa(Highchart)</a></li>
         </ul>
         <ul style="list-style-type:circle; font-size: 20px;">
-            <li><a href="#/du-stats/graphMorris">Api Externa(Awesome)</a></li>
+            <li><a href="#/du-stats/graphMorris">API Externa(Awesome)</a></li>
         </ul>
         <ul style="list-style-type:circle; font-size: 20px;">
             <li><a href="#/du-stats/schoolgraph">API Grupo 24 School</a></li>
