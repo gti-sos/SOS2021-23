@@ -32,6 +32,7 @@
 	import DrugChart1 from './duAPI/analytics/graph1.svelte';
 	import DrugChart2 from './duAPI/analytics/graphMorris.svelte';
 	import EXTschool from './duAPI/integrations/schoolgraph.svelte';
+	import EXTobesity from './duAPI/integrations/obesitygraph.svelte';
 	
 
 
@@ -57,6 +58,7 @@
 		"/du-stats/graph1": DrugChart1,
 		"/du-stats/graphMorris": DrugChart2,
 		"/du-stats/schoolgraph": EXTschool,
+		"/du-stats/obesitygraph": EXTobesity,
 		
 
 
