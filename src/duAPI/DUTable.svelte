@@ -366,6 +366,12 @@
     <Button href ="/#/du-stats/Graph">
             Analíticas
        </Button>
+    <Button href ="/#/du-stats/graph1">
+        Analítica 3D
+        </Button>
+    <Button href ="/#/du-stats/graphMorris">
+        Analítica Morris
+        </Button>
        
     {#await du_stats}
         Loading data...
