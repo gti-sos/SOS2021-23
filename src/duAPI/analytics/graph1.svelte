@@ -78,6 +78,11 @@ let drugChartDaly = [];
         },
           series: [
             {
+              name: "Población de cada país (millones)",
+              data: drugChartPopulation,
+              color: "#5062a0 "
+            },  
+          {
               name: "Muertes por consumo de drogas (millones)",
               data: drugChartDead,
               color: "#3c8dbc"

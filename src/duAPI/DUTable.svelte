@@ -372,7 +372,13 @@
     <Button href ="/#/du-stats/graphMorris">
         Analítica Morris
         </Button>
-       
+    <Button href ="/#/du-stats/schoolgraph">
+        EXT API 1
+        </Button>
+    <Button href ="/#/du-stats/obesitygraph">
+        EXT API 2
+        </Button>
+
     {#await du_stats}
         Loading data...
     {:then du_stats}
