@@ -35661,13 +35661,13 @@ var app = (function () {
     			div = element("div");
     			t3 = space();
     			create_component(button.$$.fragment);
-    			if (script.src !== (script_src_value = "https://cdn.plot.ly/plotly-latest.min.js")) attr_dev(script, "src", script_src_value);
+    			if (script.src !== (script_src_value = "https://cdn.plot.ly/plotly-2.0.0-rc.2.min.js")) attr_dev(script, "src", script_src_value);
     			add_location(script, file$7, 72, 4, 2158);
     			set_style(h3, "text-align", "center");
-    			add_location(h3, file$7, 78, 4, 2284);
+    			add_location(h3, file$7, 78, 4, 2288);
     			attr_dev(div, "id", "myDiv");
-    			add_location(div, file$7, 80, 4, 2384);
-    			add_location(main, file$7, 76, 0, 2266);
+    			add_location(div, file$7, 80, 4, 2388);
+    			add_location(main, file$7, 76, 0, 2270);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -36127,12 +36127,12 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script.src !== (script_src_value = "https://cdn.plot.ly/plotly-latest.min.js")) attr_dev(script, "src", script_src_value);
-    			add_location(script, file$5, 86, 4, 2339);
+    			add_location(script, file$5, 86, 4, 2340);
     			set_style(h3, "text-align", "center");
-    			add_location(h3, file$5, 92, 4, 2465);
+    			add_location(h3, file$5, 92, 4, 2466);
     			attr_dev(div, "id", "myDiv");
-    			add_location(div, file$5, 94, 4, 2583);
-    			add_location(main, file$5, 90, 0, 2447);
+    			add_location(div, file$5, 94, 4, 2584);
+    			add_location(main, file$5, 90, 0, 2448);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -36196,7 +36196,7 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("ApiG24", slots, []);
     	var miAPI = "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats";
-    	var API2 = "http://sos2021-23.herokuapp.com/api/v2/childrenemployment"; //proxy
+    	var API2 = "https://sos2021-23.herokuapp.com/api/v2/childrenemployment"; //proxy
 
     	async function loadGraph() {
     		let dataG2 = [];
@@ -37362,7 +37362,7 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			create_component(router.$$.fragment);
-    			add_location(main, file, 78, 0, 2707);
+    			add_location(main, file, 78, 0, 2706);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

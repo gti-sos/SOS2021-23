@@ -133,7 +133,7 @@ var unemployment_stats = [
                         return response.status(404).send("<h1>No se han cargado los recursos. Para ello dale a cargar datos</h1>");
                     } else {
                         dbdata.forEach((data) =>{ delete data._id});
-                        return response.status(200).send(JSON.stringify(dbdata,null, 2));
+                        return response.status(200).send(dbdata,null, 2);
                     }
                 }
             })

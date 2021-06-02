@@ -52,7 +52,7 @@
     </Col>
   </Container>
   <Button  color = primary href="http://sos2021-23.herokuapp.com/#/analytics">Analytics</Button>
-  <Button  color = primary href="http://sos2021-23.herokuapp.com/#/integrations">Integrations</Button>
+  <Button  color = primary href="http://localhost:11337/#/integrations">Integrations</Button>
 
   <h2>APIs</h2>
   <Container>

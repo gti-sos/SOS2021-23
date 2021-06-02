@@ -70,7 +70,7 @@
 </script>
 
 <svelte:head>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js" on:load="{loadGraph}"></script>
+    <script src='https://cdn.plot.ly/plotly-2.0.0-rc.2.min.js' on:load="{loadGraph}"></script>
 </svelte:head>
 
 

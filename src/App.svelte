@@ -71,7 +71,7 @@
 		"/hdi-stats/:country/:year":EHDI,
 		"/du-stats/Graph":DrugChart,
 		"/mh-stats/chart":MHSTChart,
-		"/hdi-stats/Graph":HDIChart,
+		"/hdi-stats/Graph":HDIChart
           
           
 		};
