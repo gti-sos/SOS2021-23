@@ -27,6 +27,13 @@
 	import Graph02 from './unempAPI/analytics/ApiG02.svelte';
 	import Graph24 from './unempAPI/analytics/ApiG24.svelte';
 
+	//DRUGS
+	
+	import DrugChart1 from './duAPI/analytics/graph1.svelte';
+	import DrugChart2 from './duAPI/analytics/graphMorris.svelte';
+	import EXTschool from './duAPI/integrations/schoolgraph.svelte';
+	import EXTobesity from './duAPI/integrations/obesitygraph.svelte';
+	
 
 
 
@@ -48,6 +55,11 @@
 		"/unemployment-graph/graphG02":Graph02,
 		"/unemployment-graph/graphG24":Graph24,
 
+		"/du-stats/graph1": DrugChart1,
+		"/du-stats/graphMorris": DrugChart2,
+		"/du-stats/schoolgraph": EXTschool,
+		"/du-stats/obesitygraph": EXTobesity,
+		
 
 
 		"/du-stats":DUSTATS,
