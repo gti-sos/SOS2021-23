@@ -2,7 +2,7 @@
     import Button from "sveltestrap/src/Button.svelte";
     import { pop } from "svelte-spa-router";
     var miAPI = "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats";
-    var API2 = "http://sos2021-23.herokuapp.com/api/v2/childrenemployment"; //proxy
+    var API2 = "https://sos2021-23.herokuapp.com/api/v2/childrenemployment"; //proxy
     async function loadGraph(){
         let dataG2 = [];
         let myData = [];
