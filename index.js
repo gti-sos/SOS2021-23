@@ -7,9 +7,10 @@ var path = require("path");
 var bodyParser = require("body-parser");
 const fs = require('fs');
 var cors = require("cors");
+var request2 = require('request');
 
 // Inicialización de puerto
-var port = process.env.PORT || 11338;
+var port = process.env.PORT || 11337;
 
 // Inicialización de APIs
 app.use(bodyParser.json());
@@ -34,6 +35,25 @@ unemployment_api_v2.register(app);
 app.use('/public', serveIndex('public')); // shows you the file list
 app.use('/public', express.static(path.join(__dirname,"public")));// serve the actual files
 app.use(express.static(path.join(__dirname,"public")));
+
+
+//Proxy UnemploymentStats
+
+var apiGrupo24_unemp = "https://sos2021-24.herokuapp.com/api/v2/children-employment"
+var pathEducation = "/api/v2/childrenemployment"
+app.use(pathEducation, function(req,res){
+	console.log("aqui entra");
+	console.log(`req.baseURL=<${req.baseUrl}>`);
+	console.log(`req.url=<${req.url}>`);
+	console.log("Piped:" + req.baseUrl + req.url);
+	console.log("hapasao el piped");
+	req.pipe(request2(apiGrupo24_unemp)).pipe(res);
+	console.log("listo");
+});
+
+
+
+
 
 // Funciones auxiliares para las que no merece crear una librería
 function hehe() {

@@ -2,7 +2,7 @@
     import Button from "sveltestrap/src/Button.svelte";
     import { pop } from "svelte-spa-router";
     var miAPI = "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats";
-    var API2 = "https://sos2021-24.herokuapp.com/api/v2/children-employment";
+    var API2 = "http://sos2021-23.herokuapp.com/api/v2/childrenemployment"; //proxy
     async function loadGraph(){
         let dataG2 = [];
         let myData = [];
@@ -10,6 +10,8 @@
         let datosKnoperc = [];
         let childrenEmp = [];
         let datosAñosEmp = [];
+        let datosPaisUnemp =[];
+        let childrenCountry=[];
                
         const resDataG2 = await fetch(API2);
         const resData = await fetch(miAPI);
@@ -17,62 +19,68 @@
         myData = await resData.json();
         dataG2 = await resDataG2.json();
 
-        datosAñosUnemp = myData.map((myData)=> parseInt(myData.year));
-        datosKnoperc = myData.map((myData)=> myData.knoperc);
+        datosPaisUnemp = myData.map((myData)=> myData.country);
+        datosAñosUnemp = myData.map((myData)=> myData.year);
+        datosKnoperc = myData.map((myData)=> parseFloat(myData.knoperc));
 
         dataG2.forEach( (x) => {
-            if (x.year == 2016) {
-                childrenEmp.push(parseInt(x.percent_children_employment_t));
+                childrenEmp.push(parseFloat(x.percent_children_employment_t));
                 datosAñosEmp.push(x.year);
-            }
+                childrenCountry.push(x.country);
         });
-        function makeTrace(i) {
-            if (i == 0) {
-                return {
-                    x: datosAñosUnemp,
-                    y: Array.apply(null, datosKnoperc),
-                    line: { 
-                        color: 'green'
-                    },
-                    visible: i === 0,
-                    name: 'Paro según Knoema.es',
-                };
-            } else if (i == 1) {
-                return {
-                    x: datosAñosEmp,
-                    y: Array.apply(null, childrenEmp),
-                    line: { 
-                        color: 'black'
-                    },
-                    visible: i === 0,
-                    name: 'Niños y niñas empleados en total',
-                };
-            }
+
+        /*
             
+        var trace1 = {
+        x: datosAñosUnemp,
+        y: datosKnoperc,
+        mode: 'markers',
+        marker: {
+            size: [ 80, 100]
         }
-        Plotly.plot('graph', [0, 1].map(makeTrace), {
-            updatemenus: [{
-                y: 1,
-                yanchor: 'top',
-                buttons: [{
-                    method: 'restyle',
-                    args: ['visible', [true, false]],
-                    label: 'Paro según Knoema.es'
-                }, {
-                    method: 'restyle',
-                    args: ['visible', [false, true]],
-                    label: 'Niños y niñas empleados en total'
-                },
-                {
-                    method: 'restyle',
-                    args: ['visible', [true, true]],
-                    label: 'Gráfica Conjunta'
-                }]
-            }],
-        });
+        };
+        var trace2 = {
+        x: datosAñosUnemp,
+        y: childrenEmp,
+        mode: 'markers',
+        marker: {
+            size: [20,40, 60, 80, 100]
+        }
+        };
+
+        var data = [trace1,trace2];
+
+        var layout = {
+        title: 'Marker Size',
+        showlegend: false,
+        height: 600,
+        width: 600
+        };
+
+        Plotly.newPlot('myDiv', data, layout);
+        */
+        var trace1 = {
+            x: datosPaisUnemp,
+            y: datosKnoperc,
+            name: 'Unemployment',
+            type: 'bar'
+            };
+
+        var trace2 = {
+            x: childrenCountry,
+            y: childrenEmp,
+            name: 'Children Employment',
+            type: 'bar'
+            };
+
+            var data = [trace1, trace2];
+
+            var layout = {barmode: 'group'};
+
+            Plotly.newPlot('myDiv', data, layout);
         
         
-    }
+}
 </script>
 
 <svelte:head>
@@ -82,8 +90,8 @@
 
 <main>
     
-    <h3 style="text-align: center;"> Porcentaje de paro según Knoema.es y el total de niños y niñas empleados en 2016</h3>
+    <h3 style="text-align: center;"> Porcentaje de paro según Knoema.es y el total de niños y niñas empleados</h3>
 
-    <div id="graph"></div>
+    <div id="myDiv"></div>
     <Button outline color="secondary" on:click="{pop}">Atrás</Button>
 </main>

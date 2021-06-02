@@ -18,25 +18,38 @@
         </div>
 
         <li style="font-size: 22px;"><strong>Unemployment-Stats</strong></li>
+        <ul style="font-size: 22px;"><strong>Integraciones</strong></ul>
+
         <ul style="list-style-type:circle; font-size: 20px;">
-            <li><a href="#/unemployment-graph/graphApiExt1">Api Externa(Highchart)</a></li>
+            <li><a href="#/unemployment-graph/graphApiExt1">Api Externa 1</a></li>
         </ul>
         <ul style="list-style-type:circle; font-size: 20px;">
-            <li><a href="#/unemployment-graph/graphApiExt2">Api Externa(Awesome)</a></li>
+            <li><a href="#/unemployment-graph/graphG01Life">Api Grupo 01 Life</a></li>
+        </ul>
+        <ul style="list-style-type:circle; font-size: 20px;">
+            <li><a href="#/unemployment-graph/graphG02">Api Grupo 02</a></li>
+        </ul>
+        <ul style="list-style-type:circle; font-size: 20px;">
+            <li><a href="#/unemployment-graph/graphG24">Api Grupo 24</a></li>
         </ul>
 
+        <ul style="font-size: 22px;"><strong>Uso</strong></ul>
+
+        <ul style="list-style-type:circle; font-size: 20px;">
+            <li><a href="#/unemployment-graph/graphApiExt2">Api Externa 2</a></li>
+        </ul>
 
         <ul style="list-style-type:circle; font-size: 20px;">
             <li><a href="#/unemployment-graph/graphG01Divorce">Api Grupo 01 Divorce</a></li>
         </ul>
+
+        <ul style="font-size: 22px;"><strong>Personal</strong></ul>
+
         <ul style="list-style-type:circle; font-size: 20px;">
-            <li><a href="#/unemployment-graph/graph01Life">Api Grupo 01 Life</a></li>
+            <li><a href="#/unemployment-stats/unemploymentHighCharts">Gráfica Unemployment(HighChart)</a></li>
         </ul>
         <ul style="list-style-type:circle; font-size: 20px;">
-            <li><a href="#/unemployment-graph/graph02">Api Grupo 02</a></li>
-        </ul>
-        <ul style="list-style-type:circle; font-size: 20px;">
-            <li><a href="#/unemployment-graph/graphG24">Api Grupo 24</a></li>
+            <li><a href="#/unemployment-stats/unemploymentAwesomeCharts">Gráfica Unemployment(Awesome)</a></li>
         </ul>
 
         <li style="font-size: 22px;"><strong>Drugs-Stats</strong></li>

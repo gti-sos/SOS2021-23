@@ -27,54 +27,51 @@
       
   console.log("Unemployment Chart data: " + unemploymentData);
           
-      Highcharts.chart('container', {
-          title: {
-              text: 'Unemployment-stats'
-          },
-          yAxis: {
-              title: {
-                  text: 'Valor'
-              }
-          },
-          xAxis: {
-              title: {
-                  text: 'País-Año'
-              },
-              categories: unemploymentChartCountryYear,
-          },
-          legend: {
-              layout: 'vertical',
-              align: 'right',
-              verticalAlign: 'middle'
-          },
-      
-       
-      
-          series: [{
-              name: 'Porcentaje según Knoema',
-              data: unemploymentChartKnoperc,
-          }, {
-              name: 'Porcentaje según InternetWorldStat',
-              data: unemploymentChartIntperc,
-          }, {
-              name: 'Porcentaje según Gfmag',
-              data: unemploymentChartGfperc,
-          }],
-          responsive: {
-              rules: [{
-                  condition: {
-                      maxWidth: 800
-                  },
-                  chartOptions: {
-                      legend: {
-                          layout: 'horizontal',
-                          align: 'center',
-                          verticalAlign: 'bottom'
-                      }
-                  }
-              }]
-          }
-      });
+  Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Porcentajes de paro según Knoema.es,InternetWorldStats.com y Gfmag.com'
+    },
+    xAxis: {
+        categories: unemploymentChartCountryYear,
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Rainfall (mm)'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Knoperc',
+        data: unemploymentChartKnoperc
+
+    }, {
+        name: 'Intperc',
+        data: unemploymentChartIntperc
+
+    }, {
+        name: 'Gfperc',
+        data: unemploymentChartGfperc
+
+    }]
+});
   }
 </script>
 
@@ -94,6 +91,9 @@
         <NavLink href="#/info">Página Principal</NavLink>
       </NavItem>
       <NavItem>
+        <NavLink href="#/integrations">Integrations</NavLink>
+      </NavItem>
+      <NavItem>
         <NavLink href="#/unemployment-stats">Datos</NavLink>
       </NavItem>
   </Nav>
@@ -108,10 +108,11 @@
       <figure class="highcharts-figure">
         <div id="container" />
         <p class="highcharts-description">
-          Gráfico de líneas básico que muestra los diferentes valores para los campos de life-stats.
+          Gráfico de columnas que muestran los porcentajes de paro.
         </p>
       </figure>
   </div>
+  
 
   <div>
     {#if !cargados}

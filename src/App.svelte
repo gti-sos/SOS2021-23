@@ -19,7 +19,8 @@
 		//UNEMPLOYMENT
 	import UnemploymentTable from "./unempAPI/unemploymentTable.svelte";
 	import EUT from "./unempAPI/EditUnempTable.svelte";
-	import UnemploymentCharts from "./unempAPI/analytics/UnemploymentChart.svelte";
+	import UnemploymentHighCharts from "./unempAPI/analytics/UnemploymentHighChart.svelte";
+	import UnemploymentAwesomeCharts from "./unempAPI/analytics/UnemploymentAwesomeChart.svelte";
 	import GraphApiExt1 from './unempAPI/analytics/ApiExt1.svelte';
 	import GraphApiExt2 from './unempAPI/analytics/ApiExt2.svelte';
 	import Graph01Divorce from './unempAPI/analytics/ApiG01Divorce.svelte';
@@ -47,7 +48,8 @@
 
 		"/unemployment-stats":UnemploymentTable,
 		"/unemployment-stats/:country/:year":EUT,
-		"/unemployment-stats/unemploymentCharts":UnemploymentCharts,
+		"/unemployment-stats/unemploymentHighCharts":UnemploymentHighCharts,
+		"/unemployment-stats/unemploymentAwesomeCharts":UnemploymentAwesomeCharts,
 		"/unemployment-graph/graphApiExt1":GraphApiExt1,
 		"/unemployment-graph/graphApiExt2":GraphApiExt2,
 		"/unemployment-graph/graph01Divorce":Graph01Divorce,
