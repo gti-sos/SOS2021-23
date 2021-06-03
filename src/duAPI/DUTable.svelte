@@ -381,8 +381,8 @@
     <Button href ="/#/du-stats/chucknorris">
         EXT CHUCK
         </Button>
-    <Button href ="/#/du-stats/videogames">
-        EXT VID
+    <Button href ="/#/du-stats/rick">
+        EXT RICK
         </Button>
 
     {#await du_stats}
