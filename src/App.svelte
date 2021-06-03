@@ -35,6 +35,7 @@
 	import EXTschool from './duAPI/integrations/schoolgraph.svelte';
 	import EXTobesity from './duAPI/integrations/obesitygraph.svelte';
 	import EXTchuck from './duAPI/integrations/chucknorris.svelte';
+	import EXTvid from './duAPI/integrations/videogames.svelte';
 
 	
 
@@ -64,6 +65,7 @@
 		"/du-stats/schoolgraph": EXTschool,
 		"/du-stats/obesitygraph": EXTobesity,
 		"/du-stats/chucknorris": EXTchuck,
+		"/du-stats/videogames": EXTvid,
 		
 
 
