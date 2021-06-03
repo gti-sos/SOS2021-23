@@ -37,7 +37,7 @@
                 { drugChartCountryDateData: "Spain", value: drugChartPopulation[0] , value2: drugChartDead[0], value3: drugChartDependence[0]},
                 { drugChartCountryDateData: "Italy", value: drugChartPopulation[1] , value2: drugChartDead[1], value3: drugChartDependence[1]},
                 { drugChartCountryDateData: "USA", value: drugChartPopulation[2] , value2: drugChartDead[2], value3: drugChartDependence[2]},
-                { drugChartCountryDateData: "Brazil", value: drugChartPopulationntos[3] , value2: drugChartDead[2], value3: drugChartDependence[3]},
+                { drugChartCountryDateData: "Brazil", value: drugChartPopulation[3] , value2: drugChartDead[2], value3: drugChartDependence[3]},
             ],
             xkey: 'Países',
             ykeys: ['value', 'value2', 'value3'],
