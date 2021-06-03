@@ -47,11 +47,11 @@
       </Col>
       <Col>
         <a href="http://sos2021-23.herokuapp.com"
-          ><b>URL: </b>http://sos2021-23.herokuapp.com</a
+          ><b>URL: </b>https://sos2021-23.herokuapp.com</a
         >
       </Col>
     </Container>
-    <Button  color = primary href="http://localhost:11337/#/info">Info</Button>
+    <Button  color = primary href="https://sos2021-23.herokuapp.com/#/info">Info</Button>
 
   </main>
   
