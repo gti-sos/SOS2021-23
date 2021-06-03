@@ -70,6 +70,9 @@
         <ul style="list-style-type:circle; font-size: 20px;">
             <li><a href="#/du-stats/chucknorris">API Externa Chuck Norris</a></li>
         </ul>
+        <ul style="list-style-type:circle; font-size: 20px;">
+            <li><a href="#/du-stats/ricki">API Externa Rick & Morty</a></li>
+        </ul>
 
 
 </div>
