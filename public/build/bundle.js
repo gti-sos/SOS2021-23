@@ -14031,7 +14031,7 @@ var app = (function () {
     	return block;
     }
 
-    // (55:2) <Button  color = primary href="http://localhost:11337/#/integrations">
+    // (55:2) <Button  color = primary href="http://sos2021-23.herokuapp.com/#/integrations">
     function create_default_slot_47(ctx) {
     	let t;
 
@@ -14051,7 +14051,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_47.name,
     		type: "slot",
-    		source: "(55:2) <Button  color = primary href=\\\"http://localhost:11337/#/integrations\\\">",
+    		source: "(55:2) <Button  color = primary href=\\\"http://sos2021-23.herokuapp.com/#/integrations\\\">",
     		ctx
     	});
 
@@ -14066,7 +14066,7 @@ var app = (function () {
     		c: function create() {
     			h5 = element("h5");
     			h5.textContent = "Estadísticas sobre drogas";
-    			add_location(h5, file$w, 61, 21, 1452);
+    			add_location(h5, file$w, 61, 21, 1461);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h5, anchor);
@@ -14359,13 +14359,13 @@ var app = (function () {
     			a3 = element("a");
     			create_component(button3.$$.fragment);
     			attr_dev(a0, "href", "https://sos2021-23.herokuapp.com/api/v1/du-stats");
-    			add_location(a0, file$w, 68, 10, 1720);
+    			add_location(a0, file$w, 68, 10, 1729);
     			attr_dev(a1, "href", "/#/du-stats");
-    			add_location(a1, file$w, 71, 10, 1857);
+    			add_location(a1, file$w, 71, 10, 1866);
     			attr_dev(a2, "href", "#/du-stats/Graph");
-    			add_location(a2, file$w, 74, 10, 1962);
+    			add_location(a2, file$w, 74, 10, 1971);
     			attr_dev(a3, "href", "https://documenter.getpostman.com/view/14950269/TzJoDzt6");
-    			add_location(a3, file$w, 77, 10, 2071);
+    			add_location(a3, file$w, 77, 10, 2080);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -14482,7 +14482,7 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "José Carlos Torres Moreno";
     			attr_dev(a, "href", "https://github.com/secaasecas");
-    			add_location(a, file$w, 82, 10, 2298);
+    			add_location(a, file$w, 82, 10, 2307);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -14674,7 +14674,7 @@ var app = (function () {
     		c: function create() {
     			h5 = element("h5");
     			h5.textContent = "Estadísticas de Salud Mental";
-    			add_location(h5, file$w, 90, 21, 2514);
+    			add_location(h5, file$w, 90, 21, 2523);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h5, anchor);
@@ -14967,13 +14967,13 @@ var app = (function () {
     			a3 = element("a");
     			create_component(button3.$$.fragment);
     			attr_dev(a0, "href", "https://sos2021-23.herokuapp.com/api/v1/mh-stats");
-    			add_location(a0, file$w, 95, 10, 2753);
+    			add_location(a0, file$w, 95, 10, 2762);
     			attr_dev(a1, "href", "/#/mh-stats");
-    			add_location(a1, file$w, 97, 10, 2878);
+    			add_location(a1, file$w, 97, 10, 2887);
     			attr_dev(a2, "href", "#/mh-stats/chart");
-    			add_location(a2, file$w, 100, 10, 2983);
+    			add_location(a2, file$w, 100, 10, 2992);
     			attr_dev(a3, "href", "https://documenter.getpostman.com/view/14943559/TzJoDfQ5");
-    			add_location(a3, file$w, 103, 10, 3092);
+    			add_location(a3, file$w, 103, 10, 3101);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -15090,7 +15090,7 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "Eduardo Carmona";
     			attr_dev(a, "href", "https://github.com/Beelthazad");
-    			add_location(a, file$w, 109, 10, 3335);
+    			add_location(a, file$w, 109, 10, 3344);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -15282,7 +15282,7 @@ var app = (function () {
     		c: function create() {
     			h5 = element("h5");
     			h5.textContent = "Porcentaje de paro(API UNEMPLOYMENT)";
-    			add_location(h5, file$w, 116, 21, 3539);
+    			add_location(h5, file$w, 116, 21, 3548);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h5, anchor);
@@ -15659,17 +15659,17 @@ var app = (function () {
     			a5 = element("a");
     			create_component(button5.$$.fragment);
     			attr_dev(a0, "href", "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats");
-    			add_location(a0, file$w, 121, 10, 3756);
+    			add_location(a0, file$w, 121, 10, 3765);
     			attr_dev(a1, "href", "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats");
-    			add_location(a1, file$w, 123, 10, 3890);
+    			add_location(a1, file$w, 123, 10, 3899);
     			attr_dev(a2, "href", "/#/unemployment-stats");
-    			add_location(a2, file$w, 125, 10, 4026);
+    			add_location(a2, file$w, 125, 10, 4035);
     			attr_dev(a3, "href", "#/unemployment-stats/unemploymentCharts");
-    			add_location(a3, file$w, 128, 10, 4141);
+    			add_location(a3, file$w, 128, 10, 4150);
     			attr_dev(a4, "href", "https://documenter.getpostman.com/view/14941751/TzJuAJ6j");
-    			add_location(a4, file$w, 131, 10, 4273);
+    			add_location(a4, file$w, 131, 10, 4282);
     			attr_dev(a5, "href", "https://documenter.getpostman.com/view/14941751/TzXwGK9g");
-    			add_location(a5, file$w, 133, 10, 4410);
+    			add_location(a5, file$w, 133, 10, 4419);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -15816,7 +15816,7 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "Antonio Corpas";
     			attr_dev(a, "href", "https://github.com/ace58");
-    			add_location(a, file$w, 139, 10, 4631);
+    			add_location(a, file$w, 139, 10, 4640);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -16008,7 +16008,7 @@ var app = (function () {
     		c: function create() {
     			h5 = element("h5");
     			h5.textContent = "Estadística HDI";
-    			add_location(h5, file$w, 146, 21, 4829);
+    			add_location(h5, file$w, 146, 21, 4838);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h5, anchor);
@@ -16301,13 +16301,13 @@ var app = (function () {
     			a3 = element("a");
     			create_component(button3.$$.fragment);
     			attr_dev(a0, "href", "https://sos2021-23.herokuapp.com/api/v1/hdi-stats");
-    			add_location(a0, file$w, 152, 10, 5014);
+    			add_location(a0, file$w, 152, 10, 5023);
     			attr_dev(a1, "href", "/#/hdi-stats");
-    			add_location(a1, file$w, 154, 10, 5140);
+    			add_location(a1, file$w, 154, 10, 5149);
     			attr_dev(a2, "href", "#/hdi-stats/Graph");
-    			add_location(a2, file$w, 157, 10, 5246);
+    			add_location(a2, file$w, 157, 10, 5255);
     			attr_dev(a3, "href", "https://documenter.getpostman.com/view/14951179/TzJoF21c");
-    			add_location(a3, file$w, 160, 10, 5356);
+    			add_location(a3, file$w, 160, 10, 5365);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -16424,7 +16424,7 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "Antonio Maiquez";
     			attr_dev(a, "href", "https://github.com/Jackman97");
-    			add_location(a, file$w, 166, 10, 5599);
+    			add_location(a, file$w, 166, 10, 5608);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -16794,7 +16794,7 @@ var app = (function () {
     	button1 = new Button({
     			props: {
     				color: "primary",
-    				href: "http://localhost:11337/#/integrations",
+    				href: "http://sos2021-23.herokuapp.com/#/integrations",
     				$$slots: { default: [create_default_slot_47] },
     				$$scope: { ctx }
     			},
@@ -16841,7 +16841,7 @@ var app = (function () {
     			add_location(h20, file$w, 20, 2, 265);
     			add_location(h21, file$w, 36, 2, 661);
     			add_location(p, file$w, 37, 2, 685);
-    			add_location(h22, file$w, 56, 2, 1331);
+    			add_location(h22, file$w, 56, 2, 1340);
     			attr_dev(main, "class", "svelte-il7l6l");
     			add_location(main, file$w, 17, 0, 230);
     		},
