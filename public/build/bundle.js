@@ -1,5 +1,5 @@
 
-(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 var app = (function () {
     'use strict';
 
@@ -36845,29 +36845,29 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Gráfico de área que muestra los diferentes valores de abandono escolar";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$2, 79, 4, 2024);
+    			add_location(script0, file$2, 79, 2, 1873);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$2, 80, 4, 2114);
+    			add_location(script1, file$2, 80, 2, 1961);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$2, 81, 4, 2195);
+    			add_location(script2, file$2, 81, 2, 2040);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$2, 82, 4, 2273);
+    			add_location(script3, file$2, 82, 2, 2116);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$2, 83, 4, 2353);
-    			add_location(strong, file$2, 90, 46, 2556);
+    			add_location(script4, file$2, 83, 2, 2194);
+    			add_location(strong, file$2, 90, 44, 2383);
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$2, 90, 10, 2520);
-    			add_location(div0, file$2, 89, 6, 2503);
+    			add_location(h1, file$2, 90, 8, 2347);
+    			add_location(div0, file$2, 89, 4, 2332);
     			attr_dev(div1, "id", "container");
-    			attr_dev(div1, "class", "svelte-o4uu59");
-    			add_location(div1, file$2, 95, 12, 2695);
+    			attr_dev(div1, "class", "svelte-1jvwztp");
+    			add_location(div1, file$2, 95, 10, 2512);
     			set_style(p, "text-align", "center");
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$2, 96, 12, 2731);
-    			attr_dev(figure, "class", "highcharts-figure svelte-o4uu59");
-    			add_location(figure, file$2, 94, 10, 2647);
-    			add_location(div2, file$2, 93, 6, 2630);
-    			add_location(main, file$2, 88, 2, 2489);
+    			add_location(p, file$2, 96, 10, 2546);
+    			attr_dev(figure, "class", "highcharts-figure svelte-1jvwztp");
+    			add_location(figure, file$2, 94, 8, 2466);
+    			add_location(div2, file$2, 93, 4, 2451);
+    			add_location(main, file$2, 88, 0, 2320);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -37041,7 +37041,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file$1 = "src\\duAPI\\integrations\\obesitygraph.svelte";
 
-    // (97:10) <Button outline color="secondary" on:click="{pop}">
+    // (105:8) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot(ctx) {
     	let t;
 
@@ -37061,7 +37061,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(97:10) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(105:8) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -37133,29 +37133,29 @@ var app = (function () {
     			t6 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$1, 75, 4, 2006);
+    			add_location(script0, file$1, 83, 2, 2076);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$1, 76, 4, 2096);
+    			add_location(script1, file$1, 84, 2, 2164);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$1, 77, 4, 2177);
+    			add_location(script2, file$1, 85, 2, 2243);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$1, 78, 4, 2255);
+    			add_location(script3, file$1, 86, 2, 2319);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$1, 79, 4, 2335);
-    			add_location(strong, file$1, 86, 46, 2538);
+    			add_location(script4, file$1, 87, 2, 2397);
+    			add_location(strong, file$1, 94, 44, 2586);
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$1, 86, 10, 2502);
-    			add_location(div0, file$1, 85, 6, 2485);
+    			add_location(h1, file$1, 94, 8, 2550);
+    			add_location(div0, file$1, 93, 4, 2535);
     			attr_dev(div1, "id", "container");
-    			attr_dev(div1, "class", "svelte-o4uu59");
-    			add_location(div1, file$1, 91, 12, 2674);
+    			attr_dev(div1, "class", "svelte-1jvwztp");
+    			add_location(div1, file$1, 99, 10, 2712);
     			set_style(p, "text-align", "center");
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$1, 92, 12, 2710);
-    			attr_dev(figure, "class", "highcharts-figure svelte-o4uu59");
-    			add_location(figure, file$1, 90, 10, 2626);
-    			add_location(div2, file$1, 89, 6, 2609);
-    			add_location(main, file$1, 84, 2, 2471);
+    			add_location(p, file$1, 100, 10, 2746);
+    			attr_dev(figure, "class", "highcharts-figure svelte-1jvwztp");
+    			add_location(figure, file$1, 98, 8, 2666);
+    			add_location(div2, file$1, 97, 4, 2651);
+    			add_location(main, file$1, 92, 0, 2523);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -37257,23 +37257,26 @@ var app = (function () {
     		console.log(obesityData);
 
     		Highcharts.chart("container", {
-    			chart: { type: "area" },
+    			chart: { type: "areaspline" },
     			title: {
     				text: "Porcentaje de Obesidad en Hombres y Mujeres"
+    			},
+    			legend: {
+    				layout: "vertical",
+    				align: "left",
+    				verticalAlign: "top",
+    				x: 150,
+    				y: 100,
+    				floating: true,
+    				borderWidth: 1,
+    				backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || "#FFFFFF"
     			},
     			yAxis: { title: { text: "Valor" } },
     			xAxis: {
     				title: { text: "País-Año" },
     				categories: obesityCountryDate
     			},
-    			legend: {
-    				layout: "vertical",
-    				align: "right",
-    				verticalAlign: "middle"
-    			},
-    			tooltip: {
-    				pointFormat: "{series.name} <strong>{point.y}%<strong>"
-    			},
+    			tooltip: { shared: true, valueSuffix: " units" },
     			series: [
     				{
     					name: "Hombres con sobrepeso",
