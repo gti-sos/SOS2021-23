@@ -38,6 +38,7 @@
     "express": "^4.17.1",
     "nedb": "^1.8.0",
     "newman": "^5.2.3",
+    "plottable": "^3.9.0",
     "request": "^2.88.2",
     "serve-index": "^1.9.1",
     "sirv-cli": "^1.0.0",
