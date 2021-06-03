@@ -55,10 +55,10 @@
         <li style="font-size: 22px;"><strong>Drugs-Stats</strong></li>
 
         <ul style="list-style-type:circle; font-size: 20px;">
-            <li><a href="#/du-stats/graph1">Api Externa(Highchart)</a></li>
+            <li><a href="#/du-stats/graph1">Api Drug-Use(Highchart)</a></li>
         </ul>
         <ul style="list-style-type:circle; font-size: 20px;">
-            <li><a href="#/du-stats/graphMorris">API Externa(Awesome)</a></li>
+            <li><a href="#/du-stats/graphMorris">API Drug-Use(Awesome)</a></li>
         </ul>
         <ul style="list-style-type:circle; font-size: 20px;">
             <li><a href="#/du-stats/schoolgraph">API Grupo 24 School</a></li>
@@ -66,6 +66,11 @@
         <ul style="list-style-type:circle; font-size: 20px;">
             <li><a href="#/du-stats/obesitygraph">API Grupo 10 Obesity</a></li>
         </ul>
+        
+        <ul style="list-style-type:circle; font-size: 20px;">
+            <li><a href="#/du-stats/chucknorris">API Externa Chuck Norris</a></li>
+        </ul>
+
 
 </div>
 </body>
