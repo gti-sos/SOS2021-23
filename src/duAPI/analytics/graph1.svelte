@@ -1,5 +1,10 @@
 <script>
-  
+   import { onMount } from "svelte";
+    import {
+        Nav,
+        NavItem,
+        Button,
+    } from "sveltestrap";
 const BASE_API_PATH_SEC="/api/v1";
 
 let drugData = [];
