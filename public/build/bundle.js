@@ -36643,22 +36643,22 @@ var app = (function () {
     			p.textContent = "Gráfico que muestra los datos de diferentes países sobre el consumo de droga en 2017.";
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css");
-    			add_location(link, file$3, 51, 4, 2322);
+    			add_location(link, file$3, 51, 4, 2318);
     			if (script0.src !== (script0_src_value = "//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 52, 4, 2418);
+    			add_location(script0, file$3, 52, 4, 2414);
     			if (script1.src !== (script1_src_value = "//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 53, 4, 2506);
+    			add_location(script1, file$3, 53, 4, 2502);
     			if (script2.src !== (script2_src_value = "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 54, 4, 2597);
+    			add_location(script2, file$3, 54, 4, 2593);
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$3, 60, 4, 2741);
+    			add_location(h1, file$3, 60, 4, 2737);
     			attr_dev(div, "id", "myfirstchart");
     			set_style(div, "height", "250px");
-    			add_location(div, file$3, 61, 4, 2823);
+    			add_location(div, file$3, 61, 4, 2819);
     			set_style(p, "text-align", "center");
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$3, 62, 4, 2881);
-    			add_location(main, file$3, 59, 0, 2729);
+    			add_location(p, file$3, 62, 4, 2877);
+    			add_location(main, file$3, 59, 0, 2725);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -36761,7 +36761,7 @@ var app = (function () {
     						},
     						{
     							drugChartCountryDateData: "Brazil",
-    							value: drugChartPopulationntos[3],
+    							value: drugChartPopulation[3],
     							value2: drugChartDead[2],
     							value3: drugChartDependence[3]
     						}
