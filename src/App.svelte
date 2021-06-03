@@ -4,6 +4,9 @@
 	import Router from 'svelte-spa-router';
 	import Analytics from "./Analytics.svelte";
 	import Integrations from "./Integrations.svelte";
+	import About from "./About.svelte";
+	import PreApi from "./PreApi.svelte";
+
 
 
 	import MHST from "./mhAPI/MHST.svelte";
@@ -43,10 +46,12 @@
 
 	//RUTAS
 	const routes = {
-		"/":Home,
+		//"/":PreApi,
+		"/":PreApi,
 		"/info":Home,
 		"/analytics":Analytics,
 		"/integrations":Integrations,
+		"/about":About,
 
 
 		"/unemployment-stats":UnemploymentTable,

@@ -51,8 +51,9 @@
       >
     </Col>
   </Container>
-  <Button  color = primary href="http://sos2021-23.herokuapp.com/#/analytics">Analytics</Button>
-  <Button  color = primary href="http://sos2021-23.herokuapp.com/#/integrations">Integrations</Button>
+  <Button  color = primary href="https://sos2021-23.herokuapp.com/#/analytics">Analytics</Button>
+  <Button  color = primary href="http://localhost:11337/#/integrations">Integrations</Button>
+  <Button  color = primary href="http://localhost:11337/#/about">About</Button>
 
   <h2>APIs</h2>
   <Container>
@@ -125,9 +126,6 @@
               <Button color="primary">V2</Button></a>
           <a href="/#/unemployment-stats">
             <Button color="primary">Frontend</Button>
-          </a>
-          <a href="#/unemployment-stats/unemploymentCharts">
-            <Button color="primary">Gráfica</Button>
           </a>
           <a href="https://documenter.getpostman.com/view/14941751/TzJuAJ6j"
             ><Button color="info">Postman V1</Button></a>

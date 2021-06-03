@@ -24,7 +24,7 @@
             <li><a href="#/unemployment-graph/graphApiExt1">Api Externa 1</a></li>
         </ul>
         <ul style="list-style-type:circle; font-size: 20px;">
-            <li><a href="#/unemployment-graph/graphG01Life">Api Grupo 01 Life</a></li>
+            <li><a href="#/unemployment-graph/graph01Life">Api Grupo 01 Life</a></li>
         </ul>
         <ul style="list-style-type:circle; font-size: 20px;">
             <li><a href="#/unemployment-graph/graphG02">Api Grupo 02</a></li>
@@ -40,7 +40,7 @@
         </ul>
 
         <ul style="list-style-type:circle; font-size: 20px;">
-            <li><a href="#/unemployment-graph/graphG01Divorce">Api Grupo 01 Divorce</a></li>
+            <li><a href="#/unemployment-graph/graph01Divorce">Api Grupo 01 Divorce</a></li>
         </ul>
 
         <ul style="font-size: 22px;"><strong>Personal</strong></ul>
