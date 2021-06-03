@@ -378,7 +378,7 @@
     <Button href ="/#/du-stats/obesitygraph">
         EXT API 2
         </Button>
-    <Button href ="/#/du-stats/chuchnorris">
+    <Button href ="/#/du-stats/chucknorris">
         EXT CHUCK
         </Button>
 

@@ -22784,7 +22784,7 @@ var app = (function () {
     	return block;
     }
 
-    // (381:4) <Button href ="/#/du-stats/chuchnorris">
+    // (381:4) <Button href ="/#/du-stats/chucknorris">
     function create_default_slot_14$2(ctx) {
     	let t;
 
@@ -22804,7 +22804,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_14$2.name,
     		type: "slot",
-    		source: "(381:4) <Button href =\\\"/#/du-stats/chuchnorris\\\">",
+    		source: "(381:4) <Button href =\\\"/#/du-stats/chucknorris\\\">",
     		ctx
     	});
 
@@ -24699,7 +24699,7 @@ var app = (function () {
 
     	button8 = new Button({
     			props: {
-    				href: "/#/du-stats/chuchnorris",
+    				href: "/#/du-stats/chucknorris",
     				$$slots: { default: [create_default_slot_14$2] },
     				$$scope: { ctx }
     			},
