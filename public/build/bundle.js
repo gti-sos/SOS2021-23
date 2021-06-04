@@ -14031,7 +14031,7 @@ var app = (function () {
     	return block;
     }
 
-    // (55:2) <Button  color = primary href="http://localhost:11337/#/integrations">
+    // (55:2) <Button  color = primary href="https://sos2021-23.herokuapp.com/#/integrations">
     function create_default_slot_47(ctx) {
     	let t;
 
@@ -14051,14 +14051,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_47.name,
     		type: "slot",
-    		source: "(55:2) <Button  color = primary href=\\\"http://localhost:11337/#/integrations\\\">",
+    		source: "(55:2) <Button  color = primary href=\\\"https://sos2021-23.herokuapp.com/#/integrations\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (56:2) <Button  color = primary href="http://localhost:11337/#/about">
+    // (56:2) <Button  color = primary href="https://sos2021-23.herokuapp.com/#/about">
     function create_default_slot_46(ctx) {
     	let t;
 
@@ -14078,7 +14078,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_46.name,
     		type: "slot",
-    		source: "(56:2) <Button  color = primary href=\\\"http://localhost:11337/#/about\\\">",
+    		source: "(56:2) <Button  color = primary href=\\\"https://sos2021-23.herokuapp.com/#/about\\\">",
     		ctx
     	});
 
@@ -14093,7 +14093,7 @@ var app = (function () {
     		c: function create() {
     			h5 = element("h5");
     			h5.textContent = "Estadísticas sobre drogas";
-    			add_location(h5, file$A, 62, 21, 1534);
+    			add_location(h5, file$A, 62, 21, 1554);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h5, anchor);
@@ -14386,13 +14386,13 @@ var app = (function () {
     			a3 = element("a");
     			create_component(button3.$$.fragment);
     			attr_dev(a0, "href", "https://sos2021-23.herokuapp.com/api/v1/du-stats");
-    			add_location(a0, file$A, 69, 10, 1802);
+    			add_location(a0, file$A, 69, 10, 1822);
     			attr_dev(a1, "href", "/#/du-stats");
-    			add_location(a1, file$A, 72, 10, 1939);
+    			add_location(a1, file$A, 72, 10, 1959);
     			attr_dev(a2, "href", "#/du-stats/Graph");
-    			add_location(a2, file$A, 75, 10, 2044);
+    			add_location(a2, file$A, 75, 10, 2064);
     			attr_dev(a3, "href", "https://documenter.getpostman.com/view/14950269/TzJoDzt6");
-    			add_location(a3, file$A, 78, 10, 2153);
+    			add_location(a3, file$A, 78, 10, 2173);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -14509,7 +14509,7 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "José Carlos Torres Moreno";
     			attr_dev(a, "href", "https://github.com/secaasecas");
-    			add_location(a, file$A, 83, 10, 2380);
+    			add_location(a, file$A, 83, 10, 2400);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -14701,7 +14701,7 @@ var app = (function () {
     		c: function create() {
     			h5 = element("h5");
     			h5.textContent = "Estadísticas de Salud Mental";
-    			add_location(h5, file$A, 91, 21, 2596);
+    			add_location(h5, file$A, 91, 21, 2616);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h5, anchor);
@@ -14994,13 +14994,13 @@ var app = (function () {
     			a3 = element("a");
     			create_component(button3.$$.fragment);
     			attr_dev(a0, "href", "https://sos2021-23.herokuapp.com/api/v1/mh-stats");
-    			add_location(a0, file$A, 96, 10, 2835);
+    			add_location(a0, file$A, 96, 10, 2855);
     			attr_dev(a1, "href", "/#/mh-stats");
-    			add_location(a1, file$A, 98, 10, 2960);
+    			add_location(a1, file$A, 98, 10, 2980);
     			attr_dev(a2, "href", "#/mh-stats/chart");
-    			add_location(a2, file$A, 101, 10, 3065);
+    			add_location(a2, file$A, 101, 10, 3085);
     			attr_dev(a3, "href", "https://documenter.getpostman.com/view/14943559/TzJoDfQ5");
-    			add_location(a3, file$A, 104, 10, 3174);
+    			add_location(a3, file$A, 104, 10, 3194);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -15117,7 +15117,7 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "Eduardo Carmona";
     			attr_dev(a, "href", "https://github.com/Beelthazad");
-    			add_location(a, file$A, 110, 10, 3417);
+    			add_location(a, file$A, 110, 10, 3437);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -15309,7 +15309,7 @@ var app = (function () {
     		c: function create() {
     			h5 = element("h5");
     			h5.textContent = "Porcentaje de paro(API UNEMPLOYMENT)";
-    			add_location(h5, file$A, 117, 21, 3621);
+    			add_location(h5, file$A, 117, 21, 3641);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h5, anchor);
@@ -15644,15 +15644,15 @@ var app = (function () {
     			a4 = element("a");
     			create_component(button4.$$.fragment);
     			attr_dev(a0, "href", "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats");
-    			add_location(a0, file$A, 122, 10, 3838);
+    			add_location(a0, file$A, 122, 10, 3858);
     			attr_dev(a1, "href", "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats");
-    			add_location(a1, file$A, 124, 10, 3972);
+    			add_location(a1, file$A, 124, 10, 3992);
     			attr_dev(a2, "href", "/#/unemployment-stats");
-    			add_location(a2, file$A, 126, 10, 4108);
+    			add_location(a2, file$A, 126, 10, 4128);
     			attr_dev(a3, "href", "https://documenter.getpostman.com/view/14941751/TzJuAJ6j");
-    			add_location(a3, file$A, 129, 10, 4223);
+    			add_location(a3, file$A, 129, 10, 4243);
     			attr_dev(a4, "href", "https://documenter.getpostman.com/view/14941751/TzXwGK9g");
-    			add_location(a4, file$A, 131, 10, 4360);
+    			add_location(a4, file$A, 131, 10, 4380);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -15784,7 +15784,7 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "Antonio Corpas";
     			attr_dev(a, "href", "https://github.com/ace58");
-    			add_location(a, file$A, 137, 10, 4581);
+    			add_location(a, file$A, 137, 10, 4601);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -15976,7 +15976,7 @@ var app = (function () {
     		c: function create() {
     			h5 = element("h5");
     			h5.textContent = "Estadística HDI";
-    			add_location(h5, file$A, 144, 21, 4779);
+    			add_location(h5, file$A, 144, 21, 4799);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h5, anchor);
@@ -16269,13 +16269,13 @@ var app = (function () {
     			a3 = element("a");
     			create_component(button3.$$.fragment);
     			attr_dev(a0, "href", "https://sos2021-23.herokuapp.com/api/v1/hdi-stats");
-    			add_location(a0, file$A, 150, 10, 4964);
+    			add_location(a0, file$A, 150, 10, 4984);
     			attr_dev(a1, "href", "/#/hdi-stats");
-    			add_location(a1, file$A, 152, 10, 5090);
+    			add_location(a1, file$A, 152, 10, 5110);
     			attr_dev(a2, "href", "#/hdi-stats/Graph");
-    			add_location(a2, file$A, 155, 10, 5196);
+    			add_location(a2, file$A, 155, 10, 5216);
     			attr_dev(a3, "href", "https://documenter.getpostman.com/view/14951179/TzJoF21c");
-    			add_location(a3, file$A, 158, 10, 5306);
+    			add_location(a3, file$A, 158, 10, 5326);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -16392,7 +16392,7 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "Antonio Maiquez";
     			attr_dev(a, "href", "https://github.com/Jackman97");
-    			add_location(a, file$A, 164, 10, 5549);
+    			add_location(a, file$A, 164, 10, 5569);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -16764,7 +16764,7 @@ var app = (function () {
     	button1 = new Button({
     			props: {
     				color: "primary",
-    				href: "http://localhost:11337/#/integrations",
+    				href: "https://sos2021-23.herokuapp.com/#/integrations",
     				$$slots: { default: [create_default_slot_47] },
     				$$scope: { ctx }
     			},
@@ -16774,7 +16774,7 @@ var app = (function () {
     	button2 = new Button({
     			props: {
     				color: "primary",
-    				href: "http://localhost:11337/#/about",
+    				href: "https://sos2021-23.herokuapp.com/#/about",
     				$$slots: { default: [create_default_slot_46] },
     				$$scope: { ctx }
     			},
@@ -16823,7 +16823,7 @@ var app = (function () {
     			add_location(h20, file$A, 20, 2, 265);
     			add_location(h21, file$A, 36, 2, 661);
     			add_location(p, file$A, 37, 2, 685);
-    			add_location(h22, file$A, 57, 2, 1413);
+    			add_location(h22, file$A, 57, 2, 1433);
     			attr_dev(main, "class", "svelte-il7l6l");
     			add_location(main, file$A, 17, 0, 230);
     		},
@@ -19478,7 +19478,7 @@ var app = (function () {
     			a = element("a");
     			b = element("b");
     			b.textContent = "URL: ";
-    			t1 = text("http://sos2021-23.herokuapp.com");
+    			t1 = text("https://sos2021-23.herokuapp.com");
     			attr_dev(b, "class", "svelte-1c5583h");
     			add_location(b, file$w, 49, 11, 1147);
     			attr_dev(a, "href", "http://sos2021-23.herokuapp.com");
@@ -19585,7 +19585,7 @@ var app = (function () {
     	return block;
     }
 
-    // (54:4) <Button  color = primary href="http://localhost:11337/#/info">
+    // (54:4) <Button  color = primary href="https://sos2021-23.herokuapp.com/#/info">
     function create_default_slot$j(ctx) {
     	let t;
 
@@ -19605,7 +19605,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$j.name,
     		type: "slot",
-    		source: "(54:4) <Button  color = primary href=\\\"http://localhost:11337/#/info\\\">",
+    		source: "(54:4) <Button  color = primary href=\\\"https://sos2021-23.herokuapp.com/#/info\\\">",
     		ctx
     	});
 
@@ -19648,7 +19648,7 @@ var app = (function () {
     	button = new Button({
     			props: {
     				color: "primary",
-    				href: "http://localhost:11337/#/info",
+    				href: "https://sos2021-23.herokuapp.com/#/info",
     				$$slots: { default: [create_default_slot$j] },
     				$$scope: { ctx }
     			},
@@ -35908,7 +35908,7 @@ var app = (function () {
     /* src\unempAPI\analytics\ApiExt1.svelte generated by Svelte v3.38.2 */
     const file$c = "src\\unempAPI\\analytics\\ApiExt1.svelte";
 
-    // (109:4) <Button outline color="secondary" on:click="{pop}">
+    // (110:4) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$6(ctx) {
     	let t;
 
@@ -35928,7 +35928,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$6.name,
     		type: "slot",
-    		source: "(109:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(110:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -35980,25 +35980,25 @@ var app = (function () {
     			div = element("div");
     			t1 = space();
     			p = element("p");
-    			p.textContent = "En esta gráfica se muestra la tasa de paro junto con el nº de valores que tienen rh2m =14 y rh2m = 6.";
+    			p.textContent = "En esta gráfica se muestra el la tasa de paro en relación a una api del tiempo en el que se muestran todos los elementos y los valores con rh2m=6 y 14.";
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$c, 95, 4, 3319);
+    			add_location(script0, file$c, 96, 4, 3285);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/highcharts-more.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$c, 96, 4, 3391);
+    			add_location(script1, file$c, 97, 4, 3357);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$c, 97, 4, 3468);
+    			add_location(script2, file$c, 98, 4, 3434);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$c, 98, 4, 3547);
+    			add_location(script3, file$c, 99, 4, 3513);
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-1ao3gux");
-    			add_location(div, file$c, 103, 8, 3722);
+    			add_location(div, file$c, 104, 8, 3688);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$c, 104, 8, 3758);
+    			add_location(p, file$c, 105, 8, 3724);
     			attr_dev(figure, "class", "highcharts-figure svelte-1ao3gux");
-    			add_location(figure, file$c, 102, 4, 3678);
-    			add_location(main, file$c, 101, 0, 3666);
+    			add_location(figure, file$c, 103, 4, 3644);
+    			add_location(main, file$c, 102, 0, 3632);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -36129,9 +36129,7 @@ var app = (function () {
 
     		Highcharts.chart("container", {
     			chart: { type: "packedbubble", height: "55%" },
-    			title: {
-    				text: "\tWeather forecasts and Unemployment stats"
-    			},
+    			title: { text: "Api externa 1" },
     			tooltip: {
     				useHTML: true,
     				pointFormat: "<b>{point.name}:</b> {point.value}</sub>"
@@ -36166,7 +36164,6 @@ var app = (function () {
     	}
 
     	
-    	loadGraph();
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {

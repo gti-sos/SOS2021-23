@@ -13,6 +13,8 @@
         const resData = await fetch(APIExt1);
         data2 = await resData.json();
         data2 = data2.dataseries;
+
+        
         const resData2 = await fetch(miAPI);
         dataUnemp = await resData2.json();
        
@@ -52,7 +54,7 @@
                 height: '55%'
             },
             title: {
-                text: '	Weather forecasts and Unemployment stats'
+                text: 'Api externa 1'
             },
             tooltip: {
                 useHTML: true,
@@ -90,7 +92,6 @@
             series: passengerCar
         });
     };
-    loadGraph();
 </script>
 <svelte:head>
     <script src="https://code.highcharts.com/highcharts.js" ></script>
@@ -103,7 +104,7 @@
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-           En esta gráfica se muestra la tasa de paro junto con el nº de valores que tienen rh2m =14 y rh2m = 6.
+           En esta gráfica se muestra el la tasa de paro en relación a una api del tiempo en el que se muestran todos los elementos y los valores con rh2m=6 y 14.
         </p>
     </figure>
     <Button outline color="secondary" on:click="{pop}">Atrás</Button>
