@@ -1,23 +1,10 @@
 var BASE_API_PATH_ACE="/api/v2/unemployment-stats";
-const fs = require('fs');
 var path = require('path');
 var Datastore = require("nedb");
 var dbFile = path.join(__dirname, 'unemployment-stats.db');
 var db = new Datastore({filename: dbFile,autoload:true});
 
-function isAO(val) {
-    return val instanceof Array || val instanceof Object ? true : false;
-}
 
-function elementExists(obj, obj_t) {
-	for (var i = 0; i < obj.length; i++) {
-		if (obj[i] == obj_t) {
-			return true;
-		} else {
-			false;
-		}
-	}
-}
 var unemployment_stats = [
   {
     "country": "Canada",
@@ -104,9 +91,10 @@ var unemployment_stats = [
  module.exports.register = (app) => {
     //carga inicial de datos
 	app.get(BASE_API_PATH_ACE  + "/loadInitialData", (req, res) => {
-		db.insert(unemployment_stats);
-		console.log(`Initial data: <${JSON.stringify(unemployment_stats, null, 2)}>`);
-		res.sendStatus(200);
+    db.remove({}, {multi: true});
+    db.insert(unemployment_stats);
+    console.log(`Initial data: <${JSON.stringify(unemployment_stats, null, 2)}>`);
+    res.sendStatus(200);
 	});
 
     //GET a la lista de recursos
