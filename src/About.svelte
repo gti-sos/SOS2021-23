@@ -23,6 +23,24 @@
             <li><a href="#/info">Video</a></li>
         </ul>
 
+        <li style="font-size: 22px;"><strong>Drugs</strong></li>
+
+        <ul style="list-style-type:circle; font-size: 20px;">
+            <li><a href="#/info">Video</a></li>
+        </ul>
+
+        <li style="font-size: 22px;"><strong>HDI</strong></li>
+
+        <ul style="list-style-type:circle; font-size: 20px;">
+            <li><a href="#/info">Video</a></li>
+        </ul>
+
+        <li style="font-size: 22px;"><strong>Mental Health</strong></li>
+
+        <ul style="list-style-type:circle; font-size: 20px;">
+            <li><a href="#/info">Video</a></li>
+        </ul>
+
 </div>
 </body>
 
