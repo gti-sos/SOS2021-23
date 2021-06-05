@@ -10,7 +10,7 @@
 - **Repository**: [gti-sos/SOS2021-23](https://github.com/gti-sos/SOS2021-23)
 - **URL**: [http://sos2021-23.herokuapp.com](http://sos2021-23.herokuapp.com)
 -  **APIs**:
-    - [https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/docs](https://sos2021-00.herokuapp.com/api/v1/uneyployment-stats/docs) (developed by [Antonio Corpas Espinar](https://github.com/ace58))
+    - [https://sos2021-23.herokuapp.com/api/v2/unemployment-stats/docs](https://sos2021-23.herokuapp.com/api/v2/unemployment-stats) (developed by [Antonio Corpas Espinar](https://github.com/ace58))
 
     - [https://sos2021-23.herokuapp.com/api/v1/unemployment-stats/docs](https://sos2021-00.herokuapp.com/api/v1/unemployment-stats/docs) (developed by [Antonio Corpas Espinar](https://github.com/ace58))
 
