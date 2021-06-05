@@ -271,6 +271,10 @@
 		<Button on:click="{getNextPage}">
             Siguiente
         </Button>
+
+        <Button outline color="primary" href="/#/info">
+            Página Principal
+        </Button>
         
 		<p>Si quieres filtar por algún atributo introduce el valor de búsqueda en la casilla. </p>
 		<Table borderless responsive>

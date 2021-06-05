@@ -1,16 +1,6 @@
 <script>
   import {
     Button,
-    Jumbotron,
-    Navbar,
-    Nav,
-    NavItem,
-    NavLink,
-    NavbarBrand,
-    Dropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
   } from "sveltestrap";
   let isOpen = false;
   var BASE_API_PATH = "/api/v2";
@@ -26,7 +16,6 @@
   var mhsGraph=[];
   var unempsGraph=[];
   
-  var int = 0;
   let errorPrint = "";
   async function getData() {
     const dataA = await fetch("/api/v1/du-stats");
@@ -59,26 +48,26 @@
       drugs.sort((a,b) => (a.year > b.year) ? 1 : ((b.year > a.year) ? -1 : 0));
       drugs.sort((a,b) => (a.country > b.country) ? 1 : ((b.country > a.country) ? -1 : 0));
       drugs.forEach(element=>{
-        drugsGraph.push(parseInt(element.dudead));
+        drugsGraph.push(parseFloat(element.dudead));
       });
       // Hdis
       hdis.sort((a,b) => (a.year > b.year) ? 1 : ((b.year > a.year) ? -1 : 0));
       hdis.sort((a,b) => (a.country > b.country) ? 1 : ((b.country > a.country) ? -1 : 0));
       hdis.forEach(element=>{
-        hdisGraph.push(parseInt(element.hdischolar));
+        hdisGraph.push(parseFloat(element.hdischolar));
    
       });
       // Mhs
       mhs.sort((a,b) => (a.year > b.year) ? 1 : ((b.year > a.year) ? -1 : 0));
       mhs.sort((a,b) => (a.country > b.country) ? 1 : ((b.country > a.country) ? -1 : 0));
       mhs.forEach(element=>{
-        mhsGraph.push(parseInt(element.population));
+        mhsGraph.push(parseFloat(element.population));
       });
-              // Activities
+              // Unemployment
       unemps.sort((a,b) => (a.year > b.year) ? 1 : ((b.year > a.year) ? -1 : 0));
       unemps.sort((a,b) => (a.country > b.country) ? 1 : ((b.country > a.country) ? -1 : 0));
       unemps.forEach(element=>{
-        unempsGraph.push(parseInt(element.knoperc));
+        unempsGraph.push(parseFloat(element.knoperc));
       });
       
       
@@ -94,11 +83,15 @@
   }
   async function loadGraph() {
     getData().then(() => {
-      Highcharts.chart("container", {
-        title: {
-          text: "",
-        },
-        yAxis: {
+      Highcharts.chart('container', {
+    chart: {
+        type: 'spline',
+        inverted: true
+    },
+    title: {
+        text: 'Gráfica grupal'
+    },
+    yAxis: {
           title: {
             text: "Valor",
           },
@@ -129,43 +122,30 @@
             ],
           },
         ],
-        series: [
-          {
-            name: "Drugs",
-            data: drugsGraph,
-          },
-          {
-            name: "Hdis",
-            data: hdisGraph,
-          },
-          
-          {
-            name: "Mhs",
-            data: mhsGraph,
-          },
-          
-          {
-            name: "Unemps",
-            data: unempsGraph,
-          }
-        ],
-        responsive: {
-          rules: [
-            {
-              condition: {
-                maxWidth: 500,
-              },
-              chartOptions: {
-                legend: {
-                  layout: "horizontal",
-                  align: "center",
-                  verticalAlign: "bottom",
-                },
-              },
-            },
-          ],
+    plotOptions: {
+        spline: {
+            marker: {
+                enable: false
+            }
+        }
+    },
+    series: [{
+        name: 'Drugs',
+        data: drugsGraph
         },
-      });
+      {
+        name: 'HDIS',
+        data: hdisGraph
+      },
+      {
+        name: 'MHS',
+        data: mhsGraph
+      },
+      {
+        name: 'Unemployment',
+        data: unempsGraph
+      },]
+});
     });
   }
 </script>
@@ -180,7 +160,7 @@
 
 <main>
   <body>
-      <Button href="#/info">Volver</Button>
+      <Button id ="volverbtn" href="#/info">Volver</Button>
 
   {#if errorPrint}
     <div class="hideMe">
@@ -208,56 +188,38 @@
 </main>
 
 <style>
-  .alertERROR {
-    margin: 0 auto;
-    display: table;
-    padding: 20px;
-    background-color: #f44336;
-    color: white;
-  }
-  .hideMe {
-    -moz-animation: cssAnimation 0s ease-in 5s forwards;
-    /* Firefox */
-    -webkit-animation: cssAnimation 0s ease-in 5s forwards;
-    /* Safari and Chrome */
-    -o-animation: cssAnimation 0s ease-in 5s forwards;
-    /* Opera */
-    animation: cssAnimation 0s ease-in 5s forwards;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-  }
-  @keyframes cssAnimation {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      left: -9999px;
-      position: absolute;
-    }
-  }
-  @-webkit-keyframes cssAnimation {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      left: -9999px;
-      position: absolute;
-    }
-  }
-  .titulo2 {
-    color: #000000;
-    text-align: center;
-    font-size: 150%;
-  }
-  .mainDiv {
-    text-align: center;
-    margin: 20px;
-  }
-  .centrado {
-    text-align: center;
-    padding: 1em;
-    margin: 0 auto;
-  }
+  .highcharts-figure, .highcharts-data-table table {
+    min-width: 310px; 
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+	font-family: Verdana, sans-serif;
+	border-collapse: collapse;
+	border: 1px solid #EBEBEB;
+	margin: 10px auto;
+	text-align: center;
+	width: 100%;
+	max-width: 500px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table th {
+	font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
 </style>
