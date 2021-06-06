@@ -43,7 +43,7 @@
 	
 
 
-
+	import MHSTSecchart from "./mhAPI/MHSTChartTwo.svelte";
 	//RUTAS
 	const routes = {
 		//"/":PreApi,
@@ -81,12 +81,13 @@
 		"/hdi-stats/:country/:year":EHDI,
 		"/du-stats/Graph":DrugChart,
 		"/mh-stats/chart":MHSTChart,
-		"/hdi-stats/Graph":HDIChart
-          
+		"/hdi-stats/Graph":HDIChart,
+        "/mh-stats/vischart":MHSTSecchart
           
 		};
 </script>
 <main>
+	<!-- svelte-ignore missing-declaration -->
 	<Router {routes}> </Router>
 </main>
 <style>
