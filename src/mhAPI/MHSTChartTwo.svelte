@@ -38,6 +38,7 @@
       }
     }
 function loadzing() {
+    console.log("AAA");
       zingchart.exec('visualization', 'setseriesvalues', {
       values: [
         mhChartPopulation,
@@ -313,11 +314,10 @@ zingchart.render({
   height: '100%',
   width: '100%'
 });
-loadzing()
 }
 </script>
   <svelte:head>
-    <script on:load={loadChart} src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
   </svelte:head>
   <main>
     <Nav>
@@ -334,7 +334,7 @@ loadzing()
         Gráfica
       </h2>
     </div>
-
+    <button on:click={loadzing}>Carga la gráfica</button>
     <div id="visualization"></div>
   </main>
   <style>

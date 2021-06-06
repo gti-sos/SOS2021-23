@@ -36653,6 +36653,8 @@ var app = (function () {
     	let div0;
     	let h2;
     	let t3;
+    	let button;
+    	let t5;
     	let div1;
     	let current;
     	let mounted;
@@ -36677,14 +36679,18 @@ var app = (function () {
     			h2 = element("h2");
     			h2.textContent = "Gráfica";
     			t3 = space();
+    			button = element("button");
+    			button.textContent = "Carga la gráfica";
+    			t5 = space();
     			div1 = element("div");
     			if (script.src !== (script_src_value = "https://cdn.zingchart.com/zingchart.min.js")) attr_dev(script, "src", script_src_value);
-    			add_location(script, file$1, 319, 4, 6345);
-    			add_location(h2, file$1, 332, 6, 6674);
-    			add_location(div0, file$1, 331, 4, 6662);
+    			add_location(script, file$1, 319, 4, 6358);
+    			add_location(h2, file$1, 332, 6, 6667);
+    			add_location(div0, file$1, 331, 4, 6655);
+    			add_location(button, file$1, 336, 4, 6715);
     			attr_dev(div1, "id", "visualization");
-    			add_location(div1, file$1, 337, 4, 6723);
-    			add_location(main, file$1, 321, 2, 6451);
+    			add_location(div1, file$1, 337, 4, 6773);
+    			add_location(main, file$1, 321, 2, 6444);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -36698,11 +36704,13 @@ var app = (function () {
     			append_dev(main, div0);
     			append_dev(div0, h2);
     			append_dev(main, t3);
+    			append_dev(main, button);
+    			append_dev(main, t5);
     			append_dev(main, div1);
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(script, "load", /*loadChart*/ ctx[0], false, false, false);
+    				dispose = listen_dev(button, "click", /*loadzing*/ ctx[0], false, false, false);
     				mounted = true;
     			}
     		},
@@ -36788,6 +36796,8 @@ var app = (function () {
     	}
 
     	function loadzing() {
+    		console.log("AAA");
+
     		zingchart.exec("visualization", "setseriesvalues", {
     			values: [
     				mhChartPopulation,
@@ -37001,8 +37011,6 @@ var app = (function () {
     			height: "100%",
     			width: "100%"
     		});
-
-    		loadzing();
     	}
 
     	const writable_props = [];
@@ -37050,7 +37058,7 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [loadChart];
+    	return [loadzing];
     }
 
     class MHSTChartTwo extends SvelteComponentDev {
