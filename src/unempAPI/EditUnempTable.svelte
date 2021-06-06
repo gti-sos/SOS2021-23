@@ -75,9 +75,9 @@ async function actualizaPais(){
                 <tr>
                     <td>{updatedCountry}</td>
                     <td>{updatedYear}</td>
-                    <td><input type =number bind:value="{updatedKnoperc}"></td>
-                    <td><input type =number bind:value="{updatedIntperc}"></td>
-                    <td><input type =number bind:value="{updatedGfperc}"></td>
+                    <td><input bind:value="{updatedKnoperc}"></td>
+                    <td><input  bind:value="{updatedIntperc}"></td>
+                    <td><input bind:value="{updatedGfperc}"></td>
                     <td> <Button outline  color="primary" on:click={actualizaPais}>Actualizar</Button> </td>
                 </tr>
         </tbody>

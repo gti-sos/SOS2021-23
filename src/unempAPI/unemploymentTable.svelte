@@ -31,6 +31,12 @@
 	let Uyear = "";
 	let Ufrom = "";
 	let Uto = "";
+	//let Uknoperc_min = "";
+	//let Uknoperc_max = "";
+	//let Uintperc_min = "";
+	//let Uintperc_max = "";
+	//let Ugfperc_min= "";
+	//let Ugfperc_max = "";
 	let knoperc="";
 	let intperc="";
 	let gfperc="";
@@ -188,7 +194,7 @@
              }).then(function (res) {
                  if(res.status == 201){
                     getData();
-                    window.alert("Se introdujo el dato");
+                     //window.alert("Se introdujo el dato");
                      console.log("Data introduced");
                      errorMSG = 201;
                  }
@@ -198,7 +204,7 @@
                      errorMSG = 400;
                  }
                  else if(res.status == 409){
-                     window.alert("Ya existe ese recurso en la base de datos");
+                     //window.alert("Ya existe ese recurso en la base de datos");
                      console.log("ERROR There is already a data with that country and year in the database");
                      errorMSG = 409;
                  }
@@ -229,7 +235,6 @@
     //DELETE ALL
     async function deleteALL() {
 		console.log("Deleting unemployment data...");
-		if(confirm("¿Está seguro de que desea eliminar todas las entradas?")){
 			console.log("Deleting all unemployment data...");
 			const res = await fetch("/api/v2/unemployment-stats/", {
 				method: "DELETE"
@@ -238,7 +243,7 @@
                     totaldata = 0;
 					getData();
                     errorMSG = 200.3;
-                    window.alert("Datos eliminados correctamente");
+                    //window.alert("Datos eliminados correctamente");
 					console.log("Datos eliminados correctamente");
                     location.reload();
 				}
@@ -247,7 +252,7 @@
                     errorMSG = 404.2;
 				}
 			});
-		}
+		
 	}
     
 </script>
@@ -266,15 +271,15 @@
             Siguiente
         </Button>
 
-        <Button outline color="primary" href="/#/info">
+        <Button  id="infobtn" outline color="primary" href="/#/info">
             Página Principal
         </Button>
         
 		<p>Si quieres filtar por algún atributo introduce el valor de búsqueda en la casilla. </p>
 		<Table borderless responsive>
 			<tr>
-				<td><strong><label>Pais: <input bind:value="{Ucountry}"></label></strong></td>
-				<td><strong><label>Año: <input bind:value="{Uyear}"></label></strong></td>
+				<td><strong><label>Pais: <input id="filterpais"  bind:value="{Ucountry}"></label></strong></td>
+				<td><strong><label>Año: <input  id="campoaño" bind:value="{Uyear}"></label></strong></td>
 				<td><strong><label>Porcentaje de Knoema: <input bind:value="{knoperc}"></label></strong></td>
 				<td><strong><label>Porcentaje de InternetWorldStats: <input bind:value="{intperc}"></label></strong></td>
 				<td><strong><label>Porcentaje de Gfmag: <input bind:value="{gfperc}"></label></strong></td>
@@ -315,7 +320,7 @@
 
         {#if errorMSG === 201}
         <UncontrolledAlert  color="success" >
-            Recurso instertado con éxito.
+            Recurso insertado.
         </UncontrolledAlert>
 	    {/if}
 
@@ -346,12 +351,12 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><input bind:value="{data.country}"></td>
-                    <td><input type =number bind:value="{data.year}"></td>
-                    <td><input type =number bind:value="{data.knoperc}"></td> 
-                    <td><input type =number bind:value="{data.intperc}"></td>    
-                    <td><input type =number bind:value="{data.gfperc}"></td>  
-                    <td><Button outline color="primary" on:click={insertData}>Insertar</Button></td>           
+                    <td><input id="insertpais" bind:value="{data.country}"></td>
+                    <td><input id="insertaño"  bind:value="{data.year}"></td>
+                    <td><input id="insertknoperc"  bind:value="{data.knoperc}"></td> 
+                    <td><input id="insertintperc"  bind:value="{data.intperc}"></td>    
+                    <td><input id="insertgfperc" bind:value="{data.gfperc}"></td>  
+                    <td><Button id ="insertbtn" outline color="primary" on:click={insertData}>Insertar</Button></td>           
                 </tr>
  
                 {#each unemployment_stats as sc}
@@ -361,7 +366,7 @@
                         <td>{sc.knoperc}</td>
                         <td>{sc.intperc}</td>
                         <td>{sc.gfperc}</td>
-                        <td><Button outline color="danger" on:click="{deleteData(sc.country, sc.year)}">Borrar</Button></td>
+                        <td><Button  id="deletebtn" outline color="danger" on:click="{deleteData(sc.country, sc.year)}">Borrar</Button></td>
                         
                     </tr>
                 {/each}

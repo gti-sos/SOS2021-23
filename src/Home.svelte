@@ -51,9 +51,9 @@
       >
     </Col>
   </Container>
-  <Button  color = primary href="https://sos2021-23.herokuapp.com/#/analytics">Analytics</Button>
-  <Button  color = primary href="https://sos2021-23.herokuapp.com/#/integrations">Integrations</Button>
-  <Button  color = primary href="https://sos2021-23.herokuapp.com/#/about">About</Button>
+  <Button  id ="analyticsbtn" color = primary href="https://sos2021-23.herokuapp.com/#/analytics">Analytics</Button>
+  <Button  id ="integrationsbtn" color = primary href="https://sos2021-23.herokuapp.com/#/integrations">Integrations</Button>
+  <Button  id ="aboutbtn" color = primary href="https://sos2021-23.herokuapp.com/#/about">About</Button>
 
   <h2>APIs</h2>
   <Container>
