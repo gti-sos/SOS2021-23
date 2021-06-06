@@ -38,40 +38,42 @@
       }
 
       Highcharts.chart("container", {
+        chart: {
+        type: 'column',
+        options3d: {
+          enabled: true,
+          alpha: 15,
+          beta: 15,
+          viewDistance: 25,
+          depth: 40
+        }
+  },
         title: {
-          text: "Estadísticas Salud Mental",
+        text: 'Highcharts responsive chart'
         },
-        yAxis: {
-          title: {
-            text: "Valor por cada 100 mil habitantes",
-          },
+
+        subtitle: {
+        text: 'Resize the frame or click buttons to change appearance'
         },
-        xAxis: {
-          title: {
-            text: "País-Año",
-          },
-          categories: mhChartCountryDate,
-        },
+
         legend: {
-          layout: "vertical",
-          align: "right",
-          verticalAlign: "middle",
+        align: 'right',
+        verticalAlign: 'middle',
+        layout: 'vertical'
         },
-        annotations: [
-          {
-            labels: [
-              {
-                point: "date",
-                text: "",
-              },
-              {
-                point: "min",
-                text: "Min",
-                backgroundColor: "white",
-              },
-            ],
-          },
-        ],
+
+        xAxis: {
+        categories: mhChartCountryDate,
+        labels: {
+            x: -10
+        }
+    },
+    yAxis: {
+        allowDecimals: false,
+        title: {
+            text: 'Afectados por cada 100 mil habitantes'
+        }
+    },
         series: [
           {
             name: "Población",
@@ -104,27 +106,41 @@
           
         ],
         responsive: {
-          rules: [
-            {
-              condition: {
-                maxWidth: 500,
-              },
-              chartOptions: {
-                legend: {
-                  layout: "horizontal",
-                  align: "center",
-                  verticalAlign: "bottom",
-                },
-              },
+          rules: [{
+            condition: {
+                maxWidth: 500
             },
-          ],
-        },
-      });
+            chartOptions: {
+                legend: {
+                    align: 'center',
+                    verticalAlign: 'bottom',
+                    layout: 'horizontal'
+                },
+                yAxis: {
+                    labels: {
+                        align: 'left',
+                        x: 0,
+                        y: -5
+                    },
+                    title: {
+                        text: null
+                    }
+                },
+                subtitle: {
+                    text: null
+                },
+                credits: {
+                    enabled: false
+                }
+            }
+        }]
+    }
+});
     }
   </script>
   <svelte:head>
     <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script
@@ -150,15 +166,15 @@
     {#if msg}
       <p>{msg}</p>
     {:else}
-      <figure class="highcharts-figure">
-        <div id="container" />
-        <p class="highcharts-description">
-          Gráfico de líneas básico que muestra los diferentes valores para los campos de mh-stats.
-        </p>
-      </figure>
+    <figure class="highcharts-figure">
+      <div id="container"></div>
+      <p class="highcharts-description">
+        La gráfica muestra el número de afectados por cada 100 mil habitantes a través de barras.
+      </p>
+  </figure>
     {/if}
+    <div id="visualization"></div>
   </main>
-  
   <style>
     main {
       text-align: center;
@@ -179,40 +195,37 @@
       padding: 8px;
       background-color: #d4edda;
     }
-    .highcharts-figure,
-    .highcharts-data-table table {
-      min-width: 360px;
-      max-width: 800px;
-      margin: 1em auto;
-    }
-    .highcharts-data-table table {
-      font-family: Verdana, sans-serif;
-      border-collapse: collapse;
-      border: 1px solid #ebebeb;
-      margin: 10px auto;
-      text-align: center;
-      width: 100%;
-      max-width: 500px;
-    }
-    .highcharts-data-table caption {
-      padding: 1em 0;
-      font-size: 1.2em;
-      color: #555;
-    }
-    .highcharts-data-table th {
-      font-weight: 600;
-      padding: 0.5em;
-    }
-    .highcharts-data-table td,
-    .highcharts-data-table th,
-    .highcharts-data-table caption {
-      padding: 0.5em;
-    }
-    .highcharts-data-table thead tr,
-    .highcharts-data-table tr:nth-child(even) {
-      background: #f8f8f8;
-    }
-    .highcharts-data-table tr:hover {
-      background: #f1f7ff;
-    }
+    .highcharts-figure, .highcharts-data-table table {
+    min-width: 310px; 
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+	font-family: Verdana, sans-serif;
+	border-collapse: collapse;
+	border: 1px solid #EBEBEB;
+	margin: 10px auto;
+	text-align: center;
+	width: 100%;
+	max-width: 500px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table th {
+	font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
   </style>

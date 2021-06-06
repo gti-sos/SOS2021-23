@@ -44,7 +44,8 @@
     "serve-index": "^1.9.1",
     "sirv-cli": "^1.0.0",
     "svelte-spa-router": "^3.1.0",
-    "sveltestrap": "^3.14.1"
+    "sveltestrap": "^3.14.1",
+    "vis-timeline": "^7.4.9"
   },
   "keywords": []
 }
