@@ -264,10 +264,10 @@
         <Button color="danger" on:click="{deleteALL}">
             Eliminar datos
         </Button>
-		<Button on:click="{getPreviewPage}">
+		<Button id ="atrasbtn" on:click="{getPreviewPage}">
             Atrás
         </Button>
-		<Button on:click="{getNextPage}">
+		<Button id ="siguientebtn" on:click="{getNextPage}">
             Siguiente
         </Button>
 

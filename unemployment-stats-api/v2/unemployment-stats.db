@@ -1,15 +1,37 @@
-{"country":"Japan","year":"2020","knoperc":"2.3","intperc":"2.4","gfperc":"3.3","_id":"6a9lvqpyfRqZjIn4"}
-{"country":"Germany","year":"2020","knoperc":"3","intperc":"3.2","gfperc":"4.2","_id":"8krk4LAcKQI5KB1l"}
-{"country":"Netherlands","year":"2018","knoperc":"333","intperc":"9.6","gfperc":"7.4","_id":"HdP3cuQJJWnE1ZcI"}
-{"country":"United Kingdom","year":"2020","knoperc":"4.1","intperc":"3.9","gfperc":"5.3","_id":"SGWBImfJyFnQ3ZLd"}
-{"country":"Spain","year":"2020","knoperc":"13","intperc":"13.6","gfperc":"16.8","_id":"X9J9nqoZPLVisa2A"}
-{"country":"Brazil","year":"2020","knoperc":"12","intperc":"11.6","gfperc":"13.3","_id":"b9VN0XVfwdvA8S9v"}
-{"country":"South Africa","year":"2019","knoperc":"22","intperc":"21.8","gfperc":"23.6","_id":"fYVh4TyxGUFUk2Ir"}
-{"country":"Israel","year":"2017","knoperc":"1.9","intperc":"6.4","gfperc":"3.3","_id":"keUJnUz7xX37UhSx"}
-{"country":"Canada","year":"2020","knoperc":"5.4","intperc":"5.6","gfperc":"9.7","_id":"lTMw6Edjpv2yB9iI"}
-{"country":"Argentine","year":"2019","knoperc":"23","intperc":"10.6","gfperc":"33.3","_id":"mcMnCg9Po8NjXlBu"}
-{"country":"United States","year":"2020","knoperc":"3.9","intperc":"4.4","gfperc":"8.8","_id":"n9PjuoLs8SnY4EQP"}
-{"$$deleted":true,"_id":"8krk4LAcKQI5KB1l"}
-{"country":"Norway","year":"2020","knoperc":"1","intperc":"1","gfperc":"1","_id":"DlthbgoFvPZS8j6I"}
-{"$$deleted":true,"_id":"DlthbgoFvPZS8j6I"}
-{"country":"Norway","year":"2020","knoperc":"1","intperc":"1","gfperc":"1","_id":"43gYsQi9h9uiyOmN"}
+{"country":"United Kingdom","year":"2020","knoperc":"4.1","intperc":"3.9","gfperc":"5.3","_id":"4sjTWhCnpKt6zD1V"}
+{"country":"South Africa","year":"2019","knoperc":"22","intperc":"21.8","gfperc":"23.6","_id":"9LQzSnYXCoJU4yMa"}
+{"country":"Israel","year":"2017","knoperc":"1.9","intperc":"6.4","gfperc":"3.3","_id":"BIcMGA71RwResGTF"}
+{"country":"Brazil","year":"2020","knoperc":"12","intperc":"11.6","gfperc":"13.3","_id":"RRvxDe1U9QTwr9ko"}
+{"country":"Japan","year":"2020","knoperc":"2.3","intperc":"2.4","gfperc":"3.3","_id":"RlyeYpf9g5Tkrlsg"}
+{"country":"United States","year":"2020","knoperc":"3.9","intperc":"4.4","gfperc":"8.8","_id":"U6uf5Kquf1wKTkhH"}
+{"country":"Germany","year":"2020","knoperc":"3","intperc":"3.2","gfperc":"4.2","_id":"bq7aPqy7rv9iRp2Y"}
+{"country":"Canada","year":"2020","knoperc":"5.4","intperc":"5.6","gfperc":"9.7","_id":"iyVEOx8LWyVOSSFW"}
+{"country":"Argentine","year":"2019","knoperc":"23","intperc":"10.6","gfperc":"33.3","_id":"mgjjm0QUTonTOC6V"}
+{"country":"Netherlands","year":"2018","knoperc":"14.5","intperc":"9.6","gfperc":"7.4","_id":"ncZtNw0wyelcMG3s"}
+{"country":"Spain","year":"2020","knoperc":"13","intperc":"13.6","gfperc":"16.8","_id":"wtH3yEMCUAuczxek"}
+{"$$deleted":true,"_id":"9LQzSnYXCoJU4yMa"}
+{"country":"Norway","year":"2020","knoperc":"1","intperc":"1","gfperc":"1","_id":"nIF4bRKvJ2SHEcah"}
+{"$$deleted":true,"_id":"BIcMGA71RwResGTF"}
+{"$$deleted":true,"_id":"4sjTWhCnpKt6zD1V"}
+{"$$deleted":true,"_id":"RRvxDe1U9QTwr9ko"}
+{"$$deleted":true,"_id":"RlyeYpf9g5Tkrlsg"}
+{"$$deleted":true,"_id":"U6uf5Kquf1wKTkhH"}
+{"$$deleted":true,"_id":"bq7aPqy7rv9iRp2Y"}
+{"$$deleted":true,"_id":"iyVEOx8LWyVOSSFW"}
+{"$$deleted":true,"_id":"mgjjm0QUTonTOC6V"}
+{"$$deleted":true,"_id":"nIF4bRKvJ2SHEcah"}
+{"$$deleted":true,"_id":"ncZtNw0wyelcMG3s"}
+{"$$deleted":true,"_id":"wtH3yEMCUAuczxek"}
+{"country":"Canada","year":"2020","knoperc":"5.4","intperc":"5.6","gfperc":"9.7","_id":"9cLhGhhzzEqFTDJF"}
+{"country":"United States","year":"2020","knoperc":"3.9","intperc":"4.4","gfperc":"8.8","_id":"2ZU9rX5PaAGAyXnM"}
+{"country":"United Kingdom","year":"2020","knoperc":"4.1","intperc":"3.9","gfperc":"5.3","_id":"8nB3iuv90qQYyofz"}
+{"country":"Germany","year":"2020","knoperc":"3","intperc":"3.2","gfperc":"4.2","_id":"d2MaqHlcf7VhCvXF"}
+{"country":"Japan","year":"2020","knoperc":"2.3","intperc":"2.4","gfperc":"3.3","_id":"wBvRFCFEN1is19ro"}
+{"country":"Spain","year":"2020","knoperc":"13","intperc":"13.6","gfperc":"16.8","_id":"I5Tp9SFXq5FmPndn"}
+{"country":"Brazil","year":"2020","knoperc":"12","intperc":"11.6","gfperc":"13.3","_id":"Zv8Qm0gYhterKvmc"}
+{"country":"Argentine","year":"2019","knoperc":"23","intperc":"10.6","gfperc":"33.3","_id":"qaKxqOXHb1HQ4hRi"}
+{"country":"South Africa","year":"2019","knoperc":"22","intperc":"21.8","gfperc":"23.6","_id":"73R1yvPJqy3zoTeg"}
+{"country":"Netherlands","year":"2018","knoperc":"14.5","intperc":"9.6","gfperc":"7.4","_id":"Rxapv2wD2zEnvMS1"}
+{"country":"Israel","year":"2017","knoperc":"1.9","intperc":"6.4","gfperc":"3.3","_id":"devYwzAjqr66K8V8"}
+{"$$deleted":true,"_id":"73R1yvPJqy3zoTeg"}
+{"country":"Norway","year":"2020","knoperc":"1","intperc":"1","gfperc":"1","_id":"3VX5SLio5TeFKlXG"}

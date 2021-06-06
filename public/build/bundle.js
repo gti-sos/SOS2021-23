@@ -11206,7 +11206,7 @@ var app = (function () {
     	return block;
     }
 
-    // (54:2) <Button  id ="analyticsbtn" color = primary href="https://sos2021-23.herokuapp.com/#/analytics">
+    // (54:2) <Button  id ="analyticsbtn" color = primary href="http://localhost:11337/#/analytics">
     function create_default_slot_48(ctx) {
     	let t;
 
@@ -11226,14 +11226,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_48.name,
     		type: "slot",
-    		source: "(54:2) <Button  id =\\\"analyticsbtn\\\" color = primary href=\\\"https://sos2021-23.herokuapp.com/#/analytics\\\">",
+    		source: "(54:2) <Button  id =\\\"analyticsbtn\\\" color = primary href=\\\"http://localhost:11337/#/analytics\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (55:2) <Button  id ="integrationsbtn" color = primary href="https://sos2021-23.herokuapp.com/#/integrations">
+    // (55:2) <Button  id ="integrationsbtn" color = primary href="http://localhost:11337/#/integrations">
     function create_default_slot_47(ctx) {
     	let t;
 
@@ -11253,14 +11253,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_47.name,
     		type: "slot",
-    		source: "(55:2) <Button  id =\\\"integrationsbtn\\\" color = primary href=\\\"https://sos2021-23.herokuapp.com/#/integrations\\\">",
+    		source: "(55:2) <Button  id =\\\"integrationsbtn\\\" color = primary href=\\\"http://localhost:11337/#/integrations\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (56:2) <Button  id ="aboutbtn" color = primary href="https://sos2021-23.herokuapp.com/#/about">
+    // (56:2) <Button  id ="aboutbtn" color = primary href="http://localhost:11337/#/about">
     function create_default_slot_46(ctx) {
     	let t;
 
@@ -11280,7 +11280,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_46.name,
     		type: "slot",
-    		source: "(56:2) <Button  id =\\\"aboutbtn\\\" color = primary href=\\\"https://sos2021-23.herokuapp.com/#/about\\\">",
+    		source: "(56:2) <Button  id =\\\"aboutbtn\\\" color = primary href=\\\"http://localhost:11337/#/about\\\">",
     		ctx
     	});
 
@@ -11295,7 +11295,7 @@ var app = (function () {
     		c: function create() {
     			h5 = element("h5");
     			h5.textContent = "Estadísticas sobre drogas";
-    			add_location(h5, file$B, 62, 21, 1610);
+    			add_location(h5, file$B, 62, 21, 1580);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h5, anchor);
@@ -11588,13 +11588,13 @@ var app = (function () {
     			a3 = element("a");
     			create_component(button3.$$.fragment);
     			attr_dev(a0, "href", "https://sos2021-23.herokuapp.com/api/v1/du-stats");
-    			add_location(a0, file$B, 69, 10, 1878);
+    			add_location(a0, file$B, 69, 10, 1848);
     			attr_dev(a1, "href", "/#/du-stats");
-    			add_location(a1, file$B, 72, 10, 2015);
+    			add_location(a1, file$B, 72, 10, 1985);
     			attr_dev(a2, "href", "#/du-stats/Graph");
-    			add_location(a2, file$B, 75, 10, 2120);
+    			add_location(a2, file$B, 75, 10, 2090);
     			attr_dev(a3, "href", "https://documenter.getpostman.com/view/14950269/TzJoDzt6");
-    			add_location(a3, file$B, 78, 10, 2229);
+    			add_location(a3, file$B, 78, 10, 2199);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -11711,7 +11711,7 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "José Carlos Torres Moreno";
     			attr_dev(a, "href", "https://github.com/secaasecas");
-    			add_location(a, file$B, 83, 10, 2456);
+    			add_location(a, file$B, 83, 10, 2426);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -11903,7 +11903,7 @@ var app = (function () {
     		c: function create() {
     			h5 = element("h5");
     			h5.textContent = "Estadísticas de Salud Mental";
-    			add_location(h5, file$B, 91, 21, 2672);
+    			add_location(h5, file$B, 91, 21, 2642);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h5, anchor);
@@ -12196,13 +12196,13 @@ var app = (function () {
     			a3 = element("a");
     			create_component(button3.$$.fragment);
     			attr_dev(a0, "href", "https://sos2021-23.herokuapp.com/api/v1/mh-stats");
-    			add_location(a0, file$B, 96, 10, 2911);
+    			add_location(a0, file$B, 96, 10, 2881);
     			attr_dev(a1, "href", "/#/mh-stats");
-    			add_location(a1, file$B, 98, 10, 3036);
+    			add_location(a1, file$B, 98, 10, 3006);
     			attr_dev(a2, "href", "#/mh-stats/chart");
-    			add_location(a2, file$B, 101, 10, 3141);
+    			add_location(a2, file$B, 101, 10, 3111);
     			attr_dev(a3, "href", "https://documenter.getpostman.com/view/14943559/TzJoDfQ5");
-    			add_location(a3, file$B, 104, 10, 3250);
+    			add_location(a3, file$B, 104, 10, 3220);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -12319,7 +12319,7 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "Eduardo Carmona";
     			attr_dev(a, "href", "https://github.com/Beelthazad");
-    			add_location(a, file$B, 110, 10, 3493);
+    			add_location(a, file$B, 110, 10, 3463);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -12511,7 +12511,7 @@ var app = (function () {
     		c: function create() {
     			h5 = element("h5");
     			h5.textContent = "Porcentaje de paro(API UNEMPLOYMENT)";
-    			add_location(h5, file$B, 117, 21, 3697);
+    			add_location(h5, file$B, 117, 21, 3667);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h5, anchor);
@@ -12846,15 +12846,15 @@ var app = (function () {
     			a4 = element("a");
     			create_component(button4.$$.fragment);
     			attr_dev(a0, "href", "https://sos2021-23.herokuapp.com/api/v1/unemployment-stats");
-    			add_location(a0, file$B, 122, 10, 3914);
+    			add_location(a0, file$B, 122, 10, 3884);
     			attr_dev(a1, "href", "https://sos2021-23.herokuapp.com/api/v2/unemployment-stats");
-    			add_location(a1, file$B, 124, 10, 4048);
+    			add_location(a1, file$B, 124, 10, 4018);
     			attr_dev(a2, "href", "/#/unemployment-stats");
-    			add_location(a2, file$B, 126, 10, 4184);
+    			add_location(a2, file$B, 126, 10, 4154);
     			attr_dev(a3, "href", "https://documenter.getpostman.com/view/14941751/TzJuAJ6j");
-    			add_location(a3, file$B, 129, 10, 4299);
+    			add_location(a3, file$B, 129, 10, 4269);
     			attr_dev(a4, "href", "https://documenter.getpostman.com/view/14941751/TzXwGK9g");
-    			add_location(a4, file$B, 131, 10, 4436);
+    			add_location(a4, file$B, 131, 10, 4406);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -12986,7 +12986,7 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "Antonio Corpas";
     			attr_dev(a, "href", "https://github.com/ace58");
-    			add_location(a, file$B, 137, 10, 4657);
+    			add_location(a, file$B, 137, 10, 4627);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -13178,7 +13178,7 @@ var app = (function () {
     		c: function create() {
     			h5 = element("h5");
     			h5.textContent = "Estadística HDI";
-    			add_location(h5, file$B, 144, 21, 4855);
+    			add_location(h5, file$B, 144, 21, 4825);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h5, anchor);
@@ -13471,13 +13471,13 @@ var app = (function () {
     			a3 = element("a");
     			create_component(button3.$$.fragment);
     			attr_dev(a0, "href", "https://sos2021-23.herokuapp.com/api/v1/hdi-stats");
-    			add_location(a0, file$B, 150, 10, 5040);
+    			add_location(a0, file$B, 150, 10, 5010);
     			attr_dev(a1, "href", "/#/hdi-stats");
-    			add_location(a1, file$B, 152, 10, 5166);
+    			add_location(a1, file$B, 152, 10, 5136);
     			attr_dev(a2, "href", "#/hdi-stats/Graph");
-    			add_location(a2, file$B, 155, 10, 5272);
+    			add_location(a2, file$B, 155, 10, 5242);
     			attr_dev(a3, "href", "https://documenter.getpostman.com/view/14951179/TzJoF21c");
-    			add_location(a3, file$B, 158, 10, 5382);
+    			add_location(a3, file$B, 158, 10, 5352);
     		},
     		m: function mount(target, anchor) {
     			mount_component(cardsubtitle, target, anchor);
@@ -13594,7 +13594,7 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "Antonio Maiquez";
     			attr_dev(a, "href", "https://github.com/Jackman97");
-    			add_location(a, file$B, 164, 10, 5625);
+    			add_location(a, file$B, 164, 10, 5595);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -13957,7 +13957,7 @@ var app = (function () {
     			props: {
     				id: "analyticsbtn",
     				color: "primary",
-    				href: "https://sos2021-23.herokuapp.com/#/analytics",
+    				href: "http://localhost:11337/#/analytics",
     				$$slots: { default: [create_default_slot_48] },
     				$$scope: { ctx }
     			},
@@ -13968,7 +13968,7 @@ var app = (function () {
     			props: {
     				id: "integrationsbtn",
     				color: "primary",
-    				href: "https://sos2021-23.herokuapp.com/#/integrations",
+    				href: "http://localhost:11337/#/integrations",
     				$$slots: { default: [create_default_slot_47] },
     				$$scope: { ctx }
     			},
@@ -13979,7 +13979,7 @@ var app = (function () {
     			props: {
     				id: "aboutbtn",
     				color: "primary",
-    				href: "https://sos2021-23.herokuapp.com/#/about",
+    				href: "http://localhost:11337/#/about",
     				$$slots: { default: [create_default_slot_46] },
     				$$scope: { ctx }
     			},
@@ -14028,7 +14028,7 @@ var app = (function () {
     			add_location(h20, file$B, 20, 2, 265);
     			add_location(h21, file$B, 36, 2, 661);
     			add_location(p, file$B, 37, 2, 685);
-    			add_location(h22, file$B, 57, 2, 1489);
+    			add_location(h22, file$B, 57, 2, 1459);
     			attr_dev(main, "class", "svelte-il7l6l");
     			add_location(main, file$B, 17, 0, 230);
     		},
@@ -16861,7 +16861,7 @@ var app = (function () {
     	return block;
     }
 
-    // (54:4) <Button   id="botoninfo" color = primary href="https://sos2021-23.herokuapp.com/#/info">
+    // (54:4) <Button   id="botoninfo" color = primary href="http://localhost:11337/#/info">
     function create_default_slot$k(ctx) {
     	let t;
 
@@ -16881,7 +16881,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$k.name,
     		type: "slot",
-    		source: "(54:4) <Button   id=\\\"botoninfo\\\" color = primary href=\\\"https://sos2021-23.herokuapp.com/#/info\\\">",
+    		source: "(54:4) <Button   id=\\\"botoninfo\\\" color = primary href=\\\"http://localhost:11337/#/info\\\">",
     		ctx
     	});
 
@@ -16925,7 +16925,7 @@ var app = (function () {
     			props: {
     				id: "botoninfo",
     				color: "primary",
-    				href: "https://sos2021-23.herokuapp.com/#/info",
+    				href: "http://localhost:11337/#/info",
     				$$slots: { default: [create_default_slot$k] },
     				$$scope: { ctx }
     			},
@@ -28979,7 +28979,7 @@ var app = (function () {
     	return block;
     }
 
-    // (267:2) <Button on:click="{getPreviewPage}">
+    // (267:2) <Button id ="atrasbtn" on:click="{getPreviewPage}">
     function create_default_slot_13(ctx) {
     	let t;
 
@@ -28999,14 +28999,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_13.name,
     		type: "slot",
-    		source: "(267:2) <Button on:click=\\\"{getPreviewPage}\\\">",
+    		source: "(267:2) <Button id =\\\"atrasbtn\\\" on:click=\\\"{getPreviewPage}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (270:2) <Button on:click="{getNextPage}">
+    // (270:2) <Button id ="siguientebtn" on:click="{getNextPage}">
     function create_default_slot_12(ctx) {
     	let t;
 
@@ -29026,7 +29026,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_12.name,
     		type: "slot",
-    		source: "(270:2) <Button on:click=\\\"{getNextPage}\\\">",
+    		source: "(270:2) <Button id =\\\"siguientebtn\\\" on:click=\\\"{getNextPage}\\\">",
     		ctx
     	});
 
@@ -29154,37 +29154,37 @@ var app = (function () {
     			t12 = text("Año(Hasta): ");
     			input6 = element("input");
     			attr_dev(input0, "id", "filterpais");
-    			add_location(input0, file$h, 280, 29, 9433);
-    			add_location(label0, file$h, 280, 16, 9420);
-    			add_location(strong0, file$h, 280, 8, 9412);
-    			add_location(td0, file$h, 280, 4, 9408);
+    			add_location(input0, file$h, 280, 29, 9467);
+    			add_location(label0, file$h, 280, 16, 9454);
+    			add_location(strong0, file$h, 280, 8, 9446);
+    			add_location(td0, file$h, 280, 4, 9442);
     			attr_dev(input1, "id", "campoaño");
-    			add_location(input1, file$h, 281, 28, 9533);
-    			add_location(label1, file$h, 281, 16, 9521);
-    			add_location(strong1, file$h, 281, 8, 9513);
-    			add_location(td1, file$h, 281, 4, 9509);
-    			add_location(input2, file$h, 282, 45, 9645);
-    			add_location(label2, file$h, 282, 16, 9616);
-    			add_location(strong2, file$h, 282, 8, 9608);
-    			add_location(td2, file$h, 282, 4, 9604);
-    			add_location(input3, file$h, 283, 57, 9756);
-    			add_location(label3, file$h, 283, 16, 9715);
-    			add_location(strong3, file$h, 283, 8, 9707);
-    			add_location(td3, file$h, 283, 4, 9703);
-    			add_location(input4, file$h, 284, 44, 9854);
-    			add_location(label4, file$h, 284, 16, 9826);
-    			add_location(strong4, file$h, 284, 8, 9818);
-    			add_location(td4, file$h, 284, 4, 9814);
-    			add_location(tr0, file$h, 279, 3, 9398);
-    			add_location(input5, file$h, 288, 35, 9972);
-    			add_location(label5, file$h, 288, 16, 9953);
-    			add_location(strong5, file$h, 288, 8, 9945);
-    			add_location(td5, file$h, 288, 4, 9941);
-    			add_location(input6, file$h, 289, 35, 10059);
-    			add_location(label6, file$h, 289, 16, 10040);
-    			add_location(strong6, file$h, 289, 8, 10032);
-    			add_location(td6, file$h, 289, 4, 10028);
-    			add_location(tr1, file$h, 287, 12, 9931);
+    			add_location(input1, file$h, 281, 28, 9567);
+    			add_location(label1, file$h, 281, 16, 9555);
+    			add_location(strong1, file$h, 281, 8, 9547);
+    			add_location(td1, file$h, 281, 4, 9543);
+    			add_location(input2, file$h, 282, 45, 9679);
+    			add_location(label2, file$h, 282, 16, 9650);
+    			add_location(strong2, file$h, 282, 8, 9642);
+    			add_location(td2, file$h, 282, 4, 9638);
+    			add_location(input3, file$h, 283, 57, 9790);
+    			add_location(label3, file$h, 283, 16, 9749);
+    			add_location(strong3, file$h, 283, 8, 9741);
+    			add_location(td3, file$h, 283, 4, 9737);
+    			add_location(input4, file$h, 284, 44, 9888);
+    			add_location(label4, file$h, 284, 16, 9860);
+    			add_location(strong4, file$h, 284, 8, 9852);
+    			add_location(td4, file$h, 284, 4, 9848);
+    			add_location(tr0, file$h, 279, 3, 9432);
+    			add_location(input5, file$h, 288, 35, 10006);
+    			add_location(label5, file$h, 288, 16, 9987);
+    			add_location(strong5, file$h, 288, 8, 9979);
+    			add_location(td5, file$h, 288, 4, 9975);
+    			add_location(input6, file$h, 289, 35, 10093);
+    			add_location(label6, file$h, 289, 16, 10074);
+    			add_location(strong6, file$h, 289, 8, 10066);
+    			add_location(td6, file$h, 289, 4, 10062);
+    			add_location(tr1, file$h, 287, 12, 9965);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr0, anchor);
@@ -30184,14 +30184,14 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			t10 = space();
     			attr_dev(a, "href", a_href_value = "#/unemployment-stats/" + /*sc*/ ctx[35].country + "/" + /*sc*/ ctx[35].year);
-    			add_location(a, file$h, 363, 28, 12685);
-    			add_location(td0, file$h, 363, 24, 12681);
-    			add_location(td1, file$h, 364, 24, 12786);
-    			add_location(td2, file$h, 365, 24, 12830);
-    			add_location(td3, file$h, 366, 24, 12877);
-    			add_location(td4, file$h, 367, 24, 12924);
-    			add_location(td5, file$h, 368, 24, 12970);
-    			add_location(tr, file$h, 362, 20, 12651);
+    			add_location(a, file$h, 363, 28, 12719);
+    			add_location(td0, file$h, 363, 24, 12715);
+    			add_location(td1, file$h, 364, 24, 12820);
+    			add_location(td2, file$h, 365, 24, 12864);
+    			add_location(td3, file$h, 366, 24, 12911);
+    			add_location(td4, file$h, 367, 24, 12958);
+    			add_location(td5, file$h, 368, 24, 13004);
+    			add_location(tr, file$h, 362, 20, 12685);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -30373,32 +30373,32 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$h, 343, 20, 11640);
-    			add_location(th1, file$h, 344, 20, 11675);
-    			add_location(th2, file$h, 345, 20, 11709);
-    			add_location(th3, file$h, 346, 20, 11767);
-    			add_location(th4, file$h, 347, 20, 11838);
-    			add_location(th5, file$h, 348, 20, 11895);
-    			add_location(tr0, file$h, 342, 16, 11614);
-    			add_location(thead, file$h, 341, 12, 11589);
+    			add_location(th0, file$h, 343, 20, 11674);
+    			add_location(th1, file$h, 344, 20, 11709);
+    			add_location(th2, file$h, 345, 20, 11743);
+    			add_location(th3, file$h, 346, 20, 11801);
+    			add_location(th4, file$h, 347, 20, 11872);
+    			add_location(th5, file$h, 348, 20, 11929);
+    			add_location(tr0, file$h, 342, 16, 11648);
+    			add_location(thead, file$h, 341, 12, 11623);
     			attr_dev(input0, "id", "insertpais");
-    			add_location(input0, file$h, 353, 24, 12027);
-    			add_location(td0, file$h, 353, 20, 12023);
+    			add_location(input0, file$h, 353, 24, 12061);
+    			add_location(td0, file$h, 353, 20, 12057);
     			attr_dev(input1, "id", "insertaño");
-    			add_location(input1, file$h, 354, 24, 12109);
-    			add_location(td1, file$h, 354, 20, 12105);
+    			add_location(input1, file$h, 354, 24, 12143);
+    			add_location(td1, file$h, 354, 20, 12139);
     			attr_dev(input2, "id", "insertknoperc");
-    			add_location(input2, file$h, 355, 24, 12188);
-    			add_location(td2, file$h, 355, 20, 12184);
+    			add_location(input2, file$h, 355, 24, 12222);
+    			add_location(td2, file$h, 355, 20, 12218);
     			attr_dev(input3, "id", "insertintperc");
-    			add_location(input3, file$h, 356, 24, 12275);
-    			add_location(td3, file$h, 356, 20, 12271);
+    			add_location(input3, file$h, 356, 24, 12309);
+    			add_location(td3, file$h, 356, 20, 12305);
     			attr_dev(input4, "id", "insertgfperc");
-    			add_location(input4, file$h, 357, 24, 12365);
-    			add_location(td4, file$h, 357, 20, 12361);
-    			add_location(td5, file$h, 358, 20, 12446);
-    			add_location(tr1, file$h, 352, 16, 11997);
-    			add_location(tbody, file$h, 351, 12, 11972);
+    			add_location(input4, file$h, 357, 24, 12399);
+    			add_location(td4, file$h, 357, 20, 12395);
+    			add_location(td5, file$h, 358, 20, 12480);
+    			add_location(tr1, file$h, 352, 16, 12031);
+    			add_location(tbody, file$h, 351, 12, 12006);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -30566,7 +30566,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "No se han encontrado datos, por favor, carga los datos iniciales.";
-    			add_location(p, file$h, 376, 12, 13267);
+    			add_location(p, file$h, 376, 12, 13301);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -30665,6 +30665,7 @@ var app = (function () {
 
     	button2 = new Button({
     			props: {
+    				id: "atrasbtn",
     				$$slots: { default: [create_default_slot_13] },
     				$$scope: { ctx }
     			},
@@ -30675,6 +30676,7 @@ var app = (function () {
 
     	button3 = new Button({
     			props: {
+    				id: "siguientebtn",
     				$$slots: { default: [create_default_slot_12] },
     				$$scope: { ctx }
     			},
@@ -30758,11 +30760,11 @@ var app = (function () {
     			p1.textContent = "Si quieres editar algún recurso haz click en el nombre del país.";
     			t10 = space();
     			info.block.c();
-    			add_location(p0, file$h, 277, 2, 9270);
+    			add_location(p0, file$h, 277, 2, 9304);
     			set_style(div, "text-align", "center");
     			set_style(div, "padding-bottom", "1%");
-    			add_location(div, file$h, 292, 2, 10133);
-    			add_location(p1, file$h, 295, 2, 10322);
+    			add_location(div, file$h, 292, 2, 10167);
+    			add_location(p1, file$h, 295, 2, 10356);
     			add_location(main, file$h, 259, 0, 8760);
     		},
     		l: function claim(nodes) {

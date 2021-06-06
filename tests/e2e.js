@@ -5,7 +5,7 @@ const puppeteer = require('puppeteer');
     console.log("Browser opened.");
 
     const page = await browser.newPage();
-    await page.goto('https://sos2021-23.herokuapp.com/');
+    await page.goto('http://localhost:11337/');
  
     console.log("Page opened! Taking an screenshot...");
 
@@ -61,7 +61,7 @@ const puppeteer = require('puppeteer');
 
     await page.waitForTimeout(5000);
 
-    await page.screenshot({ path: './tests/pics/06UnempintegrationsG2.png' ,fullpage: true});
+    await page.screenshot({ path: './tests/pics/06integrationsG2.png' ,fullpage: true});
     
     console.log("clickado boton integración grupo 2");
       
@@ -121,7 +121,7 @@ const puppeteer = require('puppeteer');
 
     await page.waitForTimeout(5000);
 
-    await page.screenshot({ path: './tests/pics/13Unempbotonfrontend.png' ,fullpage: true});
+    await page.screenshot({ path: './tests/pics/13botonfrontend.png' ,fullpage: true});
 
     console.log("foto frontend hecha");
 
@@ -131,7 +131,7 @@ const puppeteer = require('puppeteer');
 
     await page.waitForTimeout(2000); 
 
-    await page.screenshot({ path: './tests/pics/14Unempdeletedresource.png' ,fullpage: true});
+    await page.screenshot({ path: './tests/pics/14deletedresource.png' ,fullpage: true});
 
     await page.click("body > main > main > div.alert.alert-warning.alert-dismissible > button");
 
@@ -184,7 +184,7 @@ const puppeteer = require('puppeteer');
 
     await page.waitForTimeout(2000); 
     
-    await page.screenshot({ path: './tests/pics/15Unempvalueinsertadded.png',fullpage: true });
+    await page.screenshot({ path: './tests/pics/15valueinsertadded.png',fullpage: true });
 
     console.log("captura valor añadido campo búsqueda país");
 
@@ -194,7 +194,7 @@ const puppeteer = require('puppeteer');
     
     await page.waitForTimeout(2000);  
 
-    await page.screenshot({ path: './tests/pics/16Unempfinalinfo.png',fullpage: true });
+    await page.screenshot({ path: './tests/pics/16finalinfo.png',fullpage: true });
 
     /*
     console.log("pulsar insertar");
