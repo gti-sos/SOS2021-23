@@ -51,7 +51,7 @@
         >
       </Col>
     </Container>
-    <Button   id="botoninfo" color = primary href="http://localhost:11337/#/info">Info</Button>
+    <Button   id="botoninfo" color = primary href="https://sos2021-23.herokuapp.com/#/info">Info</Button>
 
   </main>
   
