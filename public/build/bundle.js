@@ -35208,29 +35208,29 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Gráfico de área que muestra los diferentes valores de abandono escolar";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$5, 79, 2, 1873);
+    			add_location(script0, file$5, 79, 2, 1875);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$5, 80, 2, 1961);
+    			add_location(script1, file$5, 80, 2, 1963);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$5, 81, 2, 2040);
+    			add_location(script2, file$5, 81, 2, 2042);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$5, 82, 2, 2116);
+    			add_location(script3, file$5, 82, 2, 2118);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$5, 83, 2, 2194);
-    			add_location(strong, file$5, 90, 44, 2383);
+    			add_location(script4, file$5, 83, 2, 2196);
+    			add_location(strong, file$5, 90, 44, 2385);
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$5, 90, 8, 2347);
-    			add_location(div0, file$5, 89, 4, 2332);
+    			add_location(h1, file$5, 90, 8, 2349);
+    			add_location(div0, file$5, 89, 4, 2334);
     			attr_dev(div1, "id", "container");
     			attr_dev(div1, "class", "svelte-1jvwztp");
-    			add_location(div1, file$5, 95, 10, 2512);
+    			add_location(div1, file$5, 95, 10, 2514);
     			set_style(p, "text-align", "center");
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$5, 96, 10, 2546);
+    			add_location(p, file$5, 96, 10, 2548);
     			attr_dev(figure, "class", "highcharts-figure svelte-1jvwztp");
-    			add_location(figure, file$5, 94, 8, 2466);
-    			add_location(div2, file$5, 93, 4, 2451);
-    			add_location(main, file$5, 88, 0, 2320);
+    			add_location(figure, file$5, 94, 8, 2468);
+    			add_location(div2, file$5, 93, 4, 2453);
+    			add_location(main, file$5, 88, 0, 2322);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -35299,7 +35299,7 @@ var app = (function () {
     	let schoolFemale = [];
 
     	async function loadChart() {
-    		const res = await fetch("http://sos2021-24.herokuapp.com/api/v2/children-out-school");
+    		const res = await fetch("https://sos2021-24.herokuapp.com/api/v2/children-out-school/");
     		schoolData = await res.json();
 
     		if (res.ok) {
@@ -35496,29 +35496,29 @@ var app = (function () {
     			t6 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$4, 83, 2, 2076);
+    			add_location(script0, file$4, 83, 2, 2077);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$4, 84, 2, 2164);
+    			add_location(script1, file$4, 84, 2, 2165);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$4, 85, 2, 2243);
+    			add_location(script2, file$4, 85, 2, 2244);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$4, 86, 2, 2319);
+    			add_location(script3, file$4, 86, 2, 2320);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$4, 87, 2, 2397);
-    			add_location(strong, file$4, 94, 44, 2586);
+    			add_location(script4, file$4, 87, 2, 2398);
+    			add_location(strong, file$4, 94, 44, 2587);
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$4, 94, 8, 2550);
-    			add_location(div0, file$4, 93, 4, 2535);
+    			add_location(h1, file$4, 94, 8, 2551);
+    			add_location(div0, file$4, 93, 4, 2536);
     			attr_dev(div1, "id", "container");
     			attr_dev(div1, "class", "svelte-1jvwztp");
-    			add_location(div1, file$4, 99, 10, 2712);
+    			add_location(div1, file$4, 99, 10, 2713);
     			set_style(p, "text-align", "center");
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$4, 100, 10, 2746);
+    			add_location(p, file$4, 100, 10, 2747);
     			attr_dev(figure, "class", "highcharts-figure svelte-1jvwztp");
-    			add_location(figure, file$4, 98, 8, 2666);
-    			add_location(div2, file$4, 97, 4, 2651);
-    			add_location(main, file$4, 92, 0, 2523);
+    			add_location(figure, file$4, 98, 8, 2667);
+    			add_location(div2, file$4, 97, 4, 2652);
+    			add_location(main, file$4, 92, 0, 2524);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -35606,7 +35606,7 @@ var app = (function () {
     	let obesityFemale = [];
 
     	async function loadChart() {
-    		const res = await fetch("http://sos2021-10.herokuapp.com/api/integration/obesity-stats");
+    		const res = await fetch("https://sos2021-10.herokuapp.com/api/integration/obesity-stats");
     		obesityData = await res.json();
 
     		if (res.ok) {
@@ -35716,7 +35716,7 @@ var app = (function () {
     const { console: console_1$2 } = globals;
     const file$3 = "src\\duAPI\\integrations\\chucknorris.svelte";
 
-    // (186:4) <Button color="primary" onclick="location.reload()" style="margin-left: 35%; width: 25%;">
+    // (272:4) <Button color="primary" onclick="location.reload()" style="margin-left: 35%; width: 25%;">
     function create_default_slot_1$2(ctx) {
     	let t;
 
@@ -35736,14 +35736,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$2.name,
     		type: "slot",
-    		source: "(186:4) <Button color=\\\"primary\\\" onclick=\\\"location.reload()\\\" style=\\\"margin-left: 35%; width: 25%;\\\">",
+    		source: "(272:4) <Button color=\\\"primary\\\" onclick=\\\"location.reload()\\\" style=\\\"margin-left: 35%; width: 25%;\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (189:4) <Button id="back" outline color="secondary" on:click="{pop}">
+    // (275:4) <Button id="back" outline color="secondary" on:click="{pop}">
     function create_default_slot$2(ctx) {
     	let t;
 
@@ -35763,7 +35763,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$2.name,
     		type: "slot",
-    		source: "(189:4) <Button id=\\\"back\\\" outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(275:4) <Button id=\\\"back\\\" outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -35851,24 +35851,24 @@ var app = (function () {
     			t7 = space();
     			create_component(button1.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$3, 171, 4, 5150);
+    			add_location(script0, file$3, 257, 4, 7777);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/wordcloud.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 172, 4, 5221);
+    			add_location(script1, file$3, 258, 4, 7848);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 173, 4, 5299);
+    			add_location(script2, file$3, 259, 4, 7926);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$3, 174, 4, 5377);
+    			add_location(script3, file$3, 260, 4, 8004);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$3, 175, 4, 5457);
+    			add_location(script4, file$3, 261, 4, 8084);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$3, 180, 8, 5631);
-    			add_location(br0, file$3, 182, 25, 5728);
+    			add_location(div, file$3, 266, 8, 8258);
+    			add_location(br0, file$3, 268, 25, 8355);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$3, 181, 8, 5667);
+    			add_location(p, file$3, 267, 8, 8294);
     			attr_dev(figure, "class", "highcharts-figure svelte-sbseph");
-    			add_location(figure, file$3, 179, 4, 5587);
-    			add_location(br1, file$3, 187, 4, 5907);
-    			add_location(main, file$3, 178, 0, 5575);
+    			add_location(figure, file$3, 265, 4, 8214);
+    			add_location(br1, file$3, 273, 4, 8534);
+    			add_location(main, file$3, 264, 0, 8202);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -35960,7 +35960,7 @@ var app = (function () {
     function instance$3($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Chucknorris", slots, []);
-    	var APIext = "http://api.quotable.io/random";
+    	var APIext = "https://api.quotable.io/random";
     	let Quote = [];
 
     	async function loadGraph() {
