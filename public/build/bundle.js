@@ -13723,7 +13723,7 @@ var app = (function () {
     }
 
     // (142:4) <Col xs="auto">
-    function create_default_slot_1$g(ctx) {
+    function create_default_slot_1$h(ctx) {
     	let card;
     	let current;
 
@@ -13769,7 +13769,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1$g.name,
+    		id: create_default_slot_1$h.name,
     		type: "slot",
     		source: "(142:4) <Col xs=\\\"auto\\\">",
     		ctx
@@ -13819,7 +13819,7 @@ var app = (function () {
     	col3 = new Col({
     			props: {
     				xs: "auto",
-    				$$slots: { default: [create_default_slot_1$g] },
+    				$$slots: { default: [create_default_slot_1$h] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -15682,7 +15682,7 @@ var app = (function () {
     const file$z = "src\\Integrations.svelte";
 
     // (17:12) <Button outline color="primary" onclick="location.href='#/info'">
-    function create_default_slot$n(ctx) {
+    function create_default_slot_1$g(ctx) {
     	let t;
 
     	const block = {
@@ -15699,9 +15699,36 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot$n.name,
+    		id: create_default_slot_1$g.name,
     		type: "slot",
     		source: "(17:12) <Button outline color=\\\"primary\\\" onclick=\\\"location.href='#/info'\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (57:8) <Button href ="/#/du-stats/graph1">
+    function create_default_slot$n(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Analítica 3D");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$n.name,
+    		type: "slot",
+    		source: "(57:8) <Button href =\\\"/#/du-stats/graph1\\\">",
     		ctx
     	});
 
@@ -15718,7 +15745,7 @@ var app = (function () {
     	let h1;
     	let t3;
     	let div0;
-    	let button;
+    	let button0;
     	let t4;
     	let li0;
     	let strong0;
@@ -15767,36 +15794,47 @@ var app = (function () {
     	let li9;
     	let strong4;
     	let t30;
+    	let button1;
+    	let t31;
     	let ul11;
     	let li10;
     	let a8;
-    	let t32;
+    	let t33;
     	let ul12;
     	let li11;
     	let a9;
-    	let t34;
+    	let t35;
     	let ul13;
     	let li12;
     	let a10;
-    	let t36;
+    	let t37;
     	let ul14;
     	let li13;
     	let a11;
-    	let t38;
+    	let t39;
     	let ul15;
     	let li14;
     	let a12;
-    	let t40;
+    	let t41;
     	let ul16;
     	let li15;
     	let a13;
     	let current;
 
-    	button = new Button({
+    	button0 = new Button({
     			props: {
     				outline: true,
     				color: "primary",
     				onclick: "location.href='#/info'",
+    				$$slots: { default: [create_default_slot_1$g] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button1 = new Button({
+    			props: {
+    				href: "/#/du-stats/graph1",
     				$$slots: { default: [create_default_slot$n] },
     				$$scope: { ctx }
     			},
@@ -15816,7 +15854,7 @@ var app = (function () {
     			h1.textContent = "Integrations";
     			t3 = space();
     			div0 = element("div");
-    			create_component(button.$$.fragment);
+    			create_component(button0.$$.fragment);
     			t4 = space();
     			li0 = element("li");
     			strong0 = element("strong");
@@ -15878,31 +15916,33 @@ var app = (function () {
     			strong4 = element("strong");
     			strong4.textContent = "Drugs-Stats";
     			t30 = space();
+    			create_component(button1.$$.fragment);
+    			t31 = space();
     			ul11 = element("ul");
     			li10 = element("li");
     			a8 = element("a");
     			a8.textContent = "Api Drug-Use(Highchart)";
-    			t32 = space();
+    			t33 = space();
     			ul12 = element("ul");
     			li11 = element("li");
     			a9 = element("a");
     			a9.textContent = "API Drug-Use(Awesome)";
-    			t34 = space();
+    			t35 = space();
     			ul13 = element("ul");
     			li12 = element("li");
     			a10 = element("a");
     			a10.textContent = "API Grupo 24 School";
-    			t36 = space();
+    			t37 = space();
     			ul14 = element("ul");
     			li13 = element("li");
     			a11 = element("a");
     			a11.textContent = "API Grupo 10 Obesity";
-    			t38 = space();
+    			t39 = space();
     			ul15 = element("ul");
     			li14 = element("li");
     			a12 = element("a");
     			a12.textContent = "API Externa Chuck Norris";
-    			t40 = space();
+    			t41 = space();
     			ul16 = element("ul");
     			li15 = element("li");
     			a13 = element("a");
@@ -15977,41 +16017,41 @@ var app = (function () {
     			set_style(li9, "font-size", "22px");
     			add_location(li9, file$z, 54, 8, 2051);
     			attr_dev(a8, "href", "#/du-stats/graph1");
-    			add_location(a8, file$z, 57, 16, 2196);
-    			add_location(li10, file$z, 57, 12, 2192);
+    			add_location(a8, file$z, 62, 16, 2310);
+    			add_location(li10, file$z, 62, 12, 2306);
     			set_style(ul11, "list-style-type", "circle");
     			set_style(ul11, "font-size", "20px");
-    			add_location(ul11, file$z, 56, 8, 2125);
+    			add_location(ul11, file$z, 61, 8, 2239);
     			attr_dev(a9, "href", "#/du-stats/graphMorris");
-    			add_location(a9, file$z, 60, 16, 2352);
-    			add_location(li11, file$z, 60, 12, 2348);
+    			add_location(a9, file$z, 65, 16, 2466);
+    			add_location(li11, file$z, 65, 12, 2462);
     			set_style(ul12, "list-style-type", "circle");
     			set_style(ul12, "font-size", "20px");
-    			add_location(ul12, file$z, 59, 8, 2281);
+    			add_location(ul12, file$z, 64, 8, 2395);
     			attr_dev(a10, "href", "#/du-stats/schoolgraph");
-    			add_location(a10, file$z, 63, 16, 2511);
-    			add_location(li12, file$z, 63, 12, 2507);
+    			add_location(a10, file$z, 68, 16, 2625);
+    			add_location(li12, file$z, 68, 12, 2621);
     			set_style(ul13, "list-style-type", "circle");
     			set_style(ul13, "font-size", "20px");
-    			add_location(ul13, file$z, 62, 8, 2440);
+    			add_location(ul13, file$z, 67, 8, 2554);
     			attr_dev(a11, "href", "#/du-stats/obesitygraph");
-    			add_location(a11, file$z, 66, 16, 2668);
-    			add_location(li13, file$z, 66, 12, 2664);
+    			add_location(a11, file$z, 71, 16, 2782);
+    			add_location(li13, file$z, 71, 12, 2778);
     			set_style(ul14, "list-style-type", "circle");
     			set_style(ul14, "font-size", "20px");
-    			add_location(ul14, file$z, 65, 8, 2597);
+    			add_location(ul14, file$z, 70, 8, 2711);
     			attr_dev(a12, "href", "#/du-stats/chucknorris");
-    			add_location(a12, file$z, 70, 16, 2837);
-    			add_location(li14, file$z, 70, 12, 2833);
+    			add_location(a12, file$z, 75, 16, 2951);
+    			add_location(li14, file$z, 75, 12, 2947);
     			set_style(ul15, "list-style-type", "circle");
     			set_style(ul15, "font-size", "20px");
-    			add_location(ul15, file$z, 69, 8, 2766);
+    			add_location(ul15, file$z, 74, 8, 2880);
     			attr_dev(a13, "href", "#/du-stats/rick");
-    			add_location(a13, file$z, 73, 16, 2999);
-    			add_location(li15, file$z, 73, 12, 2995);
+    			add_location(a13, file$z, 78, 16, 3113);
+    			add_location(li15, file$z, 78, 12, 3109);
     			set_style(ul16, "list-style-type", "circle");
     			set_style(ul16, "font-size", "20px");
-    			add_location(ul16, file$z, 72, 8, 2928);
+    			add_location(ul16, file$z, 77, 8, 3042);
     			add_location(div1, file$z, 12, 4, 178);
     			add_location(body, file$z, 11, 0, 166);
     			attr_dev(html, "lang", "ES");
@@ -16030,7 +16070,7 @@ var app = (function () {
     			append_dev(div1, h1);
     			append_dev(div1, t3);
     			append_dev(div1, div0);
-    			mount_component(button, div0, null);
+    			mount_component(button0, div0, null);
     			append_dev(div1, t4);
     			append_dev(div1, li0);
     			append_dev(li0, strong0);
@@ -16079,52 +16119,64 @@ var app = (function () {
     			append_dev(div1, li9);
     			append_dev(li9, strong4);
     			append_dev(div1, t30);
+    			mount_component(button1, div1, null);
+    			append_dev(div1, t31);
     			append_dev(div1, ul11);
     			append_dev(ul11, li10);
     			append_dev(li10, a8);
-    			append_dev(div1, t32);
+    			append_dev(div1, t33);
     			append_dev(div1, ul12);
     			append_dev(ul12, li11);
     			append_dev(li11, a9);
-    			append_dev(div1, t34);
+    			append_dev(div1, t35);
     			append_dev(div1, ul13);
     			append_dev(ul13, li12);
     			append_dev(li12, a10);
-    			append_dev(div1, t36);
+    			append_dev(div1, t37);
     			append_dev(div1, ul14);
     			append_dev(ul14, li13);
     			append_dev(li13, a11);
-    			append_dev(div1, t38);
+    			append_dev(div1, t39);
     			append_dev(div1, ul15);
     			append_dev(ul15, li14);
     			append_dev(li14, a12);
-    			append_dev(div1, t40);
+    			append_dev(div1, t41);
     			append_dev(div1, ul16);
     			append_dev(ul16, li15);
     			append_dev(li15, a13);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			const button_changes = {};
+    			const button0_changes = {};
 
     			if (dirty & /*$$scope*/ 1) {
-    				button_changes.$$scope = { dirty, ctx };
+    				button0_changes.$$scope = { dirty, ctx };
     			}
 
-    			button.$set(button_changes);
+    			button0.$set(button0_changes);
+    			const button1_changes = {};
+
+    			if (dirty & /*$$scope*/ 1) {
+    				button1_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button1.$set(button1_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(button.$$.fragment, local);
+    			transition_in(button0.$$.fragment, local);
+    			transition_in(button1.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(button.$$.fragment, local);
+    			transition_out(button0.$$.fragment, local);
+    			transition_out(button1.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(html);
-    			destroy_component(button);
+    			destroy_component(button0);
+    			destroy_component(button1);
     		}
     	};
 

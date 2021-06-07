@@ -54,6 +54,11 @@
 
         <li style="font-size: 22px;"><strong>Drugs-Stats</strong></li>
 
+        <Button href ="/#/du-stats/graph1">
+            Analítica 3D
+            </Button>
+        
+        
         <ul style="list-style-type:circle; font-size: 20px;">
             <li><a href="#/du-stats/graph1">Api Drug-Use(Highchart)</a></li>
         </ul>
@@ -73,6 +78,7 @@
         <ul style="list-style-type:circle; font-size: 20px;">
             <li><a href="#/du-stats/rick">API Externa Rick & Morty</a></li>
         </ul>
+        
 
 
 </div>
