@@ -3,7 +3,6 @@
     import { Table, Button, Nav, NavItem, NavLink } from "sveltestrap";
     const BASE_EDU_API_PATH = "/api/v1/mh-stats";
     let mhsv = [];
-    let chiout = [];
     let mhChartCountryDate = [];
     let mhChartPopulation = [];
     let mhChartAnxdaly = [];
@@ -13,30 +12,14 @@
     let mhChartDepression = [];
     let mhChartSchizophrenia = [];
 
+    let chiout = [];
+    let chiout_country = [];
+    let chiout_total = [];
+
+
     var msg = "";
     async function loadChart() {
       console.log("Obteniendo datos...");
-      const res = await fetch(BASE_EDU_API_PATH);
-      
-      if (res.ok) {
-        console.log("OK");
-        mhsv = await res.json();
-        mhsv.forEach(stat => {
-            console.log(stat);
-        mhChartCountryDate.push(stat.country+"-"+stat.year);
-        mhChartPopulation.push(parseFloat(stat.population));
-        mhChartAnxdaly.push(parseFloat(stat.anxdaly));
-        mhChartEating.push(parseFloat(stat.eating));
-        mhChartAdhd.push(parseFloat(stat.adhd));
-        mhChartBipolar.push(parseFloat(stat.bipolar));
-        mhChartDepression.push(parseFloat(stat.depression));
-        mhChartSchizophrenia.push(parseFloat(stat.schizophrenia)); 
-        msg="";
-        });
-      }else{
-        console.log("Error");
-        msg = "Por favor primero cargue los datos de la API";
-      }
 
       const resext = await fetch("https://sos2021-24.herokuapp.com/api/v2/children-out-school");
       if (resext.ok) {
@@ -44,50 +27,90 @@
         chiout = await resext.json();
         chiout.forEach(stat => {
             console.log(stat);
+            chiout_country.push(stat.country);
+            chiout_total.push(stat.children_out_school_total/100);
         });
     }else {
         console.log("Not OK");
         }
 
+      const res = await fetch(BASE_EDU_API_PATH);
+      if (res.ok) {
+        var i = 0;
+        console.log("OK");
+        mhsv = await res.json();
+        mhsv.forEach(stat => {
+            console.log(stat);
+            if (chiout_country.includes(stat.country)) {
+            i++;
+            mhChartCountryDate.push(stat.country+"-"+stat.year);
+            mhChartPopulation.push(parseFloat(stat.population));
+            mhChartAnxdaly.push(parseFloat(stat.anxdaly));
+            mhChartEating.push(parseFloat(stat.eating));
+            mhChartAdhd.push(parseFloat(stat.adhd));
+            mhChartBipolar.push(parseFloat(stat.bipolar));
+            mhChartDepression.push(parseFloat(stat.depression));
+            mhChartSchizophrenia.push(parseFloat(stat.schizophrenia)); 
+            }
+            console.log(i);
+        msg="";
+        });
+      }else{
+        console.log("Error");
+        msg = "Por favor primero cargue los datos de la API";
+      }
 
-      Highcharts.chart("container", {
-        chart: {
-        type: 'column',
-        options3d: {
-          enabled: true,
-          alpha: 15,
-          beta: 15,
-          viewDistance: 25,
-          depth: 40
-        }
+Highcharts.chart('container', {
+
+  chart: {
+    type: 'streamgraph',
+    marginBottom: 0,
+    zoomType: 'x'
   },
-        title: {
-        text: 'Highcharts responsive chart'
-        },
 
-        subtitle: {
-        text: 'Resize the frame or click buttons to change appearance'
-        },
-
-        legend: {
-        align: 'right',
-        verticalAlign: 'middle',
-        layout: 'vertical'
-        },
-
-        xAxis: {
-        categories: mhChartCountryDate,
-        labels: {
-            x: -10
-        }
+  title: {
+    floating: true,
+    align: 'left',
+    text: 'MH+NoEscolarizados'
+  },
+  xAxis: {
+    maxPadding: 0,
+    type: 'category',
+    crosshair: true,
+    categories: mhChartCountryDate,
+    labels: {
+      align: 'left',
+      reserveSpace: true,
+      rotation: 0
     },
-    yAxis: {
-        allowDecimals: false,
-        title: {
-            text: 'Afectados por cada 100 mil habitantes'
+    lineWidth: 0,
+    margin: 100,
+    tickWidth: 0
+  },
+
+  yAxis: {
+    visible: false,
+    startOnTick: false,
+    endOnTick: false
+  },
+
+  legend: {
+    enabled: true
+  },
+  plotOptions: {
+    series: {
+      label: {
+        minFontSize: 5,
+        maxFontSize: 15,
+        style: {
+          color: 'rgba(255,255,255,0.75)'
         }
-    },
-        series: [
+      }
+    }
+  },
+
+  // Data parsed with olympic-medals.node.js
+  series: [
           {
             name: "Población",
             data: mhChartPopulation,
@@ -116,49 +139,26 @@
             name: "Esquizofrenia",
             data: mhChartSchizophrenia,
           },
-          
-        ],
-        responsive: {
-          rules: [{
-            condition: {
-                maxWidth: 500
-            },
-            chartOptions: {
-                legend: {
-                    align: 'center',
-                    verticalAlign: 'bottom',
-                    layout: 'horizontal'
-                },
-                yAxis: {
-                    labels: {
-                        align: 'left',
-                        x: 0,
-                        y: -5
-                    },
-                    title: {
-                        text: null
-                    }
-                },
-                subtitle: {
-                    text: null
-                },
-                credits: {
-                    enabled: false
-                }
-            }
-        }]
+          {
+            name: "No escolarizados",
+            data: chiout_total.splice(0, mhChartSchizophrenia.length),
+          },
+  ],
+  exporting: {
+    sourceWidth: 800,
+    sourceHeight: 600
     }
-});
-    }
+    });
+}
   </script>
   <svelte:head>
     <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+    <script src="https://code.highcharts.com/modules/streamgraph.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/annotations.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script
-      src="https://code.highcharts.com/modules/accessibility.js"
-      on:load={loadChart}></script>
+    <script on:load={loadChart} src="https://code.highcharts.com/modules/accessibility.js"></script>
   </svelte:head>
   <main>
     <Nav>
@@ -172,7 +172,7 @@
   
     <div>
       <h2>
-        Gráfica
+        Gráfica HighCharts Integración Mh-stats y children_out_school
       </h2>
     </div>
   
@@ -181,12 +181,8 @@
     {:else}
     <figure class="highcharts-figure">
       <div id="container"></div>
-      <p class="highcharts-description">
-        La gráfica muestra el número de afectados por cada 100 mil habitantes a través de barras.
-      </p>
   </figure>
     {/if}
-    <div id="visualization"></div>
   </main>
   <style>
     main {
