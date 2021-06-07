@@ -74,6 +74,14 @@
             <li><a href="#/du-stats/rick">API Externa Rick & Morty</a></li>
         </ul>
         
+        <li style="font-size: 22px;"><strong>MH-STATS</strong></li>
+
+        <ul style="list-style-type:circle; font-size: 20px;">
+            <li><a href="#/mh-stats/chart">HighChart Salud Mental</a></li>
+            <li><a href="/public/mhzing.html">ZingChart Salud Mental</a></li>
+            <li><a href="#/mh-stats/education_expenditure">API SOS education_expenditure</a></li>
+            <li><a href="#/mh-stats/children_out_school">API SOS children_out_school</a></li>
+        </ul>
 
 
 </div>

@@ -51,6 +51,17 @@ app.use(pathEducation, function(req,res){
 	console.log("listo");
 });
 
+// Proxy Mh-Stats
+var apiGrupo04 = "https://sos2021-04.herokuapp.com/api/v1/education_expenditures"
+var pathEdEx = "/eduexpends"
+app.use(pathEdEx, function(req,res){
+	console.log(`req.baseURL=<${req.baseUrl}>`);
+	console.log(`req.url=<${req.url}>`);
+	console.log("Piped:" + req.baseUrl + req.url);
+	req.pipe(request2(apiGrupo04)).pipe(res);
+});
+
+
 
 //Proxy Drug-Stats
 

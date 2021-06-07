@@ -40,7 +40,8 @@
 	import EXTchuck from './duAPI/integrations/chucknorris.svelte';
 	import EXTrick from './duAPI/integrations/rick.svelte';
 
-	
+	import MHST04 from './mhAPI/MHST04.svelte';
+	import MHST24 from './mhAPI/MHST24.svelte';
 	//RUTAS
 	const routes = {
 		//"/":PreApi,
@@ -79,6 +80,8 @@
 		"/du-stats/Graph":DrugChart,
 		"/mh-stats/chart":MHSTChart,
 		"/hdi-stats/Graph":HDIChart,
+		"/mh-stats/education_expenditure":MHST04,
+		"/mh-stats/children_out_school":MHST24,
 		};
 </script>
 <main>

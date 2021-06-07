@@ -13840,13 +13840,8 @@ var app = (function () {
     	return block;
     }
 
-<<<<<<< HEAD
-    // (147:4) <Col xs="auto">
-    function create_default_slot_1$f(ctx) {
-=======
     // (142:4) <Col xs="auto">
     function create_default_slot_1$h(ctx) {
->>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     	let card;
     	let current;
 
@@ -13892,11 +13887,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-<<<<<<< HEAD
-    		id: create_default_slot_1$f.name,
-=======
     		id: create_default_slot_1$h.name,
->>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     		type: "slot",
     		source: "(147:4) <Col xs=\\\"auto\\\">",
     		ctx
@@ -13946,11 +13937,7 @@ var app = (function () {
     	col3 = new Col({
     			props: {
     				xs: "auto",
-<<<<<<< HEAD
-    				$$slots: { default: [create_default_slot_1$f] },
-=======
     				$$slots: { default: [create_default_slot_1$h] },
->>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -15813,11 +15800,7 @@ var app = (function () {
     const file$y = "src/Integrations.svelte";
 
     // (17:12) <Button outline color="primary" onclick="location.href='#/info'">
-<<<<<<< HEAD
-    function create_default_slot$m(ctx) {
-=======
     function create_default_slot_1$g(ctx) {
->>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     	let t;
 
     	const block = {
@@ -15834,11 +15817,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-<<<<<<< HEAD
-    		id: create_default_slot$m.name,
-=======
     		id: create_default_slot_1$g.name,
->>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     		type: "slot",
     		source: "(17:12) <Button outline color=\\\"primary\\\" onclick=\\\"location.href='#/info'\\\">",
     		ctx
@@ -15847,9 +15826,6 @@ var app = (function () {
     	return block;
     }
 
-<<<<<<< HEAD
-    function create_fragment$y(ctx) {
-=======
     // (57:8) <Button href ="/#/du-stats/graph1">
     function create_default_slot$n(ctx) {
     	let t;
@@ -15878,7 +15854,6 @@ var app = (function () {
     }
 
     function create_fragment$z(ctx) {
->>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     	let html;
     	let head;
     	let title;
@@ -15969,9 +15944,6 @@ var app = (function () {
     				outline: true,
     				color: "primary",
     				onclick: "location.href='#/info'",
-<<<<<<< HEAD
-    				$$slots: { default: [create_default_slot$m] },
-=======
     				$$slots: { default: [create_default_slot_1$g] },
     				$$scope: { ctx }
     			},
@@ -15982,7 +15954,6 @@ var app = (function () {
     			props: {
     				href: "/#/du-stats/graph1",
     				$$slots: { default: [create_default_slot$n] },
->>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -16164,45 +16135,6 @@ var app = (function () {
     			set_style(li9, "font-size", "22px");
     			add_location(li9, file$y, 54, 8, 1997);
     			attr_dev(a8, "href", "#/du-stats/graph1");
-<<<<<<< HEAD
-    			add_location(a8, file$y, 57, 16, 2139);
-    			add_location(li10, file$y, 57, 12, 2135);
-    			set_style(ul11, "list-style-type", "circle");
-    			set_style(ul11, "font-size", "20px");
-    			add_location(ul11, file$y, 56, 8, 2069);
-    			attr_dev(a9, "href", "#/du-stats/graphMorris");
-    			add_location(a9, file$y, 60, 16, 2292);
-    			add_location(li11, file$y, 60, 12, 2288);
-    			set_style(ul12, "list-style-type", "circle");
-    			set_style(ul12, "font-size", "20px");
-    			add_location(ul12, file$y, 59, 8, 2222);
-    			attr_dev(a10, "href", "#/du-stats/schoolgraph");
-    			add_location(a10, file$y, 63, 16, 2448);
-    			add_location(li12, file$y, 63, 12, 2444);
-    			set_style(ul13, "list-style-type", "circle");
-    			set_style(ul13, "font-size", "20px");
-    			add_location(ul13, file$y, 62, 8, 2378);
-    			attr_dev(a11, "href", "#/du-stats/obesitygraph");
-    			add_location(a11, file$y, 66, 16, 2602);
-    			add_location(li13, file$y, 66, 12, 2598);
-    			set_style(ul14, "list-style-type", "circle");
-    			set_style(ul14, "font-size", "20px");
-    			add_location(ul14, file$y, 65, 8, 2532);
-    			attr_dev(a12, "href", "#/du-stats/chucknorris");
-    			add_location(a12, file$y, 70, 16, 2767);
-    			add_location(li14, file$y, 70, 12, 2763);
-    			set_style(ul15, "list-style-type", "circle");
-    			set_style(ul15, "font-size", "20px");
-    			add_location(ul15, file$y, 69, 8, 2697);
-    			attr_dev(a13, "href", "#/du-stats/rick");
-    			add_location(a13, file$y, 73, 16, 2926);
-    			add_location(li15, file$y, 73, 12, 2922);
-    			set_style(ul16, "list-style-type", "circle");
-    			set_style(ul16, "font-size", "20px");
-    			add_location(ul16, file$y, 72, 8, 2856);
-    			add_location(div1, file$y, 12, 4, 166);
-    			add_location(body, file$y, 11, 0, 155);
-=======
     			add_location(a8, file$z, 62, 16, 2310);
     			add_location(li10, file$z, 62, 12, 2306);
     			set_style(ul11, "list-style-type", "circle");
@@ -16240,7 +16172,6 @@ var app = (function () {
     			add_location(ul16, file$z, 77, 8, 3042);
     			add_location(div1, file$z, 12, 4, 178);
     			add_location(body, file$z, 11, 0, 166);
->>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     			attr_dev(html, "lang", "ES");
     			add_location(html, file$y, 3, 0, 75);
     		},
@@ -35481,31 +35412,6 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Gráfico de área que muestra los diferentes valores de abandono escolar";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-<<<<<<< HEAD
-    			add_location(script0, file$4, 79, 2, 1794);
-    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$4, 80, 2, 1881);
-    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$4, 81, 2, 1959);
-    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$4, 82, 2, 2034);
-    			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$4, 83, 2, 2111);
-    			add_location(strong, file$4, 90, 44, 2293);
-    			set_style(h1, "text-align", "center");
-    			add_location(h1, file$4, 90, 8, 2257);
-    			add_location(div0, file$4, 89, 4, 2243);
-    			attr_dev(div1, "id", "container");
-    			attr_dev(div1, "class", "svelte-1jvwztp");
-    			add_location(div1, file$4, 95, 10, 2417);
-    			set_style(p, "text-align", "center");
-    			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$4, 96, 10, 2450);
-    			attr_dev(figure, "class", "highcharts-figure svelte-1jvwztp");
-    			add_location(figure, file$4, 94, 8, 2372);
-    			add_location(div2, file$4, 93, 4, 2358);
-    			add_location(main, file$4, 88, 0, 2232);
-=======
     			add_location(script0, file$5, 79, 2, 1875);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
     			add_location(script1, file$5, 80, 2, 1963);
@@ -35529,7 +35435,6 @@ var app = (function () {
     			add_location(figure, file$5, 94, 8, 2468);
     			add_location(div2, file$5, 93, 4, 2453);
     			add_location(main, file$5, 88, 0, 2322);
->>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -35795,31 +35700,6 @@ var app = (function () {
     			t6 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-<<<<<<< HEAD
-    			add_location(script0, file$3, 83, 2, 1993);
-    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$3, 84, 2, 2080);
-    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$3, 85, 2, 2158);
-    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$3, 86, 2, 2233);
-    			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$3, 87, 2, 2310);
-    			add_location(strong, file$3, 94, 44, 2492);
-    			set_style(h1, "text-align", "center");
-    			add_location(h1, file$3, 94, 8, 2456);
-    			add_location(div0, file$3, 93, 4, 2442);
-    			attr_dev(div1, "id", "container");
-    			attr_dev(div1, "class", "svelte-1jvwztp");
-    			add_location(div1, file$3, 99, 10, 2613);
-    			set_style(p, "text-align", "center");
-    			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$3, 100, 10, 2646);
-    			attr_dev(figure, "class", "highcharts-figure svelte-1jvwztp");
-    			add_location(figure, file$3, 98, 8, 2568);
-    			add_location(div2, file$3, 97, 4, 2554);
-    			add_location(main, file$3, 92, 0, 2431);
-=======
     			add_location(script0, file$4, 83, 2, 2077);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
     			add_location(script1, file$4, 84, 2, 2165);
@@ -35843,7 +35723,6 @@ var app = (function () {
     			add_location(figure, file$4, 98, 8, 2667);
     			add_location(div2, file$4, 97, 4, 2652);
     			add_location(main, file$4, 92, 0, 2524);
->>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -36041,13 +35920,8 @@ var app = (function () {
     const { console: console_1$1 } = globals;
     const file$2 = "src/duAPI/integrations/chucknorris.svelte";
 
-<<<<<<< HEAD
-    // (186:4) <Button color="primary" onclick="location.reload()" style="margin-left: 35%; width: 25%;">
-    function create_default_slot_1$1(ctx) {
-=======
     // (272:4) <Button color="primary" onclick="location.reload()" style="margin-left: 35%; width: 25%;">
     function create_default_slot_1$2(ctx) {
->>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     	let t;
 
     	const block = {
@@ -36073,13 +35947,8 @@ var app = (function () {
     	return block;
     }
 
-<<<<<<< HEAD
-    // (189:4) <Button id="back" outline color="secondary" on:click="{pop}">
-    function create_default_slot$1(ctx) {
-=======
     // (275:4) <Button id="back" outline color="secondary" on:click="{pop}">
     function create_default_slot$2(ctx) {
->>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     	let t;
 
     	const block = {
@@ -36186,26 +36055,6 @@ var app = (function () {
     			t7 = space();
     			create_component(button1.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-<<<<<<< HEAD
-    			add_location(script0, file$2, 171, 4, 4979);
-    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/wordcloud.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$2, 172, 4, 5049);
-    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$2, 173, 4, 5126);
-    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$2, 174, 4, 5203);
-    			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$2, 175, 4, 5282);
-    			attr_dev(div, "id", "container");
-    			add_location(div, file$2, 180, 8, 5451);
-    			add_location(br0, file$2, 182, 25, 5546);
-    			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$2, 181, 8, 5486);
-    			attr_dev(figure, "class", "highcharts-figure svelte-sbseph");
-    			add_location(figure, file$2, 179, 4, 5408);
-    			add_location(br1, file$2, 187, 4, 5720);
-    			add_location(main, file$2, 178, 0, 5397);
-=======
     			add_location(script0, file$3, 257, 4, 7777);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/wordcloud.js")) attr_dev(script1, "src", script1_src_value);
     			add_location(script1, file$3, 258, 4, 7848);
@@ -36224,7 +36073,6 @@ var app = (function () {
     			add_location(figure, file$3, 265, 4, 8214);
     			add_location(br1, file$3, 273, 4, 8534);
     			add_location(main, file$3, 264, 0, 8202);
->>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
