@@ -1,187 +1,90 @@
 <script>
     import { onMount } from "svelte";
     import { Table, Button, Nav, NavItem, NavLink } from "sveltestrap";
-    const BASE_EDU_API_PATH = "/api/v1/mh-stats";
-    let mhsv = [];
-    let mhChartCountryDate = [];
-    let mhChartPopulation = [];
-    let mhChartAnxdaly = [];
-    let mhChartEating = [];
-    let mhChartAdhd = [];
-    let mhChartBipolar = [];
-    let mhChartDepression = [];
-    let mhChartSchizophrenia = [];
+
 
     let edex = [];
-    let edex_country = [];
-    let edex_capita = [];
+    let edex_revelationplace = [];
+    let edex_versecount = [];
+    let edex_capitulo = [];
 
     var msg = "";
     async function loadChart() {
       console.log("Obteniendo datos...");
 
-      const resext = await fetch("/eduexpends");
+      const resext = await fetch("https://api.quran.com/api/v4/chapters?language=es");
       if (resext.ok) {
         console.log("OK");
         edex = await resext.json();
-        edex.forEach(stat => {
-            console.log(stat);
-            edex_country.push(stat.country);
-            edex_capita.push(stat.education_expenditure_per_capita);
-            });
+        for (var i = 0; i < edex.chapters.length; i++) {
+          edex_revelationplace.push(edex.chapters[i].revelation_place);
+          edex_versecount.push(parseInt(edex.chapters[i].verses_count));
+          edex_capitulo.push(parseInt(edex.chapters[i].id));
+        }
+        console.log("Lista lugar revelaciones: " + edex_revelationplace);
+        console.log("Lista numero versos: " + edex_versecount);
+        console.log("Lista capitulos: " + edex_capitulo);
+        console.log("OK");
         }else {
         console.log("Not OK");
         }
+        Highcharts.chart('container', {
 
+chart: {
+    type: 'variwide'
+},
 
+title: {
+    text: 'Lugar de revelación y conteo de versos en los capítulos del Corán'
+},
 
-      const res = await fetch(BASE_EDU_API_PATH);
-      if (res.ok) {
-        console.log("OK");
-        mhsv = await res.json();
-        mhsv.forEach(stat => {
-            console.log(stat);
-            if (edex_country.includes(stat.country)) {
-            mhChartCountryDate.push(stat.country+"-"+stat.year);
-            mhChartPopulation.push(parseFloat(stat.population));
-            mhChartAnxdaly.push(parseFloat(stat.anxdaly));
-            mhChartEating.push(parseFloat(stat.eating));
-            mhChartAdhd.push(parseFloat(stat.adhd));
-            mhChartBipolar.push(parseFloat(stat.bipolar));
-            mhChartDepression.push(parseFloat(stat.depression));
-            mhChartSchizophrenia.push(parseFloat(stat.schizophrenia)); 
-            }
-        msg="";
-        });
-      }else{
-        console.log("Error");
-        msg = "Por favor primero cargue los datos de la API";
-      }
-    
-      const chart = Highcharts.chart('container', {
-  chart: {
-    zoomType: 'xy'
-  }
-});
+subtitle: {
+    text: 'Fuente: quran.com'
+},
 
-let countSeries = chart.series.length;
-while (countSeries--) {
-  chart.series[countSeries].remove(false);
-}
+xAxis: {
+    type: 'category',
+},
 
-chart.update({
-  xAxis: [{
-    categories: mhChartCountryDate,
-    crosshair: true
-  }],
-  yAxis: { // Primary yAxis
-    id: 0,
-    labels: {
-      format: '{value} kk',
-      style: {
-        color: Highcharts.getOptions().colors[2]
-      }
-    },
-    opposite: true
-
-  },
-  title: {
-    text: 'Relación Población-GDP-Salud Mental(Depresión)'
-  },
-  tooltip: {
-    shared: true
-  },
-  legend: {
-    layout: 'vertical',
-    align: 'left',
-    x: 80,
-    verticalAlign: 'top',
-    y: 55,
-    floating: true,
-    backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
-  }
-});
-
-const axes = [{ // Secondary yAxis
-  id: 1,
-  gridLineWidth: 0,
-  title: {
-    text: 'GDP per capita',
-    style: {
-      color: Highcharts.getOptions().colors[0]
-    }
-  },
-  labels: {
-    format: 'm.p.c',
-    style: {
-      color: Highcharts.getOptions().colors[0]
-    }
-  }
-
-}, { // Tertiary yAxis
-  id: 2,
-  gridLineWidth: 0,
-  title: {
-    text: 'Depresión (por cada 100k)',
-    style: {
-      color: Highcharts.getOptions().colors[1]
-    }
-  },
-  labels: {
-    format: '{value} casos',
-    style: {
-      color: Highcharts.getOptions().colors[1]
-    }
-  },
-  opposite: true
-}]
-
-chart.addAxis(axes[0]);
-chart.addAxis(axes[1]);
-
-const series = [{
-  name: 'GDP',
-  type: 'column',
-  yAxis: 1,
-  data: edex_capita.splice(0, mhChartCountryDate.length),
-  tooltip: {
-    valueSuffix: 'm.p.c'
-  }
-
-}, {
-  name: 'Depresión',
-  type: 'spline',
-  yAxis: 2,
-  data: mhChartDepression,
-  marker: {
+legend: {
     enabled: false
-  },
-  dashStyle: 'shortdot',
-  tooltip: {
-    valueSuffix: ' mb'
-  }
+},
 
-}, {
-  name: 'Población',
-  type: 'spline',
-  yAxis: 0,
-  data: mhChartPopulation,
-  tooltip: {
-    valueSuffix: ' kk'
-  }
-}];
+series: [{
+        name: 'Lugar-Capitulos-MediaVersos',
+        data: [
+            [edex_revelationplace[0], edex_capitulo[0], edex_versecount[0]],
+            [edex_revelationplace[1], edex_capitulo[1], edex_versecount[1]],
+            [edex_revelationplace[2], edex_capitulo[2], edex_versecount[2]],
+            [edex_revelationplace[3], edex_capitulo[3], edex_versecount[3]],
+            [edex_revelationplace[4], edex_capitulo[4], edex_versecount[4]],
+            [edex_revelationplace[5], edex_capitulo[5], edex_versecount[5]],
+            [edex_revelationplace[6], edex_capitulo[6], edex_versecount[6]],
+            [edex_revelationplace[7], edex_capitulo[7], edex_versecount[7]],
+            [edex_revelationplace[8], edex_capitulo[8], edex_versecount[8]],
+            [edex_revelationplace[9], edex_capitulo[9], edex_versecount[9]],
+            [edex_revelationplace[10], edex_capitulo[10], edex_versecount[10]],
+            [edex_revelationplace[11], edex_capitulo[11], edex_versecount[11]],
+            [edex_revelationplace[12], edex_capitulo[12], edex_versecount[12]],
+        ],
+        dataLabels: {
+            enabled: false,
+            format: '{point.y:.0f}'
+        },
+        tooltip: {
+            pointFormat: 'Capitulos: <b>{point.y}</b><br>' +
+                'Media versos: <b> {point.z}</b><br>'
+        },
+        colorByPoint: true
+    }]
 
-series.forEach((seriesElement) => {
-  chart.addSeries(seriesElement, false);
 });
-
-chart.redraw();
 
     }
   </script>
   <svelte:head>
     <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/variwide.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script
@@ -200,7 +103,7 @@ chart.redraw();
   
     <div>
       <h2>
-        Gráfica API SOS 2: education_expenditure + mh-stats
+        Gráfica API Ext2: Corán - Lugar revelación/N. versos/Capitulo
       </h2>
     </div>
   

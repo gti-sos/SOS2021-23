@@ -85,7 +85,7 @@
 		"/mh-stats/education_expenditure":MHST04,
 		"/mh-stats/children_out_school":MHST24,
 		"/mh-stats/currencyscoop":MHSTcurrency,
-		"/mh-stats/nhl_records":MHSTnhl,
+		"/mh-stats/quran":MHSTnhl,
 		};
 </script>
 <main>
