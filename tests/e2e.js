@@ -196,6 +196,8 @@ const puppeteer = require('puppeteer');
 
     await page.screenshot({ path: './tests/pics/16finalinfo.png',fullpage: true });
 
+
+
     /*
     console.log("pulsar insertar");
 
@@ -308,6 +310,100 @@ const puppeteer = require('puppeteer');
     await page.screenshot({ path: './tests/pics/17lafotobuscada.png' });
     
     */
+
+    //DRUG USE
+
+    //ENTRA EN LA INTERFAZ 
+
+    console.log("Clicked on Interfaz")
+    await page.click("body > main > main > div:nth-child(11) > div:nth-child(1) > div > div.card-body > a:nth-child(4) > button");
+    await page.waitForTimeout(3000); 
+    await page.waitForTimeout(3000); 
+    await page.screenshot({ path: './tests/pics2/17du-statstable.png' });
+
+    //CARGA TODOS LOS DATOS
+
+    console.log("Load all school data");
+    await page.click("body > main > main > button.btn.btn-success");
+    await page.waitForTimeout(3000); 
+    await page.waitForTimeout(3000); 
+    await page.screenshot({ path: './tests/pics2/18du-statsload.png' });
+
+
+    //BORRAR UN ELEMENTO
+
+    console.log("Delete element");
+    await page.click("body > main > main > div.table-responsive > table > tbody > tr:nth-child(3) > td:nth-child(7) > button");
+    await page.waitForTimeout(3000); 
+    await page.waitForTimeout(3000); 
+    await page.screenshot({ path: './tests/pics2/19du-statsdelete.png' });
+
+    //BUSCAR DATO
+
+    console.log("Introduciendo dato");
+    await page.click("body > main > main > div.table-responsive > table > tbody > tr:nth-child(2) > td:nth-child(1) > input[type=text]");
+    await page.keyboard.type("Italy");
+    await page.screenshot({ path: './tests/pics2/20searchingItaly.png' });
+    
+    console.log("Buscando dato")
+    await page.click("body > main > main > div.table-responsive > table > tbody > tr:nth-child(2) > td:nth-child(7) > button");
+    await page.waitForTimeout(3000); 
+    await page.screenshot({ path: './tests/pics2/21busqueda.png' });
+
+
+    //VUELTA A INFO
+    console.log("Back to info");
+
+    await page.goto('http://localhost:11337/');
+    await page.screenshot({ path: './tests/pics2/22info.png' });
+
+    // PAGINA PRINCIPAL 
+    console.log("Vamos para la pagina principal")
+    await page.click("#botoninfo");
+    await page.waitForTimeout(3000); 
+    await page.screenshot({ path: './tests/pics2/23paginaprincipal.png' });
+
+    // PAGINA PRINCIPAL 
+    console.log("Hacemos click en integraciones")
+    await page.click("#integrationsbtn");
+    await page.waitForTimeout(3000); 
+    await page.screenshot({ path: './tests/pics2/24integraciones.png' });
+
+    // GRAFICA HIGHCHART
+    console.log("Veamos alguna")
+    await page.click("body > div > ul:nth-child(21) > li > a");
+    await page.waitForTimeout(3000); 
+    await page.screenshot({ path: './tests/pics2/25grafica.png' });
+    console.log("Ahi está")
+
+    //VOLVEMOS A INICIO
+    console.log("Volviendo a inicio")
+    await page.click("body > div > div > button");
+    await page.waitForTimeout(3000); 
+    await page.screenshot({ path: './tests/pics2/26vueltainicio.png' });
+
+
+    //INSERTAR MÁS A PARTIR DE AQUÍ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     await browser.close();
 

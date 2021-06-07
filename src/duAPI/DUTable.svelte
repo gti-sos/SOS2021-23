@@ -363,6 +363,9 @@
      <Button outline color="info" on:click="{getNextPage}">
          Siguiente
         </Button>{/if}
+        <Button  id="infobtn" outline color="primary" href="/#/info">
+            Página Principal
+        </Button>
     <Button href ="/#/du-stats/Graph">
             Analíticas
        </Button>

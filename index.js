@@ -52,8 +52,14 @@ app.use(pathEducation, function(req,res){
 });
 
 
+//Proxy Drug-Stats
 
-
+var remoteAPI1 = "http://api.quotable.io/random"
+var pathQuote = "/random"
+app.use(pathQuote, function(req,res){
+	console.log("Piped:" + req.baseUrl + req.url);
+	req.pipe(request(remoteAPI1)).pipe(res);
+});
 
 // Funciones auxiliares para las que no merece crear una librería
 function hehe() {
