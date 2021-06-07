@@ -41,9 +41,6 @@
 	import EXTrick from './duAPI/integrations/rick.svelte';
 
 	
-
-
-	import MHSTSecchart from "./mhAPI/MHSTChartTwo.svelte";
 	//RUTAS
 	const routes = {
 		//"/":PreApi,
@@ -82,8 +79,6 @@
 		"/du-stats/Graph":DrugChart,
 		"/mh-stats/chart":MHSTChart,
 		"/hdi-stats/Graph":HDIChart,
-        "/mh-stats/vischart":MHSTSecchart
-          
 		};
 </script>
 <main>
