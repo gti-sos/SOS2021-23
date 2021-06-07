@@ -6,6 +6,8 @@
 	<nav class="p-12 text-xl">
 		<a class="block" href="/#/info">Sobre nosotros</a>
 		<a class="block" href="/public/contact.html">Contacto</a>
+		<a class="block" href="/#/mh-stats/chart">Gráfica HighCharts</a>
+		<a class="block" href="/public/mhzing.html">Gráfica ZingCharts</a>
 	</nav>
 </aside>
 <style>

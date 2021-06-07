@@ -1,0 +1,176 @@
+<!doctype html>
+<html class="zc-html">
+  <head>
+    <meta charset="utf-8">
+    <title>Gráfica ZingCharts</title>
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+  </head>
+  ​<style>
+.chart--container {
+  height: 100%;
+  width: 100%;
+  min-height: 530px;
+}
+  </style>
+  <body class="zc-body">
+  ​
+    <div id="myChart" class="chart--container">
+    </div>
+    <button><a href="/#/info">Atrás</a></button>
+  </body>
+</html>
+<script>
+    const BASE_EDU_API_PATH = "/api/v1/mh-stats";
+    let mhsv = [];
+    let mhChartCountryDate = [];
+    let mhChartCountry = [];
+    let mhChartDate = [];
+    let mhChartPopulation = [];
+    let mhChartAnxdaly = [];
+    let mhChartEating = [];
+    let mhChartAdhd = [];
+    let mhChartBipolar = [];
+    let mhChartDepression = [];
+    let mhChartSchizophrenia = [];
+
+    var msg = "";
+    async function loadChart() {
+      console.log("Obteniendo datos...");
+      const res = await fetch(BASE_EDU_API_PATH);
+      
+      if (res.ok) {
+        console.log("OK");
+        mhsv = await res.json();
+        mhsv.forEach(stat => {
+            console.log(stat);
+        mhChartCountryDate.push(stat.country+"-"+stat.year);
+        mhChartCountry.push(stat.country);
+        mhChartDate.push(parseInt(stat.year));
+        mhChartPopulation.push(parseInt(stat.population));
+        mhChartAnxdaly.push(parseInt(stat.anxdaly));
+        mhChartEating.push(parseInt(stat.eating));
+        mhChartAdhd.push(parseInt(stat.adhd));
+        mhChartBipolar.push(parseInt(stat.bipolar));
+        mhChartDepression.push(parseInt(stat.depression));
+        mhChartSchizophrenia.push(parseInt(stat.schizophrenia)); 
+        msg="";
+        console.log(mhChartAdhd);
+        console.log(mhChartPopulation);
+        console.log(mhChartAnxdaly);
+        console.log(mhChartBipolar);
+        });
+      }else{
+        console.log("Error"+res.valueOf);
+        msg = "Por favor primero cargue los datos de la API";
+      }
+    }
+// CHART CONFIG
+// -----------------------------
+loadChart();
+
+ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+// DEFINE DATA
+// -----------------------------
+let chartData = [
+  {
+    text: 'Población',
+    values: [166, 169, 343, 712, 132, 721, 671, 234],
+    style: {
+      band: {
+        alpha: 1,
+        backgroundColor: '#000'
+      },
+      label: {
+        bold: true,
+        fontFamily: 'arial',
+        fontSize: '14px'
+      }
+    }
+  },
+  {
+    text: 'Ansiedad+Alimenticio',
+    values: [166, 130, 253, 312, 232, 921, 67, 195],
+    style: {
+      band: {
+        aplpha: 1,
+        backgroundColor: '#f26223'
+      },
+      label: {
+        bold: true,
+        fontFamily: 'arial',
+        fontSize: '14px'
+      }
+    }
+  },
+  {
+    text: 'Alimenticios',
+    values: [346, 630, 263, 412, 797, 623, 34, 493],
+    style: {
+      band: {
+        alpha: 1,
+        backgroundColor: '#957244'
+      },
+      label: {
+        bold: true,
+        fontFamily: 'arial',
+        fontSize: '14px'
+      }
+    }
+  },
+  {
+    text: 'TDAH',
+    values:  [346, 530, 462, 462, 797, 623, 3, 496],
+    style: {
+      band: {
+        alpha: 1,
+        backgroundColor: '#ffdd89'
+      },
+      label: {
+        bold: true,
+        fontFamily: 'arial',
+        fontSize: '14px'
+      }
+    }
+  }
+];
+
+// CHART CONFIG
+// -----------------------------
+let chartConfig = {
+  type: 'chord',
+  backgroundColor: '#FFFFFF',
+  title: {
+    text: 'Trastornos',
+    backgroundColor: 'none',
+    fontColor: '#333',
+    fontFamily: 'arial',
+    textAlign: 'left'
+  },
+  legend: {
+    backgroundColor: 'none',
+    borderColor: 'gray',
+    borderWidth: '2px',
+    shadow: false
+  },
+  options: {
+    anglePadding: 5,
+    bandSpace: 2,
+    colorType: 'palette',
+    palette: ['#000', '#f26223', '#957244', '#ffdd89'],
+    radius: 110
+  },
+  plotarea: {
+    margin: '25px 40px 15px 40px'
+  },
+  series: chartData
+};
+
+// RENDER CHARTS
+// -----------------------------
+zingchart.render({
+  id: 'myChart',
+  data: chartConfig,
+  height: '100%',
+  width: '100%'
+});
+</script>

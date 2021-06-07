@@ -100,11 +100,16 @@
             <Button color="primary">Interfaz</Button>
           </a>
           <a href="#/mh-stats/chart">
-            <Button color="primary">Gráfica</Button>
+            <Button color="primary">Gráfica HighCharts</Button>
+          </a>
+          <a href="/public/mhzing.html">
+            <Button color="primary">Gráfica ZingCharts</Button>
+          </a>
+          <a href="https://youtube.com">
+            <Button color="primary">Vídeo</Button>
           </a>
           <a href="https://documenter.getpostman.com/view/14943559/TzJoDfQ5"
             ><Button color="info">Documentación Backend en Postman</Button></a>
-          
         </CardBody>
         <CardFooter
           >desarrollado por 
