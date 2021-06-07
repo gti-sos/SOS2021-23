@@ -76,6 +76,10 @@
           <a href="#/du-stats/Graph">
             <Button color="primary">Gráfica</Button>
           </a>
+
+          <a href="https://www.youtube.com/watch?v=bAHH6QRHzqU">
+            <Button color="primary">Video</Button>
+          </a>
           <a href="https://documenter.getpostman.com/view/14950269/TzJoDzt6"
             ><Button color="info">Documentación Back-end en Postman</Button></a>
         </CardBody>
@@ -131,6 +135,10 @@
               <Button color="primary">V2</Button></a>
           <a href="/#/unemployment-stats">
             <Button color="primary">Frontend</Button>
+          </a>
+
+          <a href="https://www.youtube.com/watch?v=0GgTMvwEwj8">
+            <Button color="primary">Video</Button>
           </a>
           <a href="https://documenter.getpostman.com/view/14941751/TzJuAJ6j"
             ><Button color="info">Postman V1</Button></a>

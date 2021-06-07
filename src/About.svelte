@@ -20,13 +20,13 @@
         <li style="font-size: 22px;"><strong>Unemployment-Stats</strong></li>
 
         <ul style="list-style-type:circle; font-size: 20px;">
-            <li><a href="#/info">Video</a></li>
+            <li><a href="https://www.youtube.com/watch?v=0GgTMvwEwj8">Video</a></li>
         </ul>
 
         <li style="font-size: 22px;"><strong>Drugs</strong></li>
 
         <ul style="list-style-type:circle; font-size: 20px;">
-            <li><a href="#/info">Video</a></li>
+            <li><a href="https://www.youtube.com/watch?v=bAHH6QRHzqU">Video</a></li>
         </ul>
 
         <li style="font-size: 22px;"><strong>HDI</strong></li>
