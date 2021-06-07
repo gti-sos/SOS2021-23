@@ -38,7 +38,7 @@
         <li style="font-size: 22px;"><strong>Mental Health</strong></li>
 
         <ul style="list-style-type:circle; font-size: 20px;">
-            <li><a href="#/info">Video</a></li>
+            <li><a href="https://youtu.be/zOqQSNzHalk">Video</a></li>
         </ul>
 
 </div>
