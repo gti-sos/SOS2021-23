@@ -69,7 +69,7 @@
 
 <main>
     
-    <h3 style="text-align: center;"> Porcentaje de paro según Knoema.es y la distribucion de aceite en 2011</h3>
+    <h3 style="text-align: center;"> Porcentaje de paro según Knoema.es y la distribucion de aceite</h3>
 
     <div id="myDiv"></div>
     <Button outline color="secondary" on:click="{pop}">Atrás</Button>

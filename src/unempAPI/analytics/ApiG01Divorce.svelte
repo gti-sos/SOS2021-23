@@ -9,19 +9,15 @@
         let datosPaisUnemp=[];
         let datosAñosUnemp = [];
         let datosIntperc = [];
-        let divorcerate = [];
+        let ratioactual = [];
         let datosPaisDivorce = [];
         let datosAñosDivorce=[];
         
-        console.log("antes del fetch");
         const resDataG2 = await fetch(API2);
         const resData = await fetch(miAPI);
-        console.log("despues del fetch");
 
-        console.log("antes del json");
         myData = await resData.json();
         dataG2 = await resDataG2.json();
-        console.log("despues del json");
 
         datosPaisUnemp = myData.map((myData)=> (myData.country));
         datosIntperc = myData.map((myData)=> myData.intperc);
@@ -29,19 +25,27 @@
 
         dataG2.forEach( (x) => {
             
-                divorcerate.push(parseFloat(x['ratio-actual'])); 
+                ratioactual.push(parseFloat(x['ratio-actual'])); 
                 datosPaisDivorce.push(x.country);
                 datosAñosDivorce.push(x.date);
         });
-        var x = divorcerate;
+        var x = ratioactual;
         var y = datosAñosDivorce;
+        var z=datosIntperc;
+        var w=datosAñosUnemp;
 
         var trace = {
-            x: y,
-            y:x,
+            x: x,
+            y:y,
             type: 'histogram',
           };
-        var data = [trace];
+
+          var trace1 = {
+            x: z,
+            y:w,
+            type: 'histogram',
+          };
+        var data = [trace,trace1];
         Plotly.newPlot('myDiv', data);
         
     }
