@@ -36802,7 +36802,7 @@ var app = (function () {
     const { console: console_1$1 } = globals;
     const file$2 = "src/mhAPI/MHST04.svelte";
 
-    // (165:8) <NavLink href="/#/info">
+    // (194:8) <NavLink href="/#/info">
     function create_default_slot_4$1(ctx) {
     	let t;
 
@@ -36822,14 +36822,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$1.name,
     		type: "slot",
-    		source: "(165:8) <NavLink href=\\\"/#/info\\\">",
+    		source: "(194:8) <NavLink href=\\\"/#/info\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (164:6) <NavItem>
+    // (193:6) <NavItem>
     function create_default_slot_3$1(ctx) {
     	let navlink;
     	let current;
@@ -36854,7 +36854,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const navlink_changes = {};
 
-    			if (dirty & /*$$scope*/ 4096) {
+    			if (dirty & /*$$scope*/ 16384) {
     				navlink_changes.$$scope = { dirty, ctx };
     			}
 
@@ -36878,14 +36878,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$1.name,
     		type: "slot",
-    		source: "(164:6) <NavItem>",
+    		source: "(193:6) <NavItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (168:8) <NavLink href="#/mh-stats">
+    // (197:8) <NavLink href="#/mh-stats">
     function create_default_slot_2$1(ctx) {
     	let t;
 
@@ -36905,14 +36905,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$1.name,
     		type: "slot",
-    		source: "(168:8) <NavLink href=\\\"#/mh-stats\\\">",
+    		source: "(197:8) <NavLink href=\\\"#/mh-stats\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (167:6) <NavItem>
+    // (196:6) <NavItem>
     function create_default_slot_1$1(ctx) {
     	let navlink;
     	let current;
@@ -36937,7 +36937,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const navlink_changes = {};
 
-    			if (dirty & /*$$scope*/ 4096) {
+    			if (dirty & /*$$scope*/ 16384) {
     				navlink_changes.$$scope = { dirty, ctx };
     			}
 
@@ -36961,14 +36961,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$1.name,
     		type: "slot",
-    		source: "(167:6) <NavItem>",
+    		source: "(196:6) <NavItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (163:4) <Nav>
+    // (192:4) <Nav>
     function create_default_slot$1(ctx) {
     	let navitem0;
     	let t;
@@ -37006,14 +37006,14 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const navitem0_changes = {};
 
-    			if (dirty & /*$$scope*/ 4096) {
+    			if (dirty & /*$$scope*/ 16384) {
     				navitem0_changes.$$scope = { dirty, ctx };
     			}
 
     			navitem0.$set(navitem0_changes);
     			const navitem1_changes = {};
 
-    			if (dirty & /*$$scope*/ 4096) {
+    			if (dirty & /*$$scope*/ 16384) {
     				navitem1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -37041,40 +37041,31 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(163:4) <Nav>",
+    		source: "(192:4) <Nav>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (180:4) {:else}
+    // (209:4) {:else}
     function create_else_block$1(ctx) {
     	let figure;
     	let div;
-    	let t0;
-    	let p;
 
     	const block = {
     		c: function create() {
     			figure = element("figure");
     			div = element("div");
-    			t0 = space();
-    			p = element("p");
-    			p.textContent = "La gráfica muestra el número de afectados por cada 100 mil habitantes a través de barras.";
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-p7ed96");
-    			add_location(div, file$2, 181, 6, 4689);
-    			attr_dev(p, "class", "highcharts-description svelte-p7ed96");
-    			add_location(p, file$2, 182, 6, 4722);
+    			add_location(div, file$2, 210, 6, 4785);
     			attr_dev(figure, "class", "highcharts-figure svelte-p7ed96");
-    			add_location(figure, file$2, 180, 4, 4648);
+    			add_location(figure, file$2, 209, 4, 4744);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, figure, anchor);
     			append_dev(figure, div);
-    			append_dev(figure, t0);
-    			append_dev(figure, p);
     		},
     		p: noop,
     		d: function destroy(detaching) {
@@ -37086,14 +37077,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(180:4) {:else}",
+    		source: "(209:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (178:4) {#if msg}
+    // (207:4) {#if msg}
     function create_if_block$1(ctx) {
     	let p;
     	let t;
@@ -37103,7 +37094,7 @@ var app = (function () {
     			p = element("p");
     			t = text(/*msg*/ ctx[0]);
     			attr_dev(p, "class", "svelte-p7ed96");
-    			add_location(p, file$2, 178, 6, 4619);
+    			add_location(p, file$2, 207, 6, 4715);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -37121,7 +37112,7 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(178:4) {#if msg}",
+    		source: "(207:4) {#if msg}",
     		ctx
     	});
 
@@ -37143,11 +37134,9 @@ var app = (function () {
     	let main;
     	let nav;
     	let t1;
-    	let div0;
+    	let div;
     	let h2;
     	let t3;
-    	let t4;
-    	let div1;
     	let current;
     	let mounted;
     	let dispose;
@@ -37179,31 +37168,26 @@ var app = (function () {
     			main = element("main");
     			create_component(nav.$$.fragment);
     			t1 = space();
-    			div0 = element("div");
+    			div = element("div");
     			h2 = element("h2");
-    			h2.textContent = "Gráfica";
+    			h2.textContent = "Gráfica API SOS 2: education_expenditure + mh-stats";
     			t3 = space();
     			if_block.c();
-    			t4 = space();
-    			div1 = element("div");
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$2, 153, 4, 3902);
-    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/highcharts-3d.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$2, 154, 4, 3972);
+    			add_location(script0, file$2, 182, 4, 3947);
+    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
+    			add_location(script1, file$2, 183, 4, 4017);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$2, 155, 4, 4045);
+    			add_location(script2, file$2, 184, 4, 4097);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$2, 156, 4, 4122);
+    			add_location(script3, file$2, 185, 4, 4174);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$2, 157, 4, 4201);
-    			add_location(h2, file$2, 172, 6, 4552);
-    			attr_dev(div0, "class", "svelte-p7ed96");
-    			add_location(div0, file$2, 171, 4, 4540);
-    			attr_dev(div1, "id", "visualization");
-    			attr_dev(div1, "class", "svelte-p7ed96");
-    			add_location(div1, file$2, 187, 4, 4892);
+    			add_location(script4, file$2, 186, 4, 4253);
+    			add_location(h2, file$2, 201, 6, 4604);
+    			attr_dev(div, "class", "svelte-p7ed96");
+    			add_location(div, file$2, 200, 4, 4592);
     			attr_dev(main, "class", "svelte-p7ed96");
-    			add_location(main, file$2, 161, 2, 4329);
+    			add_location(main, file$2, 190, 2, 4381);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -37218,12 +37202,10 @@ var app = (function () {
     			insert_dev(target, main, anchor);
     			mount_component(nav, main, null);
     			append_dev(main, t1);
-    			append_dev(main, div0);
-    			append_dev(div0, h2);
+    			append_dev(main, div);
+    			append_dev(div, h2);
     			append_dev(main, t3);
     			if_block.m(main, null);
-    			append_dev(main, t4);
-    			append_dev(main, div1);
     			current = true;
 
     			if (!mounted) {
@@ -37234,7 +37216,7 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const nav_changes = {};
 
-    			if (dirty & /*$$scope*/ 4096) {
+    			if (dirty & /*$$scope*/ 16384) {
     				nav_changes.$$scope = { dirty, ctx };
     			}
 
@@ -37248,7 +37230,7 @@ var app = (function () {
 
     				if (if_block) {
     					if_block.c();
-    					if_block.m(main, t4);
+    					if_block.m(main, null);
     				}
     			}
     		},
@@ -37293,7 +37275,6 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("MHST04", slots, []);
     	let mhsv = [];
-    	let edex = [];
     	let mhChartCountryDate = [];
     	let mhChartPopulation = [];
     	let mhChartAnxdaly = [];
@@ -37302,33 +37283,13 @@ var app = (function () {
     	let mhChartBipolar = [];
     	let mhChartDepression = [];
     	let mhChartSchizophrenia = [];
+    	let edex = [];
+    	let edex_country = [];
+    	let edex_capita = [];
     	var msg = "";
 
     	async function loadChart() {
     		console.log("Obteniendo datos...");
-    		const res = await fetch(BASE_EDU_API_PATH$1);
-
-    		if (res.ok) {
-    			console.log("OK");
-    			mhsv = await res.json();
-
-    			mhsv.forEach(stat => {
-    				console.log(stat);
-    				mhChartCountryDate.push(stat.country + "-" + stat.year);
-    				mhChartPopulation.push(parseFloat(stat.population));
-    				mhChartAnxdaly.push(parseFloat(stat.anxdaly));
-    				mhChartEating.push(parseFloat(stat.eating));
-    				mhChartAdhd.push(parseFloat(stat.adhd));
-    				mhChartBipolar.push(parseFloat(stat.bipolar));
-    				mhChartDepression.push(parseFloat(stat.depression));
-    				mhChartSchizophrenia.push(parseFloat(stat.schizophrenia));
-    				$$invalidate(0, msg = "");
-    			});
-    		} else {
-    			console.log("Error");
-    			$$invalidate(0, msg = "Por favor primero cargue los datos de la API");
-    		}
-
     		const resext = await fetch("/eduexpends");
 
     		if (resext.ok) {
@@ -37337,89 +37298,142 @@ var app = (function () {
 
     			edex.forEach(stat => {
     				console.log(stat);
+    				edex_country.push(stat.country);
+    				edex_capita.push(stat.education_expenditure_per_capita);
     			});
     		} else {
     			console.log("Not OK");
     		}
 
-    		Highcharts.chart("container", {
-    			chart: {
-    				type: "column",
-    				options3d: {
-    					enabled: true,
-    					alpha: 15,
-    					beta: 15,
-    					viewDistance: 25,
-    					depth: 40
+    		const res = await fetch(BASE_EDU_API_PATH$1);
+
+    		if (res.ok) {
+    			console.log("OK");
+    			mhsv = await res.json();
+
+    			mhsv.forEach(stat => {
+    				console.log(stat);
+
+    				if (edex_country.includes(stat.country)) {
+    					mhChartCountryDate.push(stat.country + "-" + stat.year);
+    					mhChartPopulation.push(parseFloat(stat.population));
+    					mhChartAnxdaly.push(parseFloat(stat.anxdaly));
+    					mhChartEating.push(parseFloat(stat.eating));
+    					mhChartAdhd.push(parseFloat(stat.adhd));
+    					mhChartBipolar.push(parseFloat(stat.bipolar));
+    					mhChartDepression.push(parseFloat(stat.depression));
+    					mhChartSchizophrenia.push(parseFloat(stat.schizophrenia));
     				}
-    			},
-    			title: { text: "Highcharts responsive chart" },
-    			subtitle: {
-    				text: "Resize the frame or click buttons to change appearance"
-    			},
-    			legend: {
-    				align: "right",
-    				verticalAlign: "middle",
-    				layout: "vertical"
-    			},
-    			xAxis: {
-    				categories: mhChartCountryDate,
-    				labels: { x: -10 }
-    			},
-    			yAxis: {
-    				allowDecimals: false,
-    				title: {
-    					text: "Afectados por cada 100 mil habitantes"
-    				}
-    			},
-    			series: [
+
+    				$$invalidate(0, msg = "");
+    			});
+    		} else {
+    			console.log("Error");
+    			$$invalidate(0, msg = "Por favor primero cargue los datos de la API");
+    		}
+
+    		const chart = Highcharts.chart("container", { chart: { zoomType: "xy" } });
+    		let countSeries = chart.series.length;
+
+    		while (countSeries--) {
+    			chart.series[countSeries].remove(false);
+    		}
+
+    		chart.update({
+    			xAxis: [
     				{
-    					name: "Población",
-    					data: mhChartPopulation
-    				},
-    				{
-    					name: "T. Ansiedad+Alimenticios",
-    					data: mhChartAnxdaly
-    				},
-    				{
-    					name: "T. Alimenticios",
-    					data: mhChartEating
-    				},
-    				{ name: "TDAH", data: mhChartAdhd },
-    				{
-    					name: "Bipolaridad",
-    					data: mhChartBipolar
-    				},
-    				{
-    					name: "Depresión",
-    					data: mhChartDepression
-    				},
-    				{
-    					name: "Esquizofrenia",
-    					data: mhChartSchizophrenia
+    					categories: mhChartCountryDate,
+    					crosshair: true
     				}
     			],
-    			responsive: {
-    				rules: [
-    					{
-    						condition: { maxWidth: 500 },
-    						chartOptions: {
-    							legend: {
-    								align: "center",
-    								verticalAlign: "bottom",
-    								layout: "horizontal"
-    							},
-    							yAxis: {
-    								labels: { align: "left", x: 0, y: -5 },
-    								title: { text: null }
-    							},
-    							subtitle: { text: null },
-    							credits: { enabled: false }
-    						}
-    					}
-    				]
+    			yAxis: {
+    				// Primary yAxis
+    				id: 0,
+    				labels: {
+    					format: "{value} kk",
+    					style: { color: Highcharts.getOptions().colors[2] }
+    				},
+    				opposite: true
+    			},
+    			title: {
+    				text: "Relación Población-GDP-Salud Mental(Depresión)"
+    			},
+    			tooltip: { shared: true },
+    			legend: {
+    				layout: "vertical",
+    				align: "left",
+    				x: 80,
+    				verticalAlign: "top",
+    				y: 55,
+    				floating: true,
+    				backgroundColor: Highcharts.theme && Highcharts.theme.legendBackgroundColor || "#FFFFFF"
     			}
     		});
+
+    		const axes = [
+    			{
+    				// Secondary yAxis
+    				id: 1,
+    				gridLineWidth: 0,
+    				title: {
+    					text: "GDP per capita",
+    					style: { color: Highcharts.getOptions().colors[0] }
+    				},
+    				labels: {
+    					format: "m.p.c",
+    					style: { color: Highcharts.getOptions().colors[0] }
+    				}
+    			},
+    			{
+    				// Tertiary yAxis
+    				id: 2,
+    				gridLineWidth: 0,
+    				title: {
+    					text: "Depresión (por cada 100k)",
+    					style: { color: Highcharts.getOptions().colors[1] }
+    				},
+    				labels: {
+    					format: "{value} casos",
+    					style: { color: Highcharts.getOptions().colors[1] }
+    				},
+    				opposite: true
+    			}
+    		];
+
+    		chart.addAxis(axes[0]);
+    		chart.addAxis(axes[1]);
+
+    		const series = [
+    			{
+    				name: "GDP",
+    				type: "column",
+    				yAxis: 1,
+    				data: edex_capita.splice(0, mhChartCountryDate.length),
+    				tooltip: { valueSuffix: "m.p.c" }
+    			},
+    			{
+    				name: "Depresión",
+    				type: "spline",
+    				yAxis: 2,
+    				data: mhChartDepression,
+    				marker: { enabled: false },
+    				dashStyle: "shortdot",
+    				tooltip: { valueSuffix: " mb" }
+    			},
+    			{
+    				name: "Población",
+    				type: "spline",
+    				yAxis: 0,
+    				data: mhChartPopulation,
+    				tooltip: { valueSuffix: " kk" }
+    			}
+    		];
+
+    		series.forEach(seriesElement => {
+    			chart.addSeries(seriesElement, false);
+    		});
+
+    		chart.redraw();
     	}
 
     	const writable_props = [];
@@ -37437,7 +37451,6 @@ var app = (function () {
     		NavLink,
     		BASE_EDU_API_PATH: BASE_EDU_API_PATH$1,
     		mhsv,
-    		edex,
     		mhChartCountryDate,
     		mhChartPopulation,
     		mhChartAnxdaly,
@@ -37446,13 +37459,15 @@ var app = (function () {
     		mhChartBipolar,
     		mhChartDepression,
     		mhChartSchizophrenia,
+    		edex,
+    		edex_country,
+    		edex_capita,
     		msg,
     		loadChart
     	});
 
     	$$self.$inject_state = $$props => {
     		if ("mhsv" in $$props) mhsv = $$props.mhsv;
-    		if ("edex" in $$props) edex = $$props.edex;
     		if ("mhChartCountryDate" in $$props) mhChartCountryDate = $$props.mhChartCountryDate;
     		if ("mhChartPopulation" in $$props) mhChartPopulation = $$props.mhChartPopulation;
     		if ("mhChartAnxdaly" in $$props) mhChartAnxdaly = $$props.mhChartAnxdaly;
@@ -37461,6 +37476,9 @@ var app = (function () {
     		if ("mhChartBipolar" in $$props) mhChartBipolar = $$props.mhChartBipolar;
     		if ("mhChartDepression" in $$props) mhChartDepression = $$props.mhChartDepression;
     		if ("mhChartSchizophrenia" in $$props) mhChartSchizophrenia = $$props.mhChartSchizophrenia;
+    		if ("edex" in $$props) edex = $$props.edex;
+    		if ("edex_country" in $$props) edex_country = $$props.edex_country;
+    		if ("edex_capita" in $$props) edex_capita = $$props.edex_capita;
     		if ("msg" in $$props) $$invalidate(0, msg = $$props.msg);
     	};
 
