@@ -1,7 +1,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/gti-sos/SOS2021-23/badge.svg)](https://snyk.io/test/github/gti-sos/SOS2021-23/badge.svg)
 ## SOS2021-23
 
-- **Team**
+- **_Team**
   - [Antonio Corpas Espinar](https://github.com/ace58)
   - [José Carlos Torres](https://github.com/secaasecas)
   - [Antonio Maiquez Marin](https://github.com/Jackman97)
