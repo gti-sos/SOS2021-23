@@ -389,7 +389,7 @@ const puppeteer = require('puppeteer');
     //ENTRA EN LA INTERFAZ 
 
     console.log("Clicked on Interfaz")
-    await page.click("div.col-auto:nth-child(2) > div:nth-child(1) > div:nth-child(2) > a:nth-child(4) > button:nth-child(1)");
+    await page.click("div.col-auto:nth-child(2) > div:nth-child(1) > div:nth-child(2) > a:nth-child(4)");
     await page.waitForTimeout(3000); 
     await page.waitForTimeout(3000); 
     await page.screenshot({ path: './tests/pics/27mh-statstable.png' });
