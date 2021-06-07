@@ -76,7 +76,7 @@
 
 <main>
     
-    <h3 style="text-align: center;"> Porcentaje de paro según Knoema.es y life stat en 2019</h3>
+    <h3 style="text-align: center;"> Porcentaje de paro según Knoema.es y esperanza de vida</h3>
 
     <div id="myDiv"></div>
     <Button outline color="secondary" on:click="{pop}">Atrás</Button>

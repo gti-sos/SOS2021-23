@@ -31,6 +31,10 @@
         </ul>
         <ul style="list-style-type:circle; font-size: 20px;">
             <li><a href="#/unemployment-graph/graphG24">Api Grupo 24</a></li>
+        </ul> 
+        
+        <ul style="list-style-type:circle; font-size: 20px;">
+            <li><a href="#/unemployment-graph/graph01Divorce">Api Grupo 01 Divorce</a></li>
         </ul>
 
         <ul style="font-size: 22px;"><strong>Uso</strong></ul>
@@ -39,9 +43,7 @@
             <li><a href="#/unemployment-graph/graphApiExt2">Api Externa 2</a></li>
         </ul>
 
-        <ul style="list-style-type:circle; font-size: 20px;">
-            <li><a href="#/unemployment-graph/graph01Divorce">Api Grupo 01 Divorce</a></li>
-        </ul>
+
 
         <ul style="font-size: 22px;"><strong>Personal</strong></ul>
 
