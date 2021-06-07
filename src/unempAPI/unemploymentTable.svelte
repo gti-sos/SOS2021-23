@@ -31,12 +31,6 @@
 	let Uyear = "";
 	let Ufrom = "";
 	let Uto = "";
-	//let Uknoperc_min = "";
-	//let Uknoperc_max = "";
-	//let Uintperc_min = "";
-	//let Uintperc_max = "";
-	//let Ugfperc_min= "";
-	//let Ugfperc_max = "";
 	let knoperc="";
 	let intperc="";
 	let gfperc="";
