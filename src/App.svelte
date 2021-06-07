@@ -42,6 +42,8 @@
 
 	import MHST04 from './mhAPI/MHST04.svelte';
 	import MHST24 from './mhAPI/MHST24.svelte';
+	import MHSTcurrency from './mhAPI/MHSTcurrency.svelte';
+	import MHSTnhl from './mhAPI/MHSTnhl.svelte';
 	//RUTAS
 	const routes = {
 		//"/":PreApi,
@@ -82,6 +84,8 @@
 		"/hdi-stats/Graph":HDIChart,
 		"/mh-stats/education_expenditure":MHST04,
 		"/mh-stats/children_out_school":MHST24,
+		"/mh-stats/currencyscoop":MHSTcurrency,
+		"/mh-stats/nhl_records":MHSTnhl,
 		};
 </script>
 <main>

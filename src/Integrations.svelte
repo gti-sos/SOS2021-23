@@ -81,6 +81,8 @@
             <li><a href="/public/mhzing.html">ZingChart Salud Mental</a></li>
             <li><a href="#/mh-stats/education_expenditure">API SOS education_expenditure</a></li>
             <li><a href="#/mh-stats/children_out_school">API SOS children_out_school</a></li>
+            <li><a href="#/mh-stats/currencyscoop">API Ext1 CurrencyScoop-mh</a></li>
+            <li><a href="#/mh-stats/nhl_records">API Ext2 NHL Records API-mh</a></li>
         </ul>
 
 
