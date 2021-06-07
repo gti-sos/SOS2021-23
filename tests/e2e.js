@@ -354,7 +354,7 @@ const puppeteer = require('puppeteer');
     //VUELTA A INFO
     console.log("Back to info");
 
-    await page.goto('http://localhost:11337/');
+    await page.goto('https://sos2021-23.herokuapp.com/');
     await page.screenshot({ path: './tests/pics/22info.png' });
 
     // PAGINA PRINCIPAL 
