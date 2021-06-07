@@ -384,7 +384,76 @@ const puppeteer = require('puppeteer');
 
 
     //INSERTAR MÁS A PARTIR DE AQUÍ
+    //MH-STATS
 
+    //ENTRA EN LA INTERFAZ 
+
+    console.log("Clicked on Interfaz")
+    await page.click("div.col-auto:nth-child(2) > div:nth-child(1) > div:nth-child(2) > a:nth-child(4) > button:nth-child(1)");
+    await page.waitForTimeout(3000); 
+    await page.waitForTimeout(3000); 
+    await page.screenshot({ path: './tests/pics/27mh-statstable.png' });
+
+    //CARGA TODOS LOS DATOS
+
+    console.log("Load all MH data");
+    await page.click("#loadmhdata");
+    await page.waitForTimeout(3000); 
+    await page.waitForTimeout(3000); 
+    await page.screenshot({ path: './tests/pics/28mh-statsload.png' });
+
+
+    //BORRAR UN ELEMENTO
+
+    console.log("Delete element");
+    await page.click(".table > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(10) > button:nth-child(2)");
+    await page.waitForTimeout(3000); 
+    await page.waitForTimeout(3000); 
+    await page.screenshot({ path: './tests/pics/29mh-statsdelete.png' });
+
+    //BUSCAR DATO
+
+    console.log("Introduciendo dato");
+    await page.click(".table > tbody:nth-child(2) > tr:nth-child(11) > td:nth-child(1) > input:nth-child(1)");
+    await page.keyboard.type("Spain");
+    await page.screenshot({ path: './tests/pics/30mhsearchingSpain.png' });
+    
+    console.log("Buscando dato")
+    await page.click("button.btn-warning:nth-child(2)");
+    await page.waitForTimeout(3000); 
+    await page.screenshot({ path: './tests/pics/31mhbusqueda.png' });
+
+
+    //VUELTA A INFO
+    console.log("Back to info");
+
+    await page.goto('https://sos2021-23.herokuapp.com/');
+    await page.screenshot({ path: './tests/pics/32mhinfo.png' });
+
+    // PAGINA PRINCIPAL 
+    console.log("Vamos para la pagina principal")
+    await page.click("#botoninfo");
+    await page.waitForTimeout(3000); 
+    await page.screenshot({ path: './tests/pics/33paginaprincipal.png' });
+
+    // PAGINA PRINCIPAL 
+    console.log("Hacemos click en integraciones")
+    await page.click("#integrationsbtn");
+    await page.waitForTimeout(3000); 
+    await page.screenshot({ path: './tests/pics/34integraciones.png' });
+
+    // GRAFICA HIGHCHART
+    console.log("Veamos alguna")
+    await page.click("body > div > ul:nth-child(21) > li > a");
+    await page.waitForTimeout(3000); 
+    await page.screenshot({ path: './tests/pics/35grafica.png' });
+    console.log("Ahi está")
+
+    //VOLVEMOS A INICIO
+    console.log("Volviendo a inicio")
+    await page.click("body > main > main > ul > li:nth-child(1) > a");
+    await page.waitForTimeout(3000); 
+    await page.screenshot({ path: './tests/pics/36vueltainicio.png' });
 
 
 
