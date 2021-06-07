@@ -9,7 +9,7 @@
 
 
 async function loadChart() {
-    const res = await fetch("http://sos2021-24.herokuapp.com/api/v2/children-out-school");
+    const res = await fetch("https://sos2021-24.herokuapp.com/api/v2/children-out-school/");
     schoolData = await res.json();
     if (res.ok) {
       schoolData.forEach((stat) => {

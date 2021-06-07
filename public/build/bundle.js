@@ -1,5 +1,5 @@
 
-(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 var app = (function () {
     'use strict';
 
@@ -13840,8 +13840,13 @@ var app = (function () {
     	return block;
     }
 
+<<<<<<< HEAD
     // (147:4) <Col xs="auto">
     function create_default_slot_1$f(ctx) {
+=======
+    // (142:4) <Col xs="auto">
+    function create_default_slot_1$h(ctx) {
+>>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     	let card;
     	let current;
 
@@ -13887,7 +13892,11 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
+<<<<<<< HEAD
     		id: create_default_slot_1$f.name,
+=======
+    		id: create_default_slot_1$h.name,
+>>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     		type: "slot",
     		source: "(147:4) <Col xs=\\\"auto\\\">",
     		ctx
@@ -13937,7 +13946,11 @@ var app = (function () {
     	col3 = new Col({
     			props: {
     				xs: "auto",
+<<<<<<< HEAD
     				$$slots: { default: [create_default_slot_1$f] },
+=======
+    				$$slots: { default: [create_default_slot_1$h] },
+>>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -15800,7 +15813,11 @@ var app = (function () {
     const file$y = "src/Integrations.svelte";
 
     // (17:12) <Button outline color="primary" onclick="location.href='#/info'">
+<<<<<<< HEAD
     function create_default_slot$m(ctx) {
+=======
+    function create_default_slot_1$g(ctx) {
+>>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     	let t;
 
     	const block = {
@@ -15817,7 +15834,11 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
+<<<<<<< HEAD
     		id: create_default_slot$m.name,
+=======
+    		id: create_default_slot_1$g.name,
+>>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     		type: "slot",
     		source: "(17:12) <Button outline color=\\\"primary\\\" onclick=\\\"location.href='#/info'\\\">",
     		ctx
@@ -15826,7 +15847,38 @@ var app = (function () {
     	return block;
     }
 
+<<<<<<< HEAD
     function create_fragment$y(ctx) {
+=======
+    // (57:8) <Button href ="/#/du-stats/graph1">
+    function create_default_slot$n(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Analítica 3D");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$n.name,
+    		type: "slot",
+    		source: "(57:8) <Button href =\\\"/#/du-stats/graph1\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$z(ctx) {
+>>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     	let html;
     	let head;
     	let title;
@@ -15836,7 +15888,7 @@ var app = (function () {
     	let h1;
     	let t3;
     	let div0;
-    	let button;
+    	let button0;
     	let t4;
     	let li0;
     	let strong0;
@@ -15885,37 +15937,52 @@ var app = (function () {
     	let li9;
     	let strong4;
     	let t30;
+    	let button1;
+    	let t31;
     	let ul11;
     	let li10;
     	let a8;
-    	let t32;
+    	let t33;
     	let ul12;
     	let li11;
     	let a9;
-    	let t34;
+    	let t35;
     	let ul13;
     	let li12;
     	let a10;
-    	let t36;
+    	let t37;
     	let ul14;
     	let li13;
     	let a11;
-    	let t38;
+    	let t39;
     	let ul15;
     	let li14;
     	let a12;
-    	let t40;
+    	let t41;
     	let ul16;
     	let li15;
     	let a13;
     	let current;
 
-    	button = new Button({
+    	button0 = new Button({
     			props: {
     				outline: true,
     				color: "primary",
     				onclick: "location.href='#/info'",
+<<<<<<< HEAD
     				$$slots: { default: [create_default_slot$m] },
+=======
+    				$$slots: { default: [create_default_slot_1$g] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button1 = new Button({
+    			props: {
+    				href: "/#/du-stats/graph1",
+    				$$slots: { default: [create_default_slot$n] },
+>>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -15934,7 +16001,7 @@ var app = (function () {
     			h1.textContent = "Integrations";
     			t3 = space();
     			div0 = element("div");
-    			create_component(button.$$.fragment);
+    			create_component(button0.$$.fragment);
     			t4 = space();
     			li0 = element("li");
     			strong0 = element("strong");
@@ -15996,31 +16063,33 @@ var app = (function () {
     			strong4 = element("strong");
     			strong4.textContent = "Drugs-Stats";
     			t30 = space();
+    			create_component(button1.$$.fragment);
+    			t31 = space();
     			ul11 = element("ul");
     			li10 = element("li");
     			a8 = element("a");
     			a8.textContent = "Api Drug-Use(Highchart)";
-    			t32 = space();
+    			t33 = space();
     			ul12 = element("ul");
     			li11 = element("li");
     			a9 = element("a");
     			a9.textContent = "API Drug-Use(Awesome)";
-    			t34 = space();
+    			t35 = space();
     			ul13 = element("ul");
     			li12 = element("li");
     			a10 = element("a");
     			a10.textContent = "API Grupo 24 School";
-    			t36 = space();
+    			t37 = space();
     			ul14 = element("ul");
     			li13 = element("li");
     			a11 = element("a");
     			a11.textContent = "API Grupo 10 Obesity";
-    			t38 = space();
+    			t39 = space();
     			ul15 = element("ul");
     			li14 = element("li");
     			a12 = element("a");
     			a12.textContent = "API Externa Chuck Norris";
-    			t40 = space();
+    			t41 = space();
     			ul16 = element("ul");
     			li15 = element("li");
     			a13 = element("a");
@@ -16095,6 +16164,7 @@ var app = (function () {
     			set_style(li9, "font-size", "22px");
     			add_location(li9, file$y, 54, 8, 1997);
     			attr_dev(a8, "href", "#/du-stats/graph1");
+<<<<<<< HEAD
     			add_location(a8, file$y, 57, 16, 2139);
     			add_location(li10, file$y, 57, 12, 2135);
     			set_style(ul11, "list-style-type", "circle");
@@ -16132,6 +16202,45 @@ var app = (function () {
     			add_location(ul16, file$y, 72, 8, 2856);
     			add_location(div1, file$y, 12, 4, 166);
     			add_location(body, file$y, 11, 0, 155);
+=======
+    			add_location(a8, file$z, 62, 16, 2310);
+    			add_location(li10, file$z, 62, 12, 2306);
+    			set_style(ul11, "list-style-type", "circle");
+    			set_style(ul11, "font-size", "20px");
+    			add_location(ul11, file$z, 61, 8, 2239);
+    			attr_dev(a9, "href", "#/du-stats/graphMorris");
+    			add_location(a9, file$z, 65, 16, 2466);
+    			add_location(li11, file$z, 65, 12, 2462);
+    			set_style(ul12, "list-style-type", "circle");
+    			set_style(ul12, "font-size", "20px");
+    			add_location(ul12, file$z, 64, 8, 2395);
+    			attr_dev(a10, "href", "#/du-stats/schoolgraph");
+    			add_location(a10, file$z, 68, 16, 2625);
+    			add_location(li12, file$z, 68, 12, 2621);
+    			set_style(ul13, "list-style-type", "circle");
+    			set_style(ul13, "font-size", "20px");
+    			add_location(ul13, file$z, 67, 8, 2554);
+    			attr_dev(a11, "href", "#/du-stats/obesitygraph");
+    			add_location(a11, file$z, 71, 16, 2782);
+    			add_location(li13, file$z, 71, 12, 2778);
+    			set_style(ul14, "list-style-type", "circle");
+    			set_style(ul14, "font-size", "20px");
+    			add_location(ul14, file$z, 70, 8, 2711);
+    			attr_dev(a12, "href", "#/du-stats/chucknorris");
+    			add_location(a12, file$z, 75, 16, 2951);
+    			add_location(li14, file$z, 75, 12, 2947);
+    			set_style(ul15, "list-style-type", "circle");
+    			set_style(ul15, "font-size", "20px");
+    			add_location(ul15, file$z, 74, 8, 2880);
+    			attr_dev(a13, "href", "#/du-stats/rick");
+    			add_location(a13, file$z, 78, 16, 3113);
+    			add_location(li15, file$z, 78, 12, 3109);
+    			set_style(ul16, "list-style-type", "circle");
+    			set_style(ul16, "font-size", "20px");
+    			add_location(ul16, file$z, 77, 8, 3042);
+    			add_location(div1, file$z, 12, 4, 178);
+    			add_location(body, file$z, 11, 0, 166);
+>>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     			attr_dev(html, "lang", "ES");
     			add_location(html, file$y, 3, 0, 75);
     		},
@@ -16148,7 +16257,7 @@ var app = (function () {
     			append_dev(div1, h1);
     			append_dev(div1, t3);
     			append_dev(div1, div0);
-    			mount_component(button, div0, null);
+    			mount_component(button0, div0, null);
     			append_dev(div1, t4);
     			append_dev(div1, li0);
     			append_dev(li0, strong0);
@@ -16197,52 +16306,64 @@ var app = (function () {
     			append_dev(div1, li9);
     			append_dev(li9, strong4);
     			append_dev(div1, t30);
+    			mount_component(button1, div1, null);
+    			append_dev(div1, t31);
     			append_dev(div1, ul11);
     			append_dev(ul11, li10);
     			append_dev(li10, a8);
-    			append_dev(div1, t32);
+    			append_dev(div1, t33);
     			append_dev(div1, ul12);
     			append_dev(ul12, li11);
     			append_dev(li11, a9);
-    			append_dev(div1, t34);
+    			append_dev(div1, t35);
     			append_dev(div1, ul13);
     			append_dev(ul13, li12);
     			append_dev(li12, a10);
-    			append_dev(div1, t36);
+    			append_dev(div1, t37);
     			append_dev(div1, ul14);
     			append_dev(ul14, li13);
     			append_dev(li13, a11);
-    			append_dev(div1, t38);
+    			append_dev(div1, t39);
     			append_dev(div1, ul15);
     			append_dev(ul15, li14);
     			append_dev(li14, a12);
-    			append_dev(div1, t40);
+    			append_dev(div1, t41);
     			append_dev(div1, ul16);
     			append_dev(ul16, li15);
     			append_dev(li15, a13);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			const button_changes = {};
+    			const button0_changes = {};
 
     			if (dirty & /*$$scope*/ 1) {
-    				button_changes.$$scope = { dirty, ctx };
+    				button0_changes.$$scope = { dirty, ctx };
     			}
 
-    			button.$set(button_changes);
+    			button0.$set(button0_changes);
+    			const button1_changes = {};
+
+    			if (dirty & /*$$scope*/ 1) {
+    				button1_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button1.$set(button1_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(button.$$.fragment, local);
+    			transition_in(button0.$$.fragment, local);
+    			transition_in(button1.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(button.$$.fragment, local);
+    			transition_out(button0.$$.fragment, local);
+    			transition_out(button1.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(html);
-    			destroy_component(button);
+    			destroy_component(button0);
+    			destroy_component(button1);
     		}
     	};
 
@@ -35360,6 +35481,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Gráfico de área que muestra los diferentes valores de abandono escolar";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
+<<<<<<< HEAD
     			add_location(script0, file$4, 79, 2, 1794);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
     			add_location(script1, file$4, 80, 2, 1881);
@@ -35383,6 +35505,31 @@ var app = (function () {
     			add_location(figure, file$4, 94, 8, 2372);
     			add_location(div2, file$4, 93, 4, 2358);
     			add_location(main, file$4, 88, 0, 2232);
+=======
+    			add_location(script0, file$5, 79, 2, 1875);
+    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
+    			add_location(script1, file$5, 80, 2, 1963);
+    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
+    			add_location(script2, file$5, 81, 2, 2042);
+    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
+    			add_location(script3, file$5, 82, 2, 2118);
+    			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
+    			add_location(script4, file$5, 83, 2, 2196);
+    			add_location(strong, file$5, 90, 44, 2385);
+    			set_style(h1, "text-align", "center");
+    			add_location(h1, file$5, 90, 8, 2349);
+    			add_location(div0, file$5, 89, 4, 2334);
+    			attr_dev(div1, "id", "container");
+    			attr_dev(div1, "class", "svelte-1jvwztp");
+    			add_location(div1, file$5, 95, 10, 2514);
+    			set_style(p, "text-align", "center");
+    			attr_dev(p, "class", "highcharts-description");
+    			add_location(p, file$5, 96, 10, 2548);
+    			attr_dev(figure, "class", "highcharts-figure svelte-1jvwztp");
+    			add_location(figure, file$5, 94, 8, 2468);
+    			add_location(div2, file$5, 93, 4, 2453);
+    			add_location(main, file$5, 88, 0, 2322);
+>>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -35451,7 +35598,7 @@ var app = (function () {
     	let schoolFemale = [];
 
     	async function loadChart() {
-    		const res = await fetch("http://sos2021-24.herokuapp.com/api/v2/children-out-school");
+    		const res = await fetch("https://sos2021-24.herokuapp.com/api/v2/children-out-school/");
     		schoolData = await res.json();
 
     		if (res.ok) {
@@ -35648,6 +35795,7 @@ var app = (function () {
     			t6 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
+<<<<<<< HEAD
     			add_location(script0, file$3, 83, 2, 1993);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
     			add_location(script1, file$3, 84, 2, 2080);
@@ -35671,6 +35819,31 @@ var app = (function () {
     			add_location(figure, file$3, 98, 8, 2568);
     			add_location(div2, file$3, 97, 4, 2554);
     			add_location(main, file$3, 92, 0, 2431);
+=======
+    			add_location(script0, file$4, 83, 2, 2077);
+    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
+    			add_location(script1, file$4, 84, 2, 2165);
+    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
+    			add_location(script2, file$4, 85, 2, 2244);
+    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
+    			add_location(script3, file$4, 86, 2, 2320);
+    			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
+    			add_location(script4, file$4, 87, 2, 2398);
+    			add_location(strong, file$4, 94, 44, 2587);
+    			set_style(h1, "text-align", "center");
+    			add_location(h1, file$4, 94, 8, 2551);
+    			add_location(div0, file$4, 93, 4, 2536);
+    			attr_dev(div1, "id", "container");
+    			attr_dev(div1, "class", "svelte-1jvwztp");
+    			add_location(div1, file$4, 99, 10, 2713);
+    			set_style(p, "text-align", "center");
+    			attr_dev(p, "class", "highcharts-description");
+    			add_location(p, file$4, 100, 10, 2747);
+    			attr_dev(figure, "class", "highcharts-figure svelte-1jvwztp");
+    			add_location(figure, file$4, 98, 8, 2667);
+    			add_location(div2, file$4, 97, 4, 2652);
+    			add_location(main, file$4, 92, 0, 2524);
+>>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -35758,7 +35931,7 @@ var app = (function () {
     	let obesityFemale = [];
 
     	async function loadChart() {
-    		const res = await fetch("http://sos2021-10.herokuapp.com/api/integration/obesity-stats");
+    		const res = await fetch("https://sos2021-10.herokuapp.com/api/integration/obesity-stats");
     		obesityData = await res.json();
 
     		if (res.ok) {
@@ -35868,8 +36041,13 @@ var app = (function () {
     const { console: console_1$1 } = globals;
     const file$2 = "src/duAPI/integrations/chucknorris.svelte";
 
+<<<<<<< HEAD
     // (186:4) <Button color="primary" onclick="location.reload()" style="margin-left: 35%; width: 25%;">
     function create_default_slot_1$1(ctx) {
+=======
+    // (272:4) <Button color="primary" onclick="location.reload()" style="margin-left: 35%; width: 25%;">
+    function create_default_slot_1$2(ctx) {
+>>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     	let t;
 
     	const block = {
@@ -35888,15 +36066,20 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$1.name,
     		type: "slot",
-    		source: "(186:4) <Button color=\\\"primary\\\" onclick=\\\"location.reload()\\\" style=\\\"margin-left: 35%; width: 25%;\\\">",
+    		source: "(272:4) <Button color=\\\"primary\\\" onclick=\\\"location.reload()\\\" style=\\\"margin-left: 35%; width: 25%;\\\">",
     		ctx
     	});
 
     	return block;
     }
 
+<<<<<<< HEAD
     // (189:4) <Button id="back" outline color="secondary" on:click="{pop}">
     function create_default_slot$1(ctx) {
+=======
+    // (275:4) <Button id="back" outline color="secondary" on:click="{pop}">
+    function create_default_slot$2(ctx) {
+>>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     	let t;
 
     	const block = {
@@ -35915,7 +36098,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(189:4) <Button id=\\\"back\\\" outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(275:4) <Button id=\\\"back\\\" outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -36003,6 +36186,7 @@ var app = (function () {
     			t7 = space();
     			create_component(button1.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
+<<<<<<< HEAD
     			add_location(script0, file$2, 171, 4, 4979);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/wordcloud.js")) attr_dev(script1, "src", script1_src_value);
     			add_location(script1, file$2, 172, 4, 5049);
@@ -36021,6 +36205,26 @@ var app = (function () {
     			add_location(figure, file$2, 179, 4, 5408);
     			add_location(br1, file$2, 187, 4, 5720);
     			add_location(main, file$2, 178, 0, 5397);
+=======
+    			add_location(script0, file$3, 257, 4, 7777);
+    			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/wordcloud.js")) attr_dev(script1, "src", script1_src_value);
+    			add_location(script1, file$3, 258, 4, 7848);
+    			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
+    			add_location(script2, file$3, 259, 4, 7926);
+    			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
+    			add_location(script3, file$3, 260, 4, 8004);
+    			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
+    			add_location(script4, file$3, 261, 4, 8084);
+    			attr_dev(div, "id", "container");
+    			add_location(div, file$3, 266, 8, 8258);
+    			add_location(br0, file$3, 268, 25, 8355);
+    			attr_dev(p, "class", "highcharts-description");
+    			add_location(p, file$3, 267, 8, 8294);
+    			attr_dev(figure, "class", "highcharts-figure svelte-sbseph");
+    			add_location(figure, file$3, 265, 4, 8214);
+    			add_location(br1, file$3, 273, 4, 8534);
+    			add_location(main, file$3, 264, 0, 8202);
+>>>>>>> f50aa76f5fe6ba943bfbea486bfd863c955c45ec
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -36112,7 +36316,7 @@ var app = (function () {
     function instance$2($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Chucknorris", slots, []);
-    	var APIext = "http://api.quotable.io/random";
+    	var APIext = "https://api.quotable.io/random";
     	let Quote = [];
 
     	async function loadGraph() {
