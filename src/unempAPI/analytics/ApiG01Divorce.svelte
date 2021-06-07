@@ -58,7 +58,7 @@
 
 <main>
     
-    <h3 style="text-align: center;"> Ratio de divorcios</h3>
+    <h3 style="text-align: center;">Porcentaje de paro y ratio de divorcios</h3>
 
     <div id="myDiv"></div>
     <Button outline color="secondary" on:click="{pop}">Atrás</Button>
