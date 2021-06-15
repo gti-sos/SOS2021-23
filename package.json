@@ -43,7 +43,7 @@
     "puppeteer": "^10.0.0",
     "request": "^2.88.2",
     "serve-index": "^1.9.1",
-    "sirv-cli": "^1.0.0",
+    "sirv-cli": "^1.0.12",
     "svelte-spa-router": "^3.1.0",
     "sveltestrap": "^3.14.1",
     "zingchart": "^2.9.4",
