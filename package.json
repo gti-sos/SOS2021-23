@@ -44,7 +44,7 @@
     "request": "^2.88.2",
     "serve-index": "^1.9.1",
     "sirv-cli": "^1.0.0",
-    "svelte-spa-router": "^3.1.0",
+    "svelte-spa-router": "^3.2.0",
     "sveltestrap": "^3.14.1",
     "zingchart": "^2.9.4",
     "zingchart-web-component": "0.0.3"
